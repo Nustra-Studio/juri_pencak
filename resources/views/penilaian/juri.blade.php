@@ -6,6 +6,9 @@
     <title>Pencak Silat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/juri/style.css">
+    @php
+        $id_juri = 2;
+    @endphp
   </head>
   <body>
     <div class="container d-flex">
@@ -71,21 +74,21 @@
               </table>
 
               <div class="skill d-flex justify-content-center">
-                <button class="btnSkill1 d-flex align-items-center justify-content-center ">
+                <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center ">
                     <img src="../assets/juri/images/fist (2) 1.png">
                     <span>Pukulan</span>
                 </button>
-                <button class="btnSkill1 d-flex align-items-center justify-content-center">
+                <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center">
                     <img src="../assets/juri/images/kick 1.png">
                     <span>Tendangan</span>
                 </button>
               </div>
 
               <div class="hapus d-flex align-items-center justify-content-center">
-                <button class="btnHapus text-center">
+                <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:minus" class="btnHapus text-center">
                     <span >Hapus <br> Pukulan</span>
                 </button>
-                <button class="btnHapus text-center">
+                <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:minus" class="btnHapus text-center">
                     <span>Hapus <br> Tendangan</span>
                 </button>
               </div>
@@ -168,11 +171,11 @@
               </table>
 
               <div class="skill d-flex  justify-content-center">
-                <button class="btnSkill2 d-flex align-items-center justify-content-center ">
+                <button name="juri:{{$id_juri}} id:2 status:pukulan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center ">
                     <img src="../assets/juri/images/fist (2) 1.png">
                     <span>Pukulan</span>
                 </button>
-                <button class="btnSkill2 d-flex align-items-center justify-content-center">
+                <button name="juri:{{$id_juri}} id:2 status:tendangan p:3 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center">
                     <img src="../assets/juri/images/kick 1.png">
                     <span>Tendangan</span>
                 </button>
@@ -180,15 +183,53 @@
               </div>
 
               <div class="hapus d-flex align-items-center justify-content-center">
-                <button class="btnHapus text-center">
+                <button name="juri:{{$id_juri}} id:2 status:pukulan p:2 keterangan:minus" class="btnHapus text-center">
                     <span >Hapus <br> Pukulan</span>
                 </button>
-                <button class="btnHapus text-center">
+                <button name="juri:{{$id_juri}} id:2 status:tendangan p:3 keterangan:minus" class="btnHapus text-center">
                     <span>Hapus <br> Tendangan</span>
                 </button>
               </div>
         </div>
     </section>
+    <script>
+        // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
+        var tombolDenganKelas = document.querySelectorAll('.btnHapus, .btnSkill1 , .btnSkill2');
+    
+        // Loop melalui semua tombol dan tambahkan event listener
+        tombolDenganKelas.forEach(function(tombol) {
+            tombol.addEventListener('click', function() {
+                var nameAttribute = this.getAttribute('name'); // Mendapatkan nilai atribut "name"
+                
+                // Membagi nilai atribut "name" menjadi objek JavaScript
+                var data = {};
+                nameAttribute.split(' ').forEach(function(item) {
+                    var parts = item.split(':');
+                    data[parts[0]] = parts[1];
+                });
+    
+                // Sekarang, Anda memiliki data dalam bentuk objek
+                console.log(data);
+    
+                        // Lanjutkan dengan kode pengiriman permintaan POST jika diperlukan
+                    fetch('{{ route('juri.store') }}', {
+                    method: 'POST',
+                    headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                    })
+                .then(response => response.json())
+                .then(data => {
+                    // Lakukan sesuatu dengan respons dari server (opsional)
+                })
+                .catch(error => {
+                    // Tangani kesalahan jika ada
+                });
+                    });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

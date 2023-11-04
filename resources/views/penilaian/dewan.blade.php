@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Dewan</title>
     @php
+    use App\score;
         $id_juri = 1;
     @endphp
 </head>
@@ -50,17 +51,17 @@
             </tr>
             </thead>
             <tbody>
+                @php
+                    $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
+                    $bina =  score::where('keterangan','binaan')->where('id_perserta','1')->count();
+                    $teguran = score::where('keterangan','teguran')->where('id_perserta','1')->count();
+                    $peringatan = score::where('keterangan','peringatan')->where('id_perserta','1')->count();
+                @endphp
             <tr>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
-            </tr>
-            <tr>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
+                <td>{{$jatuh}}x</td>
+                <td>{{$bina}}x</td>
+                <td>{{$teguran}}x</td>
+                <td>{{$peringatan}}x</td>
             </tr>
             <tr>
                 <td>0x</td>
@@ -103,12 +104,17 @@
             <th>Jatuhan</th>
             </tr>
             </thead>
-            <tbody>
+            @php
+            $jatuh = score::where('keterangan','jatuh')->where('id_perserta','2')->count();
+            $bina =  score::where('keterangan','binaan')->where('id_perserta','2')->count();
+            $teguran = score::where('keterangan','teguran')->where('id_perserta','2')->count();
+            $peringatan = score::where('keterangan','peringatan')->where('id_perserta','2')->count();
+        @endphp
             <tr>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
+                <td>{{$jatuh}}x</td>
+                <td>{{$bina}}x</td>
+                <td>{{$teguran}}x</td>
+                <td>{{$peringatan}}x</td>
             </tr>
             <tr>
                 <td>0x</td>
@@ -117,12 +123,6 @@
                 <td>0x</td>
             </tr>
             <tr>     
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
-                <td>0x</td>
-            </tr>
-            <tr>
                 <td>0x</td>
                 <td>0x</td>
                 <td>0x</td>
@@ -151,9 +151,17 @@
             <button class="button-jatuhan">Verifikasi <br>Hukuman</button>
             <table class="score-table">
                 <tbody>
+                    @php
+                        $plus1 = score::where('status','plus')->where('id_perserta','1')->sum('score');
+                        $minus1 = score::where('status','minus')->where('id_perserta','1')->sum('score'); 
+                        $score1 = $plus1 - $minus1;
+                        $plus2 = score::where('status','plus')->where('id_perserta','2')->sum('score');
+                        $minus2 = score::where('status','minus')->where('id_perserta','2')->sum('score'); 
+                        $score2 = $plus2 - $minus2;
+                    @endphp
                     <tr>
-                        <td><span style="color: rgba(0, 102, 255, 1) ;">20</span></td>
-                        <td><span style="color: rgba(241, 0, 0, 1);">30</span></td>
+                        <td><span style="color: rgba(0, 102, 255, 1) ;">{{$score1}}</span></td>
+                        <td><span style="color: rgba(241, 0, 0, 1);">{{$score2}}</span></td>
                     </tr>
                 </tbody>
             </table>
