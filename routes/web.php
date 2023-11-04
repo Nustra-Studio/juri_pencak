@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Route::resource('juri', JuriController::class);
 Route::resource('dewan', DewanController::class);
+Route::get('/sse', 'JuriController@stream');
 
 
 // Route::group(['prefix' => 'email'], function(){

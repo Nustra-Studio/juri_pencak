@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../assets/juri/style.css">
     @php
         $id_juri = 2;
+        use App\score;
     @endphp
   </head>
   <body>
@@ -22,8 +23,8 @@
         <div class="container d-flex justify-content-between">
             <div class="d-flex align-items-center justify-content-center">
                 <div class="text">
-                    <span class="team">Nama Team</span> <br>
-                    <span class="peserta">Nama Peserta</span>
+                    <span class="team">SMKN 1 NGANJUK</span> <br>
+                    <span class="peserta">Yudha</span>
                 </div>
             </div>
             <div class="Juri d-flex flex-column align-items-center">
@@ -32,8 +33,8 @@
             </div>
             <div class="d-flex align-items-center justify-content-center text-end">
                 <div class="text">
-                    <span class="team">Nama Team</span><br>
-                    <span class="peserta">Nama Peserta</span>
+                    <span class="team">SMA 1 JEMBER</span><br>
+                    <span class="peserta">Alex</span>
                 </div>
             </div>
         </div>
@@ -45,6 +46,11 @@
         <div class="blueScore table-responsive">
             <table class="table table-bordered border border-black">
                 <thead>
+                    @php
+                        $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
+                        $tendangan =  score::where('keterangan','tendangan')->where('id_perserta','1')->count();
+                        $pukulan = score::where('keterangan','pukulan')->where('id_perserta','1')->count();
+                @endphp
                   <tr>
                     <th  class=" text-center">Pukulan</th>
                     <th scope="col" class=" text-center">Tendangan</th>
@@ -53,9 +59,9 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="text-center">1x</td>
-                    <td class="text-center">2x</td>
-                    <td class="text-center">3x</td>
+                    <td class="text-center">{{$pukulan}}x</td>
+                    <td class="text-center">{{$tendangan}}x</td>
+                    <td class="text-center">{{$jatuh}}x</td>
                   </tr>
                 </tbody>
                 <thead>
@@ -64,12 +70,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $data = score::where('id_perserta','1')->where('status','plus')->get();
+                    @endphp
                     <tr>
-                        <td colspan="3">1,2,2,2,5,5,5</td>
+                        <td colspan="3">
+                            @foreach ($data as $item)
+                                {{$item->score}},
+                            @endforeach
+                        </td>
                     </tr>
-                    <tr>
-                        <td colspan="3">1,2,2,2,5,5,5</td>
-                    </tr>
+                    {{-- <tr>
+                        <td colspan="3"></td>
+                    </tr> --}}
                 </tbody>
               </table>
 
@@ -125,14 +138,22 @@
 
               <table class="table point table-bordered border border-black">
                 <thead>
+                    @php
+                    $plus1 = score::where('status','plus')->where('id_perserta','1')->sum('score');
+                    $minus1 = score::where('status','minus')->where('id_perserta','1')->sum('score'); 
+                    $score1 = $plus1 - $minus1;
+                    $plus2 = score::where('status','plus')->where('id_perserta','2')->sum('score');
+                    $minus2 = score::where('status','minus')->where('id_perserta','2')->sum('score'); 
+                    $score2 = $plus2 - $minus2;
+                @endphp
                   <tr>
                     <td scope="col" class="text-center " style="background-color: #FFD600;" colspan="2">Total Point</td>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="text-center ">22</td>
-                    <td class="text-center ">16</td>
+                    <td class="text-center ">{{$score1}}</td>
+                    <td class="text-center ">{{$score2}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -142,31 +163,43 @@
         <div class="redScore table-responsive">
             <table class="table table-bordered border border-black">
                 <thead class="border border-black">
-                  <tr>
-                    <th scope="col" class=" text-center">Pukulan</th>
+                @php
+                $jatuh = score::where('keterangan','jatuh')->where('id_perserta','2')->count();
+                $tendangan =  score::where('keterangan','tendangan')->where('id_perserta','2')->count();
+                $pukulan = score::where('keterangan','pukulan')->where('id_perserta','2')->count();
+                @endphp
+                <tr>
+                    <th  class=" text-center">Pukulan</th>
                     <th scope="col" class=" text-center">Tendangan</th>
                     <th scope="col" class=" text-center">Jatuhan</th>
-                  </tr>
+                </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1x</td>
-                    <td>2x</td>
-                    <td>3x</td>
-                  </tr>
-                </tbody>
+                <tr>
+                    <td class="text-center">{{$pukulan}}x</td>
+                    <td class="text-center">{{$tendangan}}x</td>
+                    <td class="text-center">{{$jatuh}}x</td>
+                </tr>
+        </tbody>
                 <thead>
                     <tr>
                         <th scope="col" class=" text-center" colspan="3">Riwayat Point</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $data = score::where('id_perserta','2')->where('status','plus')->get();
+                    @endphp
                     <tr>
-                        <td colspan="3">1,2,2,2,5,5,5</td>
+                        <td colspan="3">
+                            @foreach ($data as $item)
+                                {{$item->score}},
+                            @endforeach
+                        </td>
                     </tr>
-                    <tr>
-                        <td colspan="3">1,2,2,2,5,5,5</td>
-                    </tr>
+                    {{-- <tr>
+                        <td colspan="3"></td>
+                    </tr> --}}
                 </tbody>
               </table>
 
@@ -229,6 +262,7 @@
                 });
                     });
         });
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
