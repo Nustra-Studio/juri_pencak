@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+.btn1 {
+    padding:5px 20px;
+    background-color: #D9D9D9;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn1:hover {
+    background-color: #c6c6c6;
+}
+
+.juri h1 {
+    margin-bottom: -3px;
+}
+
+.peserta {
+    font-weight: 500;
+}
+.redScore, .blueScore{
+    width: 100%;
+}
+
+.blueScore th {
+    background-color: #0853D2;
+    color: white;
+}
+
+.redScore th {
+    background-color: #F86C6C;
+    color: white;
+}
+
+
+.babak {
+    width: 50%;
+}
+
+.babak .tabelBabak thead tr td{
+    border-bottom:1px solid black ;
+}
+.babak .tabelBabak thead tr:nth-child(2) th,
+.babak .tabelBabak tbody tr td{
+    border: 1px solid black;
+}
+
+.refersh {
+    padding: 10px 40px;
+    border-radius: 5px;
+    color: white;
+    background-color: #2ED22E;
+    margin-top: -13px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.refersh:hover {
+    background-color: #25a825;
+}
+
+.refersh span {
+    font-size: 20px;
+}
+
+.refersh img {
+    width: 25%;
+    margin-right: 10px;
+}
+
+.point {
+    margin-top: 30px;
+}
+
+.btnSkill1 img {
+    width: 30%;
+    margin-right: 10px;
+}
+
+
+.btnSkill2 img {
+    width: 30%;
+    margin-right: 10px;
+}
+.btnSkill1 {
+    padding: 5px 10px;
+    background-color: #0853D2;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: #ffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btnSkill2 {
+    padding: 5px 10px;
+    background-color: #F86C6C;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: #ffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.btnSkill1:hover{
+    background-color: #073d9a;
+}
+
+.btnSkill2:hover{
+    background-color: #e73b3b;
+}
+
+.hapus {
+    margin-top: 10px;
+}
+
+.btnHapus {
+    padding: 5px 30px;
+    background-color: #9D9D9D;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: #ffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btnHapus:hover {
+    background-color:#747474 ;
+}
+
