@@ -71,23 +71,23 @@
               </table>
 
               <div class="skill d-flex justify-content-center">
-                <div class="btnSkill1 d-flex align-items-center justify-content-center ">
+                <button class="btnSkill1 d-flex align-items-center justify-content-center ">
                     <img src="../assets/juri/images/fist (2) 1.png">
                     <span>Pukulan</span>
-                </div>
-                <div class="btnSkill1 d-flex align-items-center justify-content-center">
+                </button>
+                <button class="btnSkill1 d-flex align-items-center justify-content-center">
                     <img src="../assets/juri/images/kick 1.png">
                     <span>Tendangan</span>
-                </div>
+                </button>
               </div>
 
               <div class="hapus d-flex align-items-center justify-content-center">
-                <div class="btnHapus text-center">
+                <button class="btnHapus text-center">
                     <span >Hapus <br> Pukulan</span>
-                </div>
-                <div class="btnHapus text-center">
+                </button>
+                <button class="btnHapus text-center">
                     <span>Hapus <br> Tendangan</span>
-                </div>
+                </button>
               </div>
         </div>
 
@@ -168,24 +168,24 @@
               </table>
 
               <div class="skill d-flex  justify-content-center">
-                <div class="btnSkill2 d-flex align-items-center justify-content-center ">
+                <button class="btnSkill2 d-flex align-items-center justify-content-center ">
                     <img src="../assets/juri/images/fist (2) 1.png">
                     <span>Pukulan</span>
-                </div>
-                <div class="btnSkill2 d-flex align-items-center justify-content-center">
+                </button>
+                <button class="btnSkill2 d-flex align-items-center justify-content-center">
                     <img src="../assets/juri/images/kick 1.png">
                     <span>Tendangan</span>
-                </div>
+                </button>
                 
               </div>
 
               <div class="hapus d-flex align-items-center justify-content-center">
-                <div class="btnHapus text-center">
+                <button class="btnHapus text-center">
                     <span >Hapus <br> Pukulan</span>
-                </div>
-                <div class="btnHapus text-center">
+                </button>
+                <button class="btnHapus text-center">
                     <span>Hapus <br> Tendangan</span>
-                </div>
+                </button>
               </div>
         </div>
     </section>

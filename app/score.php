@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class score extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'score', 'keterangan', 'id_perserta','id_juri','status',
+    ];
 }
