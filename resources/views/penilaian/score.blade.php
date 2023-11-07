@@ -126,7 +126,7 @@
             </div>
         </div>
         <div id=""name="" class="total-point-area">
-            <div id="score2" name="1" class="total-point-area-text">{{$score2}}</div>
+            <div id="score2" name="1" class="total-point-area-text"></div>
         </div>
         <div id=""name="" class="babak-area">
             <div id=""name="" class="babak-area-box">
@@ -143,7 +143,7 @@
             </div>
         </div>
         <div id=""name="" class="total-point-area-red">
-            <div id="score1" name="2" class="total-point-area-text">{{$score1}}</div>
+            <div id="score1" name="2" class="total-point-area-text"></div>
         </div>
         @php
         $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
