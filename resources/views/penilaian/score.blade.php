@@ -260,7 +260,58 @@
                     }
                 });
             }
+            function jatuh2() {
+                var elemenDiv = document.getElementById("jatuh2"); // Mendapatkan elemen dengan ID "jatuh2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#jatuh2').text('x'+' ' + response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                        jatuh2();
+                    }
+                });
+            }
+            function bina1 (){
+                var elemenDiv = document.getElementById("bina1"); // Mendapatkan elemen dengan ID "bina1"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=bina',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#bina1').text('x'+' ' + response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                        bina1();
+                    }
+                });
+            }
+            function bina2 (){
+                var elemenDiv = document.getElementById("bina2"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=bina',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#bina2').text('x'+' ' + response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                        jatuh2();
+                    }
+                });
+            }
             jatuh1();
+            jatuh2();
+            bina1();
+            bina2();
         }
 
         calldata();
