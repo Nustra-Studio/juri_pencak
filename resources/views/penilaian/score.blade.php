@@ -280,7 +280,7 @@
                 var elemenDiv = document.getElementById("bina1"); // Mendapatkan elemen dengan ID "bina1"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=bina',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -296,7 +296,7 @@
                 var elemenDiv = document.getElementById("bina2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=bina',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
