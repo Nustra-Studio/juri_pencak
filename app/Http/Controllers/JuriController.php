@@ -83,6 +83,29 @@ class JuriController extends Controller
                 }
             }
 
+            public function data(Request $request){
+                $tipe = $request->input('tipe');
+                $id = $request->input('id');
+                if($tipe ==="score"){
+                    $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
+                    $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
+                    $score = $plus - $minus;
+                    return response()->json(['data' => $score]);
+                }
+                elseif($tipe === "detail"){
+                    $kt = $request->input('kt');
+                    $data = score::where('keterangan',"$kt")->where('id_perserta',"1")->count();
+                    return response()->json(['data' => $data]);
+                }
+
+                elseif($tipe === "keterangan"){
+                    $data = score::where('id_perserta',"$id")->where('status','plus')->get();
+                    foreach($data as $item){
+                        $data[] = $item->score ;
+                    }
+                    return response()->json(['data' => $data]);
+                }
+            }
 
     /**
      * Display the specified resource.
