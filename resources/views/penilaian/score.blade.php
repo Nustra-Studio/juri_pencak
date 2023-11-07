@@ -304,7 +304,7 @@
                         $('#bina2').text('x'+' ' + response.data);
                         console.log(response.data);
                         // Panggil kembali fungsi untuk polling berikutnya
-                        jatuh2();
+                        bina2();
                     }
                 });
             }
