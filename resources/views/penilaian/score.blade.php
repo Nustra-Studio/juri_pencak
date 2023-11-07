@@ -40,7 +40,7 @@
                 <img src="../assets/Assets/karate.png" alt="" style="height: 35px; position: absolute; right: 0; left: 10px;top: 5px;">
             </div>
             <div id=""name="" class="blue-player-text">
-                SMA 1 <br> JEMBER
+                SMKN 1 <br> NGANJUK
             </div>
         </div>
         <div id=""name="" class="mid-container">
@@ -56,7 +56,7 @@
         </div>
         <div id=""name="" class="red-container">
             <div id=""name="" class="red-player-text">
-                SMKN 1<br> NGANJUK
+                SMA 1<br> JEMBER
             </div>
             <div id=""name="" class="red-player-img">
                 <img src="../assets/Assets/Ellipse 1.png" alt="" style="height: 50px; z-index: 1;">
