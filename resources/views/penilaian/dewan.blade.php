@@ -111,10 +111,10 @@
             $peringatan = score::where('keterangan','peringatan')->where('id_perserta','2')->count();
         @endphp
             <tr>
-                <td>{{$jatuh}}x</td>
-                <td>{{$bina}}x</td>
-                <td>{{$teguran}}x</td>
                 <td>{{$peringatan}}x</td>
+                <td>{{$teguran}}x</td>
+                <td>{{$bina}}x</td>
+                <td>{{$jatuh}}x</td>
             </tr>
             <tr>
                 <td>0x</td>
@@ -213,6 +213,10 @@
                 .catch(error => {
                     // Tangani kesalahan jika ada
                 });
+                function reload(){
+                    window.location.reload();
+                }
+                setInterval(reload, 4000);
                     });
         });
     </script>

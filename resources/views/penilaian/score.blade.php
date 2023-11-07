@@ -90,7 +90,7 @@
                     TEGURAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="peringatan2"name="2" class="score-blue-point">
+                    <div id="teguran2"name="2" class="score-blue-point">
                         x {{$teguran}}
                     </div>
                 </div>
@@ -255,8 +255,6 @@
                         
                         $('#jatuh1').text('x'+' ' + response.data);
                         console.log(response.data);
-                        // Panggil kembali fungsi untuk polling berikutnya
-                        jatuh1();
                     }
                 });
             }
@@ -271,8 +269,7 @@
                         
                         $('#jatuh2').text('x'+' ' + response.data);
                         console.log(response.data);
-                        // Panggil kembali fungsi untuk polling berikutnya
-                        jatuh2();
+
                     }
                 });
             }
@@ -287,8 +284,7 @@
                         
                         $('#bina1').text('x'+' ' + response.data);
                         console.log(response.data);
-                        // Panggil kembali fungsi untuk polling berikutnya
-                        bina1();
+
                     }
                 });
             }
@@ -303,8 +299,97 @@
                         
                         $('#bina2').text('x'+' ' + response.data);
                         console.log(response.data);
+
+                    }
+                });
+            }
+            function teguran1 (){
+                var elemenDiv = document.getElementById("teguran1"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#teguran1').text('x'+' ' + response.data);
+                        console.log(response.data);
                         // Panggil kembali fungsi untuk polling berikutnya
-                        bina2();
+                    }
+                });
+            }
+            function teguran2 (){
+                var elemenDiv = document.getElementById("teguran2"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#teguran2').text('x'+' ' + response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                    }
+                });
+            }
+            function peringatan1 (){
+                var elemenDiv = document.getElementById("peringatan1"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#peringatan1').text('x'+' ' + response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                    }
+                });
+            }
+            function peringatan2 (){
+                var elemenDiv = document.getElementById("peringatan2"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#peringatan2').text('x'+' ' + response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                    }
+                });
+            }
+            function score1 (){
+                var elemenDiv = document.getElementById("score1"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=score&id=' + id + '&kt=score',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#score1').text(response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                    }
+                });
+            }
+            function score2 (){
+                var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=score&id=' + id + '&kt=score',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#score2').text(response.data);
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
                     }
                 });
             }
@@ -312,10 +397,16 @@
             jatuh2();
             bina1();
             bina2();
+            teguran1();
+            teguran2();
+            peringatan1();
+            peringatan2();
+            score1();
+            score2();
         }
 
         calldata();
-
+        setInterval(calldata, 5000);
     </script>
 </body>
 </html>

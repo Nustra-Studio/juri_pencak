@@ -94,7 +94,7 @@ class JuriController extends Controller
                 }
                 elseif($tipe === "detail"){
                     $kt = $request->input('kt');
-                    $data = score::where('keterangan',"$kt")->where('id_perserta',"1")->count();
+                    $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
                     return response()->json(['data' => $data]);
                 }
 

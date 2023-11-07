@@ -255,11 +255,15 @@
                     })
                 .then(response => response.json())
                 .then(data => {
-                    // Lakukan sesuatu dengan respons dari server (opsional)
+                    console.log(data);
                 })
                 .catch(error => {
                     // Tangani kesalahan jika ada
                 });
+                function reload(){
+                  window.location.reload();
+                }
+                setInterval(reload, 4000);
                     });
         });
 
