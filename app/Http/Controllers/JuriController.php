@@ -54,6 +54,12 @@ class JuriController extends Controller
             return response()->json(['message' => 'Data berhasil disimpan']);
 
         }
+            elseif($status === "terakhir"){
+                $data = score::where('id_perserta',$request->id )->latest()->first();
+                $data->delete();
+                return response()->json(['message' => 'Data berhasil dihapus']);
+            }
+
             elseif($keterangan === "minus"){
                 $data = Score::where('keterangan', $status)->first();
                 $data->delete();
