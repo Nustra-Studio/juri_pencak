@@ -266,7 +266,7 @@
                             @php
                                 $data = score::where('id_perserta','2')->where('status','plus')->get();
                             @endphp
-                            <tr>div
+                            <tr>
                                 <td colspan="3">
                                     @foreach ($data as $item)
                                         {{$item->score}},
@@ -297,7 +297,49 @@
                 </div>
             </div>
         </section>
-    
+        <script>
+            // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
+            var tombolDenganKelas = document.querySelectorAll('.btnHapus, .btnSkill1 , .btnSkill2');
+        
+            // Loop melalui semua tombol dan tambahkan event listener
+            tombolDenganKelas.forEach(function(tombol) {
+                tombol.addEventListener('click', function() {
+                    var nameAttribute = this.getAttribute('name'); // Mendapatkan nilai atribut "name"
+                    
+                    // Membagi nilai atribut "name" menjadi objek JavaScript
+                    var data = {};
+                    nameAttribute.split(' ').forEach(function(item) {
+                        var parts = item.split(':');
+                        data[parts[0]] = parts[1];
+                    });
+        
+                    // Sekarang, Anda memiliki data dalam bentuk objek
+                    console.log(data);
+        
+                            // Lanjutkan dengan kode pengiriman permintaan POST jika diperlukan
+                        fetch('{{ route('juri.store') }}', {
+                        method: 'POST',
+                        headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                        })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        // Tangani kesalahan jika ada
+                    });
+                    function reload(){
+                    window.location.reload();
+                    }
+                    setInterval(reload, 4000);
+                        });
+            });
+
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
     </html>
