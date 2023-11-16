@@ -245,7 +245,7 @@
                             $pukulan = score::where('keterangan','pukulan')->where('id_perserta','2')->count();
                         @endphp
                         <tr>
-                            <th  class=" text-center">Pukulan</th>
+                            <th class=" text-center">Pukulan</th>
                             <th scope="col" class=" text-center">Tendangan</th>
                             <th scope="col" class=" text-center">Jatuhan</th>
                         </tr>
@@ -273,9 +273,7 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            {{-- <tr>
-                                <td colspan="3"></td>
-                            </tr> --}}
+                    
                         </tbody>
                     </table>
 
