@@ -313,8 +313,8 @@
                         data[parts[0]] = parts[1];
                     });
         
-                    // Sekarang, Anda memiliki data dalam bentuk objek
-                    console.log(data);
+                    // // Sekarang, Anda memiliki data dalam bentuk objek
+                    // console.log(data);
         
                             // Lanjutkan dengan kode pengiriman permintaan POST jika diperlukan
                         fetch('{{ route('juri.store') }}', {
