@@ -124,8 +124,8 @@
 }
 
 .score-section {
-    width: 100%;
     height: 400px;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -144,24 +144,24 @@
 }
 
 .score-blue-text {
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 1em;
+    font-size: 1.5vw;
 }
 
 .score-blue-point-wrap {
     position: absolute;
-    left: 17%;
+    left: 13%;
 }
 
 .score-blue-point {
-    font-size: 20px;
+    font-size: 1.5vw;
     position: relative;
 }
 
 .score-red {
     border: 1px solid black;
     width: 100%;
-    height: 50px;
+    height: 50px;   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,16 +169,16 @@
 
 .score-red-text {
     margin-right: 20px;
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 .score-red-point-wrap {
     position: absolute;
-    right:  13%;
+    right: 13%;
 }
 
 .score-red-point {
-    font-size: 20px;
+    font-size: 1.5vw;
     position: relative;
 }
 
@@ -194,7 +194,7 @@
 
 .total-point-area {
     background-color: var(--biru);
-    height: 300px;
+    height: 80%;
     width: 20%;
     display: flex;
     justify-content: center;
@@ -204,7 +204,7 @@
 
 .total-point-area-red {
     background-color: var(--merah);
-    height: 300px;
+    height: 80%;
     width: 20%;
     display: flex;
     justify-content: center;
@@ -215,11 +215,11 @@
 .total-point-area-text {
     color: var(--putih);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 200px;
+    font-size: 15vw;
 }
 
 .babak-area-box {
-    width: 150px;
+    width: 10.2vw;
     height: 50px;
     background-image: linear-gradient(180deg,black,rgb(143, 143, 143));
     border: 1px solid black;
@@ -237,7 +237,7 @@
 }
 
 .babak-area-box-ronde {
-    width: 150px;
+    width: 10.2vw;
     height: 50px;
     border: 1px solid black;
     display: flex;
@@ -246,6 +246,7 @@
 }
 
 .juri-info-section {
+    margin-top: 20px;
     width: 100%;
     height: 60px;
     display: flex;
@@ -263,7 +264,7 @@
 
 .juri-info-item-blue {
     border: 1px solid black;
-    width: 200px;
+    width: 10vw;
     color: var(--biru);
     font-weight: bold;
     height: 50px;
@@ -275,7 +276,7 @@
 
 .juri-info-item-red {
     border: 1px solid black;
-    width: 200px;
+    width: 10vw;
     color: var(--merah);
     font-weight: bold;
     height: 50px;
@@ -289,7 +290,7 @@
     background: linear-gradient(180deg, #000 0%, rgb(180, 180, 180) 100%);
     border: 1px solid black;
     color: var(--putih);
-    width: 150px;
+    width: 15%;
     height: 70px;
     border-radius: 5px;
     display: flex;
@@ -302,7 +303,7 @@
     background: linear-gradient(180deg, #8E8E8E 0%, #000 76.56%);
     border: 1px solid black;
     color: var(--putih);
-    width: 150px;
+    width: 15%;
     height: 70px;
     border-radius: 5px;
     display: flex;
@@ -320,9 +321,10 @@
     width: 100%;
     height: 45px;
     background-color: black;
-    position: fixed;
-    bottom: 3px;
     display: flex;
     align-items: center;
     color: #f5f5f5;
+    position: fixed;
+    bottom: 0.1vw;
+    font-size: 1vw;
 }
