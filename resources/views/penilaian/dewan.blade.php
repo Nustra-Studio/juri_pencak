@@ -184,7 +184,36 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        test
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Juri 1</td>
+                                </tr>
+                                <tr>
+                                    <td>Juri 2</td>
+                                </tr>
+                                <tr>
+                                    <td>Juri 3</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
               </div>
         </div>
