@@ -299,7 +299,7 @@
         </section>
         <script>
             // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
-            var tombolDenganKelas = document.querySelectorAll('.btnHapus, .btnSkill1 , .btnSkill2','.bt-notif');
+            var tombolDenganKelas = document.querySelectorAll('.btnHapus, .btnSkill1 , .btnSkill2 , .bt-notif');
         
             // Loop melalui semua tombol dan tambahkan event listener
             tombolDenganKelas.forEach(function(tombol) {
