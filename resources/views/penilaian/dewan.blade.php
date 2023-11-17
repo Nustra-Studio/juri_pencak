@@ -180,7 +180,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <h5 class="modal-title" id="staticBackdropLabel">Verifikasi Jatuhan</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -194,6 +194,46 @@
                             <tbody>
                                 @php
                                    $njatuhan=score::where('keterangan','jatuhan')->where('status','notif')->get();
+                                @endphp
+                                    @foreach ($njatuhan as $item)
+                                    <tr>
+                                        <td style="" >{{$item->id_juri}}</td>
+                                        @php
+                                            if ($item->id_perserta == '1') {
+                                               $color = "color: rgba(0, 102, 255, 1)";
+                                               $text = 'tim1';
+                                            }
+                                            else {
+                                                $color = "color: rgba(241, 0, 0, 1)";
+                                                $text = 'tim2';
+                                            }
+                                        @endphp
+                                        <td  style="{{ $item->id_perserta == 1 ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
+                                    </tr>
+                                    @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+              </div>
+        </div>
+        <div class="modal fade" id="vhukuman" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Verifikasi Hukuman</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Juri</th>
+                                    <th>Keputusan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                   $njatuhan=score::where('keterangan','hukuman')->where('status','notif')->get();
                                 @endphp
                                     @foreach ($njatuhan as $item)
                                     <tr>
