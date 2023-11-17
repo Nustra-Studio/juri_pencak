@@ -184,12 +184,12 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <table>
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <td>Juri 1</td>
-                                    <td>Juri 2</td>
-                                    <td>Juri 3</td>
+                                    <th>Juri 1</th>
+                                    <th>Juri 2</th>
+                                    <th>Juri 3</th>
                                 </tr>
                             </thead>
                             
