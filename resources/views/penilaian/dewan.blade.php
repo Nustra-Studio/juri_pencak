@@ -147,8 +147,8 @@
                 <img src="../assets/Assets/refresh.png" alt="" style="width: 20px;height: 20px;float: left; margin-left: 10px;">
                 Refresh
             </button>
-            <button class="button-jatuhan">Verifikasi <br>Jatuhan</button>
-            <button class="button-jatuhan">Verifikasi <br>Hukuman</button>
+            <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
+            <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
             <table class="score-table">
                 <tbody>
                     @php
@@ -175,6 +175,18 @@
             <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:plus" id="kirimData" class="button-red">BINAAN</button>
             <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:plus" id="kirimData" class="button-red">TEGURAN</button>
             <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:plus" id="kirimData" class="button-red">PERINGATAN</button>
+        </div>
+        <div class="modal fade" id="vjatuhan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        test
+                    </div>
+              </div>
         </div>
     </div>
 
