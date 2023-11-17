@@ -208,7 +208,7 @@
                                                 $text = 'tim2';
                                             }
                                         @endphp
-                                        <td style='color: rgba(241, 0, 0, 1)'>{{$text}}</td>
+                                        <td  style="{{ $item->id_perserta == 1 ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
                                     </tr>
                                     @endforeach
                             </tbody>
