@@ -184,7 +184,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <table class="table">
+                        <table class="table text-center">
                             <thead>
                                 <tr>
                                     <th>Juri 1</th>
@@ -192,7 +192,17 @@
                                     <th>Juri 3</th>
                                 </tr>
                             </thead>
-                            
+                            <tbody>
+                                <tr>
+                                    <td>Red</td>
+                                    <td>blue</td>
+                                    <td>yellow</td>
+                                </tr>
+                                <tr>
+                                    <td>Red</td>
+                                    <td>blue</td>
+                                    <td>yellow</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
