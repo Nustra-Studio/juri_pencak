@@ -188,30 +188,11 @@
                             <thead>
                                 <tr>
                                     <td>Juri 1</td>
-                                </tr>
-                                <tr>
                                     <td>Juri 2</td>
-                                </tr>
-                                <tr>
                                     <td>Juri 3</td>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        
-                                    </td>
-                                </tr>
+                            
                             </tbody>
                         </table>
                     </div>
