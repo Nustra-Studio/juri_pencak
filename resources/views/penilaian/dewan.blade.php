@@ -205,7 +205,7 @@
                                             }
                                             else {
                                                 $color = "color: rgba(241, 0, 0, 1)";
-                                                $text = 'tim2'
+                                                $text = 'tim2';
                                             }
                                         @endphp
                                         <td style={{$color}}>{{$text}}</td>
