@@ -208,7 +208,7 @@
                                                 $text = 'tim2';
                                             }
                                         @endphp
-                                        <td style={{$color}}>{{$text}}</td>
+                                        <td style='color: rgba(241, 0, 0, 1)'>{{$text}}</td>
                                     </tr>
                                     @endforeach
                             </tbody>
