@@ -187,22 +187,30 @@
                         <table class="table text-center">
                             <thead>
                                 <tr>
-                                    <th>Juri 1</th>
-                                    <th>Juri 2</th>
-                                    <th>Juri 3</th>
+                                    <th>Juri</th>
+                                    <th>Keputusan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="danger">Red</td>
-                                    <td class="primary">blue</td>
-                                    <td class="warning">yellow</td>
-                                </tr>
-                                <tr>
-                                    <td>Red</td>
-                                    <td>blue</td>
-                                    <td>yellow</td>
-                                </tr>
+                                @php
+                                   $njatuhan=score::where('keterangan','jatuhan')->where('status','notif')->get();
+                                @endphp
+                                    @foreach ($njatuhan as $item)
+                                    <tr>
+                                        <td style="" >{{$item->id_juri}}</td>
+                                        @php
+                                            if ($item->id_perserta == '1') {
+                                               $color = "color: rgba(0, 102, 255, 1)";
+                                               $text = 'tim1';
+                                            }
+                                            else {
+                                                $color = "color: rgba(241, 0, 0, 1)";
+                                                $text = 'tim2'
+                                            }
+                                        @endphp
+                                        <td style={{$color}}>{{$text}}</td>
+                                    </tr>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>
