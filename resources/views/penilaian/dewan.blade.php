@@ -194,9 +194,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Red</td>
-                                    <td>blue</td>
-                                    <td>yellow</td>
+                                    <td class="danger">Red</td>
+                                    <td class="primary">blue</td>
+                                    <td class="warning">yellow</td>
                                 </tr>
                                 <tr>
                                     <td>Red</td>
