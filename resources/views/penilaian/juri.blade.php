@@ -176,8 +176,8 @@
                         </table>
                     </div>
                     <div class="pop-button">
-                        <button type="button" class="btn btn-primary btn-lg" >Tim Biru</button>
-                        <button type="button" class="btn btn-danger btn-lg">Tim Merah</button>
+                        <button name="juri:{{$id_juri}} id:1 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
+                        <button name="juri:{{$id_juri}} id:2 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
                         <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
                     </div>
                     </div>
@@ -213,8 +213,8 @@
                         </table>
                     </div>
                     <div class="pop-button">
-                        <button type="button" class="btn btn-primary btn-lg" >Tim Biru</button>
-                        <button type="button" class="btn btn-danger btn-lg">Tim Merah</button>
+                        <button name="juri:{{$id_juri}} id:1 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
+                        <button name="juri:{{$id_juri}} id:2 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
                         <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
                     </div>
                     </div>
@@ -299,7 +299,7 @@
         </section>
         <script>
             // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
-            var tombolDenganKelas = document.querySelectorAll('.btnHapus, .btnSkill1 , .btnSkill2');
+            var tombolDenganKelas = document.querySelectorAll('.btnHapus, .btnSkill1 , .btnSkill2','.bt-notif');
         
             // Loop melalui semua tombol dan tambahkan event listener
             tombolDenganKelas.forEach(function(tombol) {

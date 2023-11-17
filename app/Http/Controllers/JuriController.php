@@ -66,6 +66,17 @@ class JuriController extends Controller
                 return response()->json(['message' => 'Data berhasil dihapus']);
 
             }
+
+            elseif($keterangan === "notif"){
+                $data = [
+                    'score' => '0',
+                    'keterangan' => $status,
+                    'id_perserta' => $id_perserta,
+                    'id_juri' => $id_juri,
+                    'status' => 'notif'
+                ];
+                score::create($data);
+            }
     }
 
         public function stream()
