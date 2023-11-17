@@ -149,9 +149,6 @@
             </button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Launch static backdrop modal
-              </button>
             <table class="score-table">
                 <tbody>
                     @php
@@ -179,27 +176,19 @@
             <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:plus" id="kirimData" class="button-red">TEGURAN</button>
             <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:plus" id="kirimData" class="button-red">PERINGATAN</button>
         </div>
-<!-- Button trigger modal -->
-
-        
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                ...
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-            </div>
+        <div class="modal fade" id="vjatuhan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        test
+                    </div>
+              </div>
         </div>
+    </div>
 
     <script>
         // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
