@@ -76,10 +76,10 @@
                             </td>
                         </tr>
                             <tr>
-                                <td colspan="3">1,2,2,2,5,5,5</td>
+                                <td colspan="3"> </td>
                             </tr>
                             <tr>
-                            <td colspan="3">1,2,2,2,5,5,5</td>
+                            <td colspan="3"> </td>
                         </tr>
                         </tbody>
                 </table>
@@ -250,10 +250,10 @@
                             </td>
                         </tr>
                             <tr>
-                                <td colspan="3">1,2,2,2,5,5,5</td>
+                                <td colspan="3"> </td>
                             </tr>
                             <tr>
-                            <td colspan="3">1,2,2,2,5,5,5</td>
+                            <td colspan="3"> </td>
                         </tr>
                         </tbody>
                     </table>
