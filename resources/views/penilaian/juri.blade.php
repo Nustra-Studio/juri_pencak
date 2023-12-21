@@ -131,12 +131,12 @@
                     </div>
     
                     <button class="btn-jatuhan d-flex" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
-                        <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
+                        <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw; margin-left : -10px;">
                         Verifikasi <br> Jatuhan
                     </button>
     
                     <button class="btn-jatuhan d-flex"  onclick="document.getElementById('popup-hukuman').style.display = 'block';document.getElementById('popup2-hukuman').style.display = 'block'">
-                        <img src="../assets/Assets/warning.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
+                        <img src="../assets/Assets/warning.png" alt="" style="width: 3vw; margin-left : -10px;">
                         Verifikasi Hukuman
                     </button>
     
@@ -261,7 +261,7 @@
                     <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-center align-items-center">
                             <button name="juri:{{$id_juri}} id:2 status:terakhir p:2 keterangan:minus" class="btnHapus text-center">
-                            <span >Hapus <br> Nilai Terakhir</span>
+                                <span >Hapus <br> Nilai Terakhir</span>
                             </button>
                         </div>
                         <div class="btn-wrap d-flex flex-column">
