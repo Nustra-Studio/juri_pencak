@@ -296,7 +296,7 @@
                 function reload(){
                     window.location.reload();
                 }
-                setInterval(reload, 4000);
+                setInterval(reload, 500);
                     });
         });
     </script>

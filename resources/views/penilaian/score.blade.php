@@ -406,7 +406,7 @@
         }
 
         calldata();
-        setInterval(calldata, 5000);
+        setInterval(calldata, 500);
     </script>
 </body>
 </html>
