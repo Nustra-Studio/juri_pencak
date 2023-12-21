@@ -132,7 +132,7 @@
     
                     <button class="btn-jatuhan d-flex" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
                         <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw; margin-left : -10px;">
-                        Verifikasi <br> Jatuhan
+                        Verifikasi Jatuhan
                     </button>
     
                     <button class="btn-jatuhan d-flex"  onclick="document.getElementById('popup-hukuman').style.display = 'block';document.getElementById('popup2-hukuman').style.display = 'block'">
