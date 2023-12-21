@@ -136,6 +136,7 @@
     cursor: pointer;
     transition: .3s;
     margin: 0px 20px;
+    font-size: 1vw;
 }
 
 .btnHapus:hover {
@@ -144,7 +145,7 @@
 
 .btn-jatuhan {
     background-color: rgb(150, 150, 150);
-    padding: 10px 40px;
+    padding: 10px 3vw;
     width: 13vw;
     height: 5vw;
     border-radius: 5px;
