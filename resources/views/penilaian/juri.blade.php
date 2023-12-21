@@ -65,9 +65,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="3">1,2,2,2,5,5,5</td>
-                            </tr>
+                            @php
+                            $data = score::where('id_perserta','1')->where('status','plus')->get();
+                        @endphp
+                        <tr>
+                            <td colspan="3">
+                                @foreach ($data as $item)
+                                    {{$item->score}},
+                                @endforeach
+                            </td>
+                        </tr>
                             <tr>
                                 <td colspan="3">1,2,2,2,5,5,5</td>
                             </tr>
@@ -232,9 +239,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="3">1,2,2,2,5,5,5</td>
-                            </tr>
+                            @php
+                            $data = score::where('id_perserta','2')->where('status','plus')->get();
+                        @endphp
+                        <tr>
+                            <td colspan="3">
+                                @foreach ($data as $item)
+                                    {{$item->score}},
+                                @endforeach
+                            </td>
+                        </tr>
                             <tr>
                                 <td colspan="3">1,2,2,2,5,5,5</td>
                             </tr>
