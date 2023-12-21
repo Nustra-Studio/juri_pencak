@@ -45,12 +45,7 @@
             <!-- Kiri -->
             <div class="blueScore table-responsive">
                 <table class="table table-bordered border border-black">
-                    <thead>
-                        @php
-                            $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
-                            $tendangan =  score::where('keterangan','tendangan')->where('id_perserta','1')->count();
-                            $pukulan = score::where('keterangan','pukulan')->where('id_perserta','1')->count();
-                        @endphp
+                        <!-- <thead>
                         <tr>
                             <th  class=" text-center">Pukulan</th>
                             <th scope="col" class=" text-center">Tendangan</th>
@@ -59,243 +54,229 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-center">{{$pukulan}}x</td>
-                            <td class="text-center">{{$tendangan}}x</td>
-                            <td class="text-center">{{$jatuh}}x</td>
+                            <td class="text-center">1x</td>
+                            <td class="text-center">2x</td>
+                            <td class="text-center">3x</td>
                         </tr>
-                        </tbody>
+                        </tbody> -->
                         <thead>
                             <tr>
                                 <th scope="col" class=" text-center " colspan="3">Riwayat Point</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                                $data = score::where('id_perserta','1')->where('status','plus')->get();
-                            @endphp
                             <tr>
-                                <td colspan="3">
-                                    @foreach ($data as $item)
-                                        {{$item->score}},
-                                    @endforeach
-                                </td>
+                                <td colspan="3">1,2,2,2,5,5,5</td>
                             </tr>
-                            {{-- <tr>
-                                <td colspan="3"></td>
-                            </tr> --}}
+                            <tr>
+                                <td colspan="3">1,2,2,2,5,5,5</td>
+                            </tr>
+                            <tr>
+                            <td colspan="3">1,2,2,2,5,5,5</td>
+                        </tr>
                         </tbody>
                     </table>
-
-                <div class="d-flex justify-content-between">
-                    <div class="btn-wrap d-flex flex-column">
-                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center ">
-                        <img src="./assets/juri/images/fist.png">
-                        <span>Pukulan</span>
-                        </button>  
-                        
-                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center">
-                            <img src="./assets/juri/images/kick.png">
-                            <span>Tendangan</span>
-                        </button>
+        
+                    <div class="d-flex justify-content-between">
+                        <div class="btn-wrap d-flex flex-column">
+                            <div class="btnSkill1 d-flex align-items-center justify-content-center ">
+                            <img src="images/fist (2) 1.png">
+                            <span>Pukulan</span>
+                            </div>  
+                            
+                            <div class="btnSkill1 d-flex align-items-center justify-content-center">
+                                <img src="images/kick 1.png">
+                                <span>Tendangan</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="btnHapus text-center">
+                            <span >Hapus <br> Nilai Terakhir</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class="btnHapus text-center">
-                        <span >Hapus <br> Nilai Terakhir</span>
-                        </button>
-                    </div>
-                </div>
-                
+                    
             </div>
 
             <!-- Tengah -->
-            <div class="babak d-flex flex-column align-items-center">
-                <table class="table tabelBabak">
-                    <thead>
-                    <tr>
-                        <td scope="col" class="text-center">Penyisihan</td>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="text-center">BABAK</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="text-center" style="background-color: #FFD600;">I</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center" >II</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center" >III</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <div class="refersh d-flex align-items-center justify-content-center ">
-                    <img src="./assets/juri/images/Icon.png">
-                    <span>Refresh</span>
-                </div>
-
-                <button class="btn-jatuhan d-flex" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
-                    <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
-                    Verifikasi <br> Jatuhan
-                </button>
-
-                <button class="btn-jatuhan d-flex"  onclick="document.getElementById('popup-hukuman').style.display = 'block';document.getElementById('popup2-hukuman').style.display = 'block'">
-                    <img src="../assets/Assets/warning.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
-                    Verifikasi Hukuman
-                </button>
-
-                <div id="popup" class="black-overlay">
-                    <div id="popup2" class="white-content">
-                    <div class="pop-header">
-                        <div>Verifikasi Juri</div>
-                        <a href="javascript:void(0)" onclick="document.getElementById('popup').style.display = 'none';document.getElementById('popup2').style.display = 'none'" style="text-decoration: none; color: red; cursor: pointer;">X</a>
-                    </div>
-                    <div class="pop-content">
-                        <table class="table-juri table-bordered border border-black">
+                <div class="babak d-flex flex-column align-items-center">
+                    <table class="table tabelBabak">
                         <thead>
-                            <tr>
-                            <td scope="col" class="text-center"">
-                                Verifikasi Jatuhan
-                            </td>
-                            </tr>
+                        <tr>
+                            <th scope="col" class="text-center">BABAK</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <td scope="col" class="text-center" style="background-color: rgb(199, 199, 199);" >
-                                Keputusan Juri 2
-                            </td>
-                            </tr>
-                            <tr>
-                            <td scope="col" class="text-center" style="background-color: blue; color: #f5f5f5;">
-                                Biru Valid
-                            </td>
-                            </tr>
+                        <tr>
+                            <td class="text-center" style="background-color: #FFD600;">I</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" >II</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" >III</td>
+                        </tr>
                         </tbody>
-                        </table>
+                    </table>
+        
+                    <div class="refersh d-flex align-items-center justify-content-center ">
+                        <img src="images/Icon.png">
+                        <span>Refresh</span>
                     </div>
-                    <div class="pop-button">
-                        <button name="juri:{{$id_juri}} id:1 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
-                        <button name="juri:{{$id_juri}} id:2 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
-                        <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
+        
+                    <button class="btn-jatuhan d-flex" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
+                        <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
+                        Verifikasi Jatuhan
+                    </button>
+        
+                    <button class="btn-jatuhan d-flex"  onclick="document.getElementById('popup-hukuman').style.display = 'block';document.getElementById('popup2-hukuman').style.display = 'block'">
+                        <img src="../assets/Assets/warning.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
+                        Verifikasi Hukuman
+                    </button>
+        
+                    <div id="popup" class="black-overlay">
+                        <div id="popup2" class="white-content">
+                        <div class="pop-header">
+                            <div>Verifikasi Juri</div>
+                            <a href="javascript:void(0)" onclick="document.getElementById('popup').style.display = 'none';document.getElementById('popup2').style.display = 'none'" style="text-decoration: none; color: red; cursor: pointer;">X</a>
+                        </div>
+                        <div class="pop-content">
+                            <table class="table-juri table-bordered border border-black">
+                            <thead>
+                                <tr>
+                                <td scope="col" class="text-center"">
+                                    Verifikasi Jatuhan
+                                </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td scope="col" class="text-center" style="background-color: rgb(199, 199, 199);" >
+                                    Keputusan Juri 2
+                                </td>
+                                </tr>
+                                <tr>
+                                <td scope="col" class="text-center" style="background-color: blue; color: #f5f5f5;">
+                                    Biru Valid
+                                </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="pop-button">
+                            <button type="button" class="btn btn-primary btn-lg" >Tim Biru</button>
+                            <button type="button" class="btn btn-danger btn-lg">Tim Merah</button>
+                            <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
+                        </div>
+                        </div>
                     </div>
+        
+                    <div id="popup-hukuman" class="black-overlay">
+                        <div id="popup2-hukuman" class="white-content-2">
+                        <div class="pop-header">
+                            <div>Verifikasi Juri</div>
+                            <a href="javascript:void(0)" onclick="document.getElementById('popup-hukuman').style.display = 'none';document.getElementById('popup2-hukuman').style.display = 'none'" style="text-decoration: none; color: red; cursor: pointer;">X</a>
+                        </div>
+                        <div class="pop-content">
+                            <table class="table-juri table-bordered border border-black">
+                            <thead>
+                                <tr>
+                                <td scope="col" class="text-center"">
+                                    Verifikasi Hukuman
+                                </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td scope="col" class="text-center" style="background-color: rgb(199, 199, 199);" >
+                                    Keputusan Juri 2
+                                </td>
+                                </tr>
+                                <tr>
+                                <td scope="col" class="text-center" style="background-color: blue; color: #f5f5f5;">
+                                    Biru Valid
+                                </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="pop-button">
+                            <button type="button" class="btn btn-primary btn-lg" >Tim Biru</button>
+                            <button type="button" class="btn btn-danger btn-lg">Tim Merah</button>
+                            <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
+                        </div>
+                        </div>
                     </div>
-                </div>
-
-                <div id="popup-hukuman" class="black-overlay">
-                    <div id="popup2-hukuman" class="white-content-2">
-                    <div class="pop-header">
-                        <div>Verifikasi Juri</div>
-                        <a href="javascript:void(0)" onclick="document.getElementById('popup-hukuman').style.display = 'none';document.getElementById('popup2-hukuman').style.display = 'none'" style="text-decoration: none; color: red; cursor: pointer;">X</a>
-                    </div>
-                    <div class="pop-content">
-                        <table class="table-juri table-bordered border border-black">
+                    <!-- <table class="table point table-bordered border border-black">
                         <thead>
-                            <tr>
-                            <td scope="col" class="text-center"">
-                                Verifikasi Hukuman
-                            </td>
-                            </tr>
+                        <tr>
+                            <td scope="col" class="text-center " style="background-color: #FFD600;" colspan="2">Total Point</td>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <td scope="col" class="text-center" style="background-color: rgb(199, 199, 199);" >
-                                Keputusan Juri 2
-                            </td>
-                            </tr>
-                            <tr>
-                            <td scope="col" class="text-center" style="background-color: blue; color: #f5f5f5;">
-                                Biru Valid
-                            </td>
-                            </tr>
+                        <tr>
+                            <td class="text-center ">22</td>
+                            <td class="text-center ">16</td>
+                        </tr>
                         </tbody>
-                        </table>
-                    </div>
-                    <div class="pop-button">
-                        <button name="juri:{{$id_juri}} id:1 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
-                        <button name="juri:{{$id_juri}} id:2 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
-                        <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
-                    </div>
-                    </div>
+                    </table> -->
+        
                 </div>
-                <!-- <table class="table point table-bordered border border-black">
-                    <thead>
-                    <tr>
-                        <td scope="col" class="text-center " style="background-color: #FFD600;" colspan="2">Total Point</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="text-center ">22</td>
-                        <td class="text-center ">16</td>
-                    </tr>
-                    </tbody>
-                </table> -->
-
-            </div>
 
             <!-- Kanan -->
-            <div class="redScore table-responsive">
-                <table class="table table-bordered border border-black">
-                    <thead>
-                        @php
-                            $jatuh = score::where('keterangan','jatuh')->where('id_perserta','2')->count();
-                            $tendangan =  score::where('keterangan','tendangan')->where('id_perserta','2')->count();
-                            $pukulan = score::where('keterangan','pukulan')->where('id_perserta','2')->count();
-                        @endphp
+                <div class="redScore table-responsive">
+                    <table class="table table-bordered border border-black">
+                        <!-- <thead class="border border-black">
                         <tr>
-                            <th class=" text-center">Pukulan</th>
+                            <th scope="col" class=" text-center">Pukulan</th>
                             <th scope="col" class=" text-center">Tendangan</th>
                             <th scope="col" class=" text-center">Jatuhan</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-center">{{$pukulan}}x</td>
-                            <td class="text-center">{{$tendangan}}x</td>
-                            <td class="text-center">{{$jatuh}}x</td>
+                            <td>1x</td>
+                            <td>2x</td>
+                            <td>3x</td>
                         </tr>
-                        </tbody>
+                        </tbody> -->
                         <thead>
                             <tr>
-                                <th scope="col" class=" text-center " colspan="3">Riwayat Point</th>
+                                <th scope="col" class=" text-center" colspan="3">Riwayat Point</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                                $data = score::where('id_perserta','2')->where('status','plus')->get();
-                            @endphp
                             <tr>
-                                <td colspan="3">
-                                    @foreach ($data as $item)
-                                        {{$item->score}},
-                                    @endforeach
-                                </td>
+                                <td colspan="3">1,2,2,2,5,5,5</td>
                             </tr>
-                    
+                            <tr>
+                                <td colspan="3">1,2,2,2,5,5,5</td>
+                            </tr>
+                            <tr>
+                            <td colspan="3">1,2,2,2,5,5,5</td>
+                        </tr>
                         </tbody>
                     </table>
-
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button name="juri:{{$id_juri}} id:2 status:terakhir p:2 keterangan:minus" class="btnHapus text-center">
-                        <span >Hapus <br> Nilai Terakhir</span>
-                        </button>
+        
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="btnHapus text-center">
+                            <span >Hapus <br> Nilai Terakhir</span>
+                            </div>
+                        </div>
+                        <div class="btn-wrap d-flex flex-column">
+                        <div class="btnSkill2 d-flex align-items-center justify-content-center ">
+                            <img src="images/fist (2) 1.png">
+                            <span>Pukulan</span>
+                        </div>  
+                            
+                        <div class="btnSkill2 d-flex align-items-center justify-content-center">
+                            <img src="images/kick 1.png">
+                            <span>Tendangan</span>
+                        </div>
                     </div>
-                    <div class="btn-wrap d-flex flex-column">
-                    <button name="juri:{{$id_juri}} id:2 status:pukulan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center ">
-                        <img src="./assets/juri/images/fist.png">
-                        <span>Pukulan</span>
-                    </button>  
-                        
-                    <button name="juri:{{$id_juri}} id:2 status:tendangan p:3 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center">
-                        <img src="./assets/juri/images/kick.png">
-                        <span>Tendangan</span>
-                    </button>
+                    </div>
                 </div>
-                </div>
-            </div>
         </section>
         <script>
             // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
