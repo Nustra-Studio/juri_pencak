@@ -75,26 +75,25 @@
                             <td colspan="3">1,2,2,2,5,5,5</td>
                         </tr>
                         </tbody>
-                    </table>
-        
-                    <div class="d-flex justify-content-between">
-                        <div class="btn-wrap d-flex flex-column">
-                            <div class="btnSkill1 d-flex align-items-center justify-content-center ">
-                            <img src="images/fist (2) 1.png">
-                            <span>Pukulan</span>
-                            </div>  
-                            
-                            <div class="btnSkill1 d-flex align-items-center justify-content-center">
-                                <img src="images/kick 1.png">
-                                <span>Tendangan</span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <div class="btnHapus text-center">
-                            <span >Hapus <br> Nilai Terakhir</span>
-                            </div>
-                        </div>
+                </table>
+                <div class="d-flex justify-content-between">
+                    <div class="btn-wrap d-flex flex-column">
+                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center ">
+                        <img src="./assets/juri/images/fist.png">
+                        <span>Pukulan</span>
+                        </button>  
+                        
+                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center">
+                            <img src="./assets/juri/images/kick.png">
+                            <span>Tendangan</span>
+                        </button>
                     </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class="btnHapus text-center">
+                        <span >Hapus <br> Nilai Terakhir</span>
+                        </button>
+                    </div>
+                </div>
                     
             </div>
 
@@ -120,20 +119,20 @@
                     </table>
         
                     <div class="refersh d-flex align-items-center justify-content-center ">
-                        <img src="images/Icon.png">
+                        <img src="./assets/juri/images/Icon.png">
                         <span>Refresh</span>
                     </div>
-        
+    
                     <button class="btn-jatuhan d-flex" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
                         <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
-                        Verifikasi Jatuhan
+                        Verifikasi <br> Jatuhan
                     </button>
-        
+    
                     <button class="btn-jatuhan d-flex"  onclick="document.getElementById('popup-hukuman').style.display = 'block';document.getElementById('popup2-hukuman').style.display = 'block'">
                         <img src="../assets/Assets/warning.png" alt="" style="width: 3vw;height: 3vw;float: left; margin-left: -1vw;">
                         Verifikasi Hukuman
                     </button>
-        
+    
                     <div id="popup" class="black-overlay">
                         <div id="popup2" class="white-content">
                         <div class="pop-header">
@@ -164,13 +163,13 @@
                             </table>
                         </div>
                         <div class="pop-button">
-                            <button type="button" class="btn btn-primary btn-lg" >Tim Biru</button>
-                            <button type="button" class="btn btn-danger btn-lg">Tim Merah</button>
+                            <button name="juri:{{$id_juri}} id:1 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
+                            <button name="juri:{{$id_juri}} id:2 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
                             <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
                         </div>
                         </div>
                     </div>
-        
+    
                     <div id="popup-hukuman" class="black-overlay">
                         <div id="popup2-hukuman" class="white-content-2">
                         <div class="pop-header">
@@ -201,25 +200,12 @@
                             </table>
                         </div>
                         <div class="pop-button">
-                            <button type="button" class="btn btn-primary btn-lg" >Tim Biru</button>
-                            <button type="button" class="btn btn-danger btn-lg">Tim Merah</button>
+                            <button name="juri:{{$id_juri}} id:1 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
+                            <button name="juri:{{$id_juri}} id:2 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
                             <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
                         </div>
                         </div>
                     </div>
-                    <!-- <table class="table point table-bordered border border-black">
-                        <thead>
-                        <tr>
-                            <td scope="col" class="text-center " style="background-color: #FFD600;" colspan="2">Total Point</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="text-center ">22</td>
-                            <td class="text-center ">16</td>
-                        </tr>
-                        </tbody>
-                    </table> -->
         
                 </div>
 
@@ -257,23 +243,23 @@
                         </tr>
                         </tbody>
                     </table>
-        
+
                     <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-center align-items-center">
-                            <div class="btnHapus text-center">
+                            <button name="juri:{{$id_juri}} id:2 status:terakhir p:2 keterangan:minus" class="btnHapus text-center">
                             <span >Hapus <br> Nilai Terakhir</span>
-                            </div>
+                            </button>
                         </div>
                         <div class="btn-wrap d-flex flex-column">
-                        <div class="btnSkill2 d-flex align-items-center justify-content-center ">
-                            <img src="images/fist (2) 1.png">
+                        <button name="juri:{{$id_juri}} id:2 status:pukulan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center ">
+                            <img src="./assets/juri/images/fist.png">
                             <span>Pukulan</span>
-                        </div>  
+                        </button>  
                             
-                        <div class="btnSkill2 d-flex align-items-center justify-content-center">
-                            <img src="images/kick 1.png">
+                        <button name="juri:{{$id_juri}} id:2 status:tendangan p:3 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center">
+                            <img src="./assets/juri/images/kick.png">
                             <span>Tendangan</span>
-                        </div>
+                        </button>
                     </div>
                     </div>
                 </div>
