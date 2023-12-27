@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('id_perserta')->nullable();
             $table->string('id_juri')->nullable();
             $table->string('status')->nullable();
+            $table->string('babak')->nullable();
             $table->timestamps();
         });
     }

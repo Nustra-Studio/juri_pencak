@@ -14,8 +14,35 @@
 Route::get('/', function () {
     return view('penilaian.score');
 });
-Route::resource('juri', JuriController::class);
-Route::resource('dewan', DewanController::class);
+    Route::prefix('admin')->group(function () {
+            
+    });
+    Route::prefix('tanding')->group(function () {
+        Route::resource('juri', JuriController::class);
+        Route::resource('dewan', DewanController::class);
+        Route::get('/', function () {
+            return view('penilaian.score');
+        });
+    });
+    Route::prefix('seni')->group(function () {
+        Route::resource('juri',JuriSeniController::class);
+        Route::resource('dewan',DewanSeniController::class);
+        Route::get('/', function () {
+            return view('seni.score');
+        });
+        Route::get('/juri-solo', function () {
+            return view('seni.ganda.juri');
+        });
+        Route::get('/juri-tunggal', function () {
+            return view('seni.tunggal.juri');
+        });
+        Route::get('/dewan-solo', function () {
+            return view('seni.ganda.dewan');
+        });
+        Route::get('/dewan-tunggal', function () {
+            return view('seni.tunggal.dewan');
+        });
+    });
 Route::get('/sse', 'JuriController@stream');
 Route::get('/call-data','JuriController@data');
 

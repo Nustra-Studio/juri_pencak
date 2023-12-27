@@ -84,7 +84,7 @@
                                 <td colspan="3"></td>
                             </tr> --}}
                         </tbody>
-                    </table>
+                </table>
 
                 <div class="d-flex justify-content-between">
                     <div class="btn-wrap d-flex flex-column">
@@ -275,7 +275,7 @@
                             </tr>
                     
                         </tbody>
-                    </table>
+                </table>
 
                 <div class="d-flex justify-content-between">
                     <div class="d-flex justify-content-center align-items-center">

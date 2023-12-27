@@ -316,7 +316,7 @@
                     function reload(){
                     window.location.reload();
                     }
-                    setInterval(reload, 400);
+                    setInterval(reload, 800);
                         });
             });
 
