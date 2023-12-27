@@ -77,6 +77,35 @@ class JuriController extends Controller
                 ];
                 score::create($data);
             }
+            elseif($keterangan === "senidewan"){
+                    $data = [
+                        'score' => $p,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'plus'
+                    ];
+            }
+            elseif($keterangan === "pointseni"){
+                $check = [
+                    'id_perserta' => $id_perserta,
+                    'keterangan' => $status,
+                ];
+                $data = [
+                    'score' => $p,
+                    'keterangan' => $status,
+                    'id_perserta' => $id_perserta,
+                    'id_juri' => $id_juri,
+                    'status' => 'point_solo'
+                ];
+                $datas = score::where($check)->first();
+                if ($datas) {
+                    $datas->update($data);
+                } else {
+                    score::create($data);
+                }
+                return response()->json(['message' => 'Data berhasil disimpan']);
+        }
     }
 
         public function stream()

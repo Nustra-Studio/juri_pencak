@@ -25,8 +25,8 @@ Route::get('/', function () {
         });
     });
     Route::prefix('seni')->group(function () {
-        Route::resource('juri',JuriSeniController::class);
-        Route::resource('dewan',DewanSeniController::class);
+        Route::resource('juri-seni',JuriSeniController::class);
+        Route::resource('dewan-seni',DewanSeniController::class);
         Route::get('/', function () {
             return view('seni.score');
         });
