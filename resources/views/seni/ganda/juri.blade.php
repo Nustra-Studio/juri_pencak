@@ -9,6 +9,8 @@
     <title>Solo & Ganda</title>
     @php
         $id_juri = 3;
+        $id_perserta = 3;
+        use App\score;
     @endphp
 </head>
 <body>
@@ -62,7 +64,14 @@
                     </td>
                     <td class="w-5 text-center align-middle fw-bold fs-5">
                         SCORE <br>
-                        <span class="text-primary">0</span>
+                        @php
+                            $check = [
+                                'id_perserta' => $id_perserta,
+                                'keterangan' => 'attack',
+                            ];
+                            $data = score::where($check)->first();
+                        @endphp
+                        <span class="text-primary">{{$data->score}}</span>
                     </td>
                     <td rowspan="3" class="w-10 text-center align-middle">
                         <span class="fs-4">Total Score</span> <br>
@@ -92,7 +101,14 @@
                     </td>
                     <td class="w-5 text-center align-middle fw-bold fs-5">
                         SCORE <br>
-                        <span class="text-primary">0</span>
+                        @php
+                            $check = [
+                                'id_perserta' => $id_perserta,
+                                'keterangan' => 'firmness',
+                            ];
+                            $data = score::where($check)->first();
+                        @endphp
+                        <span class="text-primary">{{$data->score}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -115,7 +131,14 @@
                     </td>
                     <td class="w-5 text-center align-middle fw-bold fs-5">
                         SCORE <br>
-                        <span class="text-primary">0</span>
+                        @php
+                            $check = [
+                                'id_perserta' => $id_perserta,
+                                'keterangan' => 'soulfullness',
+                            ];
+                            $data = score::where($check)->first();
+                        @endphp
+                        <span class="text-primary">{{$data->score}}</span>
                     </td>
                 </tr>
             </tbody>
