@@ -98,7 +98,12 @@ class JuriController extends Controller
                     'id_juri' => $id_juri,
                     'status' => 'point_solo'
                 ];
-                $data = score::updateOrCreate($check, $data);
+                $datas = score::where($check)->first();
+                if ($datas) {
+                    $datas->update($data);
+                } else {
+                    score::create($data);
+                }
                 return response()->json(['message' => 'Data berhasil disimpan']);
         }
     }
