@@ -78,7 +78,10 @@
                         -Technique <br>
                         -Firmness <br>
                         -Soulfullness <br>
-                        <span class="text-primary fs-4 fw-bold">0</span>
+                        @php
+                            $score =score::where('status','point_solo')->avg('score');
+                        @endphp
+                        <span class="text-primary fs-4 fw-bold">{{$score}}</span>
                     </td>
                 </tr>
                 <tr>
