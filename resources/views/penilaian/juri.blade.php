@@ -219,20 +219,7 @@
             <!-- Kanan -->
                 <div class="redScore table-responsive">
                     <table class="table table-bordered border border-black">
-                        <!-- <thead class="border border-black">
-                        <tr>
-                            <th scope="col" class=" text-center">Pukulan</th>
-                            <th scope="col" class=" text-center">Tendangan</th>
-                            <th scope="col" class=" text-center">Jatuhan</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1x</td>
-                            <td>2x</td>
-                            <td>3x</td>
-                        </tr>
-                        </tbody> -->
+
                         <thead>
                             <tr>
                                 <th scope="col" class=" text-center" colspan="3">Riwayat Point</th>
