@@ -128,7 +128,7 @@
                             </div>
                         </td>
                         @php
-                            $data = score::where('keterangan',$d)->where('id_perserta',3)->sum();
+                            $data = score::where('keterangan',$d)->where('id_perserta',3)->sum('score');
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$data}}</td>
                     </tr>
