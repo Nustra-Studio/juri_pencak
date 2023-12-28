@@ -107,6 +107,25 @@ class DewanController extends Controller
             $data->delete();
             return response()->json(['message' => 'Data berhasil dihapus']);
         }
+        elseif($keterangan === "senidewan"){
+            $data = [
+                'score' => $p,
+                'keterangan' => $status,
+                'id_perserta' => $id_perserta,
+                'id_juri' => $id_juri,
+                'status' => 'min_point_tunggal'
+            ];
+            score::create($data);
+    
+            return response()->json(['message' => 'Data berhasil disimpan']);
+        }
+        elseif($keterangan === "senidewanc"){
+            $data = score::where('keterangan',$status)
+            ->where('id_perserta',$id_perserta)
+            ->first();
+            $data->delete();
+            return response()->json(['message' => 'Data berhasil dihapus']);
+        }
         elseif($keterangan === "minus"){
             $data = Score::where('keterangan', $status)->first();
             $data->delete();
