@@ -79,7 +79,8 @@
                         -Firmness <br>
                         -Soulfullness <br>
                         @php
-                            $score =score::where('status','point_solo')->sum('score');
+                            $score = score::where('status','point_solo')->sum('score');
+                            $score = number_format($score, 2);
                         @endphp
                         <span class="text-primary fs-4 fw-bold">{{$score}}</span>
                     </td>
