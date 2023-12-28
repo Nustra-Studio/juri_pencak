@@ -13,6 +13,7 @@
     <div class="container-fluid f-cent fs-4 mt-3">
         <!-- Match Info Section -->
         @php
+            use App\score;
             // peraturan
             $a = "PERFOMANCE EXCEDEED BY 10M BY 10M AREA";
             $b = "WEAPON DROP DOES NOT MEET SYNOPSIS";
