@@ -126,7 +126,10 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="w-10 fw-bold text-primary align-middle text-center">0</td>
+                        @php
+                            $data = score::where('keterangan',$d)->where('id_perserta',3)->sum();
+                        @endphp
+                        <td class="w-10 fw-bold text-primary align-middle text-center">{{$data}}</td>
                     </tr>
                 </tbody>
             </table>
