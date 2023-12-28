@@ -14,10 +14,10 @@
         <!-- Match Info Section -->
         @php
             // peraturan
-            $1 = "PERFOMANCE EXCEDEED BY 10M BY 10M AREA";
-            $2 = "WEAPON DROP DOES NOT MEET SYNOPSIS";
-            $3 = "WEAPON FALL OUT OF ARENA WHILE TEAM IS STILL REQUIRED TO USE IT";
-            $4 = "ATHLETE STAYING AT ONE MOVE FOR MORE THAN 5 SECONDS";
+            $a = "PERFOMANCE EXCEDEED BY 10M BY 10M AREA";
+            $b = "WEAPON DROP DOES NOT MEET SYNOPSIS";
+            $c = "WEAPON FALL OUT OF ARENA WHILE TEAM IS STILL REQUIRED TO USE IT";
+            $d = "ATHLETE STAYING AT ONE MOVE FOR MORE THAN 5 SECONDS";
             $minus = '0.50';
         @endphp
         <div>
@@ -46,7 +46,7 @@
                 <tbody class="text-start">
                     <tr>
                         <td class="align-middle">
-                            {{$1}}
+                            {{$a}}
                         </td>
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
@@ -65,7 +65,7 @@
                         <td class="w-10 fw-bold text-primary align-middle text-center">0</td>
                     </tr>
                     <tr>
-                        <td class="align-middle">{{$2}}</td>
+                        <td class="align-middle">{{$b}}</td>
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
                                 <div class="row h100 ">
@@ -84,7 +84,7 @@
                     </tr>
                     <tr>
                         <td class="align-middle">
-                            {{$3}}
+                            {{$c}}
                         </td>
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
@@ -104,20 +104,20 @@
                     </tr>
                     <tr>
                         <td class="align-middle">
-                            {{$4}}
+                            {{$d}}
                         </td>
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$4}} p:{{$minus}} keterangan:senidewansc"
+                                        name="juri:{{$id_juri}} id:3 status:{{$d}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$4}} p:{{$minus}} keterangan:senidewans"
+                                        name="juri:{{$id_juri}} id:3 status:{{$d}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
