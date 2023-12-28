@@ -101,7 +101,9 @@ class DewanController extends Controller
             return response()->json(['message' => 'Data berhasil disimpan']);
         }
         elseif($keterangan === "senidewansc"){
-            $data = score::where('keterangan',$status)->fisrt();
+            $data = score::where('keterangan',$status)
+            ->where('id_perserta',$id_perserta)
+            ->first();
             $data->delete();
             return response()->json(['message' => 'Data berhasil dihapus']);
         }
