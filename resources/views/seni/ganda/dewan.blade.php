@@ -108,18 +108,21 @@
                         <td class="align-middle">
                             {{$d}}
                         </td>
+                        @php
+                            $status = str_replace(' ', '', $d);
+                        @endphp
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$d}} p:{{$minus}} keterangan:senidewansc"
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$d}} p:{{$minus}} keterangan:senidewans"
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -128,7 +131,7 @@
                             </div>
                         </td>
                         @php
-                            $data = score::where('keterangan',$d)->where('id_perserta',3)->sum('score');
+                            $data = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$data}}</td>
                     </tr>
