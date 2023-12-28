@@ -73,7 +73,10 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = score::where('keterangan',$status)
+                            ->where('status','min_point_tunggal')
+                            ->where('id_perserta',3)
+                            ->sum('score');
                             $score = number_format($score, 2);
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
@@ -105,7 +108,10 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                           $score = score::where('keterangan',$status)
+                            ->where('status','min_point_tunggal')
+                            ->where('id_perserta',3)
+                            ->sum('score');
                             $score = number_format($score, 2);
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
@@ -137,7 +143,10 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                           $score = score::where('keterangan',$status)
+                            ->where('status','min_point_tunggal')
+                            ->where('id_perserta',3)
+                            ->sum('score');
                             $score = number_format($score, 2);
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
@@ -169,7 +178,10 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                           $score = score::where('keterangan',$status)
+                            ->where('status','min_point_tunggal')
+                            ->where('id_perserta',3)
+                            ->sum('score');
                             $score = number_format($score, 2);
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
