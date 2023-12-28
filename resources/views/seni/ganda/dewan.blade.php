@@ -19,6 +19,7 @@
             $c = "WEAPON FALL OUT OF ARENA WHILE TEAM IS STILL REQUIRED TO USE IT";
             $d = "ATHLETE STAYING AT ONE MOVE FOR MORE THAN 5 SECONDS";
             $minus = '0.50';
+            $id_juri = 3;
         @endphp
         <div>
             ARENA 1 <br>
