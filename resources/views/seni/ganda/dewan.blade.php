@@ -50,59 +50,97 @@
                         <td class="align-middle">
                             {{$a}}
                         </td>
+                        @php
+                            $status = str_replace(' ', '', $a);
+                        @endphp
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-primary btn-lg h100 w100">CLEAR</button>
+                                        <button
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        class="btn btn-primary btn-lg h100 w100 btn-data"
+                                        >CLEAR</button>
                                     </div>
                                     <div class="col">
-                                        <button class="btn btn-danger btn-lg h100 w100">
-                                            - 0.50
+                                        <button
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        class="btn btn-danger btn-lg h100 w100 btn-data">
+                                            - {{$minus}}
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </td>
-                        <td class="w-10 fw-bold text-primary align-middle text-center">0</td>
+                        @php
+                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = number_format($score, 2);
+                        @endphp
+                        <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
                     </tr>
                     <tr>
-                        <td class="align-middle">{{$b}}</td>
+                        <td class="align-middle">
+                            {{$b}}
+                        </td>
+                        @php
+                            $status = str_replace(' ', '', $b);
+                        @endphp
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-primary btn-lg h100 w100">CLEAR</button>
+                                        <button
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        class="btn btn-primary btn-lg h100 w100 btn-data"
+                                        >CLEAR</button>
                                     </div>
                                     <div class="col">
-                                        <button class="btn btn-danger btn-lg h100 w100">
-                                            - 0.50
+                                        <button
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        class="btn btn-danger btn-lg h100 w100 btn-data">
+                                            - {{$minus}}
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </td>
-                        <td class="fw-bold text-primary align-middle text-center">0</td>
+                        @php
+                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = number_format($score, 2);
+                        @endphp
+                        <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
                     </tr>
                     <tr>
                         <td class="align-middle">
                             {{$c}}
                         </td>
+                        @php
+                            $status = str_replace(' ', '', $c);
+                        @endphp
                         <td style="height: 6em;">
                             <div class="container-fluid h100">
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-primary btn-lg h100 w100">CLEAR</button>
+                                        <button
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        class="btn btn-primary btn-lg h100 w100 btn-data"
+                                        >CLEAR</button>
                                     </div>
                                     <div class="col">
-                                        <button class="btn btn-danger btn-lg h100 w100">
-                                            - 0.50
+                                        <button
+                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        class="btn btn-danger btn-lg h100 w100 btn-data">
+                                            - {{$minus}}
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </td>
-                        <td class="w-10 fw-bold text-primary align-middle text-center">0</td>
+                        @php
+                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = number_format($score, 2);
+                        @endphp
+                        <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
                     </tr>
                     <tr>
                         <td class="align-middle">
@@ -117,7 +155,7 @@
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
                                         name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
-                                        class="btn btn-primary btn-lg h100 w100"
+                                        class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
