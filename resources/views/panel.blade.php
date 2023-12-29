@@ -6,7 +6,7 @@
 
 @section('content')
   @php
-      use App\PesertaModel;
+      use App\PersertaModel;
       $data_perserta = PersertaModel::get();
   @endphp
   <div class="row">
