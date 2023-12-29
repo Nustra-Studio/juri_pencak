@@ -132,7 +132,7 @@
         </table>
     </div>
     <div class="button-section">
-        <div class="btn btn-primary button-blue-container">
+        <div class="button-blue-container">
             <button name="juri:{{$id_juri}} id:1 status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue">JATUHAN</button>
             <button name="juri:{{$id_juri}} id:1 status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($bina1 === 2)
                 disabled
@@ -172,7 +172,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="btn btn-primary button-blue-container">
+        <div class="button-blue-container">
             <button name="juri:{{$id_juri}} id:2 status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
             <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS BINAAN</button>
             <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
