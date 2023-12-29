@@ -43,7 +43,7 @@ class AdminController extends Controller
             '2'=>$request->merah,
             'keterangan'=>"setting",
         ];
-        YourModel::updateOrCreate(['keterangan' => 'setting'], $data);
+        Setting::updateOrCreate(['keterangan' => 'setting'], $data);
     }
 
     /**
