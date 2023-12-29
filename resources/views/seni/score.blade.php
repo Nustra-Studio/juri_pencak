@@ -66,9 +66,9 @@
                 </thead>
                 <tbody>
                     <tr style="height: 70px;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td id="attack"></td>
+                        <td id="firmness"></td>
+                        <td id="soulfullness"></td>
                         <td></td>
                         <td></td>
                     </tr>
