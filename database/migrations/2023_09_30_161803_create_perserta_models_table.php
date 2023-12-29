@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('persertas', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->string('id_pesilat')->nullable();
             $table->string('id_kontigen')->nullable();
             $table->string('gender')->nullable();
