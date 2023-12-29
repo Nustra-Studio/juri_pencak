@@ -31,7 +31,6 @@
                   <option value="3">3</option>
                 </select>
               </div>
-            </div>
             <div class="mb-3">
               <label for="exampleFormControlSelect1" class="form-label">Peserta 1</label>
               <select class="form-select" name="biru"  id="exampleFormControlSelect1">
@@ -40,7 +39,6 @@
                   @endforeach
               </select>
             </div>
-          </div>
           <div class="mb-3">
             <label for="exampleFormControlSelect1" class="form-label">Perserta 2</label>
             <select class="form-select" name="merah" id="exampleFormControlSelect1">
