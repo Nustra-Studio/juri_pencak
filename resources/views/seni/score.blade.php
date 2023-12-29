@@ -125,11 +125,60 @@
             <div class="h100 d-flex align-items-center px-0">
                 <div class="w100 bg-black d-flex align-items-center" style="height: 55px;"> 
                     <marquee behavior="" direction="Running">
-                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam ex fugit repellendus accusantium officiis, molestiae iure cupiditate temporibus nostrum, exercitationem esse labore dolorum optio, aliquid obcaecati voluptates quaerat est nam.
+                        Pertandingan Pencak Silat Kediri Telah dimulai || Pertandingan hari ini dimulai sore Hari || kunjungi ayosilat.com untuk melihat update
                     </marquee>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function calldata() {
+            function attack() {
+                var elemenDiv = document.getElementById("attack"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=attack',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#attack').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            function firmness() {
+                var elemenDiv = document.getElementById("firmness"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=firmness',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#firmness').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            function soulfullness() {
+                var elemenDiv = document.getElementById("soulfullness"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=soulfullness',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        $('#soulfullness').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            attack();
+            firmness();
+            soulfullness();
+        }
+
+        calldata();
+        setInterval(calldata, 1500);
+    </script>
 </body>
 </html>

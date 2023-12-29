@@ -151,6 +151,12 @@ class JuriController extends Controller
                     }
                     return response()->json(['data' => $data]);
                 }
+                elseif($tipe === "seni"){
+                    $kt = $request->input('kt');
+                    $data = score::where('keterangan',"$kt")->first();
+                    $data = $data->score;
+                    return response()->json(['data' => $data]);
+                }
             }
 
     /**

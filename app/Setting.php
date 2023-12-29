@@ -13,8 +13,8 @@ class Setting extends Model
         'judul',
         'arena',
         'babak',
-        '1',
-        '2',
+        'biru',
+        'merah',
         'keterangan',
     ];
 }
