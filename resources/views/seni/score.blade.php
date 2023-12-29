@@ -67,20 +67,20 @@
                 <tbody>
                     <tr style="height: 70px;">
                         <td id="attack"></td>
+                        <td ></td>
+                        <td ></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="height: 70px;">
                         <td id="firmness"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="height: 70px;">
                         <td id="soulfullness"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height: 70px;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height: 70px;">
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
