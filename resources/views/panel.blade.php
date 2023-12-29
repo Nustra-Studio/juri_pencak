@@ -17,18 +17,18 @@
               @csrf
               <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Arena</label>
-                <input type="text" class="form-control" id="exampleInputText1" name="arena" value="Amiah Burton" placeholder="Enter Name">
+                <input type="text" class="form-control" id="exampleInputText1" name="arena"  placeholder="Enter Name">
               </div>
               <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Judul</label>
-                <input type="text" class="form-control" id="exampleInputText1" name="judul" value="Amiah Burton" placeholder="Enter Name">
+                <input type="text" class="form-control" id="exampleInputText1" name="judul"  placeholder="Enter Name">
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1" class="form-label">Babak</label>
                 <select class="form-select" name="babak" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
                 </select>
               </div>
             </div>
