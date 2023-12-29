@@ -34,7 +34,7 @@
             </div>
             <div class="mb-3">
               <label for="exampleFormControlSelect1" class="form-label">Peserta 1</label>
-              <select class="form-select" name="1"  id="exampleFormControlSelect1">
+              <select class="form-select" name="biru"  id="exampleFormControlSelect1">
                   @foreach ($data_perserta as $item)
                       <option value="{{$item->id}}">{{$item->name}}</option>
                   @endforeach
@@ -43,7 +43,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleFormControlSelect1" class="form-label">Perserta 2</label>
-            <select class="form-select" name="2" id="exampleFormControlSelect1">
+            <select class="form-select" name="merah" id="exampleFormControlSelect1">
               @foreach ($data_perserta as $item)
               <option value="{{$item->id}}">{{$item->name}}</option>
               @endforeach
