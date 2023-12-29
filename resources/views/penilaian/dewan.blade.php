@@ -178,9 +178,15 @@
             <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
             <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
             <button name="juri:{{$id_juri}} id:2 status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red">JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-danger button-red">BINAAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red">TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red">PERINGATAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($bina === 2)
+            disabled
+        @endif>BINAAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($teguran === 2)
+            disabled
+        @endif>TEGURAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($peringatan === 3)
+            disabled
+        @endif>PERINGATAN</button>
         </div>
         <div class="modal fade" id="vjatuhan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
