@@ -19,7 +19,7 @@
                 Nusantara Cup
             </div>
         </div>
-        <div class="header-pict">
+        <div class="header-pict">   
             <img src="../assets/Assets/psht.png" alt="" style="width: 150%; height: 80%; margin-left: auto;">
             <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 150%; height: 80%; margin-left: auto; background-color: rgb(154, 154, 154); border-radius: 5px; border: 1px solid black;">
         </div>
@@ -52,16 +52,16 @@
             </thead>
             <tbody>
                 @php
-                    $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
-                    $bina =  score::where('keterangan','binaan')->where('id_perserta','1')->count();
-                    $teguran = score::where('keterangan','teguran')->where('id_perserta','1')->count();
-                    $peringatan = score::where('keterangan','peringatan')->where('id_perserta','1')->count();
+                    $jatuh1 = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
+                    $bina1 =  score::where('keterangan','binaan')->where('id_perserta','1')->count();
+                    $teguran1 = score::where('keterangan','teguran')->where('id_perserta','1')->count();
+                    $peringatan1 = score::where('keterangan','peringatan')->where('id_perserta','1')->count();
                 @endphp
             <tr>
-                <td>{{$jatuh}}x</td>
-                <td>{{$bina}}x</td>
-                <td>{{$teguran}}x</td>
-                <td>{{$peringatan}}x</td>
+                <td>{{$jatuh1}}x</td>
+                <td>{{$bina1}}x</td>
+                <td>{{$teguran1}}x</td>
+                <td>{{$peringatan1}}x</td>
             </tr>
             <tr>
                 <td>0x</td>
@@ -132,15 +132,21 @@
         </table>
     </div>
     <div class="button-section">
-        <div class="button-blue-container">
-            <button name="juri:{{$id_juri}} id:1 status:jatuh p:5 keterangan:plus" id="kirimData" class="button-blue">JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:binaan p:0 keterangan:plus" id="kirimData" class="button-blue">BINAAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:teguran p:3 keterangan:plus" id="kirimData" class="button-blue">TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:peringatan p:5 keterangan:plus" id="kirimData" class="button-blue">PERINGATAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:jatuh p:5 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:binaan p:0 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS BINAAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:teguran p:3 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:1 status:peringatan p:5 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS PERINGATAN</button>
+        <div class="btn btn-primary button-blue-container">
+            <button name="juri:{{$id_juri}} id:1 status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue">JATUHAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($bina1 === 2)
+                disabled
+            @endif>BINAAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($teguran1 === 2)
+                disabled
+            @endif>TEGURAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($peringatan1 === 3)
+                disabled
+            @endif>PERINGATAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:binaan p:0 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS BINAAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
+            <button name="juri:{{$id_juri}} id:1 status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
         </div>
         <div class="mid-container">
             <button class="button-refresh-button">
@@ -166,15 +172,15 @@
                 </tbody>
             </table>
         </div>
-        <div class="button-blue-container">
-            <button name="juri:{{$id_juri}} id:2 status:jatuh p:5 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS BINAAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:minus" id="kirimData" class="button-blue-delete">HAPUS PERINGATAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:jatuh p:5 keterangan:plus" id="kirimData" class="button-red">JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:plus" id="kirimData" class="button-red">BINAAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:plus" id="kirimData" class="button-red">TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:plus" id="kirimData" class="button-red">PERINGATAN</button>
+        <div class="btn btn-primary button-blue-container">
+            <button name="juri:{{$id_juri}} id:2 status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS BINAAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red">JATUHAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-danger button-red">BINAAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red">TEGURAN</button>
+            <button name="juri:{{$id_juri}} id:2 status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red">PERINGATAN</button>
         </div>
         <div class="modal fade" id="vjatuhan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -259,7 +265,7 @@
     </div>
 
     <script>
-        // Temukan semua tombol dengan kelas "button-blue" atau "button-blue-delete"
+        // Temukan semua tombol dengan kelas "btn btn-primary button-blue" atau "btn btn-primary btn btn-secondary button-blue-delete"
         var tombolDenganKelas = document.querySelectorAll('.button-blue, .button-blue-delete , .button-red');
     
         // Loop melalui semua tombol dan tambahkan event listener
