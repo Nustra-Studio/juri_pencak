@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('penilaian.score');
 });
     Route::prefix('admin')->group(function () {
-            
+        Route::get('/', function () {
+            return view('dashboard');
+        });
     });
     Route::prefix('tanding')->group(function () {
         Route::resource('juri', JuriController::class);
