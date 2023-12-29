@@ -14,8 +14,9 @@
 Route::get('/', function () {
     return view('penilaian.score');
 });
+
+    Route::resource('admin',AdminController::class);
     Route::prefix('admin')->group(function () {
-        Route::resource('',AdminController::class);
     });
     Route::prefix('tanding')->group(function () {
         Route::resource('juri', JuriController::class);
