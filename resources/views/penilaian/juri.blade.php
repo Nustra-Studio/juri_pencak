@@ -85,18 +85,20 @@
                 </table>
                 <div class="d-flex justify-content-between">
                     <div class="btn-wrap d-flex flex-column">
-                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center btn btn-primary fs-4 p-5 me-1 shadow border-black" >
+                        {{-- btnSkill1 --}}
+                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-4 p-5 me-1 shadow border-black" >
                         <img src="../assets/juri/images/fist.png" class="ms-3" style="width: 75px;">
                         <span class="mx-3">Pukulan</span>
                         </button>  
                         
-                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center btn btn-primary fs-4 p-5 me-1 shadow border-black" >
+                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-4 p-5 me-1 shadow border-black" >
                             <img src="../assets/juri/images/kick.png" class="ms-3" style="width: 75px">
                             <span class="mx-3">Tendangan</span>
                         </button>
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
-                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center p-4 fs-4 shadow border-black">
+                        {{-- btnHapus --}}
+                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class=" text-center btn btn-secondary text-center p-4 fs-4 shadow border-black">
                         <span >Hapus <br> Nilai Terakhir</span>
                         </button>
                     </div>
