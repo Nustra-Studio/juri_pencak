@@ -245,7 +245,7 @@
                 Refresh
             </button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
-            <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhans">Verifikasi <br>Hukuman</button>
+            <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
             <table class="score-table">
                 <tbody>
                     @php
@@ -327,7 +327,7 @@
                                                 $text = 'tim2';
                                             }
                                         @endphp
-                                        <td  style="{{ $item->id_perserta == $biru ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
+                                        <td  style="{{ !empty($biru) ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
                                     </tr>
                                     @endforeach
                             </tbody>
@@ -339,7 +339,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Verifikasi Hukuman</h5>
+                      <h5 class="modal-title" id="staticBackdropLabel">Verifikasi Jatuhan</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -352,7 +352,7 @@
                             </thead>
                             <tbody>
                                 @php
-                                   $njatuhan=score::where('keterangan','hukuman')->where('status','notif')->get();
+                                   $njatuhan=score::where('keterangan','jatuhan')->where('status','notif')->get();
                                 @endphp
                                     @foreach ($njatuhan as $item)
                                     <tr>
