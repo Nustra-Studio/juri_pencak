@@ -47,7 +47,8 @@ class JuriController extends Controller
                 'keterangan' => $status,
                 'id_perserta' => $id_perserta,
                 'id_juri' => $id_juri,
-                'status' => 'plus'
+                'status' => 'plus',
+                'babak' => $request->babak,
             ];
             score::create($data);
         
@@ -55,13 +56,18 @@ class JuriController extends Controller
 
         }
             elseif($status === "terakhir"){
-                $data = score::where('id_perserta',$request->id )->latest()->first();
+                $data = score::where('id_perserta',$request->id )
+                ->where('babak',$request->babak)
+                ->latest()
+                ->first();
                 $data->delete();
                 return response()->json(['message' => 'Data berhasil dihapus']);
             }
 
             elseif($keterangan === "minus"){
-                $data = Score::where('keterangan', $status)->first();
+                $data = Score::where('keterangan', $status)
+                ->where('babak',$request->babak)
+                ->first();
                 $data->delete();
                 return response()->json(['message' => 'Data berhasil dihapus']);
 
@@ -73,7 +79,8 @@ class JuriController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
-                    'status' => 'notif'
+                    'status' => 'notif',
+                    'babak' => $request->babak
                 ];
                 score::create($data);
             }
