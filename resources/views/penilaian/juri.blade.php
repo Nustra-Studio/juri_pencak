@@ -34,7 +34,7 @@
                 </div>
                 <div class="juri d-flex flex-column align-items-center">
                     <h1>JURI 1</h1>
-                    <span>ARENA A - 1</span>
+                    <span>{{$setting->arena}}</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center text-end">
                     <div class="text">
