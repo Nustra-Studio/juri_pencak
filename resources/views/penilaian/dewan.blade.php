@@ -335,7 +335,7 @@
                     </div>
               </div>
         </div>
-        <div class="modal fade" id="vhukuman" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="vhukuman" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelhukuman" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -352,7 +352,7 @@
                             </thead>
                             <tbody>
                                 @php
-                                   $njatuhan=score::where('keterangan','jatuhan')->where('status','notif')->get();
+                                   $njatuhan=score::where('keterangan','hukuman')->where('status','notif')->get();
                                 @endphp
                                     @foreach ($njatuhan as $item)
                                     <tr>
@@ -369,7 +369,7 @@
                                                 $text = 'tim2';
                                             }
                                         @endphp
-                                        <td  style="{{ $item->id_perserta == $biru ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
+                                        <td  style="{{ !empty($biru) ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
                                     </tr>
                                     @endforeach
                             </tbody>
