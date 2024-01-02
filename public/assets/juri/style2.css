@@ -209,3 +209,7 @@
 .btn-wrap {
     gap: 5vw;
 }
+
+.font-xs {
+    font-size: 10px;
+}
