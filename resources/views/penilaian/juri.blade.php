@@ -156,12 +156,12 @@
                         <span>Refresh</span>
                     </div>
     
-                    <button class="btn-jatuhan btn btn-secondary d-flex justify-content-center align-items-center p-3 shadow border-light mx-1 mt-1" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
+                    <button class="btn-jatuhan btn btn-secondary d-flex justify-content-center align-items-center p-3 shadow border-light mx-1 mt-1" data-bs-toggle="modal" data-bs-target="#ModalJatuhan">
                         <img src="../assets/Assets/judo white.png" alt="" class="me-1" style="width: 30px;">
                         Verifikasi Jatuhan
                     </button>
     
-                    <button class="btn-jatuhan d-flex btn btn-secondary d-flex justify-content-center align-items-center p-3 shadow border-light mt-2 mx-1"  onclick="document.getElementById('popup-hukuman').style.display = 'block';document.getElementById('popup2-hukuman').style.display = 'block'">
+                    <button class="btn-jatuhan d-flex btn btn-secondary d-flex justify-content-center align-items-center p-3 shadow border-light mt-2 mx-1" data-bs-toggle="modal" data-bs-target="#ModalHukuman">
                         <img src="../assets/Assets/warning.png" alt="" class="me-1" style="width: 30px;">
                         Verifikasi Hukuman
                     </button>
