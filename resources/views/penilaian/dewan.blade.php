@@ -56,7 +56,7 @@
             </tr>
             </thead>
             <tbody>
-                @php
+            @php
                 $jatuh = score::where('keterangan','jatuh')
                 ->where('babak','1')
                 ->where('id_perserta',$tim_biru->id_pesilat)->count();
@@ -79,16 +79,16 @@
             @php
                 $jatuh = score::where('keterangan','jatuh')
                 ->where('babak','2')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
                 $bina =  score::where('keterangan','binaan')
                 ->where('babak','2')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
                 $teguran = score::where('keterangan','teguran')
                 ->where('babak','2')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
                 $peringatan = score::where('keterangan','peringatan')
                 ->where('babak','2')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
             @endphp
                 <tr>
                     <td>{{$peringatan}}x</td>
@@ -99,16 +99,16 @@
             @php
                 $jatuh = score::where('keterangan','jatuh')
                 ->where('babak','3')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
                 $bina =  score::where('keterangan','binaan')
                 ->where('babak','3')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
                 $teguran = score::where('keterangan','teguran')
                 ->where('babak','3')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
                 $peringatan = score::where('keterangan','peringatan')
                 ->where('babak','3')
-                ->where('id_perserta',$tim_merah->id_pesilat)->count();
+                ->where('id_perserta',tim_biru->id_pesilat)->count();
             @endphp    
                 <tr>     
                     <td>{{$peringatan}}x</td>
@@ -205,19 +205,33 @@
                 <td>{{$bina}}x</td>
                 <td>{{$jatuh}}x</td>
             </tr>
+            @php
+                $jatuh_babak = score::where('keterangan','jatuh')
+                ->where('babak',{{$setting->babak}})
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
+                $bina_babak =  score::where('keterangan','binaan')
+                ->where('babak',{{$setting->babak}})
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
+                $teguran_babak = score::where('keterangan','teguran')
+                ->where('babak',{{$setting->babak}})
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
+                $peringatan_babak = score::where('keterangan','peringatan')
+                ->where('babak',{{$setting->babak}})
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
+            @endphp
             </tbody>    
         </table>
     </div>
     <div class="button-section">
         <div class="button-blue-container">
             <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue">JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($bina1 === 2)
+            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($bina_babak === 2)
                 disabled
             @endif>BINAAN</button>
-            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($teguran1 === 2)
+            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($teguran_babak === 2)
                 disabled
             @endif>TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($peringatan1 === 3)
+            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($peringatan_babak === 3)
                 disabled
             @endif>PERINGATAN</button>
             <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
@@ -248,6 +262,20 @@
                     </tr>
                 </tbody>
             </table>
+        @php
+            $jatuh_babak = score::where('keterangan','jatuh')
+            ->where('babak',{{$setting->babak}})
+            ->where('id_perserta',$tim_merah->id_pesilat)->count();
+            $bina_babak =  score::where('keterangan','binaan')
+            ->where('babak',{{$setting->babak}})
+            ->where('id_perserta',$tim_merah->id_pesilat)->count();
+            $teguran_babak = score::where('keterangan','teguran')
+            ->where('babak',{{$setting->babak}})
+            ->where('id_perserta',$tim_merah->id_pesilat)->count();
+            $peringatan_babak = score::where('keterangan','peringatan')
+            ->where('babak',{{$setting->babak}})
+            ->where('id_perserta',$tim_merah->id_pesilat)->count();
+        @endphp
         </div>
         <div class="button-blue-container">
             <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
@@ -255,13 +283,13 @@
             <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
             <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
             <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red">JATUHAN</button>
-            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($bina === 2)
+            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($bina_babak === 2)
             disabled
         @endif>BINAAN</button>
-            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($teguran === 2)
+            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($teguran_babak === 2)
             disabled
         @endif>TEGURAN</button>
-            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($peringatan === 3)
+            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($peringatan_babak === 3)
             disabled
         @endif>PERINGATAN</button>
         </div>
