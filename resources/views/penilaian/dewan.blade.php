@@ -207,16 +207,16 @@
             </tr>
             @php
                 $jatuh_babak = score::where('keterangan','jatuh')
-                ->where('babak',{{$setting->babak}})
+                ->where('babak',$setting->babak)
                 ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $bina_babak =  score::where('keterangan','binaan')
-                ->where('babak',{{$setting->babak}})
+                ->where('babak',$setting->babak)
                 ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $teguran_babak = score::where('keterangan','teguran')
-                ->where('babak',{{$setting->babak}})
+                ->where('babak',$setting->babak)
                 ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $peringatan_babak = score::where('keterangan','peringatan')
-                ->where('babak',{{$setting->babak}})
+                ->where('babak',$setting->babak)
                 ->where('id_perserta',$tim_biru->id_pesilat)->count();
             @endphp
             </tbody>    
@@ -264,16 +264,16 @@
             </table>
         @php
             $jatuh_babak = score::where('keterangan','jatuh')
-            ->where('babak',{{$setting->babak}})
+            ->where('babak',$setting->babak)
             ->where('id_perserta',$tim_merah->id_pesilat)->count();
             $bina_babak =  score::where('keterangan','binaan')
-            ->where('babak',{{$setting->babak}})
+            ->where('babak',$setting->babak)
             ->where('id_perserta',$tim_merah->id_pesilat)->count();
             $teguran_babak = score::where('keterangan','teguran')
-            ->where('babak',{{$setting->babak}})
+            ->where('babak',$setting->babak)
             ->where('id_perserta',$tim_merah->id_pesilat)->count();
             $peringatan_babak = score::where('keterangan','peringatan')
-            ->where('babak',{{$setting->babak}})
+            ->where('babak',$setting->babak)
             ->where('id_perserta',$tim_merah->id_pesilat)->count();
         @endphp
         </div>
