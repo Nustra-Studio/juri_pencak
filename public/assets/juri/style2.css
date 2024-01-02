@@ -122,7 +122,7 @@
 
 
 .btn-jatuhan {
-    background-color: rgb(150, 150, 150);
+    /* background-color: rgb(150, 150, 150);
     padding: 10px 3vw;
     width: 13vw;
     height: 5vw;
@@ -130,7 +130,8 @@
     color: #f5f5f5;
     margin-top: 10px;
     transition: .3s;
-    font-size: 1vw;
+    font-size: 1vw; */
+    display: block ;
 }
 
 .btn-jatuhan:hover {

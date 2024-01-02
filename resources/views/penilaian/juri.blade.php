@@ -132,8 +132,8 @@
                         <span>Refresh</span>
                     </div>
     
-                    <button class="btn-jatuhan d-flex" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
-                        <img src="../assets/Assets/judo white.png" alt="" style="width: 3vw; margin-left : -10px;">
+                    <button class="btn-jatuhan btn btn-secondary d-flex justify-content-center align-items-center fs-5" onclick="document.getElementById('popup').style.display = 'block';document.getElementById('popup2').style.display = 'block'">
+                        <img src="../assets/Assets/judo white.png" alt="" style="width: 20px;">
                         Verifikasi Jatuhan
                     </button>
     
