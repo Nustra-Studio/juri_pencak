@@ -6,6 +6,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.custom-button {
+    height: 289px;
+    width: 100%;
+    }
+
 .mid-header {
     width: 100%;
     display: flex;
@@ -42,6 +47,10 @@
 
 .blue {
     background-color: blue;
+}
+
+.text-yellow {
+    color: yellow;
 }
 
 .direc {
