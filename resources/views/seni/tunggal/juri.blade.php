@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-md-5" >
-                    <button class="btn btn-primary btn-lg custom-button shadow">Next Move</button>
+                    <button class="btn btn-primary btn-lg custom-button shadow w-100 h-100">Next Move</button>
                 </div>
             </div>
         </div>
