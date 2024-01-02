@@ -82,8 +82,7 @@
 }
 
 .btnSkill1 img {
-    /* width: 30%;
-    margin-right: 10px; */
+   
     display: block;
 }
 
@@ -95,26 +94,10 @@
 
 }
 .btnSkill1 {
-    /* padding: 5px 10px;
-    width: 12vw;
-    background-color: #0853D2;
-    margin-left: 5px;
-    border-radius: 5px;
-    color: #ffff;
-    cursor: pointer;
-    transition: .3s; */
     display: block;
 }
 
 .btnSkill2 {
-    /* padding: 5px 10px;
-    width: 12vw;
-    background-color: #F86C6C;
-    margin-left: 5px;
-    border-radius: 5px;
-    color: #ffff;
-    cursor: pointer;
-    transition: .3s; */
     display: block;
 }
 
