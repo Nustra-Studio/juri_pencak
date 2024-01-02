@@ -71,15 +71,15 @@
                         </thead>
                         <tbody>
                         @php
-                            $data1 = score::where('id_perserta',{{$tim_biru->id_pesilat}})
+                            $data1 = score::where('id_perserta',$tim_biru->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','1')
                             ->get();
-                            $data2 = score::where('id_perserta',{{$tim_biru->id_pesilat}})
+                            $data2 = score::where('id_perserta',$tim_biru->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','2')
                             ->get();
-                            $data3 = score::where('id_perserta',{{$tim_biru->id_pesilat}})
+                            $data3 = score::where('id_perserta',$tim_biru->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','3')
                             ->get();
@@ -343,15 +343,15 @@
                         </thead>
                         <tbody>
                             @php
-                            $data1 = score::where('id_perserta',{{$tim_merah->id_pesilat}})
+                            $data1 = score::where('id_perserta',$tim_biru->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','1')
                             ->get();
-                            $data2 = score::where('id_perserta',{{$tim_merah->id_pesilat}})
+                            $data2 = score::where('id_perserta',$tim_biru->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','2')
                             ->get();
-                            $data3 = score::where('id_perserta',{{$tim_merah->id_pesilat}})
+                            $data3 = score::where('id_perserta',$tim_biru->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','3')
                             ->get();
