@@ -316,8 +316,8 @@
                                     <tr>
                                         <td style="" >{{$item->id_juri}}</td>
                                         @php
-                                                $biru = Setting::where('biru',$item->id_perserta)->first();
-                                                if ($item->id_perserta == $biru->biru) {
+                                                $biru = Setting::where('biru',$item->id_perserta)->value('biru');
+                                                if ($item->id_perserta == $biru) {
                                                 $color = "color: rgba(0, 102, 255, 1)";
                                                 $text = 'tim1';
                                                 }
@@ -326,7 +326,7 @@
                                                 $text = 'tim2';
                                             }
                                         @endphp
-                                        <td  style="{{ $item->id_perserta == $biru->biru ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
+                                        <td  style="{{ $item->id_perserta == $biru ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
                                     </tr>
                                     @endforeach
                             </tbody>
