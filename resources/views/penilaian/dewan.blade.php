@@ -79,16 +79,16 @@
             @php
                 $jatuh = score::where('keterangan','jatuh')
                 ->where('babak','2')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $bina =  score::where('keterangan','binaan')
                 ->where('babak','2')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $teguran = score::where('keterangan','teguran')
                 ->where('babak','2')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $peringatan = score::where('keterangan','peringatan')
                 ->where('babak','2')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
             @endphp
                 <tr>
                     <td>{{$peringatan}}x</td>
@@ -99,16 +99,16 @@
             @php
                 $jatuh = score::where('keterangan','jatuh')
                 ->where('babak','3')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $bina =  score::where('keterangan','binaan')
                 ->where('babak','3')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $teguran = score::where('keterangan','teguran')
                 ->where('babak','3')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
                 $peringatan = score::where('keterangan','peringatan')
                 ->where('babak','3')
-                ->where('id_perserta',tim_biru->id_pesilat)->count();
+                ->where('id_perserta',$tim_biru->id_pesilat)->count();
             @endphp    
                 <tr>     
                     <td>{{$peringatan}}x</td>
