@@ -30,7 +30,7 @@
             <!-- Score Section -->
             <div class="text-center border border-black rounded py-1">Tunggal Jurus 1 Tangan Kosong Movement 1</div>
             <div class="row text-center mt-4">
-                <div class="col-md-5">
+                <div class="col-md-5 bg-danger">
                     <button class="btn btn-danger btn-lg custom-button shadow">Wrong Move</button>
                 </div>
                 <div class="col-md-2">
