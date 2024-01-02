@@ -92,7 +92,7 @@
                         </button>  
                         
                         <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-5 py-5 px-0 px-lg-5 me-1 shadow border-black" >
-                            <img src="../assets/juri/images/kick.png" style="width3 20px;">
+                            <img src="../assets/juri/images/kick.png" style="width: 20px;">
                             <span class="ms-1">Tendangan</span>
                         </button>
                     </div>
