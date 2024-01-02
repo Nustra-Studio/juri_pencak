@@ -182,7 +182,9 @@
                             <div class="col h-100">
                             <div class="row h100">
                                 <div class="col">
-                                <button class="btn btn-primary w-100 border-black shadow">
+                                <button
+                                name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:jatuhan p:0 keterangan:notif"  
+                                class="btn btn-primary w-100 border-black shadow">
                                     Tim Biru
                                 </button>
                                 </div>
@@ -192,7 +194,9 @@
                                 </button>
                                 </div>
                                 <div class="col">
-                                <button class="btn btn-danger w-100 border-black shadow">
+                                <button
+                                name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:jatuhan p:0 keterangan:notif" 
+                                class="btn btn-danger w-100 border-black shadow">
                                     Tim Merah
                                 </button>
                                 </div>
@@ -223,7 +227,9 @@
                             <div class="col h-100">
                             <div class="row h100">
                                 <div class="col">
-                                <button class="btn btn-primary w-100 border-black shadow">
+                                <button
+                                name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:hukuman p:0 keterangan:notif"    
+                                class="btn btn-primary w-100 border-black shadow">
                                     Tim Biru
                                 </button>
                                 </div>
@@ -233,7 +239,9 @@
                                 </button>
                                 </div>
                                 <div class="col">
-                                <button class="btn btn-danger w-100 border-black shadow">
+                                <button
+                                name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:hukuman p:0 keterangan:notif"
+                                class="btn btn-danger w-100 border-black shadow">
                                     Tim Merah
                                 </button>
                                 </div>
@@ -258,7 +266,7 @@
                             <table class="table-juri table-bordered border border-black">
                             <thead>
                                 <tr>
-                                <td scope="col" class="text-center"">
+                                <td scope="col" class="text-center">
                                     Verifikasi Jatuhan
                                 </td>
                                 </tr>
