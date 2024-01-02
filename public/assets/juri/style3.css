@@ -55,18 +55,17 @@
 }
 
 .refersh {
-    padding: 10px 40px;
+    /* padding: 10px 40px;
     border-radius: 5px;
     color: white;
     background-color: #2ED22E;
     margin-top: -13px;
     cursor: pointer;
-    transition: .3s;
+    transition: .3s; */
+    display: block;
 }
 
-.refersh:hover {
-    background-color: #25a825;
-}
+
 
 .refersh span {
     font-size: 20px;
