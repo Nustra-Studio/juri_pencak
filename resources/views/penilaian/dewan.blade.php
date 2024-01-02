@@ -316,7 +316,7 @@
                                     <tr>
                                         <td style="" >{{$item->id_juri}}</td>
                                         @php
-                                                $biru = Setting::where('biru',$item->id_perserta)->value('biru');
+                                                $biru = ;
                                                 if ($item->id_perserta == $biru) {
                                                 $color = "color: rgba(0, 102, 255, 1)";
                                                 $text = 'tim1';
