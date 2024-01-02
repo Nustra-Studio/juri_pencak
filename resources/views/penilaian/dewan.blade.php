@@ -244,7 +244,7 @@
                 <img src="../assets/Assets/refresh.png" alt="" style="width: 20px;height: 20px;float: left; margin-left: 10px;">
                 Refresh
             </button>
-            <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
+            <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
             <table class="score-table">
                 <tbody>
@@ -335,6 +335,7 @@
                     </div>
               </div>
         </div>
+    </div>  
         <div class="modal fade" id="vhukuman" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-labelledby="staticBackdropLabelHukuman" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
