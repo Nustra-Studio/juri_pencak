@@ -7,8 +7,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="../assets/juri/style3.css">
         @php
-            $id_juri = 2;
             use App\score;
+            use App\Setting;
+            use App\PersertaModel;
+            $setting = Setting::first();
+            $id_juri = 2;
+            $tim_merah = PersertaModel::where('id',$setting->merah)->first();
+            $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
         @endphp
     </head>
     <body>
@@ -24,7 +29,7 @@
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="text">
                         <span class="team">SMKN 1 NGANJUK</span> <br>
-                        <span class="peserta">Yudha</span>
+                        <span class="peserta">{{$tim_biru->name}}</span>
                     </div>
                 </div>
                 <div class="juri d-flex flex-column align-items-center">
@@ -34,7 +39,7 @@
                 <div class="d-flex align-items-center justify-content-center text-end">
                     <div class="text">
                         <span class="team">SMA 1 JEMBER</span><br>
-                    <span class="peserta">Alex</span>
+                    <span class="peserta">{{$tim_merah->name}}</span>
                     </div>
                 </div>
             </div>
@@ -65,40 +70,59 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                            $data = score::where('id_perserta','1')->where('status','plus')->get();
+                        @php
+                            $data1 = score::where('id_perserta',{{$tim_biru->id_pesilat}})
+                            ->where('status','plus')
+                            ->where('babak','1')
+                            ->get();
+                            $data2 = score::where('id_perserta',{{$tim_biru->id_pesilat}})
+                            ->where('status','plus')
+                            ->where('babak','2')
+                            ->get();
+                            $data3 = score::where('id_perserta',{{$tim_biru->id_pesilat}})
+                            ->where('status','plus')
+                            ->where('babak','3')
+                            ->get();
                         @endphp
                         <tr>
                             <td colspan="3">
-                                @foreach ($data as $item)
+                                @foreach ($data1 as $item)
                                     {{$item->score}},
                                 @endforeach
                             </td>
                         </tr>
                             <tr>
-                                <td colspan="3">.</td>
+                                <td colspan="3">
+                                    @foreach ($data2 as $item)
+                                    {{$item->score}},
+                                @endforeach
+                                </td>
                             </tr>
                             <tr>
-                            <td colspan="3">.</td>
+                            <td colspan="3">
+                                @foreach ($data3 as $item)
+                                {{$item->score}},
+                            @endforeach
+                            </td>
                         </tr>
                         </tbody>
                 </table>
                 <div class="d-flex justify-content-between">
                     <div class="btn-wrap d-flex flex-column">
                         {{-- btnSkill1 --}}
-                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center btn btn-primary fs-5 py-4 px-0 px-lg-5 px-md-2 me-1 shadow border-black" >
+                        <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:pukulan p:2 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center btn btn-primary fs-5 py-4 px-0 px-lg-5 px-md-2 me-1 shadow border-black" >
                         <img src="../assets/juri/images/fist.png" style="width: 20px;">
                         <span class="ms-1">Pukulan</span>
                         </button>  
                         
-                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center btn btn-primary fs-5 py-4 px-0 px-lg-5 px-md-2 me-1 shadow border-black" >
+                        <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:tendangan p:3 keterangan:plus" class="btnSkill1 d-flex align-items-center justify-content-center btn btn-primary fs-5 py-4 px-0 px-lg-5 px-md-2 me-1 shadow border-black" >
                             <img src="../assets/juri/images/kick.png" style="width: 20px;">
                             <span class="ms-1">Tendangan</span>
                         </button>
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
                         {{-- btnHapus --}}
-                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
+                        <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
                         <span >Hapus <br> Nilai Terakhir</span>
                         </button>
                     </div>
@@ -172,8 +196,8 @@
                             </table>
                         </div>
                         <div class="pop-button">
-                            <button name="juri:{{$id_juri}} id:1 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
-                            <button name="juri:{{$id_juri}} id:2 status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
+                            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
+                            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:jatuhan p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
                             <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
                         </div>
                         </div>
@@ -209,8 +233,8 @@
                             </table>
                         </div>
                         <div class="pop-button">
-                            <button name="juri:{{$id_juri}} id:1 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
-                            <button name="juri:{{$id_juri}} id:2 status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
+                            <button name="juri:{{$id_juri}} id:{{$tim_biru->id_pesilat}} babak:{{$setting->babak}} status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-primary btn-lg" >Tim Biru</button>
+                            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:hukuman p:0 keterangan:notif" type="button" class="bt-notif btn btn-danger btn-lg">Tim Merah</button>
                             <button type="button" class="btn btn-warning btn-lg">Tim Invalid</button>
                         </div>
                         </div>
@@ -229,37 +253,56 @@
                         </thead>
                         <tbody>
                             @php
-                            $data = score::where('id_perserta','2')->where('status','plus')->get();
+                            $data1 = score::where('id_perserta',{{$tim_merah->id_pesilat}})
+                            ->where('status','plus')
+                            ->where('babak','1')
+                            ->get();
+                            $data2 = score::where('id_perserta',{{$tim_merah->id_pesilat}})
+                            ->where('status','plus')
+                            ->where('babak','2')
+                            ->get();
+                            $data3 = score::where('id_perserta',{{$tim_merah->id_pesilat}})
+                            ->where('status','plus')
+                            ->where('babak','3')
+                            ->get();
                         @endphp
                         <tr>
                             <td colspan="3">
-                                @foreach ($data as $item)
+                                @foreach ($data1 as $item)
                                     {{$item->score}},
                                 @endforeach
                             </td>
                         </tr>
                             <tr>
-                                <td colspan="3">.</td>
+                                <td colspan="3">
+                                    @foreach ($data2 as $item)
+                                    {{$item->score}},
+                                @endforeach
+                                </td>
                             </tr>
                             <tr>
-                            <td colspan="3">.</td>
+                            <td colspan="3">
+                                @foreach ($data3 as $item)
+                                {{$item->score}},
+                            @endforeach
+                            </td>
                         </tr>
                         </tbody>
                     </table>
 
                     <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-center align-items-center">
-                            <button name="juri:{{$id_juri}} id:2 status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
+                            <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
                                 <span >Hapus <br> Nilai Terakhir</span>
                             </button>
                         </div>
                         <div class="btn-wrap d-flex flex-column">
-                        <button name="juri:{{$id_juri}} id:2 status:pukulan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
+                        <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:pukulan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
                             <img src="../assets/juri/images/fist.png" style="width: 20px;">
                             <span class="ms-1">Pukulan</span>
                         </button>  
                             
-                        <button name="juri:{{$id_juri}} id:2 status:tendangan p:3 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
+                        <button name="juri:{{$id_juri}} id:{{$tim_merah->id_pesilat}} babak:{{$setting->babak}} status:tendangan p:3 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
                             <img src="../assets/juri/images/kick.png" style="width: 20px;">
                             <span class="ms-1">Tendangan</span>
                         </button>
