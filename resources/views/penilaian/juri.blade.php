@@ -86,13 +86,13 @@
                 <div class="d-flex justify-content-between">
                     <div class="btn-wrap d-flex flex-column">
                         {{-- btnSkill1 --}}
-                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-4 p-5 me-1 shadow border-black" >
-                        <img src="../assets/juri/images/fist.png" class="ms-3" style="width: 75px;">
+                        <button name="juri:{{$id_juri}} id:1 status:pukulan p:2 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-5 p-2 me-1 shadow border-black" >
+                        <img src="../assets/juri/images/fist.png" class="ms-3" style="width: 50px;">
                         <span class="mx-3">Pukulan</span>
                         </button>  
                         
-                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-4 p-5 me-1 shadow border-black" >
-                            <img src="../assets/juri/images/kick.png" class="ms-3" style="width: 75px">
+                        <button name="juri:{{$id_juri}} id:1 status:tendangan p:3 keterangan:plus" class=" d-flex align-items-center justify-content-center btn btn-primary fs-5 p-2 me-1 shadow border-black" >
+                            <img src="../assets/juri/images/kick.png" class="ms-3" style="width5075px">
                             <span class="mx-3">Tendangan</span>
                         </button>
                     </div>
