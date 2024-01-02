@@ -447,7 +447,7 @@
                     .catch(error => {
                         // Tangani kesalahan jika ada
                     });
-                    function reload(){id_perserta
+                    function reload(){
                     window.location.reload();
                     }
                     setInterval(reload, 800);
