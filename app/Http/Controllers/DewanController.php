@@ -42,6 +42,7 @@ class DewanController extends Controller
         $status = $request->status;
         $id_perserta = $request->id;
         $id_juri = $request->juri;
+        $babak = $request->babak;
     
         if ($keterangan === "plus") {
             if($status ==="binaan"){
@@ -50,7 +51,8 @@ class DewanController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
-                    'status' => 'minus'
+                    'status' => 'minus',
+                    'babak'=>$babak
                 ];
             }
             elseif($status ==="teguran"){
@@ -59,7 +61,9 @@ class DewanController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
-                    'status' => 'minus'
+                    'status' => 'minus',
+                    'babak'=>$babak
+
                 ];
 
             }
@@ -69,7 +73,8 @@ class DewanController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
-                    'status' => 'minus'
+                    'status' => 'minus',
+                    'babak'=>$babak
                 ];
 
             }
@@ -79,7 +84,8 @@ class DewanController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
-                    'status' => 'plus'
+                    'status' => 'plus',
+                    'babak'=>$babak
                 ];
             }
     
