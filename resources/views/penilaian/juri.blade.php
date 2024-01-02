@@ -84,26 +84,32 @@
                             ->where('babak','3')
                             ->get();
                         @endphp
-                        <tr>
+                            <tr>
                             <td colspan="3">
-                                @foreach ($data1 as $item)
+                                @forelse ($data1 as $item)
                                     {{$item->score}},
-                                @endforeach
+                                @empty
+                                    .
+                                @endforelse
                             </td>
                         </tr>
                             <tr>
                                 <td colspan="3">
-                                    @foreach ($data2 as $item)
-                                    {{$item->score}},
-                                @endforeach
+                                    @forelse ($data2 as $item)
+                                        {{$item->score}},
+                                    @empty
+                                        .
+                                    @endforelse
                                 </td>
                             </tr>
                             <tr>
-                            <td colspan="3">
-                                @foreach ($data3 as $item)
-                                {{$item->score}},
-                            @endforeach
-                            </td>
+                                <td colspan="3">
+                                    @forelse ($data3 as $item)
+                                        {{$item->score}},
+                                    @empty
+                                        .
+                                    @endforelse
+                                </td>
                         </tr>
                         </tbody>
                 </table>
@@ -343,39 +349,45 @@
                         </thead>
                         <tbody>
                             @php
-                            $data1 = score::where('id_perserta',$tim_biru->id_pesilat)
+                            $data1 = score::where('id_perserta',$tim_merah->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','1')
                             ->get();
-                            $data2 = score::where('id_perserta',$tim_biru->id_pesilat)
+                            $data2 = score::where('id_perserta',$tim_merah->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','2')
                             ->get();
-                            $data3 = score::where('id_perserta',$tim_biru->id_pesilat)
+                            $data3 = score::where('id_perserta',$tim_merah->id_pesilat)
                             ->where('status','plus')
                             ->where('babak','3')
                             ->get();
                         @endphp
                         <tr>
                             <td colspan="3">
-                                @foreach ($data1 as $item)
+                                @forelse ($data1 as $item)
                                     {{$item->score}},
-                                @endforeach
+                                @empty
+                                    .
+                                @endforelse
                             </td>
                         </tr>
                             <tr>
                                 <td colspan="3">
-                                    @foreach ($data2 as $item)
-                                    {{$item->score}},
-                                @endforeach
+                                    @forelse ($data2 as $item)
+                                        {{$item->score}},
+                                    @empty
+                                        .
+                                    @endforelse
                                 </td>
                             </tr>
                             <tr>
-                            <td colspan="3">
-                                @foreach ($data3 as $item)
-                                {{$item->score}},
-                            @endforeach
-                            </td>
+                                <td colspan="3">
+                                    @forelse ($data3 as $item)
+                                        {{$item->score}},
+                                    @empty
+                                        .
+                                    @endforelse
+                                </td>
                         </tr>
                         </tbody>
                     </table>
@@ -435,7 +447,7 @@
                     .catch(error => {
                         // Tangani kesalahan jika ada
                     });
-                    function reload(){
+                    function reload(){id_perserta
                     window.location.reload();
                     }
                     setInterval(reload, 800);
