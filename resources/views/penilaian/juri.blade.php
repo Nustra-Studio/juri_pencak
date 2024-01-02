@@ -98,7 +98,7 @@
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
                         {{-- btnHapus --}}
-                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class=" text-center btn btn-secondary text-center px-0 px-lg-5 py-5 fs-5 shadow border-black">
+                        <button name="juri:{{$id_juri}} id:1 status:terakhir p:2 keterangan:minus" class=" text-center btn btn-secondary text-center px-0 px-xl-5 py-5 fs-5 shadow border-black">
                         <span >Hapus <br> Nilai Terakhir</span>
                         </button>
                     </div>
