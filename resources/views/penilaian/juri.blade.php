@@ -166,6 +166,88 @@
                         Verifikasi Hukuman
                     </button>
     
+                <!-- Modal Verifikasi Jatuhan -->
+                <div class="modal fade" id="ModalJatuhan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h2>Verifikasi Jatuhan</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="model-body">
+                        <div class="container-fluid mb-3">
+                            <div class="col d-flex justify-content-center align-items-center fs-5 fw-bold">
+                            Keputusan Juri
+                            </div>
+                            <div class="col h-100">
+                            <div class="row h100">
+                                <div class="col">
+                                <button class="btn btn-primary w-100 border-black shadow">
+                                    Tim Biru
+                                </button>
+                                </div>
+                                <div class="col">
+                                <button class="btn btn-warning w-100 border-black shadow">
+                                    Invalid
+                                </button>
+                                </div>
+                                <div class="col">
+                                <button class="btn btn-danger w-100 border-black shadow">
+                                    Tim Merah
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal Verifikasi Hukuman -->
+                <div class="modal fade" id="ModalHukuman" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h2>Verifikasi Hukuman</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="model-body">
+                        <div class="container-fluid mb-3">
+                            <div class="col d-flex justify-content-center align-items-center fs-5 fw-bold">
+                            Keputusan Juri
+                            </div>
+                            <div class="col h-100">
+                            <div class="row h100">
+                                <div class="col">
+                                <button class="btn btn-primary w-100 border-black shadow">
+                                    Tim Biru
+                                </button>
+                                </div>
+                                <div class="col">
+                                <button class="btn btn-warning w-100 border-black shadow">
+                                    Invalid
+                                </button>
+                                </div>
+                                <div class="col">
+                                <button class="btn btn-danger w-100 border-black shadow">
+                                    Tim Merah
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
                     <div id="popup" class="black-overlay">
                         <div id="popup2" class="white-content">
                         <div class="pop-header">
