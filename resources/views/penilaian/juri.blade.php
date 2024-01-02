@@ -128,7 +128,7 @@
                     </table>
         
                     <div class="refersh d-flex align-items-center justify-content-center ">
-                        <img src="./assets/juri/images/Icon.png">
+                        <img src="../assets/juri/images/Icon.png">
                         <span>Refresh</span>
                     </div>
     
