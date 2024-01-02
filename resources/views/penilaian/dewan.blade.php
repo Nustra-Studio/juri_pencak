@@ -245,7 +245,7 @@
                 Refresh
             </button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
-            <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
+            <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhans">Verifikasi <br>Hukuman</button>
             <table class="score-table">
                 <tbody>
                     @php
@@ -316,8 +316,8 @@
                                     <tr>
                                         <td style="" >{{$item->id_juri}}</td>
                                         @php
-                                                $biru = PersertaModel::where('id_pesilat',$biru)->value('id');
-                                                $biru = Setting::where('biru',$item->id_perserta)->value('biru');
+                                                $biru = PersertaModel::where('id_pesilat',$item->id_perserta)->value('id');
+                                                $biru = Setting::where('biru',$biru)->value('biru');
                                                 if (!empty($biru)) {
                                                 $color = "color: rgba(0, 102, 255, 1)";
                                                 $text = 'tim1';
@@ -358,9 +358,9 @@
                                     <tr>
                                         <td style="" >{{$item->id_juri}}</td>
                                         @php
-                                                $biru = Setting::where('biru',$item->id_perserta)->value('biru');
-                                                $biru = PersertaModel::where('id_pesilat',$biru)->value('id');
-                                                if ($item->id_perserta == $biru) {
+                                                $biru = PersertaModel::where('id_pesilat',$item->id_perserta)->value('id');
+                                                $biru = Setting::where('biru',$biru)->value('biru');
+                                                if (!empty($biru)) {
                                                 $color = "color: rgba(0, 102, 255, 1)";
                                                 $text = 'tim1';
                                                 }
