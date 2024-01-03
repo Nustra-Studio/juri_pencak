@@ -174,6 +174,10 @@
                         @endphp
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
                     </tr>
+                    <tr>
+                        <td colspan="2" class="text-end">Total Pengurangan :</td>
+                        <td class="align-middle text-center text-danger fw-bold">12</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
