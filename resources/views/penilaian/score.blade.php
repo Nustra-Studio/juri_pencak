@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../assets/score/score.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @php
@@ -238,19 +237,11 @@
             <div id=""name="" class="juri-info-item-red">J2</div>
         </div>
     </div>
-    <div class="fixed-bottom container-fluid f-white px-0" style="height: 60px;">
-        <div class="row d-flex flex-column h100">
-            <div class="bg-dark-subtle border rounded border-black" style="width: 100px; height: 100%;">
-                <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 100%;">
-            </div> 
-            <div class="h100 d-flex align-items-center px-0">
-                <div class="w100 bg-black d-flex align-items-center" style="height: 55px;"> 
-                    <marquee behavior="" direction="Running">
-                        Pertandingan Pencak Silat Kediri Telah dimulai || Pertandingan hari ini dimulai sore Hari || kunjungi ayosilat.com untuk melihat update
-                    </marquee>
-                </div>
-            </div>
-        </div>
+    <div id=""name="" class="running-text">
+        <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 70px; background-color: aliceblue; border-radius: 3px; border: 1px solid black;"> 
+        <marquee behavior="" direction="Running">
+            Pertandingan Pencak Silat Kediri Telah dimulai || Pertandingan hari ini dimulai sore Hari || kunjungi ayosilat.com untuk melihat update
+        </marquee>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
