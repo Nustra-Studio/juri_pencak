@@ -237,9 +237,19 @@
             <div id=""name="" class="juri-info-item-red">J2</div>
         </div>
     </div>
-    <div id=""name="" class="running-text">
-        <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 70px; background-color: aliceblue; border-radius: 3px; border: 1px solid black;"> 
-        Pertandingan Pencak Silat Kediri Telah dimulai || Pertandingan hari ini dimulai sore Hari || kunjungi ayosilat.com untuk melihat update
+    <div class="fixed-bottom container-fluid f-white px-0" style="height: 60px;">
+        <div class="row d-flex flex-column h100">
+            <div class="bg-dark-subtle border rounded border-black" style="width: 100px; height: 100%;">
+                <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 100%;">
+            </div> 
+            <div class="h100 d-flex align-items-center px-0">
+                <div class="w100 bg-black d-flex align-items-center" style="height: 55px;"> 
+                    <marquee behavior="" direction="Running">
+                        Pertandingan Pencak Silat Kediri Telah dimulai || Pertandingan hari ini dimulai sore Hari || kunjungi ayosilat.com untuk melihat update
+                    </marquee>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
