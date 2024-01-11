@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('penilaian.score');
 });
-
+Route::get('/login', function () {
+    return view('auth.login');
+});
     Route::resource('admin',AdminController::class);
     Route::prefix('admin')->group(function () {
     });
