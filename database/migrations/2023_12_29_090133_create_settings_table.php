@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('arena');
-            $table->string('babak');
-            $table->string('1');
-            $table->string('2');
-            $table->string('keterangan');
+            $table->string('judul')->nullabel();
+            $table->string('arena')->nullabel();
+            $table->string('babak')->nullabel();
+            $table->string('1')->nullabel();
+            $table->string('2')->nullabel();
+            $table->string('keterangan')->nullabel();
+            $table->string('status')->nullabel();
             $table->timestamps();
         });
     }

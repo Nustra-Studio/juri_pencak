@@ -19,6 +19,7 @@ Route::get('/login', function () {
 });
     Route::resource('admin',AdminController::class);
     Route::prefix('admin')->group(function () {
+        Route::get('/arena', 'AdminController@arena');
     });
     Route::prefix('tanding')->group(function () {
         Route::resource('juri', JuriController::class);

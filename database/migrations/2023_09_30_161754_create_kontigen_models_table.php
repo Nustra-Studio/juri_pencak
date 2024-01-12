@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('kontigens', function (Blueprint $table) {
             $table->id();
-            $table->string('kontigen');
-            $table->string('manager');
-            $table->string('official');
-            $table->string('hp');
+            $table->string('kontigen')->nullable();
+            $table->string('manager')->nullable();
+            $table->string('official')->nullable();
+            $table->string('hp')->nullable();
             $table->string('provinsi')->nullable();
             $table->string('kota')->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('desa')->nullable();
-            $table->string('alamat');
+            $table->string('alamat')->nullable();
             $table->string('status')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('id_user')->nullable();
