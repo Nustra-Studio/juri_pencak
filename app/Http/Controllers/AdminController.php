@@ -14,11 +14,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $status ="admin"
+        $status ="admin";
         return view('admin.panel',compact($status));
     }
     public function arena(){
-        $status ="arena"
+        $status ="arena";
         return view('admin.PanelArena',compact($status));
     }
     /**
