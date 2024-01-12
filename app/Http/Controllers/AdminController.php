@@ -14,10 +14,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.panel');
+        $status ="admin"
+        return view('admin.panel',compact($status));
     }
     public function arena(){
-        return view('admin.PanelArena');
+        $status ="arena"
+        return view('admin.PanelArena',compact($status));
     }
     /**
      * Show the form for creating a new resource.
