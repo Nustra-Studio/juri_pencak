@@ -17,9 +17,11 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
-    Route::resource('admin',AdminController::class);
     Route::prefix('admin')->group(function () {
-        Route::get('/arena', 'AdminController@arena');
+        Route::resource('panel',AdminController::class);
+        Route::get('/arena', function(){
+            return view('admin.PanelArena');
+        });
     });
     Route::prefix('tanding')->group(function () {
         Route::resource('juri', JuriController::class);

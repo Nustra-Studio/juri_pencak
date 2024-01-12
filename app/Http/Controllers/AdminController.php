@@ -17,7 +17,7 @@ class AdminController extends Controller
         return view('admin.panel');
     }
     public function arena(){
-        return view('admin.PanelArena');
+        dd('2');
     }
     /**
      * Show the form for creating a new resource.
