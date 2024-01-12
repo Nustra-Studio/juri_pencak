@@ -21,7 +21,7 @@
       @if ($status =="admin")
       <li class="nav-item {{ active_class(['/admin/panels/kelas']) }}">
         <a href="{{ url('/admin/panels/kelas') }}" class="nav-link">
-          <i class="link-icon" data-feather="box"></i>
+          <i class="link-icon" data-feather="home"></i>
           <span class="link-title">Kelas</span>
         </a>
       </li>
@@ -33,19 +33,19 @@
       </li>
       <li class="nav-item {{ active_class(['/admin/panels/kontigen']) }}">
         <a href="{{ url('/admin/panels/kontigen') }}" class="nav-link">
-          <i class="link-icon" data-feather="box"></i>
+          <i class="link-icon" data-feather="package"></i>
           <span class="link-title">Kontigen</span>
         </a>
       </li>
       <li class="nav-item {{ active_class(['/admin/panels/juri']) }}">
         <a href="{{ url('/admin/panels/juri') }}" class="nav-link">
-          <i class="link-icon" data-feather="box"></i>
+          <i class="link-icon" data-feather="user"></i>
           <span class="link-title">Juri</span>
         </a>
       </li>
       <li class="nav-item {{ active_class(['/admin/panels/arena']) }}">
         <a href="{{ url('/admin/panels/arena') }}" class="nav-link">
-          <i class="link-icon" data-feather="box"></i>
+          <i class="link-icon" data-feather="inbox"></i>
           <span class="link-title">Arena</span>
         </a>
       </li>
