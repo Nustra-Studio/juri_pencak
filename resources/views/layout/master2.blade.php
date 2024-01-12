@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <!-- End fonts -->
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- CSRF Token -->
   <meta name="_token" content="{{ csrf_token() }}">
   
@@ -42,9 +42,56 @@
   <div class="main-wrapper" id="app">
     <div class="page-wrapper full-page">
       @yield('content')
+      @if (session('success'))
+      <script>
+          Swal.fire({
+              icon: 'success',
+              title: 'Sukses',
+              text: '{{ session('success') }}'
+          });
+      </script>
+      @endif
+      @if (session('error'))
+          <script>
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Gagal',
+                  text: '{{ session('error') }}'
+              });
+          </script>
+          
+  @endif
     </div>
   </div>
-
+      <script>
+        // Tambahkan event listener untuk tombol atau tautan
+        document.addEventListener('DOMContentLoaded', function () {
+            var deleteButtons = document.getElementsByClassName('delete-button');
+      
+            Array.from(deleteButtons).forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var formId = this.getAttribute('data-form-delete');
+      
+                    Swal.fire({
+                        title: 'Anda yakin?',
+                        text: "Tindakan ini tidak dapat diurungkan!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Ya, hapus!',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Mengirimkan request penghapusan
+                            document.getElementById('form-delete-' + formId).submit();
+                        }
+                    });
+                });
+            });
+        });
+      </script>
     <!-- base js -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script>
