@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="">
 	<meta name="author" content="NustraStudio">
-	<meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, laravel, theme, front-end, ui kit, web">
+	<meta name="keywords" content="S">
 
   <title>Nustra Studio</title>
 

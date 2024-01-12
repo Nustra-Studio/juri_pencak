@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('tinggi_badan')->nullable();
             $table->string('category')->nullable();
             $table->string('kelas')->nullable();
+            $table->string('keterangan')->nullabel();
+            $table->string('status')->nullabel();
             $table->timestamps();
         });
     }
