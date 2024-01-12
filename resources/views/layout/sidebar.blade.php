@@ -12,12 +12,32 @@
   <div class="sidebar-body">
     <ul class="nav">
       <li class="nav-item nav-category">Main</li>
-      <li class="nav-item {{ active_class(['/']) }}">
-        <a href="{{ url('/') }}" class="nav-link">
+      <li class="nav-item {{ active_class(['/admin/panel']) }}">
+        <a href="{{ url('/admin/panel') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Dashboard</span>
         </a>
       </li>
+      @if ($status =="admin")
+      <li class="nav-item {{ active_class(['/admin/panel/kelas']) }}">
+        <a href="{{ url('/admin/panel/kelas') }}" class="nav-link">
+          <i class="link-icon" data-feather="box"></i>
+          <span class="link-title">kelas</span>
+        </a>
+      </li>
+      <li class="nav-item {{ active_class(['/admin/panel/perserta']) }}">
+        <a href="{{ url('/admin/panel/perserta') }}" class="nav-link">
+          <i class="link-icon" data-feather="box"></i>
+          <span class="link-title">Perserta</span>
+        </a>
+      </li>
+      <li class="nav-item {{ active_class(['/admin/panel/kontigen']) }}">
+        <a href="{{ url('/admin/panel/kontigen') }}" class="nav-link">
+          <i class="link-icon" data-feather="box"></i>
+          <span class="link-title">kontigen</span>
+        </a>
+      </li>
+      @endif
     </ul>
   </div>
 </nav>
