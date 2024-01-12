@@ -19,7 +19,7 @@ Route::get('/login', function () {
 });
     Route::prefix('admin')->group(function () {
         Route::resource('/panel',AdminController::class);
-        Route::prefix('panel')->group(function () {
+        Route::prefix('panels')->group(function () {
             Route::get('/kelas', function () {
                 return view('admin.kelas');
             });

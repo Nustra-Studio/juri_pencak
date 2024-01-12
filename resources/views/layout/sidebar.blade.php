@@ -19,32 +19,32 @@
         </a>
       </li>
       @if ($status =="admin")
-      <li class="nav-item {{ active_class(['/admin/panel/kelas']) }}">
-        <a href="{{ url('/admin/panel/kelas') }}" class="nav-link">
+      <li class="nav-item {{ active_class(['/admin/panels/kelas']) }}">
+        <a href="{{ url('/admin/panels/kelas') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Kelas</span>
         </a>
       </li>
-      <li class="nav-item {{ active_class(['/admin/panel/perserta']) }}">
-        <a href="{{ url('/admin/panel/perserta') }}" class="nav-link">
+      <li class="nav-item {{ active_class(['/admin/panels/perserta']) }}">
+        <a href="{{ url('/admin/panels/perserta') }}" class="nav-link">
           <i class="link-icon" data-feather="users"></i>
           <span class="link-title">Perserta</span>
         </a>
       </li>
-      <li class="nav-item {{ active_class(['/admin/panel/kontigen']) }}">
-        <a href="{{ url('/admin/panel/kontigen') }}" class="nav-link">
+      <li class="nav-item {{ active_class(['/admin/panels/kontigen']) }}">
+        <a href="{{ url('/admin/panels/kontigen') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Kontigen</span>
         </a>
       </li>
-      <li class="nav-item {{ active_class(['/admin/panel/juri']) }}">
-        <a href="{{ url('/admin/panel/juri') }}" class="nav-link">
+      <li class="nav-item {{ active_class(['/admin/panels/juri']) }}">
+        <a href="{{ url('/admin/panels/juri') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Juri</span>
         </a>
       </li>
-      <li class="nav-item {{ active_class(['/admin/panel/arena']) }}">
-        <a href="{{ url('/admin/panel/arena') }}" class="nav-link">
+      <li class="nav-item {{ active_class(['/admin/panels/arena']) }}">
+        <a href="{{ url('/admin/panels/arena') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Arena</span>
         </a>
