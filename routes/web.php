@@ -40,6 +40,10 @@ Route::get('/login', function () {
                 $status = 'admin';
                 return view('admin.arena',compact('status'));
             });
+            Route::get('/category', function () {
+                $status = 'admin';
+                return view('admin.category',compact('status'));
+            });
         });
         Route::get('/arena', 'AdminController@arena');
     });

@@ -49,6 +49,12 @@
           <span class="link-title">Arena</span>
         </a>
       </li>
+      <li class="nav-item {{ active_class(['/admin/panels/category']) }}">
+        <a href="{{ url('/admin/panels/category') }}" class="nav-link">
+          <i class="link-icon" data-feather="inbox"></i>
+          <span class="link-title">Category</span>
+        </a>
+      </li>
       @endif
     </ul>
   </div>
