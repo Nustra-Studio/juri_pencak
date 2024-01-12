@@ -21,19 +21,24 @@ Route::get('/login', function () {
         Route::resource('/panel',AdminController::class);
         Route::prefix('panels')->group(function () {
             Route::get('/kelas', function () {
-                return view('admin.kelas');
+                $status = 'admin';
+                return view('admin.kelas',compact('status'));
             });
             Route::get('/perserta', function () {
-                return view('admin.perserta');
+                $status = 'admin';
+                return view('admin.perserta',compact('status'));
             });
             Route::get('/kontigen', function () {
-                return view('admin.kontigen');
+                $status = 'admin';
+                return view('admin.kontigen',compact('status'));
             });
             Route::get('/juri', function () {
-                return view('admin.juri');
+                $status = 'admin';
+                return view('admin.juri',compact('status'));
             });
             Route::get('/arena', function () {
-                return view('admin.arena');
+                $status = 'admin';
+                return view('admin.arena',compact('status'));
             });
         });
         Route::get('/arena', 'AdminController@arena');
