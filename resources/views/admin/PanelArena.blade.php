@@ -15,7 +15,7 @@
       <div class="col">
         <div class="card">
           <div class="card-body">
-            <form method="post" action="{{ route('admin.store') }}">
+            <form method="post" action="{{ route('panel.store') }}">
               @csrf
               <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Arena</label>

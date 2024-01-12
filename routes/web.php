@@ -17,8 +17,8 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
-    Route::resource('admin',AdminController::class);
     Route::prefix('admin')->group(function () {
+        Route::resource('/panel',AdminController::class);
         Route::get('/arena', 'AdminController@arena');
     });
     Route::prefix('tanding')->group(function () {
