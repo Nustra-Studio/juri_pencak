@@ -7,8 +7,8 @@
 
 @section('content')
 @php
-    use App\category;
-    $data = category::get();
+    use App\juri;
+    $data = juri::get();
 @endphp
 <div class="row">
     <div class="col">
@@ -23,6 +23,9 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Nomor Hp</th>
+                        <th>Keterangan</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -32,13 +35,17 @@
                         <tr>
                             <td>{{ $loop->index+1 }}</td>
                             <td> {{$item->name}}</td>
+                            <td>{{$item->alamat}}</td>
+                            <td>{{$item->nomor_hp}}</td>
+                            <td>{{$item->Keterangan}}</td>
+
                             <td>
                             <div class="text-end">
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
+                                {{-- <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
                                 @csrf
                                 @method('DELETE')
-                            </form>
+                            </form> --}}
                             <button class="btn btn-danger btn-sm delete-button" data-form-delete="{{ $item->id }}">Delete</button>
                             </div>
                         </tr>
@@ -61,23 +68,18 @@
                     <div class="modal-body">
                         <form class="forms-sample">
                             <div class="mb-3">
-                                <label for="exampleInputUsername1" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Username">
+                                <label for="exampleInputUsername1" class="form-label">Nama</label>
+                                <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Username">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                <label for="exampleInputEmail1" class="form-label">Alamat</label>
+                                <input type="text" name="alamat" class="form-control" id="exampleInputEmail1" placeholder="alamat">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="Password">
+                                <label for="exampleInputEmail1" class="form-label">Nomor Hp</label>
+                                <input type="text" name="nomor_hp" class="form-control" id="exampleInputEmail1" placeholder="0812344448520">
                             </div>
-                            <div class="form-check mb-3">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">
-                                    Remember me
-                                </label>
-                            </div>
+
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

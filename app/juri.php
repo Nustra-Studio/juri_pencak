@@ -5,16 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model
+class juri extends Model
 {
     use HasFactory;
-    protected $table = 'settings';
+    protected $table = 'juris';
     protected $fillable =[
-        'judul',
-        'arena',
-        'babak',
-        '1',
-        '2',
+        'name',
+        'alamat',
+        'nomor_hp',
         'keterangan',
+        'status'
     ];
 }

@@ -12,8 +12,8 @@
             use App\PersertaModel;
             $setting = Setting::first();
             $id_juri = 2;
-            $tim_merah = PersertaModel::where('id',$setting->merah)->first();
-            $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
+            $tim_merah = PersertaModel::where('id',$setting->1)->first();
+            $tim_biru =PersertaModel::where('id',$setting->2)->first() ;
         @endphp
     </head>
     <body>
