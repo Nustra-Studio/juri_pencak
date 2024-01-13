@@ -51,15 +51,28 @@ class Perserta implements ToCollection
                 );
             }
             $id_kontigen = KontigenModel::where('kontigen',$kontigen)->value('id');
-            
-            PersertaModel::create([
-                'name'=>$name,
-                'id_kontigen'=> $id_kontigen,
-                'category'=> $id_category,
-                'kelas'=>$id_kelas,
-                'gender'=>$gender
+            $tim = PersertaModel::where('status','biru')->latest()->first();
+            if(empty($tim)){
+                PersertaModel::create([
+                    'name'=>$name,
+                    'id_kontigen'=> $id_kontigen,
+                    'category'=> $id_category,
+                    'kelas'=>$id_kelas,
+                    'gender'=>$gender,
+                    'status'=>'biru'
+                ]);
+            }
+            else{
+                PersertaModel::create([
+                    'name'=>$name,
+                    'id_kontigen'=> $id_kontigen,
+                    'category'=> $id_category,
+                    'kelas'=>$id_kelas,
+                    'gender'=>$gender,
+                    'status'=>'merah'
+                ]);
+            }
 
-            ]);
             
         }
     }
