@@ -63,7 +63,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             dump('Error: ' . $e->getMessage()); // Use dump for debugging
             // Handle the exception
-            return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
+            // return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
         }
     }
     
