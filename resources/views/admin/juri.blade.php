@@ -66,10 +66,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="forms-sample" 
-                        method="post" 
-                        action="{{ route('admin.juri') }}
-                        >
+                        <form class="forms-sample" method="post" action="{{ route('admin.juri') }}">
+
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Nama</label>
                                 <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Username">
