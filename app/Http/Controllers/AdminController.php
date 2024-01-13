@@ -60,6 +60,7 @@ class AdminController extends Controller
             return redirect()->back()->with('success', 'Data Imported');
         } catch (\Exception $e) {
             // Handle the exception
+            dump($e);
             return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
         }
     }
