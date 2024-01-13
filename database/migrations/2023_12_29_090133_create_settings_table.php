@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('judul')->nullabel();
-            $table->string('arena')->nullabel();
-            $table->string('babak')->nullabel();
-            $table->string('1')->nullabel();
-            $table->string('2')->nullabel();
-            $table->string('keterangan')->nullabel();
-            $table->string('status')->nullabel();
+            $table->string('judul')->nullable();
+            $table->string('arena')->nullable();
+            $table->string('babak')->nullable();
+            $table->string('1')->nullable();
+            $table->string('2')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

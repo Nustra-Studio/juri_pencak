@@ -7,6 +7,7 @@ use Maatwebsite\Excel\Concerns\ToCollection;
 use App\category;
 use App\PersertaModel;
 use App\kelas;
+use App\KontigenModel;
 
 class Perserta implements ToCollection
 {
@@ -43,7 +44,7 @@ class Perserta implements ToCollection
 
             $check_kontigen = kontigen::where('name',$kontigen)->first();
             if(empty($check_kontigen)){
-                kontigen::create(
+                KontigenModel::create(
                     [
                         'kontigen'=>$kontigen
                     ]
