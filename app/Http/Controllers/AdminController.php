@@ -65,7 +65,7 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
         }
     }
-    public function juri(Request $request)[
+    public function juri(Request $request){
         $data = [
             'name'=>$request->name,
             'alamat'=>$request->alamat,
@@ -73,7 +73,7 @@ class AdminController extends Controller
         ];
     juri::create($data);
     return redirect()->back()->with('success', 'Data Imported');
-    ]
+}
     /**
      * Display the specified resource.
      *
