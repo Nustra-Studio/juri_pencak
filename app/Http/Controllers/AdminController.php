@@ -52,7 +52,8 @@ class AdminController extends Controller
             'keterangan'=>"setting",
         ];
         Setting::updateOrCreate(['keterangan' => 'setting'], $data);
-        return view('admin.PanelArena');
+        $status = 'arena';
+        return view('admin.PanelArena',compact($status));
     }
     public function excel(Request $request){
         try {
