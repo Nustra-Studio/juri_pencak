@@ -18,6 +18,7 @@ class PersertaModel extends Model
         'tinggi_badan',
         'category',
         'kelas',
-        'name'
+        'name',
+        'status'
     ];
 }

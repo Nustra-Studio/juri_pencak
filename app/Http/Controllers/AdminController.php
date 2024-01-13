@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\Perserta;
 class AdminController extends Controller
 {
     /**
@@ -53,7 +54,15 @@ class AdminController extends Controller
         Setting::updateOrCreate(['keterangan' => 'setting'], $data);
         return view('panel');
     }
-
+    public function excel(Request $request){
+        try {
+            Excel::import(new Perserta, request()->file('file'));
+            return redirect()->back()->with('success', 'Data Imported');
+        } catch (\Exception $e) {
+            // Handle the exception
+            return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
+        }
+    }
     /**
      * Display the specified resource.
      *
