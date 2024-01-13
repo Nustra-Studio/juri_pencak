@@ -18,6 +18,7 @@ Route::get('/login', function () {
     return view('auth.login');
 });
     Route::prefix('admin')->group(function () {
+        Route::post('/juri','AdminController@juri')->name('admin.juri');
         Route::post('/add-excel','AdminController@excel');
         Route::resource('/panel',AdminController::class);
         Route::prefix('panels')->group(function () {

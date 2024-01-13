@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
+use App\juri;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\Perserta;
 class AdminController extends Controller
@@ -64,6 +65,15 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
         }
     }
+    public function juri(Request $request)[
+        $data = [
+            'name'=>$request->name,
+            'alamat'=>$request->alamat,
+            'nomor_hp'=>$request->nomor_hp,
+        ];
+    juri::create($data);
+    return redirect()->back()->with('success', 'Data Imported');
+    ]
     /**
      * Display the specified resource.
      *
