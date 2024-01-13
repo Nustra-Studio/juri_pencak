@@ -53,7 +53,7 @@ class AdminController extends Controller
         ];
         Setting::updateOrCreate(['keterangan' => 'setting'], $data);
         $status = 'arena';
-        return view('admin.PanelArena',compact($status));
+        return view('admin.PanelArena',compact('status'));
     }
     public function excel(Request $request){
         try {
