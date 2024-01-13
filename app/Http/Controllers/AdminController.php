@@ -59,7 +59,7 @@ class AdminController extends Controller
         try {
             Excel::import(new Perserta, request()->file('file')); 
             dump('Import successful');// Use dump for debugging
-            return redirect()->back()->with('success', 'Data Imported');
+            // return redirect()->back()->with('success', 'Data Imported');
         } catch (\Exception $e) {
             dump('Error: ' . $e->getMessage()); // Use dump for debugging
             // Handle the exception
