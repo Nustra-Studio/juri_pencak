@@ -47,8 +47,8 @@ class AdminController extends Controller
             'judul'=>$request->judul,
             'arena'=>$request->arena,
             'babak'=>$request->babak,
-            'biru'=>$request->biru,
-            'merah'=>$request->merah,
+            '1'=>$request->biru,
+            '2'=>$request->merah,
             'keterangan'=>"setting",
         ];
         Setting::updateOrCreate(['keterangan' => 'setting'], $data);
