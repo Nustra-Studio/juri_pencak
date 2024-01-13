@@ -35,7 +35,7 @@
                                 <td>
                                 <div class="text-end">
                                     <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                    <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
+                                    <form id="form-delete-{{ $item->id }}" action="" method="POST" style="display: none;">
                                     @csrf
                                     @method('DELETE')
                                 </form>

@@ -7,14 +7,14 @@
 
 @section('content')
 @php
-    use App\category;
-    $data = category::get();
+    use App\PersertaModel;
+    $data = PersertaModel::get();
 @endphp
 <div class="row">
     <div class="col">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Data Category</h4>
+                <h4 class="card-title">Data Perserta</h4>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adddata">Tambah Data</button>
                 <button type="button"  data-bs-toggle="modal" data-bs-target="#uploadModal" class="btn btn-success">Tambah Excel</button>
             <div class="card-body">
@@ -24,6 +24,10 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Kontigen</th>
+                        <th>Kelas</th>
+                        <th>Category</th>
+                        <th>team</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -36,10 +40,10 @@
                             <td>
                             <div class="text-end">
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
+                                {{-- <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
                                 @csrf
                                 @method('DELETE')
-                            </form>
+                            </form> --}}
                             <button class="btn btn-danger btn-sm delete-button" data-form-delete="{{ $item->id }}">Delete</button>
                             </div>
                         </tr>

@@ -42,7 +42,7 @@ class Perserta implements ToCollection
             }
             $id_category = category::where('name',$category)->value('id');
 
-            $check_kontigen = kontigen::where('name',$kontigen)->first();
+            $check_kontigen = KontigenModel::where('kontigen',$kontigen)->first();
             if(empty($check_kontigen)){
                 KontigenModel::create(
                     [
@@ -50,7 +50,7 @@ class Perserta implements ToCollection
                     ]
                 );
             }
-            $id_kontigen = kontigen::where('name',$kontigen)->value('id');
+            $id_kontigen = KontigenModel::where('kontigen',$kontigen)->value('id');
             
             PersertaModel::create([
                 'name'=>$name,

@@ -54,19 +54,15 @@ class AdminController extends Controller
         Setting::updateOrCreate(['keterangan' => 'setting'], $data);
         return view('panel');
     }
-    public function excel(Request $request)
-    {
+    public function excel(Request $request){
         try {
-            Excel::import(new Perserta, request()->file('file')); 
-            dump('Import successful');// Use dump for debugging
-            // return redirect()->back()->with('success', 'Data Imported');
+            Excel::import(new Perserta, request()->file('file'));
+            return redirect()->back()->with('success', 'Data Imported');
         } catch (\Exception $e) {
-            dump('Error: ' . $e->getMessage()); // Use dump for debugging
             // Handle the exception
-            // return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
         }
     }
-    
     /**
      * Display the specified resource.
      *
