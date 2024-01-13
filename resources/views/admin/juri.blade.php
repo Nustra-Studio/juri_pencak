@@ -67,6 +67,7 @@
                     </div>
                     <div class="modal-body">
                         <form class="forms-sample" method="post" action="{{ route('admin.juri') }}">
+                            @csrf
 
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Nama</label>
