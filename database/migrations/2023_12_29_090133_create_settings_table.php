@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('judul')->nullable();
             $table->string('arena')->nullable();
             $table->string('babak')->nullable();
-            $table->string('1')->nullable();
-            $table->string('2')->nullable();
+            $table->string('biru')->nullable();
+            $table->string('merah')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
