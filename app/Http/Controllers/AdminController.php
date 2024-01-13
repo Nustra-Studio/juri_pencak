@@ -57,11 +57,10 @@ class AdminController extends Controller
     public function excel(Request $request){
         try {
             Excel::import(new Perserta, request()->file('file'));
-            // return redirect()->back()->with('success', 'Data Imported');
+            return redirect()->back()->with('success', 'Data Imported');
         } catch (\Exception $e) {
             // Handle the exception
-            dump($e);
-            // return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Error importing data: ' . $e->getMessage());
         }
     }
     /**
