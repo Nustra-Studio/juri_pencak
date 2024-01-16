@@ -47,7 +47,7 @@ Route::get('/login', function () {
                 return view('admin.category',compact('status'));
             });
         });
-        Route::post(/'arena-store','AdminController@arenastore')->name('arena.store');
+        Route::post('/arena-store','AdminController@arenastore')->name('arena.store');
         Route::get('/arena', 'AdminController@arena');
     });
     Route::prefix('tanding')->group(function () {
