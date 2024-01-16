@@ -143,8 +143,8 @@
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
                         {{-- btnHapus --}}
-                        <button name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
-                        <span >Hapus <br> Nilai Terakhir</span>
+                        <button disabled name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
+                        <span > <br>Disable</span>
                         </button>
                     </div>
                 </div>
@@ -421,8 +421,8 @@
 
                     <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-center align-items-center">
-                            <button name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
-                                <span >Hapus <br> Nilai Terakhir</span>
+                            <button disabled name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:terakhir p:2 keterangan:minus" class="btnHapus text-center btn btn-secondary text-center px-0 px-lg-3 px-xl-5 py-5 fs-5 shadow border-black">
+                                <span > <br> Disable</span>
                             </button>
                         </div>
                         <div class="btn-wrap d-flex flex-column">
