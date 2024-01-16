@@ -76,14 +76,20 @@
                         @php
                             $data1 = score::where('id_perserta',$tim_biru)
                             ->where('status','plus')
+                            ->where('keterangan','tendangan')
+                            ->where('keterangan','pukulan')
                             ->where('babak','1')
                             ->get();
                             $data2 = score::where('id_perserta',$tim_biru)
                             ->where('status','plus')
+                            ->where('keterangan','tendangan')
+                            ->where('keterangan','pukulan')
                             ->where('babak','2')
                             ->get();
                             $data3 = score::where('id_perserta',$tim_biru)
                             ->where('status','plus')
+                            ->where('keterangan','tendangan')
+                            ->where('keterangan','pukulan')
                             ->where('babak','3')
                             ->get();
                         @endphp
@@ -354,14 +360,20 @@
                             @php
                             $data1 = score::where('id_perserta',$tim_merah)
                             ->where('status','plus')
+                            ->where('keterangan','tendangan')
+                            ->where('keterangan','pukulan')
                             ->where('babak','1')
                             ->get();
                             $data2 = score::where('id_perserta',$tim_merah)
                             ->where('status','plus')
+                            ->where('keterangan','tendangan')
+                            ->where('keterangan','pukulan')
                             ->where('babak','2')
                             ->get();
                             $data3 = score::where('id_perserta',$tim_merah)
                             ->where('status','plus')
+                            ->where('keterangan','tendangan')
+                            ->where('keterangan','pukulan')
                             ->where('babak','3')
                             ->get();
                         @endphp
