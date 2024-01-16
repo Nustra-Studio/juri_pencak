@@ -7,6 +7,8 @@
     <title>Document</title>
     @php
         Use App\score;
+        Use App\setting;
+        $data = setting::first();
     @endphp
 </head>
 <body>
@@ -18,8 +20,8 @@
     $plus2 = score::where('status','plus')->where('id_perserta','6')->sum('score');
     $minus2 = score::where('status','minus')->where('id_perserta','6')->sum('score'); 
     $score2 = $plus2 - $minus2;
-    $id_perserta_1 = 4;
-    $id_perserta_2 = 6;
+    $id_perserta_1 = $data->biru ;
+    $id_perserta_2 = $data->merah;
 @endphp
     <div id=""name="" class="header-body">
         <div id=""name="" class="header-title">

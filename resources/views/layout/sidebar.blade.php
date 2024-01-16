@@ -1,7 +1,7 @@
 <nav class="sidebar">
   <div class="sidebar-header">
     <a href="#" class="sidebar-brand">
-      Nustra<span>Studio</span>
+      Ayo<span>Silat</span>
     </a>
     <div class="sidebar-toggler not-active">
       <span></span>

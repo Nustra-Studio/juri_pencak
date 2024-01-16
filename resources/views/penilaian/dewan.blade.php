@@ -74,10 +74,10 @@
                 ->where('id_perserta',$tim_biru)->count();
             @endphp
                 <tr>
-                    <td>{{$peringatan}}x</td>
-                    <td>{{$teguran}}x</td>
-                    <td>{{$bina}}x</td>
                     <td>{{$jatuh}}x</td>
+                    <td>{{$bina}}x</td>
+                    <td>{{$teguran}}x</td>
+                    <td>{{$peringatan}}x</td>
                 </tr>
             @php
                 $jatuh = score::where('keterangan','jatuh')
@@ -94,10 +94,10 @@
                 ->where('id_perserta',$tim_biru)->count();
             @endphp
                 <tr>
-                    <td>{{$peringatan}}x</td>
-                    <td>{{$teguran}}x</td>
-                    <td>{{$bina}}x</td>
                     <td>{{$jatuh}}x</td>
+                    <td>{{$bina}}x</td>
+                    <td>{{$teguran}}x</td>
+                    <td>{{$peringatan}}x</td>
                 </tr>
             @php
                 $jatuh = score::where('keterangan','jatuh')
@@ -114,10 +114,10 @@
                 ->where('id_perserta',$tim_biru)->count();
             @endphp    
                 <tr>     
-                    <td>{{$peringatan}}x</td>
-                    <td>{{$teguran}}x</td>
-                    <td>{{$bina}}x</td>
                     <td>{{$jatuh}}x</td>
+                    <td>{{$bina}}x</td>
+                    <td>{{$teguran}}x</td>
+                    <td>{{$peringatan}}x</td>
                 </tr>
             </tbody>    
         </table>
@@ -227,19 +227,19 @@
     </div>
     <div class="button-section">
         <div class="button-blue-container">
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue">JATUHAN</button>
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:jatuh p:3 keterangan:plus" id="kirimData" class="btn btn-primary button-blue">JATUHAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($bina_babak === 2)
                 disabled
             @endif>BINAAN</button>
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($teguran_babak === 2)
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:teguran p:1 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($teguran_babak === 2)
                 disabled
             @endif>TEGURAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-primary button-blue"@if ($peringatan_babak === 3)
                 disabled
             @endif>PERINGATAN</button>
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:jatuh p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:binaan p:0 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS BINAAN</button>
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:teguran p:1 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
         </div>
         <div class="mid-container">
@@ -281,15 +281,15 @@
         @endphp
         </div>
         <div class="button-blue-container">
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:jatuh p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS JATUHAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:binaan p:0 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS BINAAN</button>
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:teguran p:3 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:teguran p:1 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS TEGURAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:jatuh p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red">JATUHAN</button>
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:jatuh p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red">JATUHAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:binaan p:0 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($bina_babak === 2)
             disabled
         @endif>BINAAN</button>
-            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:teguran p:3 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($teguran_babak === 2)
+            <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:teguran p:1 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($teguran_babak === 2)
             disabled
         @endif>TEGURAN</button>
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:plus" id="kirimData" class="btn btn-danger button-red"@if ($peringatan_babak === 3)

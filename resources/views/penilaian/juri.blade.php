@@ -426,12 +426,12 @@
                             </button>
                         </div>
                         <div class="btn-wrap d-flex flex-column">
-                        <button name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:pukulan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
+                        <button name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:pukulan p:1 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
                             <img src="../assets/juri/images/fist.png" style="width: 20px;">
                             <span class="ms-1">Pukulan</span>
                         </button>  
                             
-                        <button name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:tendangan p:3 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
+                        <button name="arena:{{$id_arena}} juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:tendangan p:2 keterangan:plus" class="btnSkill2 d-flex align-items-center justify-content-center btn btn-danger fs-5 py-4 px-0 px-lg-5 px-md-2 ms-1 shadow border-black">
                             <img src="../assets/juri/images/kick.png" style="width: 20px;">
                             <span class="ms-1">Tendangan</span>
                         </button>
