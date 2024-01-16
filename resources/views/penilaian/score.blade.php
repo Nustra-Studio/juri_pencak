@@ -11,11 +11,12 @@
 </head>
 <body>
     @php
-    $plus1 = score::where('status','plus')->where('id_perserta','1')->sum('score');
-    $minus1 = score::where('status','minus')->where('id_perserta','1')->sum('score'); 
+    
+    $plus1 = score::where('status','plus')->where('id_perserta','4')->sum('score');
+    $minus1 = score::where('status','minus')->where('id_perserta','4')->sum('score'); 
     $score1 = $plus1 - $minus1;
-    $plus2 = score::where('status','plus')->where('id_perserta','2')->sum('score');
-    $minus2 = score::where('status','minus')->where('id_perserta','2')->sum('score'); 
+    $plus2 = score::where('status','plus')->where('id_perserta','6')->sum('score');
+    $minus2 = score::where('status','minus')->where('id_perserta','6')->sum('score'); 
     $score2 = $plus2 - $minus2;
 @endphp
     <div id=""name="" class="header-body">
