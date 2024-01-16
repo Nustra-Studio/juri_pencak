@@ -98,7 +98,6 @@ class AdminController extends Controller
             // Redirect or respond as needed
             return redirect()->back()->with('success', 'Data saved successfully');
         }
-    }
     /**
      * Display the specified resource.
      *
