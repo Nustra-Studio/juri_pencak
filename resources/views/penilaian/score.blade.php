@@ -54,7 +54,7 @@
                 ARENA 1 <br>
                 PENYISIHAN - DEWASA (4 PA) <br>
                 <div id=""name="" class="mid-container-timer">
-                    <div id=""name="timer" class="py-0 fs-4 px-3 bg-black border border-primary text-light rounded">
+                    <div id=""name="timer" class="py-0 fs-4 px-4 bg-black border border-primary text-light rounded fw-bold">
                         03:00
                     </div>
                 </div>
