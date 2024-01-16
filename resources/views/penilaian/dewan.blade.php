@@ -21,7 +21,9 @@
 </head>
 <body>
     <div class="header-body">
-        <button class="header-button-kembali">Kembali</button>
+        <button class="header-button-kembali">
+            <a href="{{url("/login-juri")}}" style="text-decoration: none;" class="text-dark">Log Out</a>
+        </button>
         <div class="header-title">
             <div class="header-title-2">
                 Nusantara Cup
