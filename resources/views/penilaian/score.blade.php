@@ -7,7 +7,7 @@
     <title>Document</title>
     @php
         Use App\score;
-        Use App\setting;
+        Use App\Setting;
         $data = Setting::first();
     @endphp
 </head>
