@@ -80,7 +80,7 @@
                     BINAAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="bina2"name="{{$id_perserta_1}}"  class="score-blue-point">
+                    <div id="bina2"name="{{$id_perserta_2}}"  class="score-blue-point">
                         x {{$bina}}
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     TEGURAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="teguran2"name="{{$id_perserta_1}}" class="score-blue-point">
+                    <div id="teguran2"name="{{$id_perserta_2}}" class="score-blue-point">
                         x {{$teguran}}
                     </div>
                 </div>
@@ -157,7 +157,7 @@
         <div id=""name="" class="score-area">
             <div id=""name="" class="score-red">
                 <div id=""name="" class="score-red-point-wrap">
-                    <div id="bina1" name="2" class="score-red-point">
+                    <div id="bina1" name="{{$id_perserta_1}}" class="score-red-point">
                         x{{$bina}}
                     </div>
                 </div>
@@ -170,7 +170,7 @@
             </div>
             <div id="" name="" class="score-red">
                 <div id="" name="" class="score-red-point-wrap">
-                    <div id="teguran1" name="2" class="score-red-point">
+                    <div id="teguran1" name="{{$id_perserta_1}}" class="score-red-point">
                         x 
                     </div>
                 </div>
@@ -183,7 +183,7 @@
             </div>
             <div id=""name="" class="score-red">
                 <div id=""name="" class="score-red-point-wrap">
-                    <div id="peringatan1"name="2" class="score-red-point">
+                    <div id="peringatan1"name="{{$id_perserta_1}}" class="score-red-point">
                         x {{$peringatan}}
                     </div>
                 </div>
@@ -196,7 +196,7 @@
             </div>
             <div id=""name="" class="score-red">
                 <div id=""name="" class="score-red-point-wrap">
-                    <div id="jatuh1"name="2" class="score-red-point">
+                    <div id="jatuh1"name="{{$id_perserta_1}}" class="score-red-point">
                         
                     </div>
                 </div>
