@@ -9,6 +9,8 @@
         use App\PersertaModel;
         use App\Setting;
         use App\arena;
+        use App\kelas;
+        $data_kelas = kelas::all();
         $data = arena::all();
         $data_setting = Setting::first();
         $data_perserta = PersertaModel::get();
@@ -18,7 +20,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Category</h4>
+                    <h4 class="card-title">Data Arena</h4>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adddata">Tambah Data</button>
                 <div class="card-body">
                     <div class="table-responsive">
