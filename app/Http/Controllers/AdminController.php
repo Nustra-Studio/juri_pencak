@@ -87,7 +87,7 @@ class AdminController extends Controller
             $kelas = $request->input('kelas', []);
 
             // Create and save a new Data model instance
-            $data = new Data([
+            $data = new arena([
                 'name' => $name,
                 'status' => implode(',', $kelas), // Assuming 'kelas' is a comma-separated list
                 // Add other fields as needed
