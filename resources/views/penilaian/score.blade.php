@@ -54,7 +54,7 @@
                 ARENA 1 <br>
                 PENYISIHAN - DEWASA (4 PA) <br>
                 <div id=""name="" class="mid-container-timer">
-                    <div id=""name="" class="timer-box">
+                    <div id=""name="timer" class="p-5 fs-5 bg-black border border-dark">
                         03:00
                     </div>
                 </div>
