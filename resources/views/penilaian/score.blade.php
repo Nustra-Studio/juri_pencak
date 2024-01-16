@@ -144,7 +144,7 @@
                 <div id=""name="" class="babak-area-box-text-babak">BABAK</div>
             </div>
             <div id=""name="" class="babak-area-box-ronde">
-                <div id=""name="" class="babak-area-box-text">I</div>
+                <div id=""name="" class="babak-area-box-text by">I</div>
             </div>
             <div id=""name="" class="babak-area-box-ronde">
                 <div id=""name="" class="babak-area-box-text">II</div>
