@@ -18,6 +18,8 @@
     $plus2 = score::where('status','plus')->where('id_perserta','6')->sum('score');
     $minus2 = score::where('status','minus')->where('id_perserta','6')->sum('score'); 
     $score2 = $plus2 - $minus2;
+    $id_perserta_1 = 4;
+    $id_perserta_2 = 6;
 @endphp
     <div id=""name="" class="header-body">
         <div id=""name="" class="header-title">
@@ -78,7 +80,7 @@
                     BINAAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="bina2"name="1"  class="score-blue-point">
+                    <div id="bina2"name="{{$id_perserta_1}}"  class="score-blue-point">
                         x {{$bina}}
                     </div>
                 </div>
@@ -91,7 +93,7 @@
                     TEGURAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="teguran2"name="1" class="score-blue-point">
+                    <div id="teguran2"name="{{$id_perserta_1}}" class="score-blue-point">
                         x {{$teguran}}
                     </div>
                 </div>
@@ -104,7 +106,7 @@
                     PERINGATAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="peringatan2"name="1" class="score-blue-point">
+                    <div id="peringatan2"name="{{$id_perserta_2}}" class="score-blue-point">
                         x {{$peringatan}}
                     </div>
                 </div>
@@ -117,7 +119,7 @@
                     JATUHAN
                 </div>
                 <div id=""name="" class="score-blue-point-wrap">
-                    <div id="jatuh2"name="1" class="score-blue-point">
+                    <div id="jatuh2"name="{{$id_perserta_2}}" class="score-blue-point">
                         x {{$jatuh}}
                     </div>
                 </div>
@@ -127,7 +129,7 @@
             </div>
         </div>
         <div id=""name="" class="total-point-area">
-            <div id="score2" name="1" class="total-point-area-text"></div>
+            <div id="score2" name="{{$id_perserta_2}}" class="total-point-area-text"></div>
         </div>
         <div id=""name="" class="babak-area">
             <div id=""name="" class="babak-area-box">
@@ -144,7 +146,7 @@
             </div>
         </div>
         <div id=""name="" class="total-point-area-red">
-            <div id="score1" name="2" class="total-point-area-text"></div>
+            <div id="score1" name="{{$id_perserta_1}}" class="total-point-area-text"></div>
         </div>
         @php
         $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
