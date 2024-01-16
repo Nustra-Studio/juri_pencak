@@ -72,14 +72,12 @@
                             </div>
                            <!-- ... Other form elements ... -->
                 <div class="mb-3">
-                    <label for="exampleInputKelas" class="form-label">Kelas</label>
-
-                    @for ($i = 1; $i <= 12; $i++)
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="kelasCheckbox{{ $i }}" name="kelas[]" value="Kelas {{ $i }}">
-                            <label class="form-check-label" for="kelasCheckbox{{ $i }}">Kelas {{ $i }}</label>
-                        </div>
-                    @endfor
+                    @foreach ($data_kelas as $item)
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="kelasCheckbox{{ $item->id }}" name="kelas[]" value="{{ $item->name }}">
+                        <label class="form-check-label" for="kelasCheckbox{{ $item->id }}">{{ $item->name }}</label>
+                    </div>
+                    @endforeach
 
                     <!-- Add more checkboxes or adjust the loop limit as needed -->
                 </div>
