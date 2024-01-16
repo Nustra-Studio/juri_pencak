@@ -65,7 +65,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="forms-sample">
+                        <form class="forms-sample" method="post" action="{{ route('arena.juri') }}">
+                            @csrf
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Name">
@@ -74,7 +75,7 @@
                 <div class="mb-3">
                     @foreach ($data_kelas as $item)
                     <div class="form-check form-check-inline">
-                        <input type="checkbox" class="form-check-input" id="kelasCheckbox{{ $item->id }}" name="kelas[]" value="{{ $item->name }}">
+                        <input type="checkbox" class="form-check-input" id="kelasCheckbox{{ $item->id }}" name="kelas[]" value="{{ $item->id }}">
                         <label class="form-check-label" for="kelasCheckbox{{ $item->id }}">{{ $item->name }}</label>
                     </div>
                     @endforeach

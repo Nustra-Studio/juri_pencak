@@ -74,6 +74,9 @@ class AdminController extends Controller
     juri::create($data);
     return redirect()->back()->with('success', 'Data Imported');
 }
+    public function arenastore(Request $request){
+        
+    }
     /**
      * Display the specified resource.
      *
