@@ -19,6 +19,11 @@
             $tim_merah = $tim_merah->id;
     @endphp
 </head>
+<style>
+    .by {
+        background-color: yellow;
+    }
+</style>
 <body>
     <div class="header-body">
         <button class="header-button-kembali">
@@ -129,7 +134,7 @@
             </div>
             <table class="mid-table">
                 <tbody>
-                    <tr>
+                    <tr class="by">
                         <td>I</td>
                     </tr>
                     <tr>
