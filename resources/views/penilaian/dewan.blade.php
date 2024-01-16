@@ -243,10 +243,6 @@
             <button name=" arena{{$id_arena}}juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:peringatan p:5 keterangan:minus" id="kirimData" class=" btn btn-secondary button-blue-delete">HAPUS PERINGATAN</button>
         </div>
         <div class="mid-container">
-            <button class="button-refresh-button">
-                <img src="../assets/Assets/refresh.png" alt="" style="width: 20px;height: 20px;float: left; margin-left: 10px;">
-                Refresh
-            </button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
             <table class="score-table">
