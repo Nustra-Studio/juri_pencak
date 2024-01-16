@@ -20,7 +20,10 @@
           <div class="col-md-8 ps-md-3">
             <div class="auth-form-wrapper px-4 py-5">
               <a href="/" class="noble-ui-logo d-block mb-2">Nustra<span>Studio</span></a>
-              <form class="forms-sample">
+              <form class="forms-sample"
+                    method="GET"
+                    action="{{url('/redirect-juri')}}"
+              >
                 <div class="mb-3">
                   <label for="userEmail" class="form-label">Name</label>
                   <select name="name" class="form-control" id="">

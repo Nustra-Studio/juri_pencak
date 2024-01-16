@@ -17,9 +17,11 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
-Route::get('/juri', function(){
+Route::get('/login-juri', function(){
     return view('jurilogin');
 });
+Route::get('/redirect-juri','AdminController@redirect');
+
     Route::prefix('admin')->group(function () {
         Route::post('/juri','AdminController@juri')->name('admin.juri');
         Route::post('/add-excel','AdminController@excel');

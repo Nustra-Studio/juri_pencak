@@ -98,6 +98,17 @@ class AdminController extends Controller
             // Redirect or respond as needed
             return redirect()->back()->with('success', 'Data saved successfully');
         }
+    public function redirect(Request $request){
+        $name = $request->name;
+        $role = $request->role;
+        $arena = $request->arena;
+        $data = [
+            'name'=>$name,
+            'role'=>$role,
+            'arena'=>$arena
+        ];
+        dd($data);
+    }
     /**
      * Display the specified resource.
      *
