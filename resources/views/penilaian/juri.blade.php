@@ -12,10 +12,10 @@
             use App\PersertaModel;
             $setting = Setting::first();
             $id_juri = $id_juri;
-            $tim_merah = PersertaModel::where('id',$setting->merah)->first();
-            $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
-            $tim_merah = $tim_merah->id;
-            $tim_biru = $tim_biru->id;
+            $tim_merahs = PersertaModel::where('id',$setting->merah)->first();
+            $tim_birus =PersertaModel::where('id',$setting->biru)->first() ;
+            $tim_merah = $tim_merahs->id;
+            $tim_biru = $tim_birus->id;
             $id_arena = $arena;
         @endphp
     </head>
@@ -32,7 +32,7 @@
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="text">
                         <span class="team">SMKN 1 NGANJUK</span> <br>
-                        <span class="peserta">{{$tim_biru->name}}</span>
+                        <span class="peserta">{{$tim_birus->name}}</span>
                     </div>
                 </div>
                 <div class="juri d-flex flex-column align-items-center">
@@ -42,7 +42,7 @@
                 <div class="d-flex align-items-center justify-content-center text-end">
                     <div class="text">
                         <span class="team">SMA 1 JEMBER</span><br>
-                    <span class="peserta">{{$tim_merah->name}}</span>
+                    <span class="peserta">{{$tim_merahs->name}}</span>
                     </div>
                 </div>
             </div>
