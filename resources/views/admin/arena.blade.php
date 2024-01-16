@@ -69,7 +69,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Name">
+                                <input type="text" name="name" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Name">
                             </div>
                            <!-- ... Other form elements ... -->
                 <div class="mb-3">
