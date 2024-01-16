@@ -19,7 +19,7 @@
             <div class="auth-form-wrapper px-4 py-5">
               <a href="/" class="noble-ui-logo d-block mb-2">Nustra<span>Studio</span></a>
               <form class="forms-sample">
-                <div class="mb-3">
+                <div class="mb-4">
                   <label for="userEmail" class="form-label">Name</label>
                   <select name="name" class="form-control" id="">
                     @foreach ($data as $item)
@@ -28,7 +28,7 @@
                   </select>
                   
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                   <label for="userPassword" class="form-label">Role</label>
                   <select name="role" class="form-control" id="">
                     <option value="juri-tanding">Juri Tanding</option>
@@ -39,7 +39,7 @@
                     <option value="dewan-tunggal">Dewan Seni Tunggal</option>
                   </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <button class="btn btn-primary">Login</button>
                 </div>
               </form>
