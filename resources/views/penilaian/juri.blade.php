@@ -22,7 +22,7 @@
     <body>
         <div class="container d-flex">
             <div class="btn1">
-                <span>Log Out</span>
+                <a href="{{url("/login-juri")}}">Log Out</a>
             </div>
         </div>
 
