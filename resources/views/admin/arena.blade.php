@@ -70,22 +70,21 @@
                                 <label for="exampleInputName" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Name">
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleInputKelas" class="form-label">Kelas</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="kelasCheckbox1">
-                                    <label class="form-check-label" for="kelasCheckbox1">Kelas 1</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="kelasCheckbox2">
-                                    <label class="form-check-label" for="kelasCheckbox2">Kelas 2</label>
-                                </div>
-                                <!-- Add more checkboxes for other classes as needed -->
-                            </div>
-                            <div class="form-check mb-3">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                            </div>
+                           <!-- ... Other form elements ... -->
+                <div class="mb-3">
+                    <label for="exampleInputKelas" class="form-label">Kelas</label>
+
+                    @for ($i = 1; $i <= 12; $i++)
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="kelasCheckbox{{ $i }}" name="kelas[]" value="Kelas {{ $i }}">
+                            <label class="form-check-label" for="kelasCheckbox{{ $i }}">Kelas {{ $i }}</label>
+                        </div>
+                    @endfor
+
+                    <!-- Add more checkboxes or adjust the loop limit as needed -->
+                </div>
+<!-- ... Other form elements ... -->
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
