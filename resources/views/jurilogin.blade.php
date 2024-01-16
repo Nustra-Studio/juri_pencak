@@ -50,7 +50,7 @@
                     <option value="dewan-tunggal">Dewan Seni Tunggal</option>
                   </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                     <button class="btn btn-primary">Login</button>
                 </div>
               </form>
