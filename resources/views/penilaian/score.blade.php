@@ -12,6 +12,11 @@
         $data = Setting::first();
     @endphp
 </head>
+<style>
+    .by {
+        background-color: yellow;
+    }
+</style>
 <body>
     @php
     
@@ -216,7 +221,7 @@
         <div id=""name="" class="juri-info-section-blue">
             <div id=""name="" class="juri-info-item-blue">J3</div>
             <div id=""name="" class="juri-info-item-blue">J2</div>
-            <div id=""name="" class="juri-info-item-blue bg-warning">J1</div>
+            <div id=""name="" class="juri-info-item-blue by">J1</div>
             <div id=""name="" class="juri-info-item-center">
                 <div id=""name="" class="juri-info-item-center-item">
                     PUKULAN <br>
