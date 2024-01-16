@@ -28,7 +28,7 @@
                   </select>
                   
                 </div>
-                <div class="mb-4">
+                <div class="mb-5">
                   <label for="userPassword" class="form-label">Role</label>
                   <select name="role" class="form-control" id="">
                     <option value="juri-tanding">Juri Tanding</option>
@@ -39,7 +39,7 @@
                     <option value="dewan-tunggal">Dewan Seni Tunggal</option>
                   </select>
                 </div>
-                <div class="mb-4">
+                <div class="mb-5">
                     <button class="btn btn-primary">Login</button>
                 </div>
               </form>
