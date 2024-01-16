@@ -8,7 +8,7 @@
     @php
         Use App\score;
         Use App\setting;
-        $data = setting::first();
+        $data = Setting::first();
     @endphp
 </head>
 <body>
