@@ -22,7 +22,7 @@
     <body>
         <div class="container d-flex">
             <div class="btn1">
-                <span>Kembali</span>
+                <span>Log Out</span>
             </div>
         </div>
 
@@ -171,11 +171,7 @@
                         </tr>
                         </tbody>
                     </table>
-        
-                    <div class="refersh d-flex align-items-center justify-content-center ">
-                        <img src="../assets/juri/images/Icon.png">
-                        <span>Refresh</span>
-                    </div>
+                    
     
                     <button class="btn-jatuhan btn btn-secondary d-flex justify-content-center align-items-center p-3 shadow border-light mx-1 mt-1" data-bs-toggle="modal" data-bs-target="#ModalJatuhan">
                         <img src="../assets/Assets/judo white.png" alt="" class="me-1" style="width: 30px;">
