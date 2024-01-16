@@ -65,7 +65,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="forms-sample" method="post" action="{{ route('arena.juri') }}">
+                        <form class="forms-sample" method="post" action="{{ route('arena.store') }}">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label">Name</label>

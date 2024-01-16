@@ -7,6 +7,7 @@ use App\Setting;
 use App\juri;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\Perserta;
+use App\arena;
 class AdminController extends Controller
 {
     /**
@@ -74,8 +75,29 @@ class AdminController extends Controller
     juri::create($data);
     return redirect()->back()->with('success', 'Data Imported');
 }
-    public function arenastore(Request $request){
-        
+    public function arenastore(Request $request) {
+        // Validate the form data
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'kelas' => 'nullable|array',
+            ]);
+
+            // Process the form data
+            $name = $request->input('name');
+            $kelas = $request->input('kelas', []);
+
+            // Create and save a new Data model instance
+            $data = new Data([
+                'name' => $name,
+                'status' => implode(',', $kelas), // Assuming 'kelas' is a comma-separated list
+                // Add other fields as needed
+            ]);
+
+            $data->save();
+
+            // Redirect or respond as needed
+            return redirect()->back()->with('success', 'Data saved successfully');
+        }
     }
     /**
      * Display the specified resource.
