@@ -49,12 +49,12 @@
                 SMKN 1 <br> NGANJUK
             </div>
         </div>
-        <div id=""name="" class="mid-container">
+        <div id=""name="" class="mid-container mt-2">
             <div id=""name="" class="mid-container-text">
                 ARENA 1 <br>
                 PENYISIHAN - DEWASA (4 PA) <br>
                 <div id=""name="" class="mid-container-timer">
-                    <div id=""name="timer" class="p-1 fs-5 bg-black border border-dark text-light">
+                    <div id=""name="timer" class="p-1 fs-4 px-3 bg-black border border-dark text-light">
                         03:00
                     </div>
                 </div>
