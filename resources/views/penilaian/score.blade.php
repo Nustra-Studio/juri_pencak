@@ -39,7 +39,7 @@
             <img src="../assets/Assets/IPSI.png" alt="" style="width: 100%; height: 80%; margin-left: auto;">
         </div>
     </div>
-    <div id=""name="" class="player-detail">
+    <div id=""name="" class="player-detail" style="height: 100px;">
         <div id=""name="" class="blue-container">
             <div id=""name="" class="blue-player-img">
                 <img src="../assets/Assets/Ellipse 2.png" alt="" style="height: 50px; z-index: 1;">
@@ -53,7 +53,7 @@
             <div id=""name="" class="mid-container-text">
                 ARENA 1 <br>
                 PENYISIHAN - DEWASA (4 PA) <br>
-                <div id=""name="" class="mid-container-timer mt-2">
+                <div id=""name="" class="mid-container-timer">
                     <div id=""name="timer" class="p-1 fs-5 bg-black border border-dark text-light">
                         03:00
                     </div>
