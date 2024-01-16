@@ -99,17 +99,20 @@ class AdminController extends Controller
             return redirect()->back()->with('success', 'Data saved successfully');
         }
     public function redirect(Request $request){
-        $name = $request->name;
+        $id_juri = $request->name;
         $role = $request->role;
         $arena = $request->arena;
         $data = [
-            'name'=>$name,
+            'name'=>$id_juri,
             'role'=>$role,
             'arena'=>$arena
         ];
         // check role
         if($role ==="juri-tanding"){
-            return view('penilaian.juri',compact('name','arena'));
+            return view('penilaian.juri',compact('id_juri','arena'));
+        }
+        elseif($role === "dewan-tanding"){
+            return view('penilaian.dewan',compact('id_juri','arena'));
         }
         else{
             dd($data);
