@@ -20,6 +20,9 @@ Route::get('/login', function () {
 Route::get('/login-juri', function(){
     return view('jurilogin');
 });
+Route::get('/timer',function(){
+    return view('timer');
+});
 Route::get('/redirect-juri','AdminController@redirect');
 
     Route::prefix('admin')->group(function () {
