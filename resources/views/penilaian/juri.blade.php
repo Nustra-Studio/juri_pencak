@@ -17,7 +17,7 @@
             $tim_merah = $tim_merahs->id;
             $tim_biru = $tim_birus->id;
             $id_arena = $arena;
-            $babak = Setting::where('arena',$arena)->first();
+            $babak = Setting::where('arena',$id_arena)->first();
             $babak = $babak->babak;
         @endphp
     </head>

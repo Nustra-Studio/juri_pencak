@@ -17,6 +17,8 @@
             $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
             $tim_biru = $tim_biru->id;
             $tim_merah = $tim_merah->id;
+            $babak = Score::where('arena',$arena)->first();
+            $babak = $babak->babak;
     @endphp
 </head>
 <style>
@@ -134,13 +136,19 @@
             </div>
             <table class="mid-table">
                 <tbody>
-                    <tr class="by">
+                    <tr class="
+                    @if($babak =='1') by 
+                    @endif">
                         <td>I</td>
                     </tr>
-                    <tr>
+                    <tr class="
+                    @if($babak =='2') by 
+                    @endif">
                         <td>II</td>
                     </tr>
-                    <tr>
+                    <tr class="
+                    @if($babak =='3') by 
+                    @endif">
                         <td>III</td>
                     </tr>
                 </tbody>
