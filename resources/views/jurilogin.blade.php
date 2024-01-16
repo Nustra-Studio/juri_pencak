@@ -11,7 +11,9 @@
             <div class="auth-side-wrapper" style="background-image: url('../assets/images/auth-img.jpg')">
                 @php
                     Use App\juri;
+                    Use App\arena;
                     $data = juri::all();
+                    $data_arena = arena::all();
                 @endphp
             </div>
           </div>
@@ -28,7 +30,16 @@
                   </select>
                   
                 </div>
-                <div class="mb-5">
+                <div class="mb-4">
+                  <label for="userEmail" class="form-label">Arena</label>
+                  <select name="arena" class="form-control" id="">
+                    @foreach ($data_arena as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
+                  </select>
+                  
+                </div>
+                <div class="mb-4">
                   <label for="userPassword" class="form-label">Role</label>
                   <select name="role" class="form-control" id="">
                     <option value="juri-tanding">Juri Tanding</option>
@@ -39,7 +50,7 @@
                     <option value="dewan-tunggal">Dewan Seni Tunggal</option>
                   </select>
                 </div>
-                <div class="mb-5">
+                <div class="mb-4">
                     <button class="btn btn-primary">Login</button>
                 </div>
               </form>
