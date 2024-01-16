@@ -17,7 +17,7 @@
             $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
             $tim_biru = $tim_biru->id;
             $tim_merah = $tim_merah->id;
-            $babak = Score::where('arena',$arena)->first();
+            $babak = Setting::where('arena',$arena)->first();
             $babak = $babak->babak;
     @endphp
 </head>
