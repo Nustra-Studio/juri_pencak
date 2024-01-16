@@ -107,7 +107,13 @@ class AdminController extends Controller
             'role'=>$role,
             'arena'=>$arena
         ];
-        dd($data);
+        // check role
+        if($role ==="juri-tanding"){
+            return view('penilaian.juri',compact('name','arena'));
+        }
+        else{
+            dd($data);
+        }
     }
     /**
      * Display the specified resource.
