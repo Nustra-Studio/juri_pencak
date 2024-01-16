@@ -17,6 +17,7 @@
             $tim_merah = $tim_merahs->id;
             $tim_biru = $tim_birus->id;
             $id_arena = $arena;
+            $babak = Setting::where('arena',$arena)->value('babak')->first();
         @endphp
     </head>
     <body>
@@ -161,13 +162,20 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-center" style="background-color: #FFD600;">I</td>
+                            <td class="text-center"@if ($babak == '1')
+                            style="background-color: #FFD600;"
+                            @endif>I</td>
                         </tr>
                         <tr>
-                            <td class="text-center" >II</td>
+                            <td class="text-center"@if ($babak == '2')
+                            style="background-color: #FFD600;"
+                            @endif >II</td>
                         </tr>
                         <tr>
-                            <td class="text-center" >III</td>
+                            <td class="text-center" 
+                            @if ($babak == '3')
+                            style="background-color: #FFD600;"
+                            @endif >III</td>
                         </tr>
                         </tbody>
                     </table>
