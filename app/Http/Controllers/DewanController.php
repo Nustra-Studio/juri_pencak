@@ -68,12 +68,12 @@ class DewanController extends Controller
 
             }
             elseif($status ==="peringatan"){
-                $data = score::where('keterangan',$status)->where('id_juri',$id_juri)
+                $datan = score::where('keterangan',$status)->where('id_juri',$id_juri)
                 ->where('babak',$babak)->where('id_perserta',$id_perserta)->first();
                 $datas = score::where('keterangan',$status)->where('id_juri',$id_juri)
                 ->where('babak',$babak)->where('id_perserta',$id_perserta)->latest('created_at')->first();
                 $score = $datas->score;
-                if(empty($data)){
+                if(empty($datan)){
                     $data = [
                         'score' => $p,
                         'keterangan' => $status,
