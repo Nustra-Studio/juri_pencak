@@ -103,6 +103,16 @@ class DewanController extends Controller
                         'babak'=>$babak
                     ];
             }
+            else{
+                $data = [
+                    'score' => $p,
+                    'keterangan' => $status,
+                    'id_perserta' => $id_perserta,
+                    'id_juri' => $id_juri,
+                    'status' => 'minus',
+                    'babak'=>$babak
+                ];
+            }
 
             }
             else{
