@@ -1,7 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/app.rtl.css": "/css/app.rtl.css",
     "/assets/plugins/feather-icons/feather-sprite.svg": "/assets/plugins/feather-icons/feather-sprite.svg",
     "/assets/plugins/feather-icons/feather.js": "/assets/plugins/feather-icons/feather.js",
     "/assets/plugins/feather-icons/feather.js.map": "/assets/plugins/feather-icons/feather.js.map",
@@ -315,6 +314,8 @@
     "/assets/plugins/@mdi/scss/_icons.scss": "/assets/plugins/@mdi/scss/_icons.scss",
     "/assets/plugins/@mdi/scss/_path.scss": "/assets/plugins/@mdi/scss/_path.scss",
     "/assets/plugins/@mdi/scss/_variables.scss": "/assets/plugins/@mdi/scss/_variables.scss",
+    "/assets/plugins/@mdi/scss/materialdesignicons.css": "/assets/plugins/@mdi/scss/materialdesignicons.css",
+    "/assets/plugins/@mdi/scss/materialdesignicons.css.map": "/assets/plugins/@mdi/scss/materialdesignicons.css.map",
     "/assets/plugins/@mdi/scss/materialdesignicons.scss": "/assets/plugins/@mdi/scss/materialdesignicons.scss",
     "/assets/plugins/perfect-scrollbar/perfect-scrollbar.common.js": "/assets/plugins/perfect-scrollbar/perfect-scrollbar.common.js",
     "/assets/plugins/perfect-scrollbar/perfect-scrollbar.common.js.map": "/assets/plugins/perfect-scrollbar/perfect-scrollbar.common.js.map",
