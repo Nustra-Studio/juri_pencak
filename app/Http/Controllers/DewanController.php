@@ -68,8 +68,12 @@ class DewanController extends Controller
 
             }
             elseif($status ==="peringatan"){
-                $data = score::where('keterangan',$status)->where('id_juri',$id_juri)->where('babak',$babak)
-                if(){
+                $data = score::where('keterangan',$status)->where('id_juri',$id_juri)
+                ->where('babak',$babak)->where('id_perserta',$id_perserta)->first();
+                $datas = score::where('keterangan',$status)->where('id_juri',$id_juri)
+                ->where('babak',$babak)->where('id_perserta',$id_perserta)->latest('created_at')->first();
+                $score = $datas->score;
+                if(empty($data)){
                     $data = [
                         'score' => $p,
                         'keterangan' => $status,
@@ -79,6 +83,27 @@ class DewanController extends Controller
                         'babak'=>$babak
                     ];
                 }
+                elseif(($score === '5')){
+                        $data = [
+                            'score' => $p*2,
+                            'keterangan' => $status,
+                            'id_perserta' => $id_perserta,
+                            'id_juri' => $id_juri,
+                            'status' => 'minus',
+                            'babak'=>$babak
+                        ];
+                }
+                elseif(($score === '10')){
+                    $data = [
+                        'score' => $p*3,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'minus',
+                        'babak'=>$babak
+                    ];
+            }
+
             }
             else{
                 $data = [
