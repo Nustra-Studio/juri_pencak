@@ -195,7 +195,6 @@
 
 .total-point-area {
     background-color: var(--biru);
-    height: 80%;
     width: 20%;
     display: flex;
     justify-content: center;
@@ -205,7 +204,6 @@
 
 .total-point-area-red {
     background-color: var(--merah);
-    height: 80%;
     width: 30%;
     display: flex;
     justify-content: center;
