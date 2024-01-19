@@ -129,7 +129,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="container form-group p-0 " >
-                                <select class="custom-select w-75 p-0" id="input-continent" style="height: 60px;">
+                                <select class="custom-select w-100 p-0" id="input-continent" style="height: 60px;">
                                     <option value="menang-1">Menang Point</option>
                                     <option value="menang-2">Menang Teknik</option>
                                     <option value="menang-2">Diskualifikasi</option>
@@ -138,7 +138,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             <button class="btn btn-success">K</button>
                         </div>
                     </div>
