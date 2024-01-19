@@ -393,7 +393,7 @@
             }
             function updatescore (){
                 $.ajax({
-                    url: '/call-data/?tipe=score&id=' + id + '&kt=check',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
