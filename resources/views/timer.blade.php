@@ -52,7 +52,8 @@
                     <h5 class="modal-title">Setting Timer</h5>
                 </div>
                 <div class="modal-body">
-                    <input type="text" class="form-control" placeholder="Settings">
+                    Timer
+                    <input type="time" class="form-control" placeholder="Timer">
                 </div>
             </div>
         </div>
