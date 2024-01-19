@@ -47,7 +47,7 @@
 
         <!-- JURI ARENA -->
         <section id="juri">
-            <div class="container row " style="margin-left: 5em">
+            <div class="container row " style="margin-left: 7em">
                 <div class="col d-flex align-items-center justify-content-center bg-danger">
                     <div class="text">
                         @php
