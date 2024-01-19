@@ -9,7 +9,7 @@
 </head>
 <body class="px-3 pt-5 bg-primary d-flex justify-content-center align-items-center" style="height: 650px;">
     <div class="container-fluid p-1 py-4 bg-light shadow">
-        <div class="container-fluid d-flex justify-content-end align-items-center">
+        <div class="container-fluid d-flex justify-content-end align-items-center mb-1">
             <i class="fa-solid fa-gear" style="cursor: pointer;" data-toggle="modal" data-target="#timerModal"></i>
         </div>
         <div class="row" style="height: 80px;">
