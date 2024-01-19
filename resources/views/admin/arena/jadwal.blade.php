@@ -125,7 +125,7 @@
                   <td class="fw-bold text-danger">12</td>
                   <td class="fw-bold text-primary">23</td>
                   <td class="fw-bold p-0 h-100">
-                    <select class="custom-select w-100 p-0 h-100" id="input-continent">
+                    <select class="custom-select w-100 p-0" id="input-winner"  style="height: 70px;">
                         <option value="peserta-1">Sudut Biru</option>
                         <option value="peserta-2">Sudut Merah</option>
                         <option value="peserta-3">N/A</option>
