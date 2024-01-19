@@ -260,7 +260,6 @@
         <div class="mid-container">
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vjatuhan" class="button-jatuhan">Verifikasi <br>Jatuhan</button>
             <button type="button"  data-bs-toggle="modal" data-bs-target="#vhukuman" class="button-jatuhan">Verifikasi <br>Hukuman</button>
-            <button type="button"  data-bs-toggle="" data-bs-target="#selesai" class="btn btn-success">Selesaikan <br>Pertandingan</button>
             <table class="score-table">
                 <tbody>
                     @php
