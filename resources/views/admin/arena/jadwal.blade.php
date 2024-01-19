@@ -125,7 +125,7 @@
                   <td class="fw-bold text-danger">12</td>
                   <td class="fw-bold text-primary">23</td>
                   <td class="fw-bold">Galang</td>
-                  <td class="h-100 px-0 py-0 w-25 row">
+                  <td class="h-100 px-0 py-0 w-25">
                       <div class="container form-group p-0 " >
                           <select class="custom-select w-75 p-0" id="input-continent" style="height: 60px;">
                               <option value="menang-1">Menang Point</option>
