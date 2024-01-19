@@ -135,10 +135,7 @@
                             <option value="menang-4">Keputusan wasit</option>
                         </select>
                     </div>
-
-                    <div class="col-1 m-0 p-0 d-flex justify-content-start align-items-center">
-                        <button class="btn btn-success">K</button>
-                    </div>
+                    <button class="btn btn-success">K</button>
                   </td>
                   <td>
                       <div class="d-flex justify-content-center p-0">
