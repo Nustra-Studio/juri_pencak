@@ -48,7 +48,7 @@
         <!-- JURI ARENA -->
         <section id="juri">
             <div class="container row " style="margin-left: 6.8em">
-                <div class="col d-flex align-items-center justify-content-center bg-danger">
+                <div class="col d-flex align-items-center justify-content-start bg-danger">
                     <div class="text">
                         @php
                            $kontigen = KontigenModel::where('id',$tim_birus->id_kontigen)->first();
