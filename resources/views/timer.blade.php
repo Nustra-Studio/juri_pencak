@@ -10,7 +10,7 @@
 <body class="px-3 pt-5 bg-primary d-flex justify-content-center align-items-center" style="height: 650px;">
     <div class="container-fluid p-1 py-4 bg-light shadow">
         <div class="container-fluid d-flex justify-content-end align-items-center">
-            <i class="fa-solid fa-gear" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal"></i>
+            <i class="fa-solid fa-gear" style="cursor: pointer;" data-toggle="modal" data-target="#timerModal"></i>
         </div>
         <div class="row" style="height: 80px;">
             <div class="col text-center text-primary">
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div class="modal" id="exampleModal">
+    <div class="modal fade" id="timerModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
