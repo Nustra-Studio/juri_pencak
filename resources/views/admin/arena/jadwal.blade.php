@@ -134,7 +134,7 @@
                             <option value="menang-3">Lawan Mengundurkan diri</option>
                             <option value="menang-4">Keputusan wasit</option>
                         </select>
-                        <button class="btn btn-success">
+                        <button class="btn btn-success me-1">
                             <i class="fa-solid fa-check" style="color: #ffffff;"></i>
                         </button>
                     </div>
