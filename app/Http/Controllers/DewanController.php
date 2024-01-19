@@ -113,7 +113,10 @@ class DewanController extends Controller
                     'babak'=>$babak
                 ];
             }
-
+             // Simpan data ke dalam tabel 'score'
+             score::create($data);
+    
+             return response()->json(['message' => 'Data berhasil disimpan']);
             }
             else{
                 $data = [
