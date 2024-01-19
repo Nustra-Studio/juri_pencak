@@ -135,8 +135,8 @@
                             <option value="menang-4">Keputusan wasit</option>
                         </select>
                         <button class="btn btn-success me-1">
-                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
-                            Simpan
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i> <br>
+                            <span style="font-size: 5px;">Simpan</span>
                         </button>
                     </div>
                   </td>
