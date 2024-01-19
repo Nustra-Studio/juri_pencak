@@ -10,9 +10,9 @@
             use App\score;
             use App\Setting;
             use App\PersertaModel;
-            $id_arena = 2;
+            $id_arena = $arena;
             $setting = Setting::first();
-            $id_juri = 1;
+            $id_juri = $id_juri;
             $tim_merah = PersertaModel::where('id',$setting->merah)->first();
             $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
             $tim_biru = $tim_biru->id;
