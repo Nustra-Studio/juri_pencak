@@ -20,8 +20,19 @@
             $id_arena = $arena;
             $babak = Setting::where('arena',$id_arena)->first();
             $babak = $babak->babak;
-            $settings = Setting::find($id_juri);
-            $idColomName = $settings->getKeyName();
+            $satu = Setting::where('arena',$id_arena)->where('juri_1',$id_juri)->first();
+            $dua = Setting::where('arena',$id_arena)->where('juri_2',$id_juri)->first();
+            $tiga = Setting::where('arena',$id_arena)->where('juri_3',$id_juri)->first();
+            if (!empty($satu)) {
+                $idColomName = "Juri 1";
+            }
+            elseif (!empty($dua)) {
+                $idColomName = "Juri 2";
+            }
+            elseif (!empty($tiga)) {
+                $idColomName = "Juri 3";
+            }
+            
         @endphp
     </head>
     <body>
