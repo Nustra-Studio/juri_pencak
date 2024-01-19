@@ -48,9 +48,7 @@ class JuriController extends Controller
         if($keterangan === "plus"){
             $currentTimestamp = Carbon::now();
             $threeSecondsAgo = $currentTimestamp->subSeconds(3);
-            $datas = pending_tanding::where('created_at', '>', $threeSecondsAgo)
-                ->where('created_at', '<=', $currentTimestamp)
-                ->where('id_perserta',$id_perserta)
+            $datas = pending_tanding::where('id_perserta',$id_perserta)
                 ->where('keterangan', $status)
                 ->first(); 
             $data = [
@@ -64,10 +62,10 @@ class JuriController extends Controller
             ];
 
             if ($datas !== null) {
-                $dat = [
+                $updateData = [
                     "juri$nomor_juri" => $id_juri,
                 ];
-                $datas->update($dat);
+                $datas->update($updateData);
             }
             else{
                   pending_tanding::create($data);
