@@ -124,8 +124,8 @@
                   <td class="fw-bold text-primary">Galang</td>
                   <td class="fw-bold text-danger">12</td>
                   <td class="fw-bold text-primary">23</td>
-                  <td class="fw-bold">
-                    <select class="custom-select w-100 p-0 mx-1" id="input-continent" style="height: 55px;">
+                  <td class="fw-bold p-0">
+                    <select class="custom-select w-100 p-0 h-100" id="input-continent">
                         <option value="peserta-1">Sudut Biru</option>
                         <option value="peserta-2">Sudut Merah</option>
                         <option value="peserta-3">N/A</option>
