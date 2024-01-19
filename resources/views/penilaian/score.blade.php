@@ -221,7 +221,7 @@
         <div id=""name="" class="juri-info-section-blue">
             <div id=""name="" class="juri-info-item-blue">J3</div>
             <div id=""name="" class="juri-info-item-blue">J2</div>
-            <div id=""name="" class="juri-info-item-blue by">J1</div>
+            <div id=""name="" class="juri-info-item-blue">J1</div>
             <div id=""name="" class="juri-info-item-center">
                 <div id=""name="" class="juri-info-item-center-item">
                     PUKULAN <br>
