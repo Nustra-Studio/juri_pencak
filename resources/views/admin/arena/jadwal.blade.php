@@ -127,7 +127,7 @@
                   <td class="fw-bold">Galang</td>
                   <td class="h-100 px-0 py-0 w-25">
                     <div class="row">
-                        <div class="col">
+                        <div class="col m-0 p-0">
                             <div class="container form-group p-0 ">
                                 <select class="custom-select w-75 p-0" id="input-continent" style="height: 60px;">
                                     <option value="menang-1">Menang Point</option>
@@ -138,7 +138,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-1">
+                        <div class="col-1 m-0 p-0">
                             <button class="btn btn-success">K</button>
                         </div>
                     </div>
