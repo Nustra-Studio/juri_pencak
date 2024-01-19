@@ -159,6 +159,17 @@ class JuriController extends Controller
                 $tipe = $request->input('tipe');
                 $id = $request->input('id');
                 if($tipe ==="score"){
+                    $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
+                    $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
+                    $score = $plus - $minus;
+                    return response()->json(['data' => $score]);
+                }
+                elseif($tipe === "detail"){
+                    $kt = $request->input('kt');
+                    $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
+                    return response()->json(['data' => $data]);
+                }
+                elseif($tipe === "check"){
                     $pending = pending_tanding::where('id_perserta',"$id")->first();
                     $variable1 = $pending->juri1;
                     $variable2 = $pending->juri2;
@@ -176,20 +187,8 @@ class JuriController extends Controller
                         ];
                         score::create($datas);
                         $data->delete();
-                        $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
-                        $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
-                        $score = $plus - $minus;
                         return response()->json(['data' => $score]);
                     }
-                    $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
-                    $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
-                    $score = $plus - $minus;
-                    return response()->json(['data' => $score]);
-                }
-                elseif($tipe === "detail"){
-                    $kt = $request->input('kt');
-                    $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
-                    return response()->json(['data' => $data]);
                 }
 
                 elseif($tipe === "keterangan"){

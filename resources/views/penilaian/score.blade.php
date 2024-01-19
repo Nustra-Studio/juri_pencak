@@ -391,6 +391,16 @@
                     }
                 });
             }
+            function updatescore (){
+                $.ajax({
+                    url: '/call-data/?tipe=score&id=' + id + '&kt=check',
+                    method: 'GET',
+                    success: function (response) {
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                    }
+                });
+            }
             function score2 (){
                 var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
