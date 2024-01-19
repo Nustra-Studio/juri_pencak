@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Timer</title>
 </head>
 <body class="px-3 pt-5 bg-primary d-flex justify-content-center align-items-center" style="height: 650px;">
     <div class="container-fluid p-1 py-4 bg-light shadow">
+        <div class="container-fluid d-flex justify-content-end align-items-center">
+            <i class="fa-solid fa-gear"></i>
+        </div>
         <div class="row" style="height: 80px;">
             <div class="col text-center text-primary">
                 Hours
