@@ -14,8 +14,14 @@
       <li class="nav-item nav-category">Main</li>
 
       @if ($status == "arena" )
+      <li class="nav-item {{ active_class(['/admin/panels/kelas']) }}">
+        <a href="{{url("redirect?arena=$arena&role=arena")}}" class="nav-link">
+          <i class="link-icon" data-feather="home"></i>
+          <span class="link-title">Home</span>
+        </a>
+      </li>
       <li class="nav-item {{ active_class(['/admin/panel']) }}">
-        <a href="{{ url('/admin/panel') }}" class="nav-link">
+        <a href="{{url("redirect?arena=$arena&role=arena-jadwal")}}" class="nav-link">
           <i class="link-icon" data-feather="calendar"></i>
           <span class="link-title">Jadwal</span>
         </a>
