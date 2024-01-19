@@ -8,7 +8,7 @@
   @php
       use App\PersertaModel;
       use App\Setting;
-      $data_setting = Setting::first();
+      $data_setting = Setting::where('arena',$arena)->first();
       $data_perserta = PersertaModel::get();
   @endphp
   <div class="row">

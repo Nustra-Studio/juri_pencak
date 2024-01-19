@@ -10,6 +10,7 @@
             use App\score;
             use App\Setting;
             use App\PersertaModel;
+            use App\KontigenModel;
             $setting = Setting::first();
             $id_juri = $id_juri;
             $tim_merahs = PersertaModel::where('id',$setting->merah)->first();
@@ -19,6 +20,19 @@
             $id_arena = $arena;
             $babak = Setting::where('arena',$id_arena)->first();
             $babak = $babak->babak;
+            $satu = Setting::where('arena',$id_arena)->where('juri_1',$id_juri)->first();
+            $dua = Setting::where('arena',$id_arena)->where('juri_2',$id_juri)->first();
+            $tiga = Setting::where('arena',$id_arena)->where('juri_3',$id_juri)->first();
+            if (!empty($satu)) {
+                $idColomName ="Juri 1";
+            }
+            elseif (!empty($dua)) {
+                $idColomName ="Juri 2";
+            }
+            elseif (!empty($tiga)) {
+                $idColomName ="Juri 3";
+            }
+            
         @endphp
     </head>
     <body>
@@ -33,17 +47,23 @@
             <div class="container d-flex justify-content-between">
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="text">
-                        <span class="team">SMKN 1 NGANJUK</span> <br>
+                        @php
+                           $kontigen = KontigenModel::where('id',$tim_birus->id_kontigen)->first();
+                        @endphp
+                        <span class="team">{{$kontigen->kontigen}}</span> <br>
                         <span class="peserta">{{$tim_birus->name}}</span>
                     </div>
                 </div>
                 <div class="juri d-flex flex-column align-items-center">
-                    <h1>JURI 1</h1>
+                    <h1>{{$idColomName}}</h1>
                     <span>{{$setting->arena}}</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center text-end">
                     <div class="text">
-                        <span class="team">SMA 1 JEMBER</span><br>
+                    @php
+                    $kontigen = KontigenModel::where('id',$tim_merahs->id_kontigen)->first();
+                 @endphp
+                 <span class="team">{{$kontigen->kontigen}}</span> <br>
                     <span class="peserta">{{$tim_merahs->name}}</span>
                     </div>
                 </div>
