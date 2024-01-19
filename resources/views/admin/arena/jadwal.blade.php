@@ -138,7 +138,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-1 m-0 p-0">
+                        <div class="col-1 m-0 p-0 d-flex justify-content-start align-items-center">
                             <button class="btn btn-success">K</button>
                         </div>
                     </div>
