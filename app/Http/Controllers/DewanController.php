@@ -67,54 +67,72 @@ class DewanController extends Controller
                 ];
 
             }
-            elseif($status ==="peringatan"){
-                $datan = score::where('keterangan',$status)->where('id_juri',$id_juri)
-                ->where('babak',$babak)->where('id_perserta',$id_perserta)->first();
-                $datas = score::where('keterangan',$status)->where('id_juri',$id_juri)
-                ->where('babak',$babak)->where('id_perserta',$id_perserta)->latest('created_at')->first();
-                $score = $datas->score;
-                if(empty($datan)){
-                    $data = [
-                        'score' => $p,
-                        'keterangan' => $status,
-                        'id_perserta' => $id_perserta,
-                        'id_juri' => $id_juri,
-                        'status' => 'minus',
-                        'babak'=>$babak
-                    ];
-                }
-                elseif($score == '5'){
-                        $data = [
-                            'score' => $p*2,
-                            'keterangan' => $status,
-                            'id_perserta' => $id_perserta,
-                            'id_juri' => $id_juri,
-                            'status' => 'minus',
-                            'babak'=>$babak
-                        ];
-                }
-                elseif($score == '10'){
-                    $data = [
-                        'score' => $p*3,
-                        'keterangan' => $status,
-                        'id_perserta' => $id_perserta,
-                        'id_juri' => $id_juri,
-                        'status' => 'minus',
-                        'babak'=>$babak
-                    ];
-                    }
-                    else{
+            elseif ($status === "peringatan") {
+                $datan = score::where('keterangan', $status)
+                    ->where('id_juri', $id_juri)
+                    ->where('babak', $babak)
+                    ->where('id_perserta', $id_perserta)
+                    ->first();
+            
+                $datas = score::where('keterangan', $status)
+                    ->where('id_juri', $id_juri)
+                    ->where('babak', $babak)
+                    ->where('id_perserta', $id_perserta)
+                    ->latest('created_at')
+                    ->first();
+            
+                // Check if $datas is not null before accessing its properties
+                if ($datas !== null) {
+                    $score = $datas->score;
+            
+                    if (empty($datan)) {
                         $data = [
                             'score' => $p,
                             'keterangan' => $status,
                             'id_perserta' => $id_perserta,
                             'id_juri' => $id_juri,
                             'status' => 'minus',
-                            'babak'=>$babak
+                            'babak' => $babak
+                        ];
+                    } elseif ($score == '5') {
+                        $data = [
+                            'score' => $p * 2,
+                            'keterangan' => $status,
+                            'id_perserta' => $id_perserta,
+                            'id_juri' => $id_juri,
+                            'status' => 'minus',
+                            'babak' => $babak
+                        ];
+                    } elseif ($score == '10') {
+                        $data = [
+                            'score' => $p * 3,
+                            'keterangan' => $status,
+                            'id_perserta' => $id_perserta,
+                            'id_juri' => $id_juri,
+                            'status' => 'minus',
+                            'babak' => $babak
+                        ];
+                    } else {
+                        $data = [
+                            'score' => $p,
+                            'keterangan' => $status,
+                            'id_perserta' => $id_perserta,
+                            'id_juri' => $id_juri,
+                            'status' => 'minus',
+                            'babak' => $babak
                         ];
                     }
-
+            
+                    // Simpan data ke dalam tabel 'score'
+                    score::create($data);
+            
+                    return response()->json(['message' => 'Data berhasil disimpan']);
+                } else {
+                    // Handle the case where $datas is null (no records found)
+                    return response()->json(['error' => 'No data found for peringatan'], 404);
+                }
             }
+            
             else{
                 $data = [
                     'score' => $p,
