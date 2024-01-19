@@ -45,7 +45,7 @@
                                     @csrf
                                     @method('DELETE')
                                 </form>
-                                <a class="btn btn-success btn-sm" href="{{url("redirect?arena={{$item->id}}&role=arena")}}">Panel</a>
+                                <a class="btn btn-success btn-sm" href="{{url("redirect?arena=$item->id&role=arena")}}">Panel</a>
                                 <button class="btn btn-danger btn-sm delete-button" data-form-delete="{{ $item->id }}">Delete</button>
                                 </div>
                             </tr>
