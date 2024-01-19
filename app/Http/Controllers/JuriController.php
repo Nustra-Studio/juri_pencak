@@ -145,6 +145,23 @@ class JuriController extends Controller
                 $tipe = $request->input('tipe');
                 $id = $request->input('id');
                 if($tipe ==="score"){
+                    $pending = pending_tanding::where('id_perserta',"$id")->first();
+                    $variable1 = $pending->juri1;
+                    $variable2 = $pending->juri2;
+                    $variable3 = $pending->juri3;
+                    if (($variable1 !== null) + ($variable2 !== null) + ($variable3 !== null) >= 2) {
+                        $data = pending_tanding::where('id',$pending->id)->first();
+                        $datas = [
+                            'score' => $data->score,
+                            'keterangan' => $data->keterangan,
+                            'id_perserta' => $data->id_perserta,
+                            "id_juri" => $data->juri1,
+                            'status' => 'plus',
+                            'babak' => $data->babak,
+                            'arena' => $data->arena
+                        ];
+                        score::create($datas);
+                    }
                     $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
                     $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
                     $score = $plus - $minus;
