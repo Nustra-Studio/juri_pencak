@@ -50,10 +50,17 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Setting Timer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     Timer
                     <input type="time" class="form-control" placeholder="Timer">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary fw-bold">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
