@@ -25,7 +25,7 @@
             $tiga = Setting::where('arena',$id_arena)->where('juri_3',$id_juri)->first();
             if (!empty($satu)) {
                 $idColomName ="Juri 1";
-                $nomorjuri = "1"
+                $nomorjuri = "1";
             }
             elseif (!empty($dua)) {
                 $idColomName ="Juri 2";
