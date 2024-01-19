@@ -40,8 +40,8 @@
             </div>
         </div>
         <div id=""name="" class="header-pict">
-            <img src="../assets/Assets/psht.png" alt="" style="width: 100%; height: 80%; margin-left: auto;">
-            <img src="../assets/Assets/IPSI.png" alt="" style="width: 100%; height: 80%; margin-left: auto;">
+            <img src="../assets/Assets/psht.png" alt="" style="width: 100%; height: 60px; margin-left: auto;">
+            <img src="../assets/Assets/IPSI.png" alt="" style="width: 100%; height: 60px; margin-left: auto;">
         </div>
     </div>
     <div id=""name="" class="player-detail" style="height: 100px;">
