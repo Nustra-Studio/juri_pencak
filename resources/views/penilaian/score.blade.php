@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <div id=""name="" class="score-section">
+    <div id=""name="" class="score-section" style="width: 80%;">
         <div id=""name="" class="score-area">
             <div id=""name="" class="score-blue">
                 @php
