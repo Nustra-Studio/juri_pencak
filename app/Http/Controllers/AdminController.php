@@ -94,6 +94,19 @@ class AdminController extends Controller
             ]);
 
             $data->save();
+            $arena = arena::where('name',$name)->first();
+            $datas = [
+                'judul'=>'default',
+                'arena'=>$arena->id,
+                'babak'=>'1',
+                'biru'=>'',
+                'merah'=>'',
+                'keterangan'=>"setting",
+                'juri_1'=>$request->input('juri_1'),
+                'juri_2'=>$request->input('juri_2'),
+                'juri_3'=>$request->input('juri_3'),
+            ];
+            Setting::create($datas);
 
             // Redirect or respond as needed
             return redirect()->back()->with('success', 'Data saved successfully');
