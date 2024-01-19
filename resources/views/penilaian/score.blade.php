@@ -153,7 +153,7 @@
                 <div id=""name="" class="babak-area-box-text">III</div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area-red" style="width: 35%; height: 100%;">
+        <div id=""name="" class="total-point-area-red" style="width: 35%; height: 90%;">
             <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text" style="font-size: 20vw"></div>
         </div>
         @php
