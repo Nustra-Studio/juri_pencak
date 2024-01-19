@@ -124,7 +124,13 @@
                   <td class="fw-bold text-primary">Galang</td>
                   <td class="fw-bold text-danger">12</td>
                   <td class="fw-bold text-primary">23</td>
-                  <td class="fw-bold">Tim Biru</td>
+                  <td class="fw-bold">
+                    <select class="custom-select w-100 p-0 mx-1" id="input-continent" style="height: 55px;">
+                        <option value="peserta-1">Sudut Biru</option>
+                        <option value="peserta-2">Sudut Merah</option>
+                        <option value="peserta-3">N/A</option>
+                    </select>
+                  </td>
                   <td class="h-100 px-0 py-0 w-25">
                     <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
                         <select class="custom-select w-100 p-0 mx-1" id="input-continent" style="height: 55px;">
