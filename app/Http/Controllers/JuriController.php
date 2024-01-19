@@ -52,10 +52,7 @@ class JuriController extends Controller
                 ->where('created_at', '<=', $currentTimestamp)
                 ->where('id_perserta',$id_perserta)
                 ->where('keterangan', $status)
-                ->first();
-            $variable1 = $datas->juri1;
-            $variable2 = $datas->juri2;
-            $variable3 = $datas->juri3;    
+                ->first(); 
             $data = [
                 'score' => $p,
                 'keterangan' => $status,
@@ -67,10 +64,10 @@ class JuriController extends Controller
             ];
 
             if ($datas !== null) {
-                $data = [
+                $dat = [
                     "juri$nomor_juri" => $id_juri,
                 ];
-                $datas->update($data);
+                $datas->update($dat);
             }
             else{
                   pending_tanding::create($data);
