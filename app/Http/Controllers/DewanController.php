@@ -83,7 +83,7 @@ class DewanController extends Controller
                         'babak'=>$babak
                     ];
                 }
-                elseif(($score == '5')){
+                elseif($score == '5'){
                         $data = [
                             'score' => $p*2,
                             'keterangan' => $status,
@@ -93,7 +93,7 @@ class DewanController extends Controller
                             'babak'=>$babak
                         ];
                 }
-                elseif(($score == '10')){
+                elseif($score == '10'){
                     $data = [
                         'score' => $p*3,
                         'keterangan' => $status,
