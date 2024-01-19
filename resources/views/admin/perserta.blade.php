@@ -41,8 +41,9 @@
                             <td>{{ $loop->index+1 }}</td>
                             <td> {{$item->name}}</td>
                             @php
+                                use App\kelas;
                                 $kontigen = KontigenModel::where('id',$item->id_kontigen)->first();
-                                $kelas = use App\kelas::where('id',$item->kelas)->first();
+                                $kelas = kelas::where('id',$item->kelas)->first();
                                 $category = category::where('id',$item->categor)->first();
 
                             @endphp
