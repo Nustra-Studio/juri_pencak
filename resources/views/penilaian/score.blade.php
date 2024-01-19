@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area" style="width: 40%;">
+        <div id=""name="" class="total-point-area" style="width: 35%;">
             <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text"></div>
         </div>
         <div id=""name="" class="babak-area">
@@ -153,7 +153,7 @@
                 <div id=""name="" class="babak-area-box-text">III</div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area-red" style="width: 40%;">
+        <div id=""name="" class="total-point-area-red" style="width: 35%;">
             <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text"></div>
         </div>
         @php
