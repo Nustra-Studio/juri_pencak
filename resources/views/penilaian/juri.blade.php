@@ -20,6 +20,8 @@
             $id_arena = $arena;
             $babak = Setting::where('arena',$id_arena)->first();
             $babak = $babak->babak;
+            $settings = Setting::find($id_juri);
+            $idColomName = $settings->getKeyName();
         @endphp
     </head>
     <body>
@@ -42,10 +44,11 @@
                     </div>
                 </div>
                 <div class="juri d-flex flex-column align-items-center">
-                    <h1>JURI 1</h1>
+                    <h1>{{$idColomName}}</h1>
                     <span>{{$setting->arena}}</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center text-end">
+                    <div class="text">
                     @php
                     $kontigen = KontigenModel::where('id',$tim_merahs->id_kontigen)->first();
                  @endphp
