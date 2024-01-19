@@ -47,8 +47,8 @@
 
         <!-- JURI ARENA -->
         <section id="juri">
-            <div class="container d-flex justify-content-between">
-                <div class="d-flex align-items-center justify-content-center">
+            <div class="container row">
+                <div class="col d-flex align-items-center justify-content-center">
                     <div class="text">
                         @php
                            $kontigen = KontigenModel::where('id',$tim_birus->id_kontigen)->first();
@@ -57,11 +57,11 @@
                         <span class="peserta">{{$tim_birus->name}}</span>
                     </div>
                 </div>
-                <div class="juri d-flex flex-column align-items-center">
+                <div class="col juri d-flex flex-column align-items-center">
                     <h1>{{$idColomName}}</h1>
                     <span>ARENA : {{$setting->arena}}</span>
                 </div>
-                <div class="d-flex align-items-center justify-content-center text-end">
+                <div class="col d-flex align-items-center justify-content-center text-end">
                     <div class="text">
                     @php
                     $kontigen = KontigenModel::where('id',$tim_merahs->id_kontigen)->first();
