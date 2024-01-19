@@ -137,7 +137,7 @@
             </div>
         </div>
         <div id=""name="" class="total-point-area" style="width: 35%;">
-            <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text"></div>
+            <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text" style="font-size: 20vw"></div>
         </div>
         <div id=""name="" class="babak-area">
             <div id=""name="" class="babak-area-box">
