@@ -78,13 +78,13 @@ class DewanController extends Controller
         
                     // Adjust the 'score' value based on the condition
                     if ($score == 5) {
-                        $data['score'] *= 2;
+                        $data['score'] * 2;
                     } elseif ($score == 10) {
-                        $data['score'] *= 3;
+                        $data['score'] * 3;
                     }
                 } else {
                     // Adjust the 'status' value based on the condition
-                    $data['status'] = 'plus';
+                    $data['status'] = 'minus';
                 }
             }
         
