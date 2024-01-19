@@ -10,10 +10,12 @@
         use App\Setting;
         use App\arena;
         use App\kelas;
+        use App\juri;
         $data_kelas = kelas::all();
         $data = arena::all();
         $data_setting = Setting::first();
         $data_perserta = PersertaModel::get();
+        $data_juri = juri::get();
 
     @endphp
     <div class="row">
@@ -71,6 +73,30 @@
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label">Name</label>
                                 <input type="text" name="name" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputName" class="form-label">Juri 1</label>
+                                <select  name="juri_1" class="form-control" id="exampleInputName">
+                                    @foreach ($data_juri as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputName" class="form-label">Juri 2</label>
+                                <select  name="juri_2" class="form-control" id="exampleInputName">
+                                    @foreach ($data_juri as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputName" class="form-label">Juri 3</label>
+                                <select  name="juri_3" class="form-control" id="exampleInputName">
+                                    @foreach ($data_juri as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                            <!-- ... Other form elements ... -->
                 <div class="mb-3">

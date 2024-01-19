@@ -18,10 +18,6 @@
             <form method="post" action="{{ route('panel.store') }}">
               @csrf
               <div class="mb-3">
-                <label for="exampleInputText1" class="form-label">Arena</label>
-                <input type="text" value="{{$data_setting->arena}}" class="form-control" id="exampleInputText1" name="arena"  placeholder="Enter Name">
-              </div>
-              <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Judul</label>
                 <input type="text" value="{{$data_setting->judul}}"  class="form-control" id="exampleInputText1" name="judul"  placeholder="Enter Name">
               </div>
@@ -33,22 +29,6 @@
                   <option value="3"  {{ 3 == $data_setting->babak ? 'selected' : '' }}>3</option>
                 </select>
               </div>
-            <div class="mb-3">
-              <label for="exampleFormControlSelect1" class="form-label">Peserta 1</label>
-              <select class="form-select" name="biru"  id="exampleFormControlSelect1">
-                  @foreach ($data_perserta as $item)
-                      <option {{ $item->id == $data_setting->biru ? 'selected' : '' }} value="{{$item->id}}">{{$item->name}}</option>
-                  @endforeach
-              </select>
-            </div>
-          <div class="mb-3">
-            <label for="exampleFormControlSelect1" class="form-label">Perserta 2</label>
-            <select class="form-select" name="merah" id="exampleFormControlSelect1">
-              @foreach ($data_perserta as $item)
-              <option value="{{$item->id}}" {{ $item->id == $data_setting->merah ? 'selected' : '' }}>{{$item->name}}</option>
-              @endforeach
-            </select>
-          </div>
           <button class="btn btn-primary" type="submit">Update</button>
             </form>
           </div>

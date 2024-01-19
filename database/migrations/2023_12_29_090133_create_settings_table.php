@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('babak')->nullable();
             $table->string('biru')->nullable();
             $table->string('merah')->nullable();
+            $table->string('juri_1')->nullable();
+            $table->string('juri_2')->nullable();
+            $table->string('juri_3')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
