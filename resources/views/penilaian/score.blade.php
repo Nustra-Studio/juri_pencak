@@ -154,7 +154,7 @@
             </div>
         </div>
         <div id=""name="" class="total-point-area-red" style="width: 35%;">
-            <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text"></div>
+            <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text" style="font-size: 20vw"></div>
         </div>
         @php
         $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
