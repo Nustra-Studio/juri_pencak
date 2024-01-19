@@ -43,7 +43,6 @@ class DewanController extends Controller
         $id_perserta = $request->id;
         $id_juri = $request->juri;
         $babak = $request->babak;
-        $arena = $request->arena;
     
         if ($keterangan === "plus") {
             if($status ==="binaan"){
@@ -68,62 +67,83 @@ class DewanController extends Controller
                 ];
 
             }
-          // Initialize $data array with common elements
+            elseif($status ==="peringatan"){
+                $datan = score::where('keterangan',$status)->where('id_juri',$id_juri)
+                ->where('babak',$babak)->where('id_perserta',$id_perserta)->first();
+                $datas = score::where('keterangan',$status)->where('id_juri',$id_juri)
+                ->where('babak',$babak)->where('id_perserta',$id_perserta)->latest('created_at')->first();
+                $score = $datas->score;
+                if(empty($datan)){
+                    $data = [
+                        'score' => $p,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'minus',
+                        'babak'=>$babak
+                    ];
+                }
+                elseif($score == '5'){
+                        $data = [
+                            'score' => $p*2,
+                            'keterangan' => $status,
+                            'id_perserta' => $id_perserta,
+                            'id_juri' => $id_juri,
+                            'status' => 'minus',
+                            'babak'=>$babak
+                        ];
+                }
+                elseif($score == '10'){
+                    $data = [
+                        'score' => $p*3,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'minus',
+                        'babak'=>$babak
+                    ];
+            }
+            else{
+                $data = [
+                    'score' => $p,
+                    'keterangan' => $status,
+                    'id_perserta' => $id_perserta,
+                    'id_juri' => $id_juri,
+                    'status' => 'minus',
+                    'babak'=>$babak
+                ];
+            }
+             // Simpan data ke dalam tabel 'score'
+             score::create($data);
+    
+             return response()->json(['message' => 'Data berhasil disimpan']);
+            }
+            else{
+                $data = [
+                    'score' => $p,
+                    'keterangan' => $status,
+                    'id_perserta' => $id_perserta,
+                    'id_juri' => $id_juri,
+                    'status' => 'plus',
+                    'babak'=>$babak
+                ];
+            }
+    
+            // Simpan data ke dalam tabel 'score'
+            score::create($data);
+    
+            return response()->json(['message' => 'Data berhasil disimpan']);
+        }
+        elseif($keterangan === "senidewans"){
             $data = [
                 'score' => $p,
                 'keterangan' => $status,
                 'id_perserta' => $id_perserta,
                 'id_juri' => $id_juri,
-                'babak' => $babak,
+                'status' => 'min_point_solo'
             ];
-
-            if ($status === "peringatan") {
-                $datan = score::where('keterangan', $status)
-                    ->where('id_juri', $id_juri)
-                    ->where('babak', $babak)
-                    ->where('id_perserta', $id_perserta)
-                    ->first();
-
-                $datas = score::where('keterangan', $status)
-                    ->where('id_juri', $id_juri)
-                    ->where('babak', $babak)
-                    ->where('id_perserta', $id_perserta)
-                    ->latest('created_at')
-                    ->first();
-
-                if (empty($datan)) {
-                    // Adjust the 'status' value based on the condition
-                    $data['status'] = 'minus';
-
-                    // Adjust the 'score' value based on the condition
-                    if ($datas->score == 5) {
-                        $data['score'] *= 2;
-                    } elseif ($datas->score == 10) {
-                        $data['score'] *= 3;
-                    }
-
-                    // Simpan data ke dalam tabel 'score'
-                    score::create($data);
-
-                    return response()->json(['message' => 'Data berhasil disimpan']);
-                } else {
-                    // Adjust the 'status' value based on the condition
-                    $data['status'] = 'plus';
-                }
-
-
-            // Simpan data ke dalam tabel 'score' for the other cases
             score::create($data);
-
-            return response()->json(['message' => 'Data berhasil disimpan']);
-            }
-         elseif ($keterangan === "senidewans") {
-            // Adjust the 'status' value based on the condition
-            $data['status'] = 'min_point_solo';
-
-            // Simpan data ke dalam tabel 'score'
-            score::create($data);
-
+    
             return response()->json(['message' => 'Data berhasil disimpan']);
         }
         elseif($keterangan === "senidewansc"){
