@@ -391,7 +391,21 @@
                     }
                 });
             }
-            function updatescore (){
+            function updatescore1 (){
+                var elemenDiv = document.getElementById("score1"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
+                $.ajax({
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check',
+                    method: 'GET',
+                    success: function (response) {
+                        console.log(response.data);
+                        // Panggil kembali fungsi untuk polling berikutnya
+                    }
+                });
+            }
+            function updatescore2 (){
+                var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
+                var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
                     url: '/call-data/?tipe=check&id=' + id + '&kt=check',
                     method: 'GET',
@@ -426,7 +440,8 @@
             peringatan2();
             score1();
             score2();
-            updatescore();
+            updatescore1();
+            updatescore2();
 
         }
 
