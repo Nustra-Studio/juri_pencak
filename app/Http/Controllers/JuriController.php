@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\score;
 use App\pending_tanding;
+use Carbon\Carbon;
 
 class JuriController extends Controller
 {
@@ -45,7 +46,16 @@ class JuriController extends Controller
         $arena = $request->arena;
         
         if($keterangan === "plus"){
-           
+            $currentTimestamp = Carbon::now();
+            $threeSecondsAgo = $currentTimestamp->subSeconds(3);
+            $datas = pending_tanding::where('created_at', '>', $threeSecondsAgo)
+                ->where('created_at', '<=', $currentTimestamp)
+                ->where('id_perserta',$id_perserta)
+                ->where('keterangan', $status)
+                ->first();
+            $variable1 = $datas->juri1;
+            $variable2 = $datas->juri2;
+            $variable3 = $datas->juri3;    
             $data = [
                 'score' => $p,
                 'keterangan' => $status,
@@ -55,7 +65,17 @@ class JuriController extends Controller
                 'babak' => $request->babak,
                 'arena' => $arena
             ];
-            pending_tanding::create($data);
+
+            if ($variable1 !== null || $variable2 !== null || $variable3 !== null) {
+                $data = [
+                    "juri$nomor_juri" => $id_juri,
+                ];
+                $datas->update($data);
+            }
+            else{
+                  pending_tanding::create($data);
+            }
+          
         
             return response()->json(['message' => 'Data berhasil disimpan']);
 
