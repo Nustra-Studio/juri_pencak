@@ -9,7 +9,7 @@
 @php
     use App\PersertaModel;
     use App\KontigenModel;
-    
+    use App\kelas;
     use App\category;
     $data = PersertaModel::get();
 @endphp
@@ -41,7 +41,7 @@
                             <td>{{ $loop->index+1 }}</td>
                             <td> {{$item->name}}</td>
                             @php
-                                use App\kelas;
+                              
                                 $kontigen = KontigenModel::where('id',$item->id_kontigen)->first();
                                 $kelas = kelas::where('id',$item->kelas)->first();
                                 $category = category::where('id',$item->categor)->first();
