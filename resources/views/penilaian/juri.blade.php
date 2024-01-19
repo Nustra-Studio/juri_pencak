@@ -24,13 +24,13 @@
             $dua = Setting::where('arena',$id_arena)->where('juri_2',$id_juri)->first();
             $tiga = Setting::where('arena',$id_arena)->where('juri_3',$id_juri)->first();
             if (!empty($satu)) {
-                $idColomName = "Juri 1";
+                $idColomName ="Juri 1";
             }
             elseif (!empty($dua)) {
-                $idColomName = "Juri 2";
+                $idColomName ="Juri 2";
             }
             elseif (!empty($tiga)) {
-                $idColomName = "Juri 3";
+                $idColomName ="Juri 3";
             }
             
         @endphp
