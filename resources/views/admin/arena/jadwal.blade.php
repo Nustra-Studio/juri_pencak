@@ -125,7 +125,7 @@
                   <td class="fw-bold text-danger">12</td>
                   <td class="fw-bold text-primary">23</td>
                   <td class="fw-bold">Galang</td>
-                  <td class="h-100 px-0 py-0 w-25 bg-primary">
+                  <td class="h-100 px-0 py-0 w-25">
                     <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
                         <select class="custom-select w-100 p-0 me-1" id="input-continent" style="height: 65px;">
                             <option value="menang-1">Menang Point</option>
@@ -140,7 +140,7 @@
                     </div>
                   </td>
                   <td>
-                      <div class="d-flex justify-content-center p-0">
+                      <div class="d-flex justify-content-center p-0 me-1">
                           <div class="bg-success p-2 text-center text-light rounded shadow" style="width: 85px;">Selesai</div>
                       </div>
                   </td>
