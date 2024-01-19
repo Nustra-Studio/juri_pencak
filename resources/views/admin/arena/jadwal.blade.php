@@ -33,6 +33,7 @@
         use App\PersertaModel;
         use App\Setting;
         use App\jadwal;
+        use App\kelas;
         $data_setting = Setting::first();
         $data_perserta = PersertaModel::get();
         $data_jadwal = jadwal::where('arena',$arena)->get();
@@ -121,11 +122,17 @@
 
                 @foreach ($data_jadwal as $item)
                 <tr>
+                    @php
+                        $merah = PersertaModel::where('id',$item->perserta_merah)->first();
+                        $biru =  PersertaModel::where('id',$item->perserta_merah)->first();
+                        $id_kelas = $merah->kelas;
+                        $kelas = kelas::where('id',$id_kelas)->first();
+                    @endphp
                     <td>1</td>
                     <td>1</td>
-                    <td>KELAS D</td>
-                    <td class="fw-bold text-danger">{{$item->perserta_merah}}</td>
-                    <td class="fw-bold text-primary">{{$item->perserta_biru}}</td>
+                    <td>{{$kelas->name}}</td>
+                    <td class="fw-bold text-danger">{{$merah->name}}</td>
+                    <td class="fw-bold text-primary">{{$biru->name}}</td>
                     <td class="fw-bold text-danger">{{$item->score_merah}}</td>
                     <td class="fw-bold text-primary">{{$item->score_biru}}</td>
                     <td class="fw-bold p-0 h-100">
