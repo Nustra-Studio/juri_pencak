@@ -44,7 +44,7 @@
                               
                                 $kontigen = KontigenModel::where('id',$item->id_kontigen)->first();
                                 $kelas = kelas::where('id',$item->kelas)->first();
-                                $category = category::where('id',$item->categor)->first();
+                                $category = category::where('id',$item->category)->first();
 
                             @endphp
                             <td>{{$kontigen->kontigen}}</td>
