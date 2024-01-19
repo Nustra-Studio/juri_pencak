@@ -430,7 +430,7 @@
                     // Tangani kesalahan jika ada
                 });
                 function reload(){
-                    window.location.reload();
+                    // window.location.reload();
                 }
                 setInterval(reload, 800);
                     });
