@@ -128,11 +128,11 @@
                   <td class="h-100 px-0 py-0 w-25">
                     <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
                         <select class="custom-select w-100 p-0 mx-1" id="input-continent" style="height: 55px;">
-                            <option value="menang-1">Menang Point</option>
-                            <option value="menang-2">Menang Teknik</option>
+                            <option value="menang-1">Point</option>
+                            <option value="menang-2"> Teknik</option>
                             <option value="menang-2">Diskualifikasi</option>
                             <option value="menang-3">Lawan Mengundurkan diri</option>
-                            <option value="menang-4">Keputusan wasit</option>
+                            <option value="menang-4">Wasit Menghentikan Pertandigan</option>
                         </select>
                         <button class="btn btn-success me-1">
                             <i class="fa-solid fa-check" style="color: #ffffff;"></i>
