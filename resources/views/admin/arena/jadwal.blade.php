@@ -133,7 +133,7 @@
                   </td>
                   <td class="h-100 px-0 py-0 w-25">
                     <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
-                        <select class="custom-select w-100 p-0 mx-1" id="input-continent" style="height: 55px;">
+                        <select class="custom-select w-100 p-0 me-1" id="input-continent" style="height: 70px;">
                             <option value="menang-1">Point</option>
                             <option value="menang-2"> Teknik</option>
                             <option value="menang-2">Diskualifikasi</option>
