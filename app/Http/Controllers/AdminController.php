@@ -119,7 +119,7 @@ class AdminController extends Controller
             return view('admin.PanelArena',compact('arena'));
         }
         elseif($role == "score"){
-            return view('score',compact('arena'));
+            return view('penilaian.score',compact('arena'));
         }
         else{
             dd($data);
