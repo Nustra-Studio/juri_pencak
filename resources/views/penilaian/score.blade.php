@@ -76,7 +76,7 @@
         </div>
     </div>
     <div id=""name="" class="score-section">
-        <div id=""name="" class="score-area">
+        <div id=""name="" class="score-area" style="width: 20%;">
             <div id=""name="" class="score-blue">
                 @php
                 $jatuh = score::where('keterangan','jatuh')->where('id_perserta','2')->count();
