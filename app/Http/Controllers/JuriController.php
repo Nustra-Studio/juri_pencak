@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\score;
+use App\pending_tanding;
 
 class JuriController extends Controller
 {
@@ -40,17 +41,21 @@ class JuriController extends Controller
         $status = $request->status;
         $id_perserta = $request->id;
         $id_juri = $request->juri;
+        $nomor_juri = $request->nj;
+        $arena = $request->arena;
         
         if($keterangan === "plus"){
+           
             $data = [
                 'score' => $p,
                 'keterangan' => $status,
                 'id_perserta' => $id_perserta,
-                'id_juri' => $id_juri,
+                "juri$nomor_juri" => $id_juri,
                 'status' => 'plus',
                 'babak' => $request->babak,
+                'arena' => $arena
             ];
-            score::create($data);
+            pending_tanding::create($data);
         
             return response()->json(['message' => 'Data berhasil disimpan']);
 
