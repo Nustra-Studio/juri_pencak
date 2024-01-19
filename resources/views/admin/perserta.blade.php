@@ -51,7 +51,8 @@
                             <td>{{$kelas->name}}</td>
                             <td>{{$category->name}}</td>
                             <td>{{$item->status}}</td>
-                            <div class="text-end">
+                            <td>                            
+                                <div class="text-end">
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
                                 {{-- <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
                                 @csrf
@@ -59,6 +60,7 @@
                             </form> --}}
                             <button class="btn btn-danger btn-sm delete-button" data-form-delete="{{ $item->id }}">Delete</button>
                             </div>
+                        </td>
                         </tr>
                     @endforeach 
                     
