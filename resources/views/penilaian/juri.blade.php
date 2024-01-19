@@ -57,7 +57,7 @@
                         <span class="peserta">{{$tim_birus->name}}</span>
                     </div>
                 </div>
-                <div class="col juri d-flex flex-column justify-content-center align-items-center">
+                <div class="col juri d-flex flex-column justify-content-center align-items-center bg-black">
                     <h1>{{$idColomName}}</h1>
                     <span>ARENA : {{$setting->arena}}</span>
                 </div>
