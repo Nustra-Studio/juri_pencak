@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 Route::get('/score',function(){
     return view('loginscore');
-})
+});
 Route::get('/login', function () {
     return view('auth.login');
 });
