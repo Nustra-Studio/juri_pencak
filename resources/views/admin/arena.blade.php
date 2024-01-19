@@ -45,6 +45,15 @@
                                     @csrf
                                     @method('DELETE')
                                 </form>
+                                <form   class="forms-sample"
+                                        style="display: none;"
+                                        method="GET"
+                                        action="{{url('/redirect')}}"
+                                >
+                                <input type="hidden" name="role" value="arena">
+                                <input type="hidden" name="arena" value="{{$item->id}}">
+                                <button class="btn btn-success btn-sm ">Panel</button>
+                                </form>
                                 <button class="btn btn-danger btn-sm delete-button" data-form-delete="{{ $item->id }}">Delete</button>
                                 </div>
                             </tr>

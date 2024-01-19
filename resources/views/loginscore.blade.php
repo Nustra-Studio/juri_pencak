@@ -33,17 +33,6 @@
                   </select>
                   <input type="hidden" name="role" value="score">
                 </div>
-                {{-- <div class="mb-3">
-                  <label for="userPassword" class="form-label">Role</label>
-                  <select name="role" class="form-control" id="">
-                    <option value="juri-tanding">Juri Tanding</option>
-                    <option value="dewan-tanding">Dewan Juri Tanding</option>
-                    <option value="juri-ganda">Juri Seni Ganda</option>
-                    <option value="dewan-ganda">Dewan Seni Ganda</option>
-                    <option value="juri-tunggal">Juri Seni Tunggal</option>
-                    <option value="dewan-tunggal">Dewan Seni Tunggal</option>
-                  </select>
-                </div> --}}
                 <div class="mb-2">
                     <button class="btn btn-primary">Login</button>
                 </div>
