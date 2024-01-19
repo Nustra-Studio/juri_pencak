@@ -187,7 +187,6 @@ class JuriController extends Controller
                         ];
                         score::create($datas);
                         $data->delete();
-                        return response()->json(['data' => $score]);
                     }
                 }
 
