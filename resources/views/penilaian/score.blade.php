@@ -10,6 +10,7 @@
         Use App\score;
         Use App\Setting;
         $data = Setting::first();
+        $babak = $data->babak;
     @endphp
 </head>
 <style>
@@ -29,9 +30,10 @@
     $id_perserta_1 = $data->biru ;
     $id_perserta_2 = $data->merah;
 @endphp
+<div class="d-none" name="{{$babak}}" id="babakid"></div>
     <div id=""name="" class="header-body">
         <div id=""name="" class="header-title">
-            NUSANTARA CUP
+            SH TERATE CUP 1, Ranting Kota, Cabang Kota Kediri
         </div>
         <div id=""name="" class="mid-header">
             <img src="../assets/Assets/header.png" alt="" style="position: relative; left: -50%; height: 40px; margin-bottom: 30px;">
@@ -136,8 +138,8 @@
                 </div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area" style="width: 35%; height: 370px;">
-            <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text" style="font-size: 20vw"></div>
+        <div id=""name="" class="total-point-area" style="width: 27%; height: 370px;">
+            <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text" style="font-size: 23vw"></div>
         </div>
         <div id=""name="" class="babak-area">
             <div id=""name="" class="babak-area-box">
@@ -153,8 +155,8 @@
                 <div id=""name="" class="babak-area-box-text">III</div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area-red" style="width: 35%; height: 370px;">
-            <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text" style="font-size: 20vw"></div>
+        <div id=""name="" class="total-point-area-red" style="width: 27%; height: 370px;">
+            <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text" style="font-size: 23vw"></div>
         </div>
         @php
         $jatuh = score::where('keterangan','jatuh')->where('id_perserta','1')->count();
@@ -251,17 +253,19 @@
     <div id=""name="" class="running-text">
         <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 70px; background-color: aliceblue; border-radius: 3px; border: 1px solid black;"> 
         <marquee behavior="" direction="Running">
-            Pertandingan Pencak Silat Kediri Telah dimulai || Pertandingan hari ini dimulai sore Hari || kunjungi ayosilat.com untuk melihat update
+            SH TERATE CUP 1, Ranting Kota, Cabang Kota Kediri Telah Di Mulai || Info Lebih Lanjut kunjungi IG @ayosilat atau menghubungi 0856-4909-2072 || kunjungi ayosilat.com untuk melihat update
         </marquee>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function calldata() {
+                var babakDiv =   document.getElementById("babakid");
+                var IdBabak = elemenDiv.getAttribute("name");
             function jatuh1() {
                 var elemenDiv = document.getElementById("jatuh1"); // Mendapatkan elemen dengan ID "jatuh1"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -275,7 +279,7 @@
                 var elemenDiv = document.getElementById("jatuh2"); // Mendapatkan elemen dengan ID "jatuh2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -290,7 +294,7 @@
                 var elemenDiv = document.getElementById("bina1"); // Mendapatkan elemen dengan ID "bina1"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -305,7 +309,7 @@
                 var elemenDiv = document.getElementById("bina2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -320,7 +324,7 @@
                 var elemenDiv = document.getElementById("teguran1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran,&babak='+ IdBabak +
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -335,7 +339,7 @@
                 var elemenDiv = document.getElementById("teguran2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -350,7 +354,7 @@
                 var elemenDiv = document.getElementById("peringatan1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -365,7 +369,7 @@
                 var elemenDiv = document.getElementById("peringatan2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan',
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan&babak='+ IdBabak +,
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -446,7 +450,7 @@
         }
 
         calldata();
-        setInterval(calldata, 1500);
+        setInterval(calldata, 500);
     </script>
 </body>
 </html>
