@@ -35,7 +35,7 @@
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="text">
                         @php
-                           $kontigen = KontigenModel::where('id',$tim_birus->kontigen)->first();
+                           $kontigen = KontigenModel::where('id',$tim_birus->id_kontigen)->first();
                         @endphp
                         <span class="team">{{$kontigen->kontigen}}</span> <br>
                         <span class="peserta">{{$tim_birus->name}}</span>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-center text-end">
                     @php
-                    $kontigen = KontigenModel::where('id',$tim_merahs->kontigen)->first();
+                    $kontigen = KontigenModel::where('id',$tim_merahs->id_kontigen)->first();
                  @endphp
                  <span class="team">{{$kontigen->kontigen}}</span> <br>
                     <span class="peserta">{{$tim_merahs->name}}</span>
