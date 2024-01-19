@@ -8,6 +8,9 @@
 @section('content')
 @php
     use App\PersertaModel;
+    use App\KontigenModel;
+    use App\Kelas;
+    use App\category;
     $data = PersertaModel::get();
 @endphp
 <div class="row">
@@ -37,7 +40,16 @@
                         <tr>
                             <td>{{ $loop->index+1 }}</td>
                             <td> {{$item->name}}</td>
-                            <td>
+                            @php
+                                $kontigen = KontigenModel::where('id',$item->id_kontigen)->first();
+                                $kelas = kelas::where('id',$item->kelas)->first();
+                                $category = category::where('id',$item->categor)->first();
+
+                            @endphp
+                            <td>{{$kontigen->kontigen}}</td>
+                            <td>{{$kelas->name}}</td>
+                            <td>{{$category->name}}</td>
+                            <td>{{$item->status}}</td>
                             <div class="text-end">
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
                                 {{-- <form id="form-delete-{{ $item->id }}" action="{{ route('category.destroy', $item->id) }}" method="POST" style="display: none;">
