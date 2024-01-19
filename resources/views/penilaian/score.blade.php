@@ -426,6 +426,8 @@
             peringatan2();
             score1();
             score2();
+            updatescore();
+
         }
 
         calldata();
