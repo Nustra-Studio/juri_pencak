@@ -110,21 +110,22 @@ class DewanController extends Controller
                     // Adjust the 'status' value based on the condition
                     $data['status'] = 'plus';
                 }
-            } elseif ($keterangan === "senidewans") {
-                // Adjust the 'status' value based on the condition
-                $data['status'] = 'min_point_solo';
 
-                // Simpan data ke dalam tabel 'score'
-                score::create($data);
-
-                return response()->json(['message' => 'Data berhasil disimpan']);
-            }
 
             // Simpan data ke dalam tabel 'score' for the other cases
             score::create($data);
 
             return response()->json(['message' => 'Data berhasil disimpan']);
+            }
+         elseif ($keterangan === "senidewans") {
+            // Adjust the 'status' value based on the condition
+            $data['status'] = 'min_point_solo';
 
+            // Simpan data ke dalam tabel 'score'
+            score::create($data);
+
+            return response()->json(['message' => 'Data berhasil disimpan']);
+        }
         elseif($keterangan === "senidewansc"){
             $data = score::where('keterangan',$status)
             ->where('id_perserta',$id_perserta)
