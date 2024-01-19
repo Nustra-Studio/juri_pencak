@@ -66,7 +66,7 @@ class JuriController extends Controller
                 'arena' => $arena
             ];
 
-            if ($variable1 !== null || $variable2 !== null || $variable3 !== null) {
+            if ($datas !== null) {
                 $data = [
                     "juri$nomor_juri" => $id_juri,
                 ];
@@ -75,7 +75,6 @@ class JuriController extends Controller
             else{
                   pending_tanding::create($data);
             }
-          
         
             return response()->json(['message' => 'Data berhasil disimpan']);
 
