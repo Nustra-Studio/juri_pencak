@@ -134,6 +134,7 @@
                               <option value="menang-3">Lawan Mengundurkan diri</option>
                               <option value="menang-4">Keputusan wasit</option>
                           </select>
+                          <button class="btn btn-success">OK</button>
                       </div>
                   </td>
                   <td>
