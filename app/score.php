@@ -10,6 +10,6 @@ class score extends Model
     use HasFactory;
     protected $table = 'scores'; 
     protected $fillable = [
-        'score', 'keterangan', 'id_perserta','id_juri','status','babak'
+        'score', 'keterangan', 'id_perserta','id_juri','status','babak','arena'
     ];
 }
