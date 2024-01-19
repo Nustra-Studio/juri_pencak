@@ -16,5 +16,8 @@ class Setting extends Model
         'biru',
         'merah',
         'keterangan',
+        'juri_1',
+        'juri_2',
+        'juri_3',
     ];
 }
