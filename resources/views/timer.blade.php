@@ -51,7 +51,6 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Setting Timer</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
                       </button>
                 </div>
                 <div class="modal-body">
