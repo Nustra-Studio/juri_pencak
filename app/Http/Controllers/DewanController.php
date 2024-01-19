@@ -68,7 +68,7 @@ class DewanController extends Controller
                     ->first();
         
                 // Check if $datas is not null before accessing its properties
-                if ($datas !== null) {
+                if ($datan !== null) {
                     $score = $datas->score;
         
                     if (empty($datan)) {
