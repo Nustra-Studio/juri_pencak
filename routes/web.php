@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('penilaian.score');
 });
+Route::get('/score',function(){
+    return view('loginscore');
+})
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -23,7 +26,7 @@ Route::get('/login-juri', function(){
 Route::get('/timer',function(){
     return view('timer');
 });
-Route::get('/redirect-juri','AdminController@redirect');
+Route::get('/redirect','AdminController@redirect');
 
     Route::prefix('admin')->group(function () {
         Route::post('/juri','AdminController@juri')->name('admin.juri');

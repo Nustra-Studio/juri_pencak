@@ -8,7 +8,7 @@
       <div class="card">
         <div class="row">
           <div class="col-md-4 pe-md-1">
-            <div class="auth-side-wrapper" style="background-image: url('../assets/images/auth-img.jpg')">
+            <div class="auth-side-wrapper">
                 @php
                     Use App\juri;
                     Use App\arena;
@@ -19,20 +19,11 @@
           </div>
           <div class="col-md-8 ps-md-3">
             <div class="auth-form-wrapper px-4 py-5">
-              <a href="/" class="noble-ui-logo d-block mb-2">Login<span>Juri</span></a>
+              <a href="/" class="noble-ui-logo d-block mb-2">Login<span>Score</span></a>
               <form class="forms-sample"
                     method="GET"
                     action="{{url('/redirect')}}"
               >
-                <div class="mb-3">
-                  <label for="userEmail" class="form-label">Name</label>
-                  <select name="name" class="form-control" id="">
-                    @foreach ($data as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                  </select>
-                  
-                </div>
                 <div class="mb-3">
                   <label for="userEmail" class="form-label">Arena</label>
                   <select name="arena" class="form-control" id="">
@@ -40,9 +31,9 @@
                         <option value="{{$item->id}}">{{$item->name}}</option>
                     @endforeach
                   </select>
-                  
+                  <input type="hidden" name="role" value="score">
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                   <label for="userPassword" class="form-label">Role</label>
                   <select name="role" class="form-control" id="">
                     <option value="juri-tanding">Juri Tanding</option>
@@ -52,7 +43,7 @@
                     <option value="juri-tunggal">Juri Seni Tunggal</option>
                     <option value="dewan-tunggal">Dewan Seni Tunggal</option>
                   </select>
-                </div>
+                </div> --}}
                 <div class="mb-2">
                     <button class="btn btn-primary">Login</button>
                 </div>
