@@ -126,7 +126,7 @@
                   <td class="fw-bold text-primary">23</td>
                   <td class="fw-bold">Galang</td>
                   <td class="h-100 px-0 py-0 w-25 bg-primary">
-                    <div class="form-group p-0 d-flex justify-content-start align-items-center">
+                    <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
                         <select class="custom-select w-75 p-0" id="input-continent" style="height: 40px;">
                             <option value="menang-1">Menang Point</option>
                             <option value="menang-2">Menang Teknik</option>
@@ -134,8 +134,8 @@
                             <option value="menang-3">Lawan Mengundurkan diri</option>
                             <option value="menang-4">Keputusan wasit</option>
                         </select>
+                        <button class="btn btn-success">K</button>
                     </div>
-                    <button class="btn btn-success">K</button>
                   </td>
                   <td>
                       <div class="d-flex justify-content-center p-0">
