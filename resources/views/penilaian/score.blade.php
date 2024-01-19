@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <div id=""name="" class="score-section" style="width: 80%;">
+    <div id=""name="" class="score-section">
         <div id=""name="" class="score-area">
             <div id=""name="" class="score-blue">
                 @php
@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area" style="width: 40%;">
+        <div id=""name="" class="total-point-area">
             <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text"></div>
         </div>
         <div id=""name="" class="babak-area">
@@ -153,7 +153,7 @@
                 <div id=""name="" class="babak-area-box-text">III</div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area-red" style="width: 40%;">
+        <div id=""name="" class="total-point-area-red">
             <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text"></div>
         </div>
         @php
@@ -162,7 +162,7 @@
         $teguran = score::where('keterangan','teguran')->where('id_perserta','1')->count();
         $peringatan = score::where('keterangan','peringatan')->where('id_perserta','1')->count();
     @endphp
-        <div id=""name="" class="score-area" style="width: 80%;">
+        <div id=""name="" class="score-area">
             <div id=""name="" class="score-red">
                 <div id=""name="" class="score-red-point-wrap">
                     <div id="bina1" name="{{$id_perserta_2}}" class="score-red-point">
