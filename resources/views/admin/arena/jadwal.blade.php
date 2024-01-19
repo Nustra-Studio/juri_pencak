@@ -125,19 +125,22 @@
                   <td class="fw-bold text-danger">12</td>
                   <td class="fw-bold text-primary">23</td>
                   <td class="fw-bold">Galang</td>
-                  <td class="h-100 px-0 py-0 w-25 bg-primary">
-                    <div class="form-group p-0 d-flex justify-content-start align-items-center">
-                        <select class="custom-select w-75 p-0" id="input-continent" style="height: 40px;">
-                            <option value="menang-1">Menang Point</option>
-                            <option value="menang-2">Menang Teknik</option>
-                            <option value="menang-2">Diskualifikasi</option>
-                            <option value="menang-3">Lawan Mengundurkan diri</option>
-                            <option value="menang-4">Keputusan wasit</option>
-                        </select>
+                  <td class="h-100 px-0 py-0 w-25 bg-primary row">
+                    <div class="col">
+                        <div class="form-group p-0 d-flex justify-content-start align-items-center">
+                            <select class="custom-select w-75 p-0" id="input-continent" style="height: 40px;">
+                                <option value="menang-1">Menang Point</option>
+                                <option value="menang-2">Menang Teknik</option>
+                                <option value="menang-2">Diskualifikasi</option>
+                                <option value="menang-3">Lawan Mengundurkan diri</option>
+                                <option value="menang-4">Keputusan wasit</option>
+                            </select>
+                        </div>
                     </div>
-                    
-                    <div class="col-1 m-0 p-0 d-flex justify-content-start align-items-center">
-                        <button class="btn btn-success">K</button>
+                    <div class="col">
+                        <div class="col-1 m-0 p-0 d-flex justify-content-start align-items-center">
+                            <button class="btn btn-success">K</button>
+                        </div>
                     </div>
                   </td>
                   <td>
