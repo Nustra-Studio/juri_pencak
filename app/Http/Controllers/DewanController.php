@@ -61,6 +61,11 @@ class DewanController extends Controller
                     ->where('id_perserta', $id_perserta)
                     ->latest('created_at')
                     ->first();
+                    $datan = score::where('keterangan', $status)
+                    ->where('id_juri', $id_juri)
+                    ->where('babak', $babak)
+                    ->where('id_perserta', $id_perserta)
+                    ->first();
         
                 // Check if $datas is not null before accessing its properties
                 if ($datas !== null) {
