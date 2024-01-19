@@ -126,7 +126,7 @@
                   <td class="fw-bold text-primary">23</td>
                   <td class="fw-bold">Galang</td>
                   <td class="h-100 px-0 py-0 w-25">
-                    <div class="row w-100 gap-0">
+                    <div class="container-fluid row w-100 gap-0 bg-black">
                         <div class="col m-0 p-0">
                             <div class="form-group p-0 d-flex justify-content-start align-items-center">
                                 <select class="custom-select w-75 p-0" id="input-continent" style="height: 40px;">
