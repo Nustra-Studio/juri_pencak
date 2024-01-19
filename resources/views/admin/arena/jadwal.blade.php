@@ -127,7 +127,7 @@
                   <td class="fw-bold">Galang</td>
                   <td class="h-100 px-0 py-0 w-25">
                     <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
-                        <select class="custom-select w-100 p-0 me-1" id="input-continent" style="height: 65px;">
+                        <select class="custom-select w-100 p-0 me-1" id="input-continent" style="height: 55px;">
                             <option value="menang-1">Menang Point</option>
                             <option value="menang-2">Menang Teknik</option>
                             <option value="menang-2">Diskualifikasi</option>
