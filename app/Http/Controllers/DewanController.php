@@ -43,48 +43,29 @@ class DewanController extends Controller
         $id_perserta = $request->id;
         $id_juri = $request->juri;
         $babak = $request->babak;
-    
+        
         if ($keterangan === "plus") {
-            if($status ==="binaan"){
+            if ($status === "binaan" || $status === "teguran") {
                 $data = [
                     'score' => $p,
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
                     'status' => 'minus',
-                    'babak'=>$babak
+                    'babak' => $babak
                 ];
-            }
-            elseif($status ==="teguran"){
-                $data = [
-                    'score' => $p,
-                    'keterangan' => $status,
-                    'id_perserta' => $id_perserta,
-                    'id_juri' => $id_juri,
-                    'status' => 'minus',
-                    'babak'=>$babak
-
-                ];
-
-            }
-            elseif ($status === "peringatan") {
-                $datan = score::where('keterangan', $status)
-                    ->where('id_juri', $id_juri)
-                    ->where('babak', $babak)
-                    ->where('id_perserta', $id_perserta)
-                    ->first();
-            
+            } elseif ($status === "peringatan") {
                 $datas = score::where('keterangan', $status)
                     ->where('id_juri', $id_juri)
                     ->where('babak', $babak)
                     ->where('id_perserta', $id_perserta)
                     ->latest('created_at')
                     ->first();
-            
+        
                 // Check if $datas is not null before accessing its properties
                 if ($datas !== null) {
                     $score = $datas->score;
-            
+        
                     if (empty($datan)) {
                         $data = [
                             'score' => $p,
@@ -96,7 +77,7 @@ class DewanController extends Controller
                         ];
                     } elseif ($score == '5') {
                         $data = [
-                            'score' => $p * 2,
+                            'score' => '10',
                             'keterangan' => $status,
                             'id_perserta' => $id_perserta,
                             'id_juri' => $id_juri,
@@ -105,7 +86,7 @@ class DewanController extends Controller
                         ];
                     } elseif ($score == '10') {
                         $data = [
-                            'score' => $p * 3,
+                            'score' => '15',
                             'keterangan' => $status,
                             'id_perserta' => $id_perserta,
                             'id_juri' => $id_juri,
@@ -122,33 +103,32 @@ class DewanController extends Controller
                             'babak' => $babak
                         ];
                     }
-            
+        
                     // Simpan data ke dalam tabel 'score'
                     score::create($data);
-            
+        
                     return response()->json(['message' => 'Data berhasil disimpan']);
                 } else {
                     // Handle the case where $datas is null (no records found)
                     return response()->json(['error' => 'No data found for peringatan'], 404);
                 }
-            }
-            
-            else{
+            } else {
                 $data = [
                     'score' => $p,
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
                     'status' => 'plus',
-                    'babak'=>$babak
+                    'babak' => $babak
                 ];
             }
-    
+        
             // Simpan data ke dalam tabel 'score'
             score::create($data);
-    
+        
             return response()->json(['message' => 'Data berhasil disimpan']);
         }
+        
         elseif($keterangan === "senidewans"){
             $data = [
                 'score' => $p,
