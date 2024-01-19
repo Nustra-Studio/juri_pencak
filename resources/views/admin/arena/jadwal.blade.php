@@ -124,7 +124,7 @@
                 <tr>
                     @php
                         $merah = PersertaModel::where('id',$item->perserta_merah)->first();
-                        $biru =  PersertaModel::where('id',$item->perserta_merah)->first();
+                        $biru =  PersertaModel::where('id',$item->perserta_biru)->first();
                         $id_kelas = $merah->kelas;
                         $kelas = kelas::where('id',$id_kelas)->first();
                     @endphp
