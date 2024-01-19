@@ -176,6 +176,10 @@ class JuriController extends Controller
                         ];
                         score::create($datas);
                         $data->delete();
+                        $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
+                        $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
+                        $score = $plus - $minus;
+                        return response()->json(['data' => $score]);
                     }
                     $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
                     $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
