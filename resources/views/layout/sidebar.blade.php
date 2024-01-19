@@ -12,13 +12,22 @@
   <div class="sidebar-body">
     <ul class="nav">
       <li class="nav-item nav-category">Main</li>
+
+      @if ($status == "arena" )
+      <li class="nav-item {{ active_class(['/admin/panel']) }}">
+        <a href="{{ url('/admin/panel') }}" class="nav-link">
+          <i class="link-icon" data-feather="calendar"></i>
+          <span class="link-title">Jadwal</span>
+        </a>
+      </li>
+      @endif
+      @if ($status =="admin")
       <li class="nav-item {{ active_class(['/admin/panel']) }}">
         <a href="{{ url('/admin/panel') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Dashboard</span>
         </a>
       </li>
-      @if ($status =="admin")
       <li class="nav-item {{ active_class(['/admin/panels/kelas']) }}">
         <a href="{{ url('/admin/panels/kelas') }}" class="nav-link">
           <i class="link-icon" data-feather="home"></i>
