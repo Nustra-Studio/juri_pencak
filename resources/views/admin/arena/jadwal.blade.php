@@ -136,6 +136,7 @@
                         </select>
                         <button class="btn btn-success me-1">
                             <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            Simpan
                         </button>
                     </div>
                   </td>
