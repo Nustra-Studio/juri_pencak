@@ -10,7 +10,7 @@
 <body class="px-3 pt-5 bg-primary d-flex justify-content-center align-items-center" style="height: 650px;">
     <div class="container-fluid p-1 py-4 bg-light shadow">
         <div class="container-fluid d-flex justify-content-end align-items-center">
-            <i class="fa-solid fa-gear" style="cursor: pointer;"> </i>
+            <i class="fa-solid fa-gear" style="cursor: pointer;"></i>
         </div>
         <div class="row" style="height: 80px;">
             <div class="col text-center text-primary">
@@ -42,6 +42,19 @@
             <button id="pauseBtn" class="btn btn-primary mx-3 mt-2 px-4">Pause</button>  
             <button id="startBtn" class="btn btn-danger mx-3 mt-2 px-4">Start</button>
             <button id="stopBtn" class="btn btn-primary mx-3 mt-2 px-4">Stop</button>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Setting Timer</h5>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" placeholder="Settings">
+                </div>
+            </div>
         </div>
     </div>
 
