@@ -115,7 +115,7 @@ class AdminController extends Controller
             return view('penilaian.dewan',compact('id_juri','arena'));
         }
         elseif($role == "arena"){
-            $status = 'arena'
+            $status = 'arena';
             return view('admin.PanelArena',compact('arena','status'));
         }
         elseif($role == "score"){
