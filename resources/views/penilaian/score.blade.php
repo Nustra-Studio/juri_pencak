@@ -162,7 +162,7 @@
         $teguran = score::where('keterangan','teguran')->where('id_perserta','1')->count();
         $peringatan = score::where('keterangan','peringatan')->where('id_perserta','1')->count();
     @endphp
-        <div id=""name="" class="score-area">
+        <div id=""name="" class="score-area" style="width: 80%;">
             <div id=""name="" class="score-red">
                 <div id=""name="" class="score-red-point-wrap">
                     <div id="bina1" name="{{$id_perserta_2}}" class="score-red-point">
