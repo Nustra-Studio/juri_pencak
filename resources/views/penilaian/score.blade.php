@@ -5,11 +5,13 @@
     <link rel="stylesheet" href="../assets/score/score.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Score</title>
     @php
         Use App\score;
         Use App\Setting;
-        $data = Setting::first();
+        Use App\KontigenModel;
+        Use App\PersertaModel;
+        $data = Setting::where('arena',$arena)->first();
         $babak = $data->babak;
     @endphp
 </head>
@@ -31,6 +33,7 @@
     $id_perserta_2 = $data->merah;
 @endphp
 <div class="d-none" name="{{$babak}}" id="babakid"></div>
+  <div class="d-none" name="{{$arena}}" id="arenaid"></div>
     <div id=""name="" class="header-body">
         <div id=""name="" class="header-title">
             SH TERATE CUP 1, Ranting Kota, Cabang Kota Kediri
@@ -52,13 +55,14 @@
                 <img src="../assets/Assets/Ellipse 2.png" alt="" style="height: 50px; z-index: 1;">
                 <img src="../assets/Assets/karate.png" alt="" style="height: 35px; position: absolute; right: 0; left: 10px;top: 5px;">
             </div>
-            <div id=""name="" class="blue-player-text">
-                SMKN 1 <br> NGANJUK
+            <div id=""name="" class="blue-player-text text-primary text-start align-self-center mt-2 fw-bold">
+				Tim Biru
             </div>
         </div>
         <div id=""name="" class="mid-container mt-2">
             <div id=""name="" class="mid-container-text">
-                ARENA 1 <br>
+              
+                ARENA {{$arena}} <br>
                 PENYISIHAN - DEWASA (4 PA) <br>
                 <div id=""name="" class="mid-container-timer">
                     <div id=""name="timer" class="py-0 fs-4 px-4 bg-black border border-primary text-light rounded fw-bold">
@@ -67,9 +71,9 @@
                 </div>
             </div>
         </div>
-        <div id=""name="" class="red-container">
-            <div id=""name="" class="red-player-text">
-                SMA 1<br> JEMBER
+        <div id=""name="" class="red-container" style="width: 200px;">
+            <div id=""name="" class="red-player-text text-danger text-center align-self-center fw-bold">
+                Tim Merah
             </div>
             <div id=""name="" class="red-player-img">
                 <img src="../assets/Assets/Ellipse 1.png" alt="" style="height: 50px; z-index: 1;">
@@ -145,13 +149,13 @@
             <div id=""name="" class="babak-area-box">
                 <div id=""name="" class="babak-area-box-text-babak">BABAK</div>
             </div>
-            <div id=""name="" class="babak-area-box-ronde by">
+            <div id="babaksatu"name="" class="babak-area-box-ronde ">
                 <div id=""name="" class="babak-area-box-text">I</div>
             </div>
-            <div id=""name="" class="babak-area-box-ronde">
+            <div id="babakdua"name="" class="babak-area-box-ronde ">
                 <div id=""name="" class="babak-area-box-text">II</div>
             </div>
-            <div id=""name="" class="babak-area-box-ronde">
+            <div id="babaktiga"name="" class="babak-area-box-ronde ">
                 <div id=""name="" class="babak-area-box-text">III</div>
             </div>
         </div>
@@ -219,36 +223,38 @@
             </div>
         </div>
     </div>
-    <div id=""name="" class="juri-info-section">
-        <div id=""name="" class="juri-info-section-blue">
-            <div id=""name="" class="juri-info-item-blue">J3</div>
-            <div id=""name="" class="juri-info-item-blue">J2</div>
-            <div id=""name="" class="juri-info-item-blue">J1</div>
-            <div id=""name="" class="juri-info-item-center">
-                <div id=""name="" class="juri-info-item-center-item">
-                    PUKULAN <br>
-                    <img src="../assets/Assets/fist (2).png" alt="" style="height: 30px;">
-                </div>
-            </div>
-            <div id=""name="" class="juri-info-item-red">J1</div>
-            <div id=""name="" class="juri-info-item-red">J2</div>
-            <div id=""name="" class="juri-info-item-red">J3</div>
+    <div class="container d-flex justify-content-center align-items-center gap-5" style="width: 700px;">
+        <table class="table table-bordered border-3 border-dark" style="width: 450px;">
+            <thead class="table-secondary">
+                <tr>
+                    <th colspan="3" class="text-center text-primary">Indikator Jatuhan</th>
+                </tr>
+            </thead>
+            <tbody class="text-center fw-bold">
+                <tr>
+                    <td id="j1" class="">J1</td>
+                    <td id="j2" class="">J2</td>
+                    <td id="j3" class="">J3</td>
+                </tr>
+            </tbody>
+        </table>
 
-        </div>
-        <div id=""name="" class="juri-info-section-blue">
-            <div id=""name="" class="juri-info-item-blue">J3</div>
-            <div id=""name="" class="juri-info-item-blue">J2</div>
-            <div id=""name="" class="juri-info-item-blue">J1</div>
-            <div id=""name="" class="juri-info-item-center-2">
-                <div id=""name="" class="juri-info-item-center-item">
-                    <img src="../assets/Assets/kciks.png" alt="" style="height: 30px;"> <br>
-                    Tendangan
-                </div>
-            </div>
-            <div id=""name="" class="juri-info-item-red">J1</div>
-            <div id=""name="" class="juri-info-item-red">J3</div>
-            <div id=""name="" class="juri-info-item-red">J2</div>
-        </div>
+        <table class="table table-bordered rounded  border-3 border-dark" style="width: 450px;">
+            <thead class="table-secondary">
+                <tr>
+                    <th colspan="3" class="text-center text-danger">Indikator Hukuman</th>
+                </tr>
+            </thead>
+            <tbody class="text-center fw-bold">
+                <tr>
+                  	<td id="h3" class="">J3</td>
+                  	<td id="h2" class="">J2</td>
+                    <td id="h1" class="">J1</td>
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div id=""name="" class="running-text">
         <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 70px; background-color: aliceblue; border-radius: 3px; border: 1px solid black;"> 
@@ -260,12 +266,12 @@
     <script>
         function calldata() {
                 var babakDiv =   document.getElementById("babakid");
-                var IdBabak = elemenDiv.getAttribute("name");
+                var IdBabak = babakDiv.getAttribute("name");
             function jatuh1() {
                 var elemenDiv = document.getElementById("jatuh1"); // Mendapatkan elemen dengan ID "jatuh1"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -279,7 +285,7 @@
                 var elemenDiv = document.getElementById("jatuh2"); // Mendapatkan elemen dengan ID "jatuh2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=jatuh&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -294,7 +300,7 @@
                 var elemenDiv = document.getElementById("bina1"); // Mendapatkan elemen dengan ID "bina1"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -309,7 +315,7 @@
                 var elemenDiv = document.getElementById("bina2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=binaan&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -324,7 +330,7 @@
                 var elemenDiv = document.getElementById("teguran1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran,&babak='+ IdBabak +
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -339,7 +345,7 @@
                 var elemenDiv = document.getElementById("teguran2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=teguran&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -354,7 +360,7 @@
                 var elemenDiv = document.getElementById("peringatan1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -369,7 +375,7 @@
                 var elemenDiv = document.getElementById("peringatan2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan&babak='+ IdBabak +,
+                    url: '/call-data/?tipe=detail&id=' + id + '&kt=peringatan&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -384,7 +390,7 @@
                 var elemenDiv = document.getElementById("score1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=score&id=' + id + '&kt=score',
+                    url: '/call-data/?tipe=score&id=' + id + '&kt=score&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -399,7 +405,7 @@
                 var elemenDiv = document.getElementById("score1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=check&id=' + id + '&kt=check',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
@@ -411,7 +417,7 @@
                 var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=check&id=' + id + '&kt=check',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
@@ -423,7 +429,7 @@
                 var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=score&id=' + id + '&kt=score',
+                    url: '/call-data/?tipe=score&id=' + id + '&kt=score&babak='+ IdBabak +'',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
@@ -434,6 +440,190 @@
                     }
                 });
             }
+            function babak1() {
+                var babaksatu = document.getElementById('babaksatu');
+                var babakdua = document.getElementById('babakdua');
+                var babaktiga = document.getElementById('babaktiga');
+                babakdua.classList.remove('by');
+                babaktiga.classList.remove('by');
+                babaksatu.classList.add('by');
+            }
+
+            function babak2() {
+                var babaksatu = document.getElementById('babaksatu');
+                var babakdua = document.getElementById('babakdua');
+                var babaktiga = document.getElementById('babaktiga');
+                babakdua.classList.add('by');
+                babaktiga.classList.remove('by');
+                babaksatu.classList.remove('by');
+            }
+
+            function babak3() {
+                var babaksatu = document.getElementById('babaksatu');
+                var babakdua = document.getElementById('babakdua');
+                var babaktiga = document.getElementById('babaktiga');
+                babakdua.classList.remove('by');
+                babaktiga.classList.add('by');
+                babaksatu.classList.remove('by');
+            }
+
+            function changebabak() {
+                var elemenDiv = document.getElementById("arenaid");
+                var id = elemenDiv.getAttribute("name");
+                $.ajax({
+                    url: '/call-data/?tipe=checkbabak&id=' + id + '',
+                    method: 'GET',
+                    success: function (response) {
+                        console.log(response.data);
+                        var idbabak = response.data;
+                        if (idbabak == 1) {
+                            babak1();
+                        } else if (idbabak == 2) {
+                            babak2();
+                        } else if (idbabak == 3) {
+                            babak3();
+                        }
+                    }
+                });
+            }
+			function jatuhan1() {
+                var elemenDiv = document.getElementById("arenaid");
+                var id = elemenDiv.getAttribute("name");
+                $.ajax({
+                    url: '/call-data/?tipe=checkjatuhan&arena=' + id + '&juri=juri_1',
+                    method: 'GET',
+                    success: function (response) {
+                        console.log(response.data);
+                        var color = response.data;
+                        if (color == "merah") {
+                           var jatuhan = document.getElementById('j1');
+                          	jatuhan.setAttribute('class', '');
+                			jatuhan.classList.add('bg-danger');
+                        } else if (color == "biru") {
+                              var jatuhan = document.getElementById('j1');
+                              jatuhan.setAttribute('class', '');
+                                jatuhan.classList.add('bg-primary');
+                        } else{
+                             var jatuhan = document.getElementById('j1');
+                			 jatuhan.setAttribute('class', '');
+                        }
+                    }
+                });
+            }
+          			function jatuhan2() {
+                var elemenDiv = document.getElementById("arenaid");
+                var id = elemenDiv.getAttribute("name");
+                $.ajax({
+                    url: '/call-data/?tipe=checkjatuhan&arena=' + id + '&juri=juri_2',
+                    method: 'GET',
+                    success: function (response) {
+                        console.log(response.data);
+                        var color = response.data;
+                        if (color == "merah") {
+                           var jatuhan = document.getElementById('j2');
+                          	jatuhan.setAttribute('class', '');
+                			jatuhan.classList.add('bg-danger');
+                        } else if (color == "biru") {
+                              var jatuhan = document.getElementById('j2');
+                              jatuhan.setAttribute('class', '');
+                                jatuhan.classList.add('bg-primary');
+                        } else{
+                             var jatuhan = document.getElementById('j2');
+                			 jatuhan.setAttribute('class', '');
+                        }
+                    }
+                });
+            }
+          			function jatuhan3() {
+                        var elemenDiv = document.getElementById("arenaid");
+                        var id = elemenDiv.getAttribute("name");
+                        $.ajax({
+                            url: '/call-data/?tipe=checkjatuhan&arena=' + id + '&juri=juri_3',
+                            method: 'GET',
+                            success: function (response) {
+                                console.log(response.data);
+                                var color = response.data;
+                                if (color == "merah") {
+                                   var jatuhan = document.getElementById('j3');
+                                    jatuhan.setAttribute('class', '');
+                                    jatuhan.classList.add('bg-danger');
+                                } else if (color == "biru") {
+                                      var jatuhan = document.getElementById('j3');
+                                      jatuhan.setAttribute('class', '');
+                                        jatuhan.classList.add('bg-primary');
+                                } else{
+                                     var jatuhan = document.getElementById('j3');
+                                     jatuhan.setAttribute('class', '');
+                                }
+                            }
+                        });
+            }
+            function hukuman1() {
+                          var elemenDiv = document.getElementById("arenaid");
+                          var id = elemenDiv.getAttribute("name");
+                          $.ajax({
+                              url: '/call-data/?tipe=checkhukuman&arena=' + id + '&juri=juri_1',
+                              method: 'GET',
+                              success: function (response) {
+                                  console.log(response.data);
+                                  var color = response.data;
+                                  var jatuhan = document.getElementById('h1');
+                                  if (color == "merah") {
+                                      jatuhan.setAttribute('class', '');
+                                      jatuhan.classList.add('bg-danger');
+                                  } else if (color == "biru") {
+                                        jatuhan.setAttribute('class', '');
+                                          jatuhan.classList.add('bg-primary');
+                                  } else{
+                                       jatuhan.setAttribute('class', '');
+                                  }
+                              }
+                          });
+              }
+          function hukuman2() {
+                          var elemenDiv = document.getElementById("arenaid");
+                          var id = elemenDiv.getAttribute("name");
+                          $.ajax({
+                              url: '/call-data/?tipe=checkhukuman&arena=' + id + '&juri=juri_2',
+                              method: 'GET',
+                              success: function (response) {
+                                  console.log(response.data);
+                                  var color = response.data;
+                                  var jatuhan = document.getElementById('h2');
+                                  if (color == "merah") {
+                                      jatuhan.setAttribute('class', '');
+                                      jatuhan.classList.add('bg-danger');
+                                  } else if (color == "biru") {
+                                        jatuhan.setAttribute('class', '');
+                                          jatuhan.classList.add('bg-primary');
+                                  } else{
+                                       jatuhan.setAttribute('class', '');
+                                  }
+                              }
+                          });
+              }
+          function hukuman3() {
+                          var elemenDiv = document.getElementById("arenaid");
+                          var id = elemenDiv.getAttribute("name");
+                          $.ajax({
+                              url: '/call-data/?tipe=checkhukuman&arena=' + id + '&juri=juri_3',
+                              method: 'GET',
+                              success: function (response) {
+                                  console.log(response.data);
+                                  var color = response.data;
+                                  var jatuhan = document.getElementById('h3');
+                                  if (color == "merah") {
+                                      jatuhan.setAttribute('class', '');
+                                      jatuhan.classList.add('bg-danger');
+                                  } else if (color == "biru") {
+                                        jatuhan.setAttribute('class', '');
+                                          jatuhan.classList.add('bg-primary');
+                                  } else{
+                                       jatuhan.setAttribute('class', '');
+                                  }
+                              }
+                          });
+              }
             jatuh1();
             jatuh2();
             bina1();
@@ -446,6 +636,13 @@
             score2();
             updatescore1();
             updatescore2();
+      		changebabak();
+      		jatuhan1()
+      		jatuhan2()
+      		jatuhan3()
+      		hukuman1()
+      		hukuman2()
+      		hukuman3()
 
         }
 

@@ -24,15 +24,15 @@
             $dua = Setting::where('arena',$id_arena)->where('juri_2',$id_juri)->first();
             $tiga = Setting::where('arena',$id_arena)->where('juri_3',$id_juri)->first();
             if (!empty($satu)) {
-                $idColomName ="Juri 1";
+                $idColomName ="Juri_1";
                 $nomorjuri = "1";
             }
             elseif (!empty($dua)) {
-                $idColomName ="Juri 2";
+                $idColomName ="Juri_2";
                 $nomorjuri = '2';
             }
             elseif (!empty($tiga)) {
-                $idColomName ="Juri 3";
+                $idColomName ="Juri_3";
                 $nomorjuri = "3";
             }
             
@@ -232,7 +232,7 @@
                             <div class="row h100">
                                 <div class="col">
                                 <button
-                                name="juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:jatuhan p:0 keterangan:notif"  
+                                name="juri:{{$idColomName}} id:{{$tim_biru}} babak:{{$setting->babak}} status:jatuhan p:biru keterangan:notif"  
                                 class=" bt-notif btn btn-primary w-100 border-black shadow">
                                     Tim Biru
                                 </button>
@@ -244,7 +244,7 @@
                                 </div>
                                 <div class="col">
                                 <button
-                                name="juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:jatuhan p:0 keterangan:notif" 
+                                name="juri:{{$idColomName}} id:{{$tim_merah}} babak:{{$setting->babak}} status:jatuhan p:merah keterangan:notif" 
                                 class="bt-notif btn btn-danger w-100 border-black shadow">
                                     Tim Merah
                                 </button>
@@ -277,7 +277,7 @@
                             <div class="row h100">
                                 <div class="col">
                                 <button
-                                name="juri:{{$id_juri}} id:{{$tim_biru}} babak:{{$setting->babak}} status:hukuman p:0 keterangan:notif"    
+                                name="juri:{{$idColomName}} id:{{$tim_biru}} babak:{{$setting->babak}} status:hukuman p:biru keterangan:notif"    
                                 class="bt-notif btn btn-primary w-100 border-black shadow">
                                     Tim Biru
                                 </button>
@@ -289,7 +289,7 @@
                                 </div>
                                 <div class="col">
                                 <button
-                                name="juri:{{$id_juri}} id:{{$tim_merah}} babak:{{$setting->babak}} status:hukuman p:0 keterangan:notif"
+                                name="juri:{{$idColomName}} id:{{$tim_merah}} babak:{{$setting->babak}} status:hukuman p:merah keterangan:notif"
                                 class=" bt-notif btn btn-danger w-100 border-black shadow">
                                     Tim Merah
                                 </button>

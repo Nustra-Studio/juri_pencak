@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\score;
 use App\pending_tanding;
+use App\Setting;
 use Carbon\Carbon;
 
 class JuriController extends Controller
@@ -94,7 +95,7 @@ class JuriController extends Controller
 
             elseif($keterangan === "notif"){
                 $data = [
-                    'score' => '0',
+                    'score' => $p,
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
@@ -164,16 +165,42 @@ class JuriController extends Controller
                     $score = $plus - $minus;
                     return response()->json(['data' => $score]);
                 }
+               elseif($tipe === "checkbabak"){
+                 	$data = Setting::where('arena',$id)->first();
+                 	$data = $data->babak;
+                 	return response()->json(['data' => $arena]);
+               }
                 elseif($tipe === "detail"){
                     $kt = $request->input('kt');
                     $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
                     return response()->json(['data' => $data]);
                 }
+              elseif($tipe === "checkjatuhan"){
+                  $arena = $request->input('arena');
+                  $id_juri = $request->juri('juri');
+                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
+                	$data = $data->score;
+                  return response()->json(['data' => $data]);
+              }
+              elseif($tipe === "checkhukuman"){
+                  $arena = $request->input('arena');
+                  $id_juri = $request->input('juri');
+                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','jatuhan')->first();
+                
+                	$data = $data->score;
+                  return response()->json(['data' => $data]);
+              }
+              
                 elseif($tipe === "check"){
                     $pending = pending_tanding::where('id_perserta',"$id")->first();
+                  	$arena = $request->input('arena');
                     $variable1 = $pending->juri1;
                     $variable2 = $pending->juri2;
                     $variable3 = $pending->juri3;
+                  	$threshold = Carbon::now()->subSeconds(3);
+                  	$five = Carbon::now()->subSeconds(5);
+                  	$hapus_dewan = score::where('status','notif')->where('arena',$arena)->get();
+                  	$hapus_data = pending_tanding::where('created_at', '<', $threshold)->delete();
                     if (($variable1 !== null) + ($variable2 !== null) + ($variable3 !== null) >= 2) {
                         $data = pending_tanding::where('id',$pending->id)->first();
                         $datas = [
@@ -188,6 +215,9 @@ class JuriController extends Controller
                         score::create($datas);
                         $data->delete();
                     }
+                 elseif($hapus_dewan->count() > 0) {
+                          $hapus_dewan->each->delete();
+                      } 
                 }
 
                 elseif($tipe === "keterangan"){
