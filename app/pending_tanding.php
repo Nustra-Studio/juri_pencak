@@ -16,6 +16,8 @@ class pending_tanding extends Model
         'juri3',
         'id_perserta',
         'babak',
-        'arena'
+        'arena',
+        'status',
+        'keterangan'
     ];
 }

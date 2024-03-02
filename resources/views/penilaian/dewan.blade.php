@@ -330,17 +330,17 @@
                                     <tr>
                                         <td style="" >{{$item->id_juri}}</td>
                                         @php
-                                                $biru = PersertaModel::where('id_pesilat',$item->id_perserta)->value('id');
-                                                $biru = Setting::where('biru',$biru)->value('biru');
-                                                if (!empty($biru)) {
-                                                $color = "color: rgba(0, 102, 255, 1)";
-                                                $text = 'tim1';
-                                                }
-                                            else {
-                                                $color = "color: rgba(241, 0, 0, 1)";
-                                                $text = 'tim2';
-                                            }
-                                        @endphp
+                                        if ($item->score === 'biru') {
+                                        $color = "color: rgba(0, 102, 255, 1)";
+                                        $text = 'Tim Biru';
+                                        $biru = 'biru';
+                                        }
+                                    else {
+                                        $color = "color: rgba(241, 0, 0, 1)";
+                                        $text = 'Tim Merah';
+                                        $biru = '';
+                                    }
+                                @endphp
                                         <td  style="{{ !empty($biru) ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>
                                     </tr>
                                     @endforeach
@@ -373,15 +373,15 @@
                                     <tr>
                                         <td style="" >{{$item->id_juri}}</td>
                                         @php
-                                                $biru = PersertaModel::where('id_pesilat',$item->id_perserta)->value('id');
-                                                $biru = Setting::where('biru',$biru)->value('biru');
-                                                if (!empty($biru)) {
+                                                if ($item->score === 'biru') {
                                                 $color = "color: rgba(0, 102, 255, 1)";
                                                 $text = 'tim1';
+                                                $biru = 'biru';
                                                 }
                                             else {
                                                 $color = "color: rgba(241, 0, 0, 1)";
                                                 $text = 'tim2';
+                                                $biru = '';
                                             }
                                         @endphp
                                         <td  style="{{ !empty($biru) ? 'color: rgba(0, 102, 255, 1)' : 'color: rgba(241, 0, 0, 1)' }}">{{$text}}</td>

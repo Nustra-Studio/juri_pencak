@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('babak')->nullable();
             $table->string('arena')->nullable();
             $table->string('status')->nullable();
-            $table->string('perserta')->nullable();
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
