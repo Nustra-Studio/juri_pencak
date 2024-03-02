@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/score',function(){
     return view('loginscore');
 });
+Route::get('/timeradmin','AdminController@timer');
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -24,7 +25,7 @@ Route::get('/login-juri', function(){
     return view('jurilogin');
 });
 Route::get('/timer',function(){
-    return view('timer');
+    return view('logintimer');
 });
 Route::get('/redirect','AdminController@redirect');
 

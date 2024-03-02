@@ -60,8 +60,6 @@
                         <th scope="col" style="background-color: #0066FF; color: #f5f5f5;">JURI 1</th>
                         <th scope="col" style="background-color: #0066FF; color: #f5f5f5;">JURI 2</th>
                         <th scope="col" style="background-color: #0066FF; color: #f5f5f5;">JURI 3</th>
-                        <th scope="col" style="background-color: #0066FF; color: #f5f5f5;">JURI 4</th>
-                        <th scope="col" style="background-color: #0066FF; color: #f5f5f5;">JURI 5</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,13 +67,9 @@
                         <td id="attack"></td>
                         <td ></td>
                         <td ></td>
-                        <td></td>
-                        <td></td>
                     </tr>
                     <tr style="height: 70px;">
                         <td id="firmness"></td>
-                        <td></td>
-                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -83,13 +77,9 @@
                         <td id="soulfullness"></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
                     </tr>
                     <tr style="height: 70px;">
-                        <td class="bg-dark-subtle"></td>
-                        <td class="bg-dark-subtle"></td>
-                        <td class="bg-dark-subtle"></td>
+                        <td class="bg-dark-subtle" id="totaljuri"></td>
                         <td class="bg-dark-subtle"></td>
                         <td class="bg-dark-subtle"></td>
                     </tr>
@@ -134,6 +124,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function calldata() {
+            var attackp;
+            var soulp;
+            var firmp;
             function attack() {
                 var elemenDiv = document.getElementById("attack"); // Mendapatkan elemen dengan ID "jatuh1"
                 $.ajax({
@@ -142,6 +135,7 @@
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
                         
+                        attackp = parseFloat(response.data);
                         $('#attack').text(response.data);
                         console.log(response.data);
                     }
@@ -155,6 +149,7 @@
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
                         
+                        firmp = parseFloat(response.data);
                         $('#firmness').text(response.data);
                         console.log(response.data);
                     }
@@ -168,15 +163,16 @@
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
                         
+                        soulp = parseFloat(response.data);
                         $('#soulfullness').text(response.data);
-                        console.log(response.data);
+                        console.log(soulp);
                     }
                 });
             }
             attack();
             firmness();
             soulfullness();
-        }
+        }   
 
         calldata();
         setInterval(calldata, 1500);

@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Solo & Ganda</title>
     @php
-        $id_juri = 3;
         $id_perserta = 3;
         use App\score;
     @endphp
@@ -18,7 +17,7 @@
     <div class="container-fluid f-cent fs-4 mt-3">
         <div>
             ARENA 1 <br>
-            PENYISIHAN - DEWASA(GANDA)
+            PENYISIHAN - DEWASA
         </div>
     </div>
     <!-- Mid Section -->
@@ -55,7 +54,7 @@
                         @endphp
                         <button
                         class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                        name="juri:{{$id_juri}} id:3 status:attack p:{{$number}} keterangan:pointseni"
+                        name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:attack p:{{$number}} keterangan:pointseni"
                         >{{$number}}</button>
                         @endfor
                     
@@ -71,7 +70,11 @@
                             ];
                             $data = score::where($check)->first();
                         @endphp
-                        <span class="text-primary">{{$data->score}}</span>
+                       @if($data)
+                       <span class="text-primary">{{$data->score}}</span>
+                        @else
+                            <span class="text-primary">0</span>
+                        @endif
                     </td>
                     <td rowspan="3" class="w-10 text-center align-middle">
                         <span class="fs-4">Total Score</span> <br>
@@ -81,6 +84,7 @@
                         @php
                             $score = score::where('status','point_solo')->sum('score');
                             $score = number_format($score, 2);
+                            $score = 9.1 + $score;
                         @endphp
                         <span class="text-primary fs-4 fw-bold">{{$score}}</span>
                     </td>
@@ -98,7 +102,7 @@
                         @endphp
                             <button
                             class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                            name="juri:{{$id_juri}} id:3 status:firmness p:{{$number}} keterangan:pointseni"
+                            name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:firmness p:{{$number}} keterangan:pointseni"
                             >{{$number}}</button>
                         @endfor
                         
@@ -112,7 +116,11 @@
                             ];
                             $data = score::where($check)->first();
                         @endphp
-                        <span class="text-primary">{{$data->score}}</span>
+                           @if($data)
+                           <span class="text-primary">{{$data->score}}</span>
+                            @else
+                                <span class="text-primary">0</span>
+                            @endif
                     </td>
                 </tr>
                 <tr>
@@ -125,10 +133,11 @@
                         @for ($i = 1; $i <= 30; $i++)
                         @php
                             $number = number_format($i * 0.01, 2);
+
                         @endphp
                             <button
                             class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                            name="juri:{{$id_juri}} id:3 status:soulfullness p:{{$number}} keterangan:pointseni"
+                            name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:soulfullness p:{{$number}} keterangan:pointseni"
                             >{{$number}}</button>
                         @endfor
                         
@@ -142,7 +151,11 @@
                             ];
                             $data = score::where($check)->first();
                         @endphp
-                        <span class="text-primary">{{$data->score}}</span>
+                          @if($data)
+                          <span class="text-primary">{{$data->score}}</span>
+                           @else
+                               <span class="text-primary">0</span>
+                           @endif
                     </td>
                 </tr>
             </tbody>

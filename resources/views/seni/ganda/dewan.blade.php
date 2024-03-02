@@ -20,7 +20,7 @@
             $c = "WEAPON FALL OUT OF ARENA WHILE TEAM IS STILL REQUIRED TO USE IT";
             $d = "ATHLETE STAYING AT ONE MOVE FOR MORE THAN 5 SECONDS";
             $minus = '0.50';
-            $id_juri = 3;
+            $id_perserta = 3;
         @endphp
         <div>
             ARENA 1 <br>
@@ -58,13 +58,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -73,10 +73,15 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = score::where('keterangan',$status)->where('id_perserta',$id_perserta)->sum('score');
                             $score = number_format($score, 2);
+                            $score_check = number_format(0, 2);
                         @endphp
+                        @if ($score > $score_check)
+                        <td class="w-10 fw-bold text-danger align-middle text-center">-{{$score}}</td>
+                        @else
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td class="align-middle">
@@ -90,13 +95,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -105,10 +110,15 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = score::where('keterangan',$status)->where('id_perserta',$id_perserta)->sum('score');
                             $score = number_format($score, 2);
+                            $score_check = number_format(0, 2);
                         @endphp
+                        @if ($score > $score_check)
+                        <td class="w-10 fw-bold text-danger align-middle text-center">-{{$score}}</td>
+                        @else
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td class="align-middle">
@@ -122,13 +132,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -137,10 +147,15 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = score::where('keterangan',$status)->where('id_perserta',$id_perserta)->sum('score');
                             $score = number_format($score, 2);
+                            $score_check = number_format(0, 2);
                         @endphp
+                        @if ($score > $score_check)
+                        <td class="w-10 fw-bold text-danger align-middle text-center">-{{$score}}</td>
+                        @else
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td class="align-middle">
@@ -154,13 +169,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name="juri:{{$id_juri}} id:3 status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -169,14 +184,23 @@
                             </div>
                         </td>
                         @php
-                            $score = score::where('keterangan',$status)->where('id_perserta',3)->sum('score');
+                            $score = score::where('keterangan',$status)->where('id_perserta',$id_perserta)->sum('score');
                             $score = number_format($score, 2);
+                            $score_check = number_format(0, 2);
                         @endphp
+                        @if ($score > $score_check)
+                        <td class="w-10 fw-bold text-danger align-middle text-center">-{{$score}}</td>
+                        @else
                         <td class="w-10 fw-bold text-primary align-middle text-center">{{$score}}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td colspan="2" class="text-end">Total Pengurangan :</td>
-                        <td class="align-middle text-center text-danger fw-bold">12</td>
+                            @php
+                                    $score = score::where('status',"seni_minus")->where('id_perserta',$id_perserta)->sum('score');
+                                    $score = number_format($score, 2);
+                            @endphp
+                        <td class="align-middle text-center text-danger fw-bold">-{{$score}}</td>
                     </tr>
                 </tbody>
             </table>

@@ -45,7 +45,7 @@ class DewanController extends Controller
         $babak = $request->babak;
     
         if ($keterangan === "plus") {
-            i if ($status === "peringatan") {
+            if ($status === "peringatan") {
                 $datan = Score::where('keterangan', $status)
                     ->where('id_juri', $id_juri)
                     ->where('babak', $babak)
@@ -114,7 +114,19 @@ class DewanController extends Controller
 
             return response()->json(['message' => 'Data berhasil disimpan']);
         }
-        elseif($keterangan === "senidewanc"){
+        elseif($keterangan === "senidewans"){
+            $data = [
+                'score' => $p,
+                'keterangan' => $status,
+                'id_perserta' => $id_perserta,
+                'id_juri' => $id_juri,
+                'status' => 'seni_minus',
+                'babak' => $babak
+            ];
+            Score::create($data);
+            return response()->json(['message' => 'Data berhasil dihapus']);
+        }
+        elseif($keterangan === "senidewansc"){
             $data = score::where('keterangan',$status)
             ->where('id_perserta',$id_perserta)
             ->first();

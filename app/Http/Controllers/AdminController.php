@@ -8,6 +8,7 @@ use App\juri;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\Perserta;
 use App\arena;
+use App\score;
 class AdminController extends Controller
 {
     /**
@@ -26,7 +27,32 @@ class AdminController extends Controller
             $status = 'arena';
             return view('admin.PanelArena', compact('status'));
         }
-
+      public function timer(Request $request){
+		$tipe = $request->tipe;
+        $select = $request->value;
+        $arena =$request->arena;
+        	if($tipe ==="babak"){
+            	$data = Setting::where('arena',$arena)->first();
+              	$data->update(['babak'=>$select]);
+              	 return response()->json('success',200);
+            }
+        elseif($tipe ==="clear"){
+          	if($arena == '1'){
+              $data = Score::where('id_perserta', '1')->orWhere('id_perserta', '2')->get();
+              $data->each->delete();
+              	$data = Setting::where('arena',$arena)->first();
+              	$data->update(['babak'=>'1']);
+              return response()->json('success',200);
+            }
+          elseif($arena == '2'){
+              $data = Score::where('id_perserta','3')->orWhere('id_perserta','4')->get();
+              $data->each->delete();
+              	$data = Setting::where('arena',$arena)->first();
+              	$data->update(['babak'=>'1']);
+              return response()->json('success',200);
+            }
+        }
+      }
     /**
      * Show the form for creating a new resource.
      *
@@ -137,6 +163,24 @@ class AdminController extends Controller
         }
         elseif($role == "score"){
             return view('penilaian.score',compact('arena'));
+        }
+        elseif($role == "seni_score"){
+            return view('seni.score',compact('arena'));
+        }
+        elseif($role == 'timer'){
+            return view('timer',compact('arena'));
+        }
+        elseif($role == 'juri-ganda'){
+            return view('seni.ganda.juri',compact('id_juri','arena'));
+        }
+        elseif($role == 'dewan-ganda'){
+            return view('seni.ganda.dewan',compact('id_juri','arena'));
+        }
+        elseif($role == 'juri-tunggal'){
+            return view('seni.tunggal.juri',compact('id_juri','arena'));
+        }
+        elseif($role == 'dewan-tunggal'){
+            return view('seni.tunggal.dewan',compact('id_juri','arena'));
         }
         else{
             dd($data);
