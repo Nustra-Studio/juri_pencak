@@ -56,7 +56,7 @@
                 </div>
                 <div class="juri d-flex flex-column align-items-center">
                     <h1>{{$idColomName}}</h1>
-                    <span>{{$setting->arena}}</span>
+                    <span>{{$setting->judul}}</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center text-end">
                     <div class="text">
