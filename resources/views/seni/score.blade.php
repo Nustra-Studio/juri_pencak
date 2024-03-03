@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/seni/ScoreSeni.css">
     <title>Seni Score</title>
+    @php
+            use App\score;
+            use App\Setting;
+            use App\PersertaModel;
+            use App\KontigenModel;
+            $setting = Setting::first();
+            $perserta = PersertaModel::where('id',$setting->biru)->first(); 
+            $id_perserta = $perserta->id;
+            $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
+    @endphp
 </head>
 <body>
     <!-- Header Section -->
@@ -50,8 +60,8 @@
         <div class="container-fluid ">
             <!-- Player Info -->
             <div class="fs-4 mt-4">
-                NAMA : Novan <br>
-                KONTINGEN : Nganjuk
+                NAMA : {{$perserta->name}} <br>
+                KONTINGEN : {{$kontigen}}
             </div>
             <!-- Point Table -->
             <table class="table table-bordered mt-3 f-cent fs-3 border-black">
@@ -64,19 +74,19 @@
                 </thead>
                 <tbody>
                     <tr style="height: 70px;">
-                        <td id="attack"></td>
-                        <td ></td>
-                        <td ></td>
+                        <td id="attack1"></td>
+                        <td id="attack2"></td>
+                        <td id="attack3"></td>
                     </tr>
                     <tr style="height: 70px;">
-                        <td id="firmness"></td>
-                        <td></td>
-                        <td></td>
+                        <td id="firmness1"></td>
+                        <td id="firmness2"></td>
+                        <td id="firmness3"></td>
                     </tr>
                     <tr style="height: 70px;">
-                        <td id="soulfullness"></td>
-                        <td></td>
-                        <td></td>
+                        <td id="soulfullness1"></td>
+                        <td id="soulfullness2"></td>
+                        <td id="soulfullness3"></td>
                     </tr>
                     <tr style="height: 70px;">
                         <td class="bg-dark-subtle" id="totaljuri"></td>
@@ -121,22 +131,25 @@
             </div>
         </div>
     </div>
+    <div class="d-none" name="{{$id_perserta}}" id="id_perserta"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function calldata() {
+        function calldata1() {
+            var elemenDiv = document.getElementById("id_perserta");
+            var id = elemenDiv.getAttribute("name");
             var attackp;
             var soulp;
             var firmp;
             function attack() {
                 var elemenDiv = document.getElementById("attack"); // Mendapatkan elemen dengan ID "jatuh1"
                 $.ajax({
-                    url: '/call-data/?tipe=seni&kt=attack',
+                    url: '/call-data/?tipe=seni&kt=attack&id='+id+'&juri=1',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
                         
                         attackp = parseFloat(response.data);
-                        $('#attack').text(response.data);
+                        $('#attack1').text(response.data);
                         console.log(response.data);
                     }
                 });
@@ -144,13 +157,13 @@
             function firmness() {
                 var elemenDiv = document.getElementById("firmness"); // Mendapatkan elemen dengan ID "jatuh1"
                 $.ajax({
-                    url: '/call-data/?tipe=seni&kt=firmness',
+                    url: '/call-data/?tipe=seni&kt=firmness&id='+id+'&juri=1',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
                         
                         firmp = parseFloat(response.data);
-                        $('#firmness').text(response.data);
+                        $('#firmness1').text(response.data);
                         console.log(response.data);
                     }
                 });
@@ -158,13 +171,13 @@
             function soulfullness() {
                 var elemenDiv = document.getElementById("soulfullness"); // Mendapatkan elemen dengan ID "jatuh1"
                 $.ajax({
-                    url: '/call-data/?tipe=seni&kt=soulfullness',
+                    url: '/call-data/?tipe=seni&kt=soulfullness&id='+id+'&juri=1',
                     method: 'GET',
                     success: function (response) {
                         // Perbarui tampilan dengan data yang diperbarui
                         
                         soulp = parseFloat(response.data);
-                        $('#soulfullness').text(response.data);
+                        $('#soulfullness1').text(response.data);
                         console.log(soulp);
                     }
                 });
@@ -173,9 +186,114 @@
             firmness();
             soulfullness();
         }   
-
-        calldata();
-        setInterval(calldata, 1500);
+        function calldata2() {
+            var elemenDiv = document.getElementById("id_perserta");
+            var id = elemenDiv.getAttribute("name");
+            var attackp;
+            var soulp;
+            var firmp;
+            function attack() {
+                var elemenDiv = document.getElementById("attack"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=attack&id='+id+'&juri=2',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        attackp = parseFloat(response.data);
+                        $('#attack2').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            function firmness() {
+                var elemenDiv = document.getElementById("firmness"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=firmness&id='+id+'&juri=2',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        firmp = parseFloat(response.data);
+                        $('#firmness2').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            function soulfullness() {
+                var elemenDiv = document.getElementById("soulfullness"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=soulfullness&id='+id+'&juri=2',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        soulp = parseFloat(response.data);
+                        $('#soulfullness2').text(response.data);
+                        console.log(soulp);
+                    }
+                });
+            }
+            attack();
+            firmness();
+            soulfullness();
+        } 
+        function calldata3() {
+            var elemenDiv = document.getElementById("id_perserta");
+            var id = elemenDiv.getAttribute("name");
+            var attackp;
+            var soulp;
+            var firmp;
+            function attack() {
+                var elemenDiv = document.getElementById("attack"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=attack&id='+id+'&juri=3',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        attackp = parseFloat(response.data);
+                        $('#attack3').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            function firmness() {
+                var elemenDiv = document.getElementById("firmness"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=firmness&id='+id+'&juri=3',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        firmp = parseFloat(response.data);
+                        $('#firmness3').text(response.data);
+                        console.log(response.data);
+                    }
+                });
+            }
+            function soulfullness() {
+                var elemenDiv = document.getElementById("soulfullness"); // Mendapatkan elemen dengan ID "jatuh1"
+                $.ajax({
+                    url: '/call-data/?tipe=seni&kt=soulfullness&id='+id+'&juri=3',
+                    method: 'GET',
+                    success: function (response) {
+                        // Perbarui tampilan dengan data yang diperbarui
+                        
+                        soulp = parseFloat(response.data);
+                        $('#soulfullness3').text(response.data);
+                        console.log(soulp);
+                    }
+                });
+            }
+            attack();
+            firmness();
+            soulfullness();
+        } 
+        calldata1();
+        calldata2();
+        calldata3();
+        setInterval(calldata, 2500);
     </script>
 </body>
 </html>

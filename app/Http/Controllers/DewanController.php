@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\score;
+use App\Setting;
+use App\PersertaModel;
 
 class DewanController extends Controller
 {
@@ -138,6 +140,12 @@ class DewanController extends Controller
             $data->delete();
             return response()->json(['message' => 'Data berhasil dihapus']);
 
+        }
+        elseif($keterangan === "jadwal"){
+            $data = Setting::first();
+            Setting::where('id',$data->id)->update(['biru'=>$p]);
+            $perserta = PersertaModel::where('id',$p)->update(['status'=>$status]);
+            return response()->json(['message' => 'Data berhasil ']);
         }
     }
 

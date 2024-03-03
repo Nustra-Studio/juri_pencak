@@ -8,15 +8,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Solo & Ganda</title>
     @php
-        $id_perserta = 3;
-        use App\score;
+            use App\score;
+            use App\Setting;
+            use App\PersertaModel;
+            use App\KontigenModel;
+            $setting = Setting::first();
+            $perserta = PersertaModel::where('id',$setting->biru)->first(); 
+            $id_perserta = $perserta->id;
+            $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
     @endphp
 </head>
 <body>
     <!-- Match Info Section -->
     <div class="container-fluid f-cent fs-4 mt-3">
         <div>
-            ARENA 1 <br>
+            ARENA {{$arena}} <br>
             PENYISIHAN - DEWASA
         </div>
     </div>
@@ -26,11 +32,11 @@
         <!-- Player Info Section -->
             <div class="col fs-2">
                 <span class="fs-5">NAMA PESERTA :</span> <br> 
-                <span class="text-primary">BRIAN PUTRA IMANUEL</span>
+                <span class="text-primary">{{$perserta->name}}</span>
             </div>
             <div class="col text-end fs-2">
                 <span class="fs-5">: KONTINGEN</span> <br>
-                <span class="text-primary">NGANJUK</span>
+                <span class="text-primary">{{$kontigen}}</span>
             </div>
         </div>
         <table class="table table-bordered border-black">
@@ -54,7 +60,7 @@
                         @endphp
                         <button
                         class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                        name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:attack p:{{$number}} keterangan:pointseni"
+                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:attack p:{{$number}} keterangan:pointseni"
                         >{{$number}}</button>
                         @endfor
                     
@@ -102,7 +108,7 @@
                         @endphp
                             <button
                             class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                            name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:firmness p:{{$number}} keterangan:pointseni"
+                            name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:firmness p:{{$number}} keterangan:pointseni"
                             >{{$number}}</button>
                         @endfor
                         
@@ -137,7 +143,7 @@
                         @endphp
                             <button
                             class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                            name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:soulfullness p:{{$number}} keterangan:pointseni"
+                            name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:soulfullness p:{{$number}} keterangan:pointseni"
                             >{{$number}}</button>
                         @endfor
                         
@@ -151,11 +157,11 @@
                             ];
                             $data = score::where($check)->first();
                         @endphp
-                          @if($data)
-                          <span class="text-primary">{{$data->score}}</span>
-                           @else
-                               <span class="text-primary">0</span>
-                           @endif
+                        @if($data)
+                        <span class="text-primary">{{$data->score}}</span>
+                        @else
+                            <span class="text-primary">0</span>
+                        @endif
                     </td>
                 </tr>
             </tbody>

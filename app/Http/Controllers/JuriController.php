@@ -69,7 +69,7 @@ class JuriController extends Controller
                 $datas->update($updateData);
             }
             else{
-                  pending_tanding::create($data);
+                pending_tanding::create($data);
             }
         
             return response()->json(['message' => 'Data berhasil disimpan']);
@@ -165,23 +165,23 @@ class JuriController extends Controller
                     $score = $plus - $minus;
                     return response()->json(['data' => $score]);
                 }
-               elseif($tipe === "checkbabak"){
-                 	$data = Setting::where('arena',$id)->first();
-                 	$data = $data->babak;
-                 	return response()->json(['data' => $arena]);
-               }
+                elseif($tipe === "checkbabak"){
+                        $data = Setting::where('arena',$id)->first();
+                        $data = $data->babak;
+                        return response()->json(['data' => $arena]);
+                }
                 elseif($tipe === "detail"){
                     $kt = $request->input('kt');
                     $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
                     return response()->json(['data' => $data]);
                 }
-              elseif($tipe === "checkjatuhan"){
-                  $arena = $request->input('arena');
-                  $id_juri = $request->juri('juri');
-                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
-                	$data = $data->score;
-                  return response()->json(['data' => $data]);
-              }
+                elseif($tipe === "checkjatuhan"){
+                    $arena = $request->input('arena');
+                    $id_juri = $request->juri('juri');
+                    $data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
+                    $data = $data->score;
+                    return response()->json(['data' => $data]);
+                }
               elseif($tipe === "checkhukuman"){
                   $arena = $request->input('arena');
                   $id_juri = $request->input('juri');
@@ -216,7 +216,7 @@ class JuriController extends Controller
                         $data->delete();
                     }
                  elseif($hapus_dewan->count() > 0) {
-                          $hapus_dewan->each->delete();
+                        $hapus_dewan->each->delete();
                       } 
                 }
 
@@ -229,8 +229,14 @@ class JuriController extends Controller
                 }
                 elseif($tipe === "seni"){
                     $kt = $request->input('kt');
-                    $data = score::where('keterangan',"$kt")->first();
-                    $data = $data->score;
+                    $id = $request->input('id');
+                    if($kt == "solo"){
+                        $data =score::where('id_perserta',$id)
+                                        ->where('keterangan', 'LIKE', '%firmness%')
+                                        ->orWhere('keterangan', 'LIKE', '%attack%')
+                                        ->orWhere('keterangan', 'LIKE', '%soulfullness%')
+                                        ->get();
+                    }
                     return response()->json(['data' => $data]);
                 }
             }

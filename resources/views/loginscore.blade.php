@@ -31,7 +31,14 @@
                         <option value="{{$item->id}}">{{$item->name}}</option>
                     @endforeach
                   </select>
-                  <input type="hidden" name="role" value="score">
+
+                </div>
+                <div class="mb-3">
+                  <label for="userEmail" class="form-label">Pertandingan</label>
+                  <select  class="form-control" name="role" id="">
+                    <option value="score">Tanding</option>
+                    <option value="seni_score">Seni</option>
+                </select>
                 </div>
                 <div class="mb-2">
                     <button class="btn btn-primary">Login</button>

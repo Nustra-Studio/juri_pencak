@@ -8,10 +8,20 @@
     <title>Juri Seni</title>
 </head>
 <body>
-           <!-- Match Info Section -->
-           <div class="d-flex justify-content-center ">
+    @php
+            use App\score;
+            use App\Setting;
+            use App\PersertaModel;
+            use App\KontigenModel;
+            $setting = Setting::first();
+            $perserta = PersertaModel::where('id',$setting->biru)->first(); 
+            $id_perserta = $perserta->id;
+            $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
+    @endphp
+        <!-- Match Info Section -->
+        <div class="d-flex justify-content-center ">
             <div class="mid-header-text text-center" >
-                ARENA 1 <br>
+                ARENA {{$arena}} <br>
                 PENYISIHAN - DEWASA (TUNGGAL)
             </div>
         </div>
@@ -20,18 +30,20 @@
             <div class="row">
                 <div class="col">
                     Nama : <br>
-                    <span class="text-primary fw-bold fs-5">Brian Putra Imanuel</span>
+                    <span class="text-primary fw-bold fs-5">{{$perserta->name}}</span>
                 </div>
                 <div class="col text-end">
                     : Kontingen <br>    
-                    <span class="text-primary fw-bold fs-5">KEDIRI</span>
+                    <span class="text-primary fw-bold fs-5">{{$kontigen}}</span>
                 </div>
             </div>
             <!-- Score Section -->
-            <div class="text-center border border-black rounded py-1">Tunggal Jurus 1 Tangan Kosong Movement 1</div>
+            <div class="text-center border border-black rounded py-1"></div>
             <div class="row text-center mt-4" style="height: 200px;">
                 <div class="col-md-5">
-                    <button class="btn btn-danger btn-lg custom-button shadow w-100 h-100">Wrong Move</button>
+                    <button
+                    name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:attack p:{{$number}} keterangan:pointseni"
+                    class="btn btn-danger btn-lg custom-button shadow w-100 h-100">Wrong Move</button>
                 </div>
                 <div class="col-md-2">
                     <div class="container-fluid h-100">

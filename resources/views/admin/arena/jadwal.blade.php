@@ -144,13 +144,18 @@
                                             <td>
                                                 <div class="d-flex justify-content-center p-0">
                                                     @if ($item->status === "pending")
-                                                    <button class="btn btn-primary px-3 shadow text-light">Pending</button>
+                                                    <button 
+                                                    name="keterangan:jadwal p:{{$item->id}} status:proses"
+                                                    class="btn btn-primary px-3 shadow text-light btn-data">Pending</button>
                                                     @endif
                                                     @if ($item->status === "proses")
-                                                    <button class="btn btn-warning px-3 shadow text-light">Proses</button>
+                                                    <button
+                                                    name="keterangan:jadwal p:{{$item->id}} status:finish"
+                                                    class="btn btn-warning px-3 shadow text-light btn-data">Proses</button>
                                                     @endif
                                                     @if ($item->status === "finish")
-                                                    <button class="btn btn-success px-3 shadow text-light">Selesai</button>
+                                                    <button
+                                                    class="btn btn-success px-3 shadow text-light btn-data">Selesai</button>
                                                     @endif
                                                 </div>
                                             </td>
@@ -180,5 +185,46 @@
     @endpush
 
     @push('custom-scripts')
-    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+        <script>
+             var tombolDenganKelas = document.querySelectorAll('.btn-data');
+    
+    // Loop melalui semua tombol dan tambahkan event listener
+    tombolDenganKelas.forEach(function(tombol) {
+        tombol.addEventListener('click', function() {
+            var nameAttribute = this.getAttribute('name'); // Mendapatkan nilai atribut "name"
+            
+            // Membagi nilai atribut "name" menjadi objek JavaScript
+            var data = {};
+            nameAttribute.split(' ').forEach(function(item) {
+                var parts = item.split(':');
+                data[parts[0]] = parts[1];
+            });
+
+            // Sekarang, Anda memiliki data dalam bentuk objek
+            console.log(data);
+
+                    // Lanjutkan dengan kode pengiriman permintaan POST jika diperlukan
+                fetch('{{ route('dewan.store') }}', {
+                method: 'POST',
+                headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                // Tangani kesalahan jika ada
+            });
+            function reload(){
+            window.location.reload();
+            }
+            setInterval(reload, 800);
+                });
+    });
+        </script>
     @endpush

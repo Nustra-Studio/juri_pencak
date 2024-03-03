@@ -14,16 +14,22 @@
         <!-- Match Info Section -->
         @php
             use App\score;
+            use App\Setting;
+            use App\PersertaModel;
+            use App\KontigenModel;
             // peraturan
             $a = "PERFOMANCE EXCEDEED BY 10M BY 10M AREA";
             $b = "WEAPON DROP DOES NOT MEET SYNOPSIS";
             $c = "WEAPON FALL OUT OF ARENA WHILE TEAM IS STILL REQUIRED TO USE IT";
             $d = "ATHLETE STAYING AT ONE MOVE FOR MORE THAN 5 SECONDS";
             $minus = '0.50';
-            $id_perserta = 3;
+            $setting = Setting::first();
+            $perserta = PersertaModel::where('id',$setting->biru)->first(); 
+            $id_perserta = $perserta->id;
+            $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
         @endphp
         <div>
-            ARENA 1 <br>
+            ARENA {{$arena}} <br>
             PENYISIHAN - DEWASA(Solo)
         </div>
         <!-- Player Info Section -->
@@ -31,11 +37,11 @@
             <div class="row">
                 <div class="col fs-2 text-start">
                     <span class="fs-5">NAMA PESERTA :</span> <br> 
-                    <span class="text-primary">BRIAN PUTRA IMANUEL</span>
+                    <span class="text-primary">{{$perserta->name}}</span>
                 </div>
                 <div class="col text-end fs-2 text-end">
                     <span class="fs-5">: KONTINGEN</span> <br>
-                    <span class="text-primary">NGANJUK</span>
+                    <span class="text-primary">{{$kontigen}}</span>
                 </div>
             </div>
             <table class="table table-bordered border-black">
