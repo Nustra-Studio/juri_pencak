@@ -230,12 +230,11 @@ class JuriController extends Controller
                 elseif($tipe === "seni"){
                     $kt = $request->input('kt');
                     $id = $request->input('id');
+                    $id_juri = $request->input('juri');
                     if($kt == "solo"){
                         $data =score::where('id_perserta',$id)
-                                        ->where('keterangan', 'LIKE', '%firmness%')
-                                        ->orWhere('keterangan', 'LIKE', '%attack%')
-                                        ->orWhere('keterangan', 'LIKE', '%soulfullness%')
-                                        ->get();
+                                        ->where('id_juri', ' $id_juri')
+                                        ->first();
                     }
                     return response()->json(['data' => $data]);
                 }

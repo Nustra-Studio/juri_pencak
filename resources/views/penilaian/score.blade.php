@@ -2,10 +2,10 @@
 <html lang="en">        
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/score/score.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Score</title>
+    <link rel="stylesheet" href="../assets/score/score.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     @php
         Use App\score;
         Use App\Setting;
@@ -402,10 +402,12 @@
                 });
             }
             function updatescore1 (){
+              var arenadiv = document.getElementById("arenaid");
+                var arena = arenadiv.getAttribute("name");
                 var elemenDiv = document.getElementById("score1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'&arena'+ arena +'',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
@@ -414,10 +416,12 @@
                 });
             }
             function updatescore2 (){
+                var arenadiv = document.getElementById("arenaid");
+                var arena = arenadiv.getAttribute("name");
                 var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'&arena'+ arena +'',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
@@ -624,6 +628,7 @@
                               }
                           });
               }
+            changebabak();
             jatuh1();
             jatuh2();
             bina1();
@@ -636,13 +641,8 @@
             score2();
             updatescore1();
             updatescore2();
-      		changebabak();
-      		jatuhan1()
-      		jatuhan2()
-      		jatuhan3()
-      		hukuman1()
-      		hukuman2()
-      		hukuman3()
+
+
 
         }
 
