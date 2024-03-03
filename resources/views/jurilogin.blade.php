@@ -47,10 +47,10 @@
                   <select name="role" class="form-control" id="">
                     <option value="juri-tanding">Juri Tanding</option>
                     <option value="dewan-tanding">Dewan Juri Tanding</option>
-                    <option value="juri-ganda">Juri Seni Solo Creative Ganda</option>
-                    <option value="dewan-ganda">Dewan Seni Solo Creative Ganda</option>
-                    <option value="juri-tunggal">Juri Seni Tunggal Tunggal</option>
-                    <option value="dewan-tunggal">Dewan Seni Tunggal Tunggal</option>
+                    <option value="juri-ganda">Juri Seni Ganda</option>
+                    <option value="dewan-ganda">Dewan Seni Ganda</option>
+                    <option value="juri-tunggal">Juri Seni Tunggal</option>
+                    <option value="dewan-tunggal">Dewan Seni Tunggal</option>
                   </select>
                 </div>
                 <div class="mb-2">

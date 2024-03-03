@@ -165,11 +165,19 @@ class JuriController extends Controller
                     $score = $plus - $minus;
                     return response()->json(['data' => $score]);
                 }
+<<<<<<< HEAD
                 elseif($tipe === "checkbabak"){
                         $data = Setting::where('arena',$id)->first();
                         $data = $data->babak;
                         return response()->json(['data' => $arena]);
                 }
+=======
+               elseif($tipe === "checkbabak"){
+                 	$data = Setting::where('arena',$id)->first();
+                 	$data = $data->babak;
+                 	return response()->json(['data' => $arena]);
+               }
+>>>>>>> db40017ff59f2393a9d0c51337fcd66f6ab3ab2a
                 elseif($tipe === "detail"){
                     $kt = $request->input('kt');
                     $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
@@ -182,6 +190,13 @@ class JuriController extends Controller
                     $data = $data->score;
                     return response()->json(['data' => $data]);
                 }
+              elseif($tipe === "checkhukuman"){
+                  $arena = $request->input('arena');
+                  $id_juri = $request->juri('juri');
+                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
+                	$data = $data->score;
+                  return response()->json(['data' => $data]);
+              }
               elseif($tipe === "checkhukuman"){
                   $arena = $request->input('arena');
                   $id_juri = $request->input('juri');
@@ -216,7 +231,11 @@ class JuriController extends Controller
                         $data->delete();
                     }
                  elseif($hapus_dewan->count() > 0) {
+<<<<<<< HEAD
                         $hapus_dewan->each->delete();
+=======
+                          $hapus_dewan->each->delete();
+>>>>>>> db40017ff59f2393a9d0c51337fcd66f6ab3ab2a
                       } 
                 }
 
