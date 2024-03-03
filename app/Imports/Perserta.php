@@ -51,15 +51,24 @@ class Perserta implements ToCollection
                 );
             }
             $id_kontigen = KontigenModel::where('kontigen',$kontigen)->value('id');
-            $tim = PersertaModel::where('status', 'biru')->latest()->firstOrNew();
-            $tim->name = $name;
-            $tim->id_kontigen = $id_kontigen;
-            $tim->category = $id_category;
-            $tim->kelas = $id_kelas;
-            $tim->gender = $gender;
-            $tim->status = ($tim->exists) ? 'merah' : 'biru';
+            $tim = [
+                'name'=>$name,
+                'id_kontigen'=>$id_kontigen,
+                'category'=>$id_category,
+                'kelas'=>$id_kelas,
+                'gender'=>$gender,
+                'status'=>'pending'
+            ];
+            PersertaModel::create($tim);
+            // $tim = PersertaModel::where('status', 'biru')->latest()->firstOrNew();
+            // $tim->name = $name;
+            // $tim->id_kontigen = $id_kontigen;
+            // $tim->category = $id_category;
+            // $tim->kelas = $id_kelas;
+            // $tim->gender = $gender;
+            // $tim->status = ($tim->exists) ? 'merah' : 'biru';
 
-            $tim->save();
+            // $tim->save();
 
             
         }

@@ -197,8 +197,8 @@
                     <tr>
                         <td colspan="2" class="text-end">Total Pengurangan :</td>
                             @php
-                                 $score = score::where('status',"seni_minus")->where('id_perserta',$id_perserta)->sum('score');
-                                 $score = number_format($score, 2);
+                                    $score = score::where('status',"seni_minus")->where('id_perserta',$id_perserta)->sum('score');
+                                    $score = number_format($score, 2);
                             @endphp
                         <td class="align-middle text-center text-danger fw-bold">-{{$score}}</td>
                     </tr>

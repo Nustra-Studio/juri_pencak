@@ -104,14 +104,13 @@ class JuriController extends Controller
                 ];
                 score::create($data);
             }
-            elseif($keterangan === "senidewans"){
+            elseif($keterangan === "senidewan"){
                     $data = [
                         'score' => $p,
                         'keterangan' => $status,
                         'id_perserta' => $id_perserta,
                         'id_juri' => $id_juri,
-                        'status' => 'plus',
-                        'arena' => $arena
+                        'status' => 'plus'
                     ];
             }
             elseif($keterangan === "pointseni"){
@@ -124,8 +123,7 @@ class JuriController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
-                    'status' => 'point_solo',
-                    'arena' => $arena,
+                    'status' => 'point_solo'
                 ];
                 $datas = score::where($check)->first();
                 if ($datas) {
@@ -161,8 +159,6 @@ class JuriController extends Controller
             public function data(Request $request){
                 $tipe = $request->input('tipe');
                 $id = $request->input('id');
-              	$arena = $request->input('arena');
-              	$id_juri = $request->input('juri');
                 if($tipe ==="score"){
                     $plus = score::where('status','plus')->where('id_perserta',"$id")->sum('score');
                     $minus = score::where('status','minus')->where('id_perserta',"$id")->sum('score'); 
@@ -172,7 +168,7 @@ class JuriController extends Controller
                elseif($tipe === "checkbabak"){
                  	$data = Setting::where('arena',$id)->first();
                  	$data = $data->babak;
-                 	return response()->json(['data' => $data]);
+                 	return response()->json(['data' => $arena]);
                }
                 elseif($tipe === "detail"){
                     $kt = $request->input('kt');
@@ -181,12 +177,23 @@ class JuriController extends Controller
                 }
               elseif($tipe === "checkjatuhan"){
                   $arena = $request->input('arena');
-                  $id_juri = $request->input('juri');
-                	$data = score::where('id_juri',$id_juri)->where('status','notif')->where('keterangan','jatuhan')->first();
-                $data = $data->p;
+                  $id_juri = $request->juri('juri');
+                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
+                	$data = $data->score;
+                  return response()->json(['data' => $data]);
               }
+              elseif($tipe === "checkhukuman"){
+                  $arena = $request->input('arena');
+                  $id_juri = $request->input('juri');
+                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','jatuhan')->first();
+                
+                	$data = $data->score;
+                  return response()->json(['data' => $data]);
+              }
+              
                 elseif($tipe === "check"){
                     $pending = pending_tanding::where('id_perserta',"$id")->first();
+                  	$arena = $request->input('arena');
                     $variable1 = $pending->juri1;
                     $variable2 = $pending->juri2;
                     $variable3 = $pending->juri3;
@@ -208,6 +215,9 @@ class JuriController extends Controller
                         score::create($datas);
                         $data->delete();
                     }
+                 elseif($hapus_dewan->count() > 0) {
+                          $hapus_dewan->each->delete();
+                      } 
                 }
 
                 elseif($tipe === "keterangan"){
