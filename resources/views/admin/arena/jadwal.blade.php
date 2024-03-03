@@ -34,144 +34,138 @@
         use App\Setting;
         use App\jadwal;
         use App\kelas;
-        use App\category;
         $data_setting = Setting::first();
         $data_perserta = PersertaModel::get();
-        $total_pertandingan = PersertaModel::where('status','pending')->count('id');
-        $finish_pertandingan = PersertaModel::where('status','finish')->count('id');
         $data_jadwal = jadwal::where('arena',$arena)->get();
     @endphp
-    <body>
         <!-- Title -->
         <div class="containter-fluid fs-2 fw-bold d-flex justify-content-center align-items-center mt-2">
-            Jadwal Pertandigan
-        </div>
-        <!-- Indicator -->
-        <div class="container-fluid mt-2">
-            <table class="table table-bordered border-dark shadow">
-                <thead class="text-center">
-                    <tr>
-                        <th class="text-primary" colspan="3">Indikator Pertandingan</th>
-                    </tr>
-                </thead>
-                <tbody class="">
-                    <tr>
-                        <td class="">
-                            <div class="d-flex justify-content-center p-0">
-                                <div class="bg-success p-2 text-center text-light rounded shadow" style="width: 75px;">Selesai</div>
-                            </div>
-                        </td>
-                        <td class="">
-                            <div class="d-flex justify-content-center p-0">
-                                <div class="bg-warning p-2 text-center text-light rounded shadow" style="width: 75px;">Proses</div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- Status Info -->
-        <div class="container-fluid">
-            <table class="table table-bordered border-dark shadow">
-                <thead class="text-center">
-                    <tr>
-                        <th class="px-1">Total : {{$total_pertandingan}} Pertandingan</th>
-                        <th class="px-2">Selesai : {{$finish_pertandingan}} Pertandingan</th>
-                        <th class="px-2">Sisa : {{$total_pertandingan-$finish_pertandingan}} Pertandingan</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <!-- Match Info Section -->
-        <div class="container-fluid table-responsive-lg">
-            <table class="table table-warning table-bordered text-center align-middle">
-                <thead>
-                    <tr>
-                        <th>Senin, 15 Oktober 2024</th>
-                        <th>08:00-selesai</th>
-                        <th>Gelanggang 1</th>
-                        <th>Penyisihan</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <!-- Information Table -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive-lg">  
-                        <div class="card-body">
-                            <table id="example" class="table table-bordered shadow" style="width: 100%;">
-                                <thead class="text-center">
-                                    <tr>    
-                                        <th class="bg-light text-center">No</th>
-                                        <th class="bg-light text-center">Partai</th>
-                                        <th class="bg-light text-center">Kelas</th>
-                                        <th class="bg-light text-center">Nama</th>
-                                        <th class="bg-light text-center">Kategori</th>
-                                        <th class="bg-light text-center">Skor</th>
-                                        <th class="bg-light text-center">Waktu</th>
-                                        <th class="bg-light text-center">Deviation</th>
-                                        <th class="bg-light text-center">Kondisi Menang</th>
-                                        <th class="bg-light text-center">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center align-middle">
-                                        @foreach ($data_perserta as $item)
-                                        <tr>
-                                                @php
-                                                    $kelas = kelas::where('id',$item->kelas)->value('name');
-                                                    $category = category::where('id',$item->category)->value('name')
-                                                @endphp
-                                            <td class="text-center">{{ $loop->index+1 }}</td>
-                                            <td class="text-center">1</td>
-                                            <td>{{$kelas}}</td>
-                                            <td class="">{{$item->name}}</td>
-                                            <td class="">{{$category}}</td>
-                                            <td class="text-danger text-center">N/A</td>
-                                            <td class="text-primary text-center">N/A</td>
-                                            <td class="text-center">N/A</td>
-                                            <td class="h-100 px-0 py-0">
-                                                <div class="container form-group p-0 " >
-                                                    <select class="form-select w-100 p-0 text-center"" id="input-continent" style="height: 60px;">
-                                                        <option value="menang-1">Menang Point</option>
-                                                        <option value="menang-2">Menang Teknik</option>
-                                                        <option value="menang-2">Diskualifikasi</option>
-                                                        <option value="menang-4">Keputusan wasit</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex justify-content-center p-0">
-                                                    @if ($item->status === "pending")
-                                                    <button class="btn btn-primary px-3 shadow text-light">Pending</button>
-                                                    @endif
-                                                    @if ($item->status === "proses")
-                                                    <button class="btn btn-warning px-3 shadow text-light">Proses</button>
-                                                    @endif
-                                                    @if ($item->status === "finish")
-                                                    <button class="btn btn-success px-3 shadow text-light">Selesai</button>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                </tbody>
-                            </table>
+        Jadwal Pertandigan
+    </div>
+    <!-- Indicator -->
+    <div class="container-fluid mt-2">
+        <table class="table table-bordered border-dark shadow">
+            <thead class="text-center">
+                <tr>
+                    <th class="text-primary" colspan="3">Indikator Pertandingan</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                <tr>
+                    <td class="">
+                        <div class="d-flex justify-content-center p-0">
+                            <div class="bg-success p-2 text-center text-light rounded shadow" style="width: 75px;">Selesai</div>
                         </div>
-                    </div>
-                </div>
+                    </td>
+                    <td class="">
+                        <div class="d-flex justify-content-center p-0">
+                            <div class="bg-warning p-2 text-center text-light rounded shadow" style="width: 75px;">Proses</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Status Info -->
+    <div class="container-fluid">
+        <table class="table table-bordered border-dark shadow">
+            <thead class="text-center">
+                <tr>
+                    <th class="px-1">Total : 10 Pertandingan</th>
+                    <th class="px-2">Selesai : 10 Pertandingan</th>
+                    <th class="px-2">Sisa : 10 Pertandingan</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- Search -->
+    <div class="container-fluid my-3">
+        <form>
+            <div class="form-floating forma" >
+                <i class="icon fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                <input type="text" class="form-control ps-5 border-dark" id="floatingSrc" placeholder="Search">
+                <label for="floatingSrc" class="ms-5 px-0">Search</label>
             </div>
-        </div>
-    
-        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>    
-        <script src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
-        <script>
-            new DataTable('#example')
-        </script>
-    </body>
+        </form>
+    </div>
+    <!-- Match Info Section -->
+    <div class="container-fluid table-responsive-lg">
+        <table class="table table-warning table-bordered text-center align-middle">
+            <thead>
+                <tr>
+                    <th>Senin, 15 Oktober 2024</th>
+                    <th>08:00-selesai</th>
+                    <th>Gelanggang 1</th>
+                    <th>Penyisihan</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- Information Table -->
+    <div class="container-fluid table-responsive-lg">
+        <table class="table table-bordered border border-dark shadow">
+            <thead class="text-center">
+                <tr>
+                    <th class="bg-dark-subtle">No</th>
+                    <th class="bg-dark-subtle">Partai</th>
+                    <th class="bg-dark-subtle">Kelas</th>
+                    <th class="bg-dark-subtle">Sudut Merah</th>
+                    <th class="bg-dark-subtle">Sudut Biru</th>
+                    <th class="bg-dark-subtle">Skor</th>
+                    <th class="bg-dark-subtle">Skor</th>
+                    <th class="bg-dark-subtle">Pemenang</th>
+                    <th class="bg-dark-subtle">Kondisi Menang</th>
+                    <th class="bg-dark-subtle">Status</th>
+                </tr>
+            </thead>
+            <tbody class="text-center align-middle">
+
+                @foreach ($data_jadwal as $item)
+                <tr>
+                    @php
+                        $merah = PersertaModel::where('id',$item->perserta_merah)->first();
+                        $biru =  PersertaModel::where('id',$item->perserta_biru)->first();
+                        $id_kelas = $merah->kelas;
+                        $kelas = kelas::where('id',$id_kelas)->first();
+                    @endphp
+                    <td>1</td>
+                    <td>1</td>
+                    <td>{{$kelas->name}}</td>
+                    <td class="fw-bold text-danger">{{$merah->name}}</td>
+                    <td class="fw-bold text-primary">{{$biru->name}}</td>
+                    <td class="fw-bold text-danger">{{$item->score_merah}}</td>
+                    <td class="fw-bold text-primary">{{$item->score_biru}}</td>
+                    <td class="fw-bold p-0 h-100">
+                        <select class="custom-select w-100 p-0" id="input-winner"  style="height: 70px;">
+                            <option value="peserta_1" class="text-primary">Sudut Biru</option>
+                            <option value="peserta_2" class="text-danger">Sudut Merah</option>
+                            <option value="">N/A</option>
+                        </select>
+                    </td>
+                    <td class="h-100 px-0 py-0 w-25">
+                        <div class="form-group p-0 d-flex justify-content-start align-items-center flex-row">
+                            <select class="custom-select w-100 p-0 me-1" id="input-continent" style="height: 70px;">
+                                <option value="menang-1">Point</option>
+                                <option value="menang-2"> Teknik</option>
+                                <option value="menang-2">Diskualifikasi</option>
+                                <option value="menang-3">Lawan Mengundurkan diri</option>
+                                <option value="menang-4">Wasit Menghentikan Pertandigan</option>
+                            </select>
+                            <button class="btn btn-success me-1">
+                                <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-center p-0 me-1">
+                            <div class="bg-success p-2 text-center text-light rounded shadow" style="width: 85px;">Selesai</div>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>    
     @endsection
 
     @push('plugin-scripts')

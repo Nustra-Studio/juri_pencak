@@ -402,10 +402,12 @@
                 });
             }
             function updatescore1 (){
+              var arenadiv = document.getElementById("arenaid");
+                var arena = arenadiv.getAttribute("name");
                 var elemenDiv = document.getElementById("score1"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'&arena'+ arena +'',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
@@ -414,10 +416,12 @@
                 });
             }
             function updatescore2 (){
+                var arenadiv = document.getElementById("arenaid");
+                var arena = arenadiv.getAttribute("name");
                 var elemenDiv = document.getElementById("score2"); // Mendapatkan elemen dengan ID "bina2"
                 var id = elemenDiv.getAttribute("name"); // Mengambil nilai ID elemen
                 $.ajax({
-                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'',
+                    url: '/call-data/?tipe=check&id=' + id + '&kt=check&babak='+ IdBabak +'&arena'+ arena +'',
                     method: 'GET',
                     success: function (response) {
                         console.log(response.data);
@@ -624,6 +628,7 @@
                               }
                           });
               }
+            changebabak();
             jatuh1();
             jatuh2();
             bina1();
@@ -636,13 +641,8 @@
             score2();
             updatescore1();
             updatescore2();
-      		changebabak();
-      		jatuhan1()
-      		jatuhan2()
-      		jatuhan3()
-      		hukuman1()
-      		hukuman2()
-      		hukuman3()
+
+
 
         }
 

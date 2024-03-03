@@ -11,7 +11,7 @@
             use App\Setting;
             use App\PersertaModel;
             $id_arena = $arena;
-            $setting = Setting::first();
+          	$setting = Setting::where('arena',$arena)->first();
             $id_juri = $id_juri;
             $tim_merah = PersertaModel::where('id',$setting->merah)->first();
             $tim_biru =PersertaModel::where('id',$setting->biru)->first() ;
@@ -43,18 +43,16 @@
     </div>
     <div class="header-text">
         <div class="header-text-title">
-            Arena 1 <br>
-            Penyisihan Remaja
+            Arena {{$setting->arena}} <br>
+            Tanding Silat
         </div>
     </div>
     <div class="player-detail">
         <div>
-            SMKN 1 <br>
-            Ngajuk
+            Tim Biru
         </div>
         <div class="player-detail-blue">
-            SMA 1 <br>
-            Jember
+            Tim Merah
         </div>   
     </div>
     <div class="table-container">

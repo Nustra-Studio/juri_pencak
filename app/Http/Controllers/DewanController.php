@@ -98,7 +98,35 @@ class DewanController extends Controller
                         'babak' => $babak
                     ];
                 }
-            } else {
+            } 
+          elseif($status === "teguran"){
+            $datan = Score::where('keterangan', $status)
+                    ->where('id_juri', $id_juri)
+                    ->where('babak', $babak)
+                    ->where('id_perserta', $id_perserta)
+                    ->first();
+            if (empty($datan)) {
+                    $data = [
+                        'score' => $p,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'minus',
+                        'babak' => $babak
+                    ];
+                }
+            else{
+                $data = [
+                        'score' => $p * 2,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'minus',
+                        'babak' => $babak
+                    ];
+            }
+          }
+          else {
                 $data = [
                     'score' => $p,
                     'keterangan' => $status,
@@ -121,10 +149,11 @@ class DewanController extends Controller
                 'id_perserta' => $id_perserta,
                 'id_juri' => $id_juri,
                 'status' => 'seni_minus',
-                'babak' => $babak
+                'arena' => $request->arena,
             ];
             Score::create($data);
-            return response()->json(['message' => 'Data berhasil dihapus']);
+
+            return response()->json(['message' => 'Data berhasil disimpan']);
         }
         elseif($keterangan === "senidewansc"){
             $data = score::where('keterangan',$status)
