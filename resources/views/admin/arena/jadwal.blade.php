@@ -28,7 +28,6 @@
 </style>
 @endpush
 
-<<<<<<< HEAD
 @section('content')
 @php
     use App\PersertaModel;
@@ -164,152 +163,10 @@
                                     @endforeach
                             </tbody>
                         </table>
-=======
-        @media only screen and (max-width: 600px) {
-            .forma {
-                width: 200px;
-            }
-            }
-    </style>
-    @endpush
-
-    @section('content')
-    @php
-        use App\PersertaModel;
-        use App\Setting;
-        use App\jadwal;
-        use App\kelas;
-        use App\category;
-        $data_setting = Setting::first();
-        $data_perserta = PersertaModel::get();
-        $total_pertandingan = PersertaModel::where('status','pending')->count('id');
-        $finish_pertandingan = PersertaModel::where('status','finish')->count('id');
-        $data_jadwal = jadwal::where('arena',$arena)->get();
-    @endphp
-    <body>
-        <!-- Title -->
-        <div class="containter-fluid fs-2 fw-bold d-flex justify-content-center align-items-center mt-2">
-            Jadwal Pertandigan
-        </div>
-        <!-- Indicator -->
-        <div class="container-fluid mt-2">
-            <table class="table table-bordered border-dark shadow">
-                <thead class="text-center">
-                    <tr>
-                        <th class="text-primary" colspan="3">Indikator Pertandingan</th>
-                    </tr>
-                </thead>
-                <tbody class="">
-                    <tr>
-                        <td class="">
-                            <div class="d-flex justify-content-center p-0">
-                                <div class="bg-success p-2 text-center text-light rounded shadow" style="width: 75px;">Selesai</div>
-                            </div>
-                        </td>
-                        <td class="">
-                            <div class="d-flex justify-content-center p-0">
-                                <div class="bg-warning p-2 text-center text-light rounded shadow" style="width: 75px;">Proses</div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- Status Info -->
-        <div class="container-fluid">
-            <table class="table table-bordered border-dark shadow">
-                <thead class="text-center">
-                    <tr>
-                        <th class="px-1">Total : {{$total_pertandingan}} Pertandingan</th>
-                        <th class="px-2">Selesai : {{$finish_pertandingan}} Pertandingan</th>
-                        <th class="px-2">Sisa : {{$total_pertandingan-$finish_pertandingan}} Pertandingan</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <!-- Match Info Section -->
-        <div class="container-fluid table-responsive-lg">
-            <table class="table table-warning table-bordered text-center align-middle">
-                <thead>
-                    <tr>
-                        <th>Senin, 15 Oktober 2024</th>
-                        <th>08:00-selesai</th>
-                        <th>Gelanggang 1</th>
-                        <th>Penyisihan</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <!-- Information Table -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive-lg">  
-                        <div class="card-body">
-                            <table id="example" class="table table-bordered shadow" style="width: 100%;">
-                                <thead class="text-center">
-                                    <tr>    
-                                        <th class="bg-light text-center">No</th>
-                                        <th class="bg-light text-center">Partai</th>
-                                        <th class="bg-light text-center">Kelas</th>
-                                        <th class="bg-light text-center">Nama</th>
-                                        <th class="bg-light text-center">Kategori</th>
-                                        <th class="bg-light text-center">Skor</th>
-                                        <th class="bg-light text-center">Waktu</th>
-                                        <th class="bg-light text-center">Deviation</th>
-                                        <th class="bg-light text-center">Kondisi Menang</th>
-                                        <th class="bg-light text-center">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center align-middle">
-                                        @foreach ($data_perserta as $item)
-                                        <tr>
-                                                @php
-                                                    $kelas = kelas::where('id',$item->kelas)->value('name');
-                                                    $category = category::where('id',$item->category)->value('name')
-                                                @endphp
-                                            <td class="text-center">{{ $loop->index+1 }}</td>
-                                            <td class="text-center">1</td>
-                                            <td>{{$kelas}}</td>
-                                            <td class="">{{$item->name}}</td>
-                                            <td class="">{{$category}}</td>
-                                            <td class="text-danger text-center">N/A</td>
-                                            <td class="text-primary text-center">N/A</td>
-                                            <td class="text-center">N/A</td>
-                                            <td class="h-100 px-0 py-0">
-                                                <div class="container form-group p-0 " >
-                                                    <select class="form-select w-100 p-0 text-center"" id="input-continent" style="height: 60px;">
-                                                        <option value="menang-1">Menang Point</option>
-                                                        <option value="menang-2">Menang Teknik</option>
-                                                        <option value="menang-2">Diskualifikasi</option>
-                                                        <option value="menang-4">Keputusan wasit</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex justify-content-center p-0">
-                                                    @if ($item->status === "pending")
-                                                    <button class="btn btn-primary px-3 shadow text-light">Pending</button>
-                                                    @endif
-                                                    @if ($item->status === "proses")
-                                                    <button class="btn btn-warning px-3 shadow text-light">Proses</button>
-                                                    @endif
-                                                    @if ($item->status === "finish")
-                                                    <button class="btn btn-success px-3 shadow text-light">Selesai</button>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                </tbody>
-                            </table>
-                        </div>
->>>>>>> db40017ff59f2393a9d0c51337fcd66f6ab3ab2a
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -321,18 +178,6 @@
     </script>
 </body>
 @endsection
-=======
-    
-        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>    
-        <script src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
-        <script>
-            new DataTable('#example')
-        </script>
-    </body>
-    @endsection
->>>>>>> db40017ff59f2393a9d0c51337fcd66f6ab3ab2a
 
 @push('plugin-scripts')
 <script src="{{ asset('assets/plugins/flatpickr/flatpickr.min.js') }}"></script>
