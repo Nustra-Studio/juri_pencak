@@ -27,6 +27,10 @@
         }
 </style>
 @endpush
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef85df9f29a200536e26dcbdd9d8a9159b0b2b90
 @section('content')
 @php
     use App\PersertaModel;
@@ -140,6 +144,7 @@
                                                 </select>
                                             </div>
                                         </td>
+
                                     <td>
                                         <div class="d-flex justify-content-center p-0">
                                             @if ($item->status === "pending")
