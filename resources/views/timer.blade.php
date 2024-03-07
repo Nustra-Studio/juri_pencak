@@ -33,11 +33,6 @@
             </select>
         </div>
 
-        <div class="container-fluid px-4 mt-2">
-            <button id="clear" class="btn btn-block btn-success w-100 fs-4">
-                Selesai Pertandingan
-            </button>
-        </div>
 
         <div class="modal fade" id="timerModal">
             <div class="modal-dialog modal-dialog-centered">
