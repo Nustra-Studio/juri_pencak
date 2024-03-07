@@ -21,7 +21,7 @@
         
         <div class="container-fluid d-flex justify-content-center my-4 px-1">
             <button class="btn btn-primary mt-2 me-1 px-3 py-3 fs-1">Pause</button>  
-            <button class="btn btn-warning mt-2 ms-1 px-3 py-3 fs-1">Reset</button>  
+            <button class="btn btn-success mt-2 ms-1 px-3 py-3 fs-1">Reset</button>  
             <button class="btn btn-danger mt-2 px-3 py-3 fs-1">Stop</button>  
         </div>
 
