@@ -15,9 +15,6 @@
         <div class="container-fluid d-flex justify-content-center align-items-center fs-3">
             Timer Ayo<span class="text-primary">Silat</span>
         </div>
-        <div class="container-fluid">
-            <i class="bi bi-gear"></i>
-        </div>
         
         <div class="container-fluid d-flex justify-content-center my-4 px-1">
             <button class="btn btn-primary mt-2 me-1 px-3 py-3 fs-1">Pause</button>  
