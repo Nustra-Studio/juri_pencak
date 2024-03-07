@@ -27,7 +27,6 @@
             </select>
         </div>
 
-
         <div class="modal fade" id="timerModal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
