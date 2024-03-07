@@ -12,10 +12,11 @@
             use App\Setting;
             use App\PersertaModel;
             use App\KontigenModel;
-            $setting = Setting::first();
+            $setting = Setting::where('arena',$arena)->first();
             $perserta = PersertaModel::where('id',$setting->biru)->first(); 
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
+            $scores = score::where('id_perserta',$id_perserta)->get();
     @endphp
 </head>
 <body>
@@ -60,7 +61,7 @@
                         @endphp
                         <button
                         class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:attack p:{{$number}} keterangan:pointseni"
+                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:attack p:{{$number}} keterangan:pointseni"
                         >{{$number}}</button>
                         @endfor
                     
@@ -88,7 +89,7 @@
                         -Firmness <br>
                         -Soulfullness <br>
                         @php
-                            $score = score::where('status','point_solo')->sum('score');
+                            $score = $scores->where('status','point_solo')->sum('score');
                             $score = number_format($score, 2);
                             $score = 9.1 + $score;
                         @endphp
@@ -108,7 +109,7 @@
                         @endphp
                             <button
                             class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                            name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:firmness p:{{$number}} keterangan:pointseni"
+                            name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:firmness p:{{$number}} keterangan:pointseni"
                             >{{$number}}</button>
                         @endfor
                         
@@ -143,7 +144,7 @@
                         @endphp
                             <button
                             class="btn btn-light border-black px-3 py-2 my-1 mx-1 btn-data"
-                            name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:soulfullness p:{{$number}} keterangan:pointseni"
+                            name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:soulfullness p:{{$number}} keterangan:pointseni"
                             >{{$number}}</button>
                         @endfor
                         

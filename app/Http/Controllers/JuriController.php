@@ -165,19 +165,12 @@ class JuriController extends Controller
                     $score = $plus - $minus;
                     return response()->json(['data' => $score]);
                 }
-<<<<<<< HEAD
                 elseif($tipe === "checkbabak"){
                         $data = Setting::where('arena',$id)->first();
                         $data = $data->babak;
                         return response()->json(['data' => $arena]);
                 }
-=======
-               elseif($tipe === "checkbabak"){
-                 	$data = Setting::where('arena',$id)->first();
-                 	$data = $data->babak;
-                 	return response()->json(['data' => $arena]);
-               }
->>>>>>> db40017ff59f2393a9d0c51337fcd66f6ab3ab2a
+
                 elseif($tipe === "detail"){
                     $kt = $request->input('kt');
                     $data = score::where('keterangan',"$kt")->where('id_perserta',"$id")->count();
@@ -190,32 +183,32 @@ class JuriController extends Controller
                     $data = $data->score;
                     return response()->json(['data' => $data]);
                 }
-              elseif($tipe === "checkhukuman"){
-                  $arena = $request->input('arena');
-                  $id_juri = $request->juri('juri');
-                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
-                	$data = $data->score;
-                  return response()->json(['data' => $data]);
-              }
-              elseif($tipe === "checkhukuman"){
-                  $arena = $request->input('arena');
-                  $id_juri = $request->input('juri');
-                	$data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','jatuhan')->first();
+                elseif($tipe === "checkhukuman"){
+                    $arena = $request->input('arena');
+                    $id_juri = $request->juri('juri');
+                        $data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','hukuman')->first();
+                        $data = $data->score;
+                    return response()->json(['data' => $data]);
+                }
+                elseif($tipe === "checkhukuman"){
+                    $arena = $request->input('arena');
+                    $id_juri = $request->input('juri');
+                        $data = score::where('id_juri',$id_juri)->where('arena',$arena)->where('status','notif')->where('keterangan','jatuhan')->first();
+                    
+                        $data = $data->score;
+                    return response()->json(['data' => $data]);
+                }
                 
-                	$data = $data->score;
-                  return response()->json(['data' => $data]);
-              }
-              
                 elseif($tipe === "check"){
                     $pending = pending_tanding::where('id_perserta',"$id")->first();
-                  	$arena = $request->input('arena');
+                    $arena = $request->input('arena');
                     $variable1 = $pending->juri1;
                     $variable2 = $pending->juri2;
                     $variable3 = $pending->juri3;
-                  	$threshold = Carbon::now()->subSeconds(3);
-                  	$five = Carbon::now()->subSeconds(5);
-                  	$hapus_dewan = score::where('status','notif')->where('arena',$arena)->get();
-                  	$hapus_data = pending_tanding::where('created_at', '<', $threshold)->delete();
+                    $threshold = Carbon::now()->subSeconds(3);
+                    $five = Carbon::now()->subSeconds(5);
+                    $hapus_dewan = score::where('status','notif')->where('arena',$arena)->get();
+                    $hapus_data = pending_tanding::where('created_at', '<', $threshold)->delete();
                     if (($variable1 !== null) + ($variable2 !== null) + ($variable3 !== null) >= 2) {
                         $data = pending_tanding::where('id',$pending->id)->first();
                         $datas = [
@@ -230,14 +223,11 @@ class JuriController extends Controller
                         score::create($datas);
                         $data->delete();
                     }
-                 elseif($hapus_dewan->count() > 0) {
-<<<<<<< HEAD
-                        $hapus_dewan->each->delete();
-=======
-                          $hapus_dewan->each->delete();
->>>>>>> db40017ff59f2393a9d0c51337fcd66f6ab3ab2a
-                      } 
-                }
+                    elseif($hapus_dewan->count() > 0) {
+                            $hapus_dewan->each->delete();
+
+                        } 
+                    }
 
                 elseif($tipe === "keterangan"){
                     $data = score::where('id_perserta',"$id")->where('status','plus')->get();
@@ -250,12 +240,98 @@ class JuriController extends Controller
                     $kt = $request->input('kt');
                     $id = $request->input('id');
                     $id_juri = $request->input('juri');
-                    if($kt == "solo"){
-                        $data =score::where('id_perserta',$id)
-                                        ->where('id_juri', ' $id_juri')
-                                        ->first();
+                    if($kt == "ganda"){
+                        $data =score::where('id_perserta',$id)->get();
+                        $setting = Setting::where('arena',$request->input('arena'))->first();
+
+                        // foreach($data as $item){
+                        //     if($item->id_juri === $setting->juri_1){
+                        //             if($item->keterangan === "attck"){
+                        //                 $attck_1 = $item->score;
+                        //             }
+                        //             elseif($item->keterangan === "firmness"){
+                        //                 $firmness_1 = $item->score;
+                        //             }
+                        //             elseif($item->keterangan === "soulfullness"){
+                        //                 $soulfullness_1 = $item->score;
+                        //             }
+                        //     }
+                        //     elseif($item->id_juri === $setting->juri_2){
+                        //         if($item->keterangan === "attck"){
+                        //             $attck_2 = $item->score;
+                        //         }
+                        //         elseif($item->keterangan === "firmness"){
+                        //             $firmness_2 = $item->score;
+                        //         }
+                        //         elseif($item->keterangan === "soulfullness"){
+                        //             $soulfullness_2 = $item->score;
+                        //         }
+                        //     }
+                        //     elseif($item->id_juri === $setting->juri_3){
+                        //         if($item->keterangan === "attck"){
+                        //             $attck_3 = $item->score;
+                        //         }
+                        //         elseif($item->keterangan === "firmness"){
+                        //             $firmness_3 = $item->score;
+                        //         }
+                        //         elseif($item->keterangan === "soulfullness"){
+                        //             $soulfullness_3 = $item->score;
+                        //         }
+                        //     }
+                        // }
+                        // $respone =[
+                        //     'attack_1'=>$attck_1,
+                        //     'attack_2'=>$attck_2,
+                        //     'attack_3'=>$attck_3,
+                        //     'soulfullness_1'=>$soulfullness_1,
+                        //     'soulfullness_2'=>$soulfullness_2,
+                        //     'soulfullness_3'=>$soulfullness_3,
+                        //     'firmness_1'=> $firmness_1,
+                        //     'firmness_2'=> $firmness_2,
+                        //     'firmness_3'=> $firmness_3,
+                        // ];
+                        if (!empty($data)) {
+                            $response = [
+                                'attack1' => 0,
+                                'attack2' => 0,
+                                'attack3' => 0,
+                                'soulfullness1' => 0,
+                                'soulfullness2' => 0,
+                                'soulfullness3' => 0,
+                                'firmness1' => 0,
+                                'firmness2' => 0,
+                                'firmness3' => 0,
+                            ];
+                        
+                            foreach ($data as $item) {
+                                switch ($item->id_juri) {
+                                    case $setting->juri_1:
+                                        $response['attack1'] = ($item->keterangan === "attack") ? $item->score : 0;
+                                        $response['firmness1'] = ($item->keterangan === "firmness") ? $item->score : 0;
+                                        $response['soulfullness1'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
+                                        break;
+                                    case $setting->juri_2:
+                                        $response['attack2'] = ($item->keterangan === "attack") ? $item->score : 0;
+                                        $response['firmness2'] = ($item->keterangan === "firmness") ? $item->score : 0;
+                                        $response['soulfullness2'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
+                                        break;
+                                    case $setting->juri_3:
+                                        $response['attack3'] = ($item->keterangan === "attack") ? $item->score : 0;
+                                        $response['firmness3'] = ($item->keterangan === "firmness") ? $item->score : 0;
+                                        $response['soulfullness3'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
+                                        break;
+                                    default:
+    
+                                        break;
+                                }
+                            }
+                        
+                            return response()->json($response,200);
+                        } else {
+                            return response()->json(['message' => 'No data available'],404);
+                        }
                     }
-                    return response()->json(['data' => $data]);
+                    return response()->json($respone);
                 }
             }
 

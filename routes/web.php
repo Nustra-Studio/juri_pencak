@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('penilaian.score');
+    return redirect()->route('admin.panel.arena');
 });
 Route::get('/score',function(){
     return view('loginscore');
-});
+})->name('score');
 Route::get('/timeradmin','AdminController@timer');
 Route::get('/login', function () {
     return view('auth.login');
@@ -53,7 +53,7 @@ Route::get('/redirect','AdminController@redirect');
             Route::get('/arena', function () {
                 $status = 'admin';
                 return view('admin.arena',compact('status'));
-            });
+            })->name('admin.panel.arena');
             Route::get('/category', function () {
                 $status = 'admin';
                 return view('admin.category',compact('status'));
@@ -90,6 +90,7 @@ Route::get('/redirect','AdminController@redirect');
     });
 Route::get('/sse', 'JuriController@stream');
 Route::get('/call-data','JuriController@data');
+Route::get('/call-data/seni','JuriController@dataseni');
 
 
 // Route::group(['prefix' => 'email'], function(){

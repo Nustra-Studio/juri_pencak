@@ -23,7 +23,7 @@
             $c = "WEAPON FALL OUT OF ARENA WHILE TEAM IS STILL REQUIRED TO USE IT";
             $d = "ATHLETE STAYING AT ONE MOVE FOR MORE THAN 5 SECONDS";
             $minus = '0.50';
-            $setting = Setting::first();
+            $setting = Setting::where('arena',$arena)->first();
             $perserta = PersertaModel::where('id',$setting->biru)->first(); 
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
@@ -64,13 +64,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -101,13 +101,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -138,13 +138,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>
@@ -175,13 +175,13 @@
                                 <div class="row h100 ">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewansc"
                                         class="btn btn-primary btn-lg h100 w100 btn-data"
                                         >CLEAR</button>
                                     </div>
                                     <div class="col">
                                         <button
-                                        name=" arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:{{$status}} p:{{$minus}} keterangan:senidewans"
                                         class="btn btn-danger btn-lg h100 w100 btn-data">
                                             - {{$minus}}
                                         </button>

@@ -19,5 +19,6 @@ class Setting extends Model
         'juri_1',
         'juri_2',
         'juri_3',
+        'time'
     ];
 }

@@ -98,18 +98,17 @@
                                     @endforeach
                                 </select>
                             </div>
-                           <!-- ... Other form elements ... -->
-                <div class="mb-3">
-                    @foreach ($data_kelas as $item)
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" class="form-check-input" id="kelasCheckbox{{ $item->id }}" name="kelas[]" value="{{ $item->id }}">
-                        <label class="form-check-label" for="kelasCheckbox{{ $item->id }}">{{ $item->name }}</label>
-                    </div>
-                    @endforeach
-
-                    <!-- Add more checkboxes or adjust the loop limit as needed -->
-                </div>
-<!-- ... Other form elements ... -->
+                            <!-- ... Other form elements ... -->
+                            <div class="mb-3">
+                            <label for="exampleInputName" class="form-label">Status</label>
+                            <select  name="kelas" class="form-control" id="exampleInputName">
+                                        <option value="Tanding">Tanding</option>
+                                        <option value="Solo_Kreatif">Seni Solo Kreatif</option>
+                                        <option value="Ganda_Kreatif">Seni Ganda Kreatif</option>
+                                        <option value="Tunggal">Seni Tunggal</option>
+                                        <option value="Group">Seni Group</option>
+                            </select>
+                        </div>
 
                     </div>
                     <div class="modal-footer">

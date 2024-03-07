@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('juri_3')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('status')->nullable();
+            $table->string('time')->nullable();
             $table->timestamps();
         });
     }

@@ -27,32 +27,32 @@ class AdminController extends Controller
             $status = 'arena';
             return view('admin.PanelArena', compact('status'));
         }
-      public function timer(Request $request){
-		$tipe = $request->tipe;
-        $select = $request->value;
-        $arena =$request->arena;
-        	if($tipe ==="babak"){
-            	$data = Setting::where('arena',$arena)->first();
-              	$data->update(['babak'=>$select]);
-              	 return response()->json('success',200);
-            }
-        elseif($tipe ==="clear"){
-          	if($arena == '1'){
-              $data = Score::where('id_perserta', '1')->orWhere('id_perserta', '2')->get();
-              $data->each->delete();
-              	$data = Setting::where('arena',$arena)->first();
-              	$data->update(['babak'=>'1']);
-              return response()->json('success',200);
-            }
-          elseif($arena == '2'){
-              $data = Score::where('id_perserta','3')->orWhere('id_perserta','4')->get();
-              $data->each->delete();
-              	$data = Setting::where('arena',$arena)->first();
-              	$data->update(['babak'=>'1']);
-              return response()->json('success',200);
+        public function timer(Request $request){
+            $tipe = $request->tipe;
+            $select = $request->value;
+            $arena =$request->arena;
+                if($tipe ==="babak"){
+                    $data = Setting::where('arena',$arena)->first();
+                    $data->update(['babak'=>$select]);
+                    return response()->json('success',200);
+                }
+            elseif($tipe ==="clear"){
+                if($arena == '1'){
+                $data = Score::where('id_perserta', '1')->orWhere('id_perserta', '2')->get();
+                $data->each->delete();
+                    $data = Setting::where('arena',$arena)->first();
+                    $data->update(['babak'=>'1']);
+                return response()->json('success',200);
+                }
+            elseif($arena == '2'){
+                $data = Score::where('id_perserta','3')->orWhere('id_perserta','4')->get();
+                $data->each->delete();
+                    $data = Setting::where('arena',$arena)->first();
+                    $data->update(['babak'=>'1']);
+                return response()->json('success',200);
+                }
             }
         }
-      }
     /**
      * Show the form for creating a new resource.
      *
@@ -105,29 +105,29 @@ class AdminController extends Controller
         // Validate the form data
             $request->validate([
                 'name' => 'required|string|max:255',
-                'kelas' => 'nullable|array',
+                'kelas' => 'required',
             ]);
 
             // Process the form data
             $name = $request->input('name');
-            $kelas = $request->input('kelas', []);
+            $kelas = $request->input('kelas');
 
             // Create and save a new Data model instance
             $data = new arena([
                 'name' => $name,
-                'status' => implode(',', $kelas), // Assuming 'kelas' is a comma-separated list
+                'status' => $kelas // Assuming 'kelas' is a comma-separated list
                 // Add other fields as needed
             ]);
 
             $data->save();
             $arena = arena::where('name',$name)->first();
             $datas = [
-                'judul'=>'default',
+                'judul'=>"$name || $kelas" ,
                 'arena'=>$arena->id,
                 'babak'=>'1',
                 'biru'=>'',
                 'merah'=>'',
-                'keterangan'=>"setting",
+                'keterangan'=>"$kelas",
                 'juri_1'=>$request->input('juri_1'),
                 'juri_2'=>$request->input('juri_2'),
                 'juri_3'=>$request->input('juri_3'),
@@ -141,6 +141,7 @@ class AdminController extends Controller
         $id_juri = $request->name;
         $role = $request->role;
         $arena = $request->arena;
+
         $data = [
             'name'=>$id_juri,
             'role'=>$role,
@@ -162,10 +163,16 @@ class AdminController extends Controller
             return view('admin.arena.jadwal',compact('arena','status'));
         }
         elseif($role == "score"){
-            return view('penilaian.score',compact('arena'));
-        }
-        elseif($role == "seni_score"){
-            return view('seni.score',compact('arena'));
+                $data = arena::where('id',$arena)->first();
+                    if($data->status === "tanding"){
+                        return view('penilaian.score',compact('arena'));
+                    }
+                    elseif($data->status === "Ganda_Kreatif" || $data->status === "Solo_Kreatif"){
+                        return view('seni.score',compact('arena'));
+                    }
+                    else{
+                        return view('loginscore');
+                    }
         }
         elseif($role == 'timer'){
             return view('timer',compact('arena'));

@@ -143,7 +143,7 @@ class DewanController extends Controller
         }
         elseif($keterangan === "jadwal"){
             $data = Setting::first();
-            Setting::where('id',$data->id)->update(['biru'=>$p]);
+            Setting::where('arena',$request->arena)->update(['biru'=>$p]);
             $perserta = PersertaModel::where('id',$p)->update(['status'=>$status]);
             return response()->json(['message' => 'Data berhasil ']);
         }
