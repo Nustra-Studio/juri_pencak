@@ -204,7 +204,7 @@
 
 .total-point-area-red {
     background-color: var(--merah);
-    width: 30%;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
