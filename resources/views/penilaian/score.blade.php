@@ -75,7 +75,7 @@
                 <img src="../assets/Assets/karate.png" alt="" style="height: 35px; position: absolute; right: 0; left: 10px;top: 5px;">
             </div>
             <div id=""name="" class="blue-player-text text-primary text-start align-self-center mt-2 fw-bold">
-				Tim Biru
+                Tim Biru
             </div>
         </div>
         <div id=""name="" class="mid-container mt-2">
@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div id=""name="" class="score-section pt-3">
+    <div id=""name="" class="score-section mt-3">
         <div id=""name="" class="score-area">
             <div id=""name="" class="score-blue">
                 @php
