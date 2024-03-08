@@ -30,13 +30,15 @@
     }
 
     .total-point-area-red {
-        background-color: var(--merah);
+        /* background-color: var(--merah); */
+        background-color: yellow;
         width: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 5px;
     }
+    
 </style>
 <body>
     @php
