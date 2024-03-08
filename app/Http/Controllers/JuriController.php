@@ -192,7 +192,6 @@ class JuriController extends Controller
                                 'score2'=> 0,
                             ];
                             foreach ($data as $item) {
-                                if($item->babak === $setting->babak){
                                     if($item->id_perserta === $setting->biru){
                                         $response['jatuh1'] += ($item->keterangan === "jatuh") ? $item->score / 3 : 0;
                                         $response['binaan1'] += ($item->keterangan === "binaan") ? $item->score + 1 : 0;
@@ -213,7 +212,7 @@ class JuriController extends Controller
                                         $score = $plus - $minus;
                                         $response['score2'] = $score;
                                     }
-                                }
+                                
                             }
                             return response()->json($response,200);
                         }
