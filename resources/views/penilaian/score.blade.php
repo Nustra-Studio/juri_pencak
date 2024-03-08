@@ -242,39 +242,7 @@
             </div>
         </div>
     </div>
-    <div class="container d-flex justify-content-center align-items-center gap-5" style="width: 700px;">
-        <table class="table table-bordered border-3 border-dark" style="width: 450px;">
-            <thead class="table-secondary">
-                <tr>
-                    <th colspan="3" class="text-center text-primary">Indikator Jatuhan</th>
-                </tr>
-            </thead>
-            <tbody class="text-center fw-bold">
-                <tr>
-                    <td id="j1" class="">J1</td>
-                    <td id="j2" class="">J2</td>
-                    <td id="j3" class="">J3</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="table table-bordered rounded  border-3 border-dark" style="width: 450px;">
-            <thead class="table-secondary">
-                <tr>
-                    <th colspan="3" class="text-center text-danger">Indikator Hukuman</th>
-                </tr>
-            </thead>
-            <tbody class="text-center fw-bold">
-                <tr>
-                        <td id="h3" class="">J3</td>
-                        <td id="h2" class="">J2</td>
-                        <td id="h1" class="">J1</td>
-                    
-                    
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    
     <div id=""name="" class="running-text">
         <img src="../assets/Assets/Ayo Silat.png" alt="" style="width: 70px; background-color: aliceblue; border-radius: 3px; border: 1px solid black;"> 
         <marquee behavior="" direction="Running">
