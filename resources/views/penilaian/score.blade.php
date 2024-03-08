@@ -30,8 +30,7 @@
     }
 
     .total-point-area-red {
-        /* background-color: var(--merah); */
-        background-color: yellow;
+        background-color: var(--merah);
         width: 300px;
         display: flex;
         justify-content: center;
@@ -162,7 +161,7 @@
                 </div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area" style="width: 27%; height: 370px;">
+        <div id=""name="" class="total-point-area" style="width: 300px; height: 370px;">
             <div id="score2" name="{{$id_perserta_1}}" class="total-point-area-text" style="font-size: 23vw"></div>
         </div>
         <div id=""name="" class="babak-area">
@@ -179,7 +178,7 @@
                 <div id=""name="" class="babak-area-box-text">III</div>
             </div>
         </div>
-        <div id=""name="" class="total-point-area-red" style="width: 27%; height: 370px;">
+        <div id=""name="" class="total-point-area-red" style="width: 300px; height: 370px;">
             <div id="score1" name="{{$id_perserta_2}}" class="total-point-area-text" style="font-size: 23vw"></div>
         </div>
         @php
