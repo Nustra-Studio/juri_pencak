@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div id=""name="" class="score-section my-3">
+    <div id=""name="" class="score-section pt-3">
         <div id=""name="" class="score-area">
             <div id=""name="" class="score-blue">
                 @php
