@@ -19,6 +19,24 @@
     .by {
         background-color: yellow;
     }
+    
+    .total-point-area {
+    background-color: var(--biru);
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    }
+
+    .total-point-area-red {
+        background-color: var(--merah);
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
 </style>
 <body>
     @php
