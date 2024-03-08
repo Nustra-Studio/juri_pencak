@@ -247,9 +247,9 @@
             </thead>
             <tbody class="text-center fw-bold">
                 <tr>
-                  	<td id="h3" class="">J3</td>
-                  	<td id="h2" class="">J2</td>
-                    <td id="h1" class="">J1</td>
+                        <td id="h3" class="">J3</td>
+                        <td id="h2" class="">J2</td>
+                        <td id="h1" class="">J1</td>
                     
                     
                 </tr>
@@ -265,298 +265,298 @@
 
     {{-- Modal Section --}}
     {{-- Jatuhan --}}
-    <div class="modal" tabindex="-1" role="dialog" id="modalJatuhan">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Keputusan <span class="text-danger">Dewan Juri</span></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 text-center fs-1 ">
-                                Verifikasi <span class="text-primary">Jatuhan</span>
+        <div class="modal" tabindex="-1" role="dialog" id="modalJatuhan">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Keputusan <span class="text-danger">Dewan Juri</span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 text-center fs-1 ">
+                                    Verifikasi <span class="text-primary">Jatuhan</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>
-                                                <div class="container border ">
-                                                    J1 
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="container border ">
-                                                    J2
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="container border ">
-                                                    J3
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="container biru">
-                                                    a
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="container merah">
-                                                    a
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="container invalid">
-                                                    a
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>
+                                                    <div class="container border ">
+                                                        J1 
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="container border ">
+                                                        J2
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="container border ">
+                                                        J3
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="container biru">
+                                                        a
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="container merah">
+                                                        a
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="container invalid">
+                                                        a
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>Indikator</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                    </div>
-                                                                    <div class="col ">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="container biru">a</div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>Indikator</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                        </div>
+                                                                        <div class="col ">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="container biru">a</div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col fw-lighter">
+                                                                    Jatuhan Sah <br> Untuk sudut Biru
+                                                                </div>
                                                             </div>
-                                                            <div class="col fw-lighter">
-                                                                Jatuhan Sah <br> Untuk sudut Biru
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                        </div>
+                                                                        <div class="col ">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="container merah ">a</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col fw-lighter">
+                                                                    Jatuhan Sah <br> Untuk sudut Merah
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                        </div>
+                                                                        <div class="col ">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="container invalid">a</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col fw-lighter">
+                                                                    Jatuhan Invalid <br>
+                                                                    (Tidak Sah)
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                    </div>
-                                                                    <div class="col ">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="container merah ">a</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col fw-lighter">
-                                                                Jatuhan Sah <br> Untuk sudut Merah
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                    </div>
-                                                                    <div class="col ">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="container invalid">a</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col fw-lighter">
-                                                                Jatuhan Invalid <br>
-                                                                (Tidak Sah)
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-          </div>
+            </div>
         </div>
-    </div>
 
     {{-- Hukuman --}}
-    <div class="modal" tabindex="-1" role="dialog" id="modalHukuman">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Keputusan <span class="text-danger">Dewan Juri</span></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 text-center fs-1 ">
-                                Verifikasi <span class="text-danger">Hukuman</span>
+        <div class="modal" tabindex="-1" role="dialog" id="modalHukuman">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Keputusan <span class="text-danger">Dewan Juri</span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 text-center fs-1 ">
+                                    Verifikasi <span class="text-danger">Hukuman</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>
-                                                <div class="container border ">
-                                                    J1 
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="container border ">
-                                                    J2
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="container border ">
-                                                    J3
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="container biru">
-                                                    a
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="container merah">
-                                                    a
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="container invalid">
-                                                    a
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>
+                                                    <div class="container border ">
+                                                        J1 
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="container border ">
+                                                        J2
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="container border ">
+                                                        J3
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="container biru">
+                                                        a
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="container merah">
+                                                        a
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="container invalid">
+                                                        a
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>Indikator</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                    </div>
-                                                                    <div class="col ">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="container biru">a</div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>Indikator</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                        </div>
+                                                                        <div class="col ">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="container biru">a</div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col fw-lighter">
+                                                                    Hukuman <br> Untuk sudut Biru
+                                                                </div>
                                                             </div>
-                                                            <div class="col fw-lighter">
-                                                                Hukuman <br> Untuk sudut Biru
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                        </div>
+                                                                        <div class="col ">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="container merah ">a</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col fw-lighter">
+                                                                    Hukuman <br> Untuk sudut Merah
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                        </div>
+                                                                        <div class="col ">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="container invalid">a</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col fw-lighter">
+                                                                    Hukuman Invalid <br>
+                                                                    (Tidak Sah)
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                    </div>
-                                                                    <div class="col ">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="container merah ">a</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col fw-lighter">
-                                                                Hukuman <br> Untuk sudut Merah
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <div class="col d-flex justify-content-center justify-content-lg-end align-items-center">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                    </div>
-                                                                    <div class="col ">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="container invalid">a</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col fw-lighter">
-                                                                Hukuman Invalid <br>
-                                                                (Tidak Sah)
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-          </div>
+            </div>
         </div>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @include('addon.tanding.core')

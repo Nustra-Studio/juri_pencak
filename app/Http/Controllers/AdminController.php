@@ -164,7 +164,7 @@ class AdminController extends Controller
         }
         elseif($role == "score"){
                 $data = arena::where('id',$arena)->first();
-                    if($data->status === "tanding"){
+                    if($data->status === "Tanding"){
                         return view('penilaian.score',compact('arena'));
                     }
                     elseif($data->status === "Ganda_Kreatif" || $data->status === "Solo_Kreatif"){

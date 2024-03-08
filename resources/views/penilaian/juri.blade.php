@@ -78,20 +78,6 @@
             <!-- Kiri -->
             <div class="blueScore table-responsive">
                 <table class="table table-bordered border border-black">
-                        <!-- <thead>
-                        <tr>
-                            <th  class=" text-center">Pukulan</th>
-                            <th scope="col" class=" text-center">Tendangan</th>
-                            <th scope="col" class=" text-center">Jatuhan</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="text-center">1x</td>
-                            <td class="text-center">2x</td>
-                            <td class="text-center">3x</td>
-                        </tr>
-                        </tbody> -->
                         <thead>
                             <tr>
                                 <th scope="col" class=" text-center " colspan="3">Riwayat Point</th>
@@ -204,33 +190,33 @@
                         </tbody>
                     </table>
                     
-    					@php
+                    @php
                         $data = score::where('id_juri', $idColomName)
-                                      ->where('arena', $arena)
-                                      ->where('status', 'notif')
-                                      ->where('keterangan', 'jatuhan')
-                                      ->first();
-                  		if(!empty($data)){
-                  			$check = $data->id_juri;
-                  		}
-                        else{
-							$check = "null";
-                        }
+                                        ->where('arena', $arena)
+                                        ->where('status', 'notif')
+                                        ->where('keterangan', 'jatuhan')
+                                        ->first();
+                            if(!empty($data)){
+                                $check = $data->id_juri;
+                            }
+                            else{
+                                $check = "null";
+                            }
                     @endphp
 
                     <button @if($idColomName == $check) disabled @endif class="btn-jatuhan btn btn-secondary d-flex justify-content-center align-items-center p-3 shadow border-light mx-1 mt-1" data-bs-toggle="modal" data-bs-target="#ModalJatuhan">
                         <img src="../assets/Assets/judo white.png" alt="" class="me-1" style="width: 30px;">
                         Verifikasi Jatuhan
                     </button>
-    					@php
+    			        @php
                         $data = score::where('id_juri', $idColomName)
-                                      ->where('arena', $arena)
-                                      ->where('status', 'notif')
-                                      ->where('keterangan', 'jatuhan')
-                                      ->first();
-                  		if(!empty($data)){
-                  			$check = $data->id_juri;
-                  		}
+                                        ->where('arena', $arena)
+                                        ->where('status', 'notif')
+                                        ->where('keterangan', 'jatuhan')
+                                        ->first();
+                        if(!empty($data)){
+                            $check = $data->id_juri;
+                        }
                         else{
 							$check = "null";
                         }

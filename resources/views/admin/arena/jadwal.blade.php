@@ -27,10 +27,7 @@
         }
 </style>
 @endpush
-<<<<<<< HEAD
-=======
 
->>>>>>> ef85df9f29a200536e26dcbdd9d8a9159b0b2b90
 @section('content')
 @php
     use App\PersertaModel;
@@ -85,19 +82,7 @@
             </thead>
         </table>
     </div>
-    <!-- Match Info Section -->
-    <div class="container-fluid table-responsive-lg">
-        <table class="table table-warning table-bordered text-center align-middle">
-            <thead>
-                <tr>
-                    <th>Senin, 15 Oktober 2024</th>
-                    <th>08:00-selesai</th>
-                    <th>Gelanggang 1</th>
-                    <th>Penyisihan</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
+
     <!-- Information Table -->
     <div class="container-fluid">
         <div class="row">
