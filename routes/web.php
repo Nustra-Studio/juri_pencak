@@ -25,7 +25,7 @@ Route::get('/login-juri', function(){
     return view('jurilogin');
 });
 Route::get('/timer',function(){
-    return view('logintimer');
+    return view('timer');
 });
 Route::get('/redirect','AdminController@redirect');
 
