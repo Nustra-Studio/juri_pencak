@@ -113,8 +113,29 @@
                     </div>
                     <!-- Point Section -->
                     <div class="col border-green rounded d-flex justify-content-center flex-column align-items-center fs-2">
-                        <span class="mt-5">HASIL PENILAIAN (SCORE)</span>
-                        <div class="border border-black btn-back-green rounded px-lg-5 py-2 mt-3 mb-5 d-flex justify-content-center" style="width: 15rem;">83</div>
+                        <span class="mt-2">HASIL PENILAIAN (SCORE)</span>
+                        <table class="table table-bordered border-success">
+                            <thead >
+                                <tr class="text-center">
+                                    <th class="w-50 text-danger">
+                                        Pelanggaran
+                                    </th>
+                                    <th class="text-success">
+                                        Score
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center">
+                                    <td>
+                                        -0.50
+                                    </td>
+                                    <td>
+                                        9.23
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
