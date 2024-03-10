@@ -317,7 +317,7 @@ class JuriController extends Controller
                                     
                                 }
                                 elseif ($item->status === "seni_minus") {
-                                    $response['dewan'] = $item->score; // Subtract score for seni_minus
+                                    $response['dewan'] += $item->score; // Subtract score for seni_minus
                                 } 
                                 elseif ($item->id_juri === $setting->juri_2) {
                                     if ($item->keterangan === "attack") {
