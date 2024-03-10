@@ -161,6 +161,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function calldata() {
+            function findMedian(arr) {
+            arr.sort((a, b) => a - b);
+            const middleIndex = Math.floor(arr.length / 2);
+
+            if (arr.length % 2 === 0) {
+                return (arr[middleIndex - 1] + arr[middleIndex]) / 2;
+            } else {
+                return arr[middleIndex];
+            }
+        } 
             var elemenDiv = document.getElementById("id_perserta");
             var id = elemenDiv.getAttribute("name");
             var arenaDiv = document.getElementById("arena");
@@ -201,17 +211,7 @@
             requestdata();
         }   
         calldata();
-        setInterval(calldata, 500);
-function findMedian(arr) {
-            arr.sort((a, b) => a - b);
-            const middleIndex = Math.floor(arr.length / 2);
-
-            if (arr.length % 2 === 0) {
-                return (arr[middleIndex - 1] + arr[middleIndex]) / 2;
-            } else {
-                return arr[middleIndex];
-            }
-}        
+        setInterval(calldata, 500);       
     </script>
 </body>
 </html>
