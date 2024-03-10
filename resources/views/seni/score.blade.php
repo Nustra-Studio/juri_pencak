@@ -206,7 +206,7 @@
                         $('#total3').text(juri3);
                         $('#total_score').text(findMedian(all_juri));
                     }
-                });
+                })+parseFloat('9.1');
             }
             requestdata();
         }   
