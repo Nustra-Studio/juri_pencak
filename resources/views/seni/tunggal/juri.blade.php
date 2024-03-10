@@ -50,8 +50,8 @@
             <div class="row text-center mt-4" style="height: 200px;">
                 <div class="col-md-5">
                     <button
-                    name=" arena:{{$arena}} juri:{{$id_juri}} id:3 status:attack p:{{$number}} keterangan:pointseni"
-                    class="btn btn-danger btn-lg custom-button shadow w-100 h-100">Wrong Move</button>
+                    name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:wrong p:0 keterangan:seni_tunggal"
+                    class="btn btn-danger btn-lg custom-button shadow w-100 h-100 btn-data">Wrong Move</button>
                 </div>
                 <div class="col-md-2">
                     <div class="container-fluid h-100">

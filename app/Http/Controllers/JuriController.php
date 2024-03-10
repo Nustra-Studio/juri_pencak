@@ -145,16 +145,18 @@ class JuriController extends Controller
                     'keterangan' => $status,
                     'id_perserta' => $id_perserta,
                     'id_juri' => $id_juri,
+                    'babak'=> 1,
                     'status' => 'point_tunggal'
                 ];
                 $datas = score::where($check)->first();
                 if ($datas) {
                     $data = [
-                        'score' => $p+1,
+                        'score' => $datas->score + $p,
                         'keterangan' => $status,
                         'id_perserta' => $id_perserta,
                         'id_juri' => $id_juri,
-                        'status' => 'point_tunggal'
+                        'status' => 'point_tunggal',
+                        'babak' => $datas->babak + 1,
                     ];
                     $datas->update($data);
                 } else {
