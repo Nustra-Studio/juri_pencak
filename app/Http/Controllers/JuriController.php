@@ -333,6 +333,7 @@ class JuriController extends Controller
                                 } elseif ($item->status === "seni_minus") {
                                     $response['dewan'] += $item->score;
                                 }
+                                $data[] = $item;
                             }                            
                             
                             dd($data);
