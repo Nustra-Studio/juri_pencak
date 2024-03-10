@@ -180,14 +180,14 @@
                     url: '/call-data/?tipe=seni&kt=ganda&id='+id+'&arena='+arena+'',
                     method: 'GET',
                     success: function (response) {
-                     var juri1 = parseFloat(response.firmness1) 
-                        + parseFloat(response.attack1)
+                     var juri1 = parseFloat(response.firmness1) +parseFloat('9.1')
+                        + parseFloat(response.attack1)+parseFloat('9.1')
                         + parseFloat(response.soulfullness1) +parseFloat('9.1').toFixed(2);
-                    var juri2 = parseFloat(response.firmness2) 
-                        + parseFloat(response.attack2)
+                    var juri2 = parseFloat(response.firmness2) +parseFloat('9.1')
+                        + parseFloat(response.attack2)+parseFloat('9.1')
                         + parseFloat(response.soulfullness2) +parseFloat('9.1').toFixed(2);
-                    var juri3 = parseFloat(response.firmness3) 
-                        + parseFloat(response.attack3)
+                    var juri3 = parseFloat(response.firmness3) +parseFloat('9.1')
+                        + parseFloat(response.attack3)+parseFloat('9.1')
                         + parseFloat(response.soulfullness3) +parseFloat('9.1').toFixed(2);
                     var all_juri = [juri1 , juri2 , juri3];        
 
@@ -206,7 +206,7 @@
                         $('#total3').text(juri3);
                         $('#total_score').text(findMedian(all_juri));
                     }
-                })+parseFloat('9.1');
+                });
             }
             requestdata();
         }   
