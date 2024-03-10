@@ -334,14 +334,12 @@ class JuriController extends Controller
                                     $response['dewan'] = $item->score; // Subtract score for seni_minus
                                 }
                             }                            
-                            
-                        
                             return response()->json($response,200);
                         } else {
                             return response()->json(['message' => 'No data available'],404);
                         }
                     }
-                    return response()->json($respone);
+                    // return response()->json($respone);
                 }
             }
 
