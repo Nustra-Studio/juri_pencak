@@ -186,7 +186,7 @@
                         var all_juri = [juri1 , juri2 , juri3];        
 
                         // Perbarui tampilan dengan data yang diperbarui
-                        console.log(all_juri);
+                        console.log(response);
                         $('#soulfullness1').text(response.soulfullness1);
                         $('#attack1').text(response.attack1);
                         $('#firmness1').text(response.firmness1);
