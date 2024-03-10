@@ -85,15 +85,16 @@
                                     Flow of Movement/Stamina (Range Score : 0,01 - 0,10)
                                     <div></div>
                                     <!-- Increment 0,01 jadi 10 button 0,01 sampai 0,10 -->
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1t">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
-                                    <button class="btn btn-primary btn-lg mx-1">0,01</button>
+                                    @for ($i = 1; $i <= 10; $i++)
+                                    @php
+                                        $number = number_format($i * 0.01, 2);
+            
+                                    @endphp
+                                        <button
+                                        class="btn btn-primary btn-lg mx-1 btn-data"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:soulfullness p:{{$number}} keterangan:pointseni"
+                                        >{{$number}}</button>
+                                    @endfor
                                 </td>
                                 <td class="text-center align-middle text-primary fw-bold">
                                     0.01
