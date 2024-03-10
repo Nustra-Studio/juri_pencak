@@ -19,7 +19,12 @@
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
             $number = 1;
             $score = score::where('id_perserta',$id_perserta)->where('keterangan','next')->first();
+           if(!empty($score)){
             $score = $score->score
+           }
+           else{
+            $score = 0;
+           }
     @endphp
         <!-- Match Info Section -->
         <div class="d-flex justify-content-center ">
