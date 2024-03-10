@@ -117,6 +117,7 @@ class JuriController extends Controller
                 $check = [
                     'id_perserta' => $id_perserta,
                     'keterangan' => $status,
+                    'id_juri' => $id_juri
                 ];
                 $data = [
                     'score' => $p,
