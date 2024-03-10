@@ -302,7 +302,7 @@ class JuriController extends Controller
                                 'firmness1' => 0,
                                 'firmness2' => 0,
                                 'firmness3' => 0,
-                                'dewan'=> 0
+                                'dewan'=> 0,
                             ];
                             
                             foreach ($data as $item) {
