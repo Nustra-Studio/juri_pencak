@@ -330,14 +330,13 @@ class JuriController extends Controller
                                     } elseif ($item->keterangan === "soulfullness") {
                                         $response['soulfullness3'] = $item->score;
                                     }
-                                } elseif ($item->status === "seni_minus") {
+                                } elseif ($item->status == "seni_minus") {
                                     $response['dewan'] += $item->score;
                                 }
-                                $data[] = $item;
                             }                            
                             
-                            dd($data);
-                            // return response()->json($response,200);
+                        
+                            return response()->json($response,200);
                         } else {
                             return response()->json(['message' => 'No data available'],404);
                         }
