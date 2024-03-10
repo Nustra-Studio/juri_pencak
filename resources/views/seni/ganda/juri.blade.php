@@ -74,6 +74,7 @@
                             $check = [
                                 'id_perserta' => $id_perserta,
                                 'keterangan' => 'attack',
+                                'id_juri' => $id_juri
                             ];
                             $data = score::where($check)->first();
                         @endphp
@@ -89,7 +90,7 @@
                         -Firmness <br>
                         -Soulfullness <br>
                         @php
-                            $score = $scores->where('status','point_solo')->sum('score');
+                            $score = $scores->where('status','point_solo')->where('id_juri',$id_juri)->sum('score');
                             $score = number_format($score, 2);
                             $score = 9.1 + $score;
                         @endphp
@@ -120,6 +121,7 @@
                             $check = [
                                 'id_perserta' => $id_perserta,
                                 'keterangan' => 'firmness',
+                                'id_juri' => $id_juri
                             ];
                             $data = score::where($check)->first();
                         @endphp
@@ -155,6 +157,7 @@
                             $check = [
                                 'id_perserta' => $id_perserta,
                                 'keterangan' => 'soulfullness',
+                                'id_juri' => $id_juri
                             ];
                             $data = score::where($check)->first();
                         @endphp
