@@ -17,6 +17,7 @@
             $perserta = PersertaModel::where('id',$setting->biru)->first(); 
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
+            $number = 1;
     @endphp
         <!-- Match Info Section -->
         <div class="d-flex justify-content-center ">
@@ -65,7 +66,10 @@
                     </div>
                 </div>
                 <div class="col-md-5" >
-                    <button class="btn btn-primary btn-lg custom-button shadow w-100 h-100">Next Move</button>
+                    <button
+                     class="btn btn-primary btn-lg custom-button shadow w-100 h-100"
+                     name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:seni p:{{$number}} keterangan:next"
+                     >Next Move</button>
                 </div>
             </div>
         </div>
@@ -92,7 +96,7 @@
                                     @endphp
                                         <button
                                         class="btn btn-primary btn-lg mx-1 btn-data"
-                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:soulfullness p:{{$number}} keterangan:pointseni"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:seni p:{{$number}} keterangan:flwo"
                                         >{{$number}}</button>
                                     @endfor
                                 </td>
@@ -109,5 +113,44 @@
                 </div>
             </div>            
         </div>
+        <script>
+             tombolDenganKelas.forEach(function(tombol) {
+            tombol.addEventListener('click', function() {
+                var nameAttribute = this.getAttribute('name'); // Mendapatkan nilai atribut "name"
+                
+                // Membagi nilai atribut "name" menjadi objek JavaScript
+                var data = {};
+                nameAttribute.split(' ').forEach(function(item) {
+                    var parts = item.split(':');
+                    data[parts[0]] = parts[1];
+                });
+    
+                // Sekarang, Anda memiliki data dalam bentuk objek
+                console.log(data);
+    
+                        // Lanjutkan dengan kode pengiriman permintaan POST jika diperlukan
+                    fetch('{{ route('juri.store') }}', {
+                    method: 'POST',
+                    headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                    })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    // Tangani kesalahan jika ada
+                });
+                function reload(){
+                window.location.reload();
+                }
+                setInterval(reload, 800);
+                    });
+        });
+
+        </script>
 </body>
 </html>
