@@ -134,6 +134,27 @@ class JuriController extends Controller
                 }
                 return response()->json(['message' => 'Data berhasil disimpan']);
         }
+            elseif( $keterangan === "seni_tunggal"){
+                $check = [
+                    'id_perserta' => $id_perserta,
+                    'keterangan' => $status,
+                    'id_juri' => $id_juri
+                ];
+                $data = [
+                    'score' => $p,
+                    'keterangan' => $status,
+                    'id_perserta' => $id_perserta,
+                    'id_juri' => $id_juri,
+                    'status' => 'point_tunggal'
+                ];
+                $datas = score::where($check)->first();
+                if ($datas) {
+                    $datas->update($data);
+                } else {
+                    score::create($data);
+                }
+                return response()->json(['message' => 'Data berhasil disimpan']);
+            }
     }
 
         public function stream()

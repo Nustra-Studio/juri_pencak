@@ -18,6 +18,8 @@
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
             $number = 1;
+            $score = score::where('id_perserta',$id_perserta)->where('keterangan','next')->first();
+            $score = $score->score
     @endphp
         <!-- Match Info Section -->
         <div class="d-flex justify-content-center ">
@@ -57,8 +59,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-danger fw-bold">0</td>
-                                        <td class="text-primary fw-bold">0</td>
+                                        <td class="text-primary fw-bold">{{$score}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -68,7 +69,7 @@
                 <div class="col-md-5" >
                     <button
                      class="btn btn-primary btn-lg custom-button shadow w-100 h-100 btn-data"
-                     name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:seni p:{{$number}} keterangan:next"
+                     name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:next p:{{$number}} keterangan:seni_tunggal"
                      >Next Move</button>
                 </div>
             </div>
@@ -96,7 +97,7 @@
                                     @endphp
                                         <button
                                         class="btn btn-primary btn-lg mx-1 btn-data"
-                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:seni p:{{$number}} keterangan:flwo"
+                                        name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:flwo p:{{$number}} keterangan:seni_tunggal"
                                         >{{$number}}</button>
                                     @endfor
                                 </td>
