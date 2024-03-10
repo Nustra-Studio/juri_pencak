@@ -341,7 +341,7 @@ class JuriController extends Controller
                             return response()->json(['message' => 'No data available'],404);
                         }
                     }
-                    return response()->json($respone);
+                    // return response()->json($respone);
                 }
             }
 
