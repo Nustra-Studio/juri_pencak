@@ -18,9 +18,24 @@
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
             $number = 1;
-            $score = score::where('id_perserta',$id_perserta)->where('keterangan','next')->first();
+            $scores = score::where('id_perserta',$id_perserta)->where('status','point_tunggal')->get();
+            $score = 0;
+            if($score === 0){
+                $score_actual = 9 + $score / 100;
+            }
+            else{
+                $score_actual = 9 + $score-10 / 100;
+            }
+            $total_score = $score_actual;
            if(!empty($score)){
-            $score = $score->score;
+                foreach ($scores as $item) {
+                    if($item->keterangan === "next"){
+                        $score += $item->score;
+                    }
+                    elseif($item->keterangan === 'flwo'){
+                        $total_score += $item->score;
+                    }
+                }
            }
            else{
             $score = 0;
@@ -50,7 +65,7 @@
             <div class="row text-center mt-4" style="height: 200px;">
                 <div class="col-md-5">
                     <button
-                    name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:wrong p:0 keterangan:seni_tunggal"
+                    name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:next p:0 keterangan:seni_tunggal"
                     class="btn btn-danger btn-lg custom-button shadow w-100 h-100 btn-data">Wrong Move</button>
                 </div>
                 <div class="col-md-2">
@@ -86,7 +101,7 @@
                         <thead>
                             <tr>
                                 <th class="bg-dark-subtle">ACCURACY TOTAL SCORE</th>
-                                <th class="text-primary fw-bold">9.92</th>
+                                <th class="text-primary fw-bold">{{$score_actual}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,7 +127,7 @@
                             </tr>
                             <tr>
                                 <td class="bg-dark-subtle fw-bold">TOTAL SCORE :</td>
-                                <td class="fw-bold text-primary">9.93</td>    
+                                <td class="fw-bold text-primary">{{$total_score}}</td>    
                             </tr>
                         </tbody>
                     </table>
