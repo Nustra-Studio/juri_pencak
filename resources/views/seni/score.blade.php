@@ -170,8 +170,12 @@
                     url: '/call-data/?tipe=seni&kt=ganda&id='+id+'&arena='+arena+'',
                     method: 'GET',
                     success: function (response) {
+                     var juri1 = parseFloat(response.firmness1) 
+                        + parseFloat(response.attack1)
+                        + parseFloat(response.soulfullness1) +parseFloat('9.1').toFixed(2);
+
                         // Perbarui tampilan dengan data yang diperbarui
-                        console.log(response);
+                        console.log(juri1);
                         $('#soulfullness1').text(response.soulfullness1);
                         $('#attack1').text(response.attack1);
                         $('#firmness1').text(response.firmness1);
@@ -189,6 +193,7 @@
                         $('#total3').text((parseFloat(response.firmness3) 
                         + parseFloat(response.attack3)
                         + parseFloat(response.soulfullness3) +parseFloat('9.1')).toFixed(2));
+
 
                     }
                 }); +parseFloat('9.1')
