@@ -307,19 +307,37 @@ class JuriController extends Controller
                         
                             foreach ($data as $item) {
                                     if($item->id_juri === $setting->juri_1){
-                                        $response['attack1'] = ($item->keterangan === "attack") ? $item->score : 0;
-                                        $response['firmness1'] = ($item->keterangan === "firmness") ? $item->score : 0;
-                                        $response['soulfullness1'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
+                                        if($item->keterangan = "attack"){
+                                            $response['attack1'] = $item->score ;
+                                        }
+                                        elseif($item->keterangan = "firmness"){
+                                            $response['firmness1'] = $item->score ;
+                                        }
+                                        elseif($item->keterangan = "soulfullness"){
+                                            $response['soulfullness1'] = $item->score ;
+                                        }
                                     }
-                                    elseif($item->id_juri === $setting->juri_2){
-                                        $response['attack2'] = ($item->keterangan === "attack") ? $item->score : 0;
-                                        $response['firmness2'] = ($item->keterangan === "firmness") ? $item->score : 0;
-                                        $response['soulfullness2'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
+                                    if($item->id_juri === $setting->juri_2){
+                                        if($item->keterangan = "attack"){
+                                            $response['attack2'] = $item->score ;
+                                        }
+                                        elseif($item->keterangan = "firmness"){
+                                            $response['firmness2'] = $item->score ;
+                                        }
+                                        elseif($item->keterangan = "soulfullness"){
+                                            $response['soulfullness2'] = $item->score ;
+                                        }
                                     }
-                                    elseif($item->id_juri === $setting->juri_3){
-                                        $response['attack3'] = ($item->keterangan === "attack") ? $item->score : 0;
-                                        $response['firmness3'] = ($item->keterangan === "firmness") ? $item->score : 0;
-                                        $response['soulfullness3'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
+                                    if($item->id_juri === $setting->juri_3){
+                                        if($item->keterangan = "attack"){
+                                            $response['attack3'] = $item->score ;
+                                        }
+                                        elseif($item->keterangan = "firmness"){
+                                            $response['firmness3'] = $item->score ;
+                                        }
+                                        elseif($item->keterangan = "soulfullness"){
+                                            $response['soulfullness3'] = $item->score ;
+                                        }
                                     }
                                     elseif($item->status === "seni_minus"){
                                         $response['dewan'] + ($item->status === "seni_minus") ? $item->score : 0;
