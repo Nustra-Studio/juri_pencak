@@ -20,7 +20,7 @@
             $number = 1;
             $score = score::where('id_perserta',$id_perserta)->where('keterangan','next')->first();
            if(!empty($score)){
-            $score = $score->score
+            $score = $score->score;
            }
            else{
             $score = 0;
