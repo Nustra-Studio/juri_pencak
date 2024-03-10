@@ -290,6 +290,7 @@ class JuriController extends Controller
                     $id_juri = $request->input('juri');
                     if($kt == "ganda"){
                         $data =score::where('id_perserta',$id)->get();
+                        $dewan = $data->where('status','seni_minus')->sum('score');
                         $setting = Setting::where('arena',$request->input('arena'))->first();
                         if (!empty($data)) {
                             $response = [
@@ -304,7 +305,7 @@ class JuriController extends Controller
                                 'firmness3' => 0,
                                 'dewan'=> 0,
                             ];
-                            
+                            $response['dewan'] += $dewan;
                             foreach ($data as $item) {
                                 if ($item->id_juri === $setting->juri_1) {
                                     if ($item->keterangan === "attack") {
@@ -316,9 +317,6 @@ class JuriController extends Controller
                                     }
                                     
                                 }
-                                elseif ($item->status === "seni_minus") {
-                                    $response['dewan'] += $item->score; // Subtract score for seni_minus
-                                } 
                                 elseif ($item->id_juri === $setting->juri_2) {
                                     if ($item->keterangan === "attack") {
                                         $response['attack2'] = $item->score;
