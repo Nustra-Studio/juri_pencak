@@ -184,7 +184,7 @@
                         var juri2 = (parseFloat(response.firmness2) + parseFloat(response.attack2) + parseFloat(response.soulfullness2) + 9.1).toFixed(2);
                         var juri3 = (parseFloat(response.firmness3) + parseFloat(response.attack3) + parseFloat(response.soulfullness3) + 9.1).toFixed(2);
                         var all_juri = [juri1 , juri2 , juri3];        
-                        var total_score = findMedian(all_juri) - dewan;
+                        var total_score = findMedian(all_juri) - response.dewan;
 
                         // Perbarui tampilan dengan data yang diperbarui
                         console.log(response    );
@@ -200,7 +200,7 @@
                         $('#firmness3').text(response.firmness3);
                         $('#total3').text(juri3);
                         $('#total_score').text(total_score);
-                        $('#dewan_pinalti').text(dewan);
+                        $('#dewan_pinalti').text(response.dewan);
                     }
                 });
             }
