@@ -331,8 +331,7 @@ class JuriController extends Controller
                                         $response['soulfullness3'] = $item->score;
                                     }
                                 } elseif ($item->status === "seni_minus") {
-                                    // Here, it seems you missed assigning the value to response['dewan']
-                                    $response['dewan'] += ($item->status === "seni_minus") ? $item->score : 0;
+                                    $response['dewan'] += $item->score;
                                 }
                             }                            
                             
