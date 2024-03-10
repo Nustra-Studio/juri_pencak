@@ -194,6 +194,7 @@
                         $('#total1').text(juri1);
                         $('#attack2').text(response.attack2);
                         $('#firmness2').text(response.firmness2);
+                        $('#soulfullness2').text(response.soulfullness2);
                         $('#total2').text(juri2);
                         $('#soulfullness3').text(response.soulfullness3);
                         $('#attack3').text(response.attack3);
