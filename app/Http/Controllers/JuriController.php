@@ -149,6 +149,13 @@ class JuriController extends Controller
                 ];
                 $datas = score::where($check)->first();
                 if ($datas) {
+                    $data = [
+                        'score' => $p+1,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'point_tunggal'
+                    ];
                     $datas->update($data);
                 } else {
                     score::create($data);
