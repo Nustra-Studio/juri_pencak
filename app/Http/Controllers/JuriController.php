@@ -308,7 +308,7 @@ class JuriController extends Controller
                             foreach ($data as $item) {
                                     if($item->id_juri === $setting->juri_1){
                                         $response['attack1'] = ($item->keterangan === "attack") ? $item->score : 0;
-                                        $response['firmness1'] = ($item->keterangan === "firmness") ? $item->score : 0;
+                                        $response['firmness1'] = ($item->keterangan === "0.12") ? $item->score : 0;
                                         $response['soulfullness1'] = ($item->keterangan === "soulfullness") ? $item->score : 0;
                                     }
                                     elseif($item->id_juri === $setting->juri_2){
