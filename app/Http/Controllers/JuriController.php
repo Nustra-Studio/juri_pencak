@@ -314,7 +314,12 @@ class JuriController extends Controller
                                     } elseif ($item->keterangan === "soulfullness") {
                                         $response['soulfullness1'] = $item->score;
                                     }
-                                } elseif ($item->id_juri === $setting->juri_2) {
+                                    
+                                }
+                                elseif ($item->status === "seni_minus") {
+                                    $response['dewan'] = $item->score; // Subtract score for seni_minus
+                                } 
+                                elseif ($item->id_juri === $setting->juri_2) {
                                     if ($item->keterangan === "attack") {
                                         $response['attack2'] = $item->score;
                                     } elseif ($item->keterangan === "firmness") {
@@ -330,8 +335,6 @@ class JuriController extends Controller
                                     } elseif ($item->keterangan === "soulfullness") {
                                         $response['soulfullness3'] = $item->score;
                                     }
-                                } elseif ($item->status === "seni_minus") {
-                                    $response['dewan'] = $item->score; // Subtract score for seni_minus
                                 }
                             }                            
                             return response()->json($response,200);
