@@ -27,7 +27,7 @@
                 $score_actual = 9 + $score-10 / 100;
             }
             $total_score = $score_actual;
-           if(!empty($score)){
+           if(!empty($scores)){
                 foreach ($scores as $item) {
                     if($item->keterangan === "next"){
                         $score += $item->score;
