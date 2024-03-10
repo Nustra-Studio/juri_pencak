@@ -331,17 +331,17 @@ class JuriController extends Controller
                                         $response['soulfullness3'] = $item->score;
                                     }
                                 } elseif ($item->status === "seni_minus") {
-                                    return response()->json($response,200);
+                                    $response['dewan'] = $item->score; // Subtract score for seni_minus
                                 }
                             }                            
                             
                         
-                            // return response()->json($response,200);
+                            return response()->json($response,200);
                         } else {
                             return response()->json(['message' => 'No data available'],404);
                         }
                     }
-                    // return response()->json($respone);
+                    return response()->json($respone);
                 }
             }
 
