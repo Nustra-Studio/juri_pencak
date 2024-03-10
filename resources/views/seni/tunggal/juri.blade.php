@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-md-5" >
                     <button
-                     class="btn btn-primary btn-lg custom-button shadow w-100 h-100"
+                     class="btn btn-primary btn-lg custom-button shadow w-100 h-100 btn-data"
                      name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:seni p:{{$number}} keterangan:next"
                      >Next Move</button>
                 </div>
@@ -114,6 +114,7 @@
             </div>            
         </div>
         <script>
+             var tombolDenganKelas = document.querySelectorAll('.btn-data');
              tombolDenganKelas.forEach(function(tombol) {
             tombol.addEventListener('click', function() {
                 var nameAttribute = this.getAttribute('name'); // Mendapatkan nilai atribut "name"
