@@ -292,7 +292,6 @@ class JuriController extends Controller
                         $data =score::where('id_perserta',$id)->get();
                         $dewan = $data->where('status','seni_minus')->sum('score');
                         $setting = Setting::where('arena',$request->input('arena'))->first();
-                        $juri_1 = $data->where('id_juri',$setting->juri_1);
                         if (!empty($data)) {
                             $response = [
                                 'attack1' => 0,
@@ -307,8 +306,8 @@ class JuriController extends Controller
                                 'dewan'=> 0,
                             ];
                             $response['dewan'] += $dewan;
-                            dd($juri_1);
-                            foreach($juri_1 as $item){
+                            foreach ($data as $item) {
+                                if ($item->id_juri === $setting->juri_1) {
                                     if ($item->keterangan === "attack") {
                                         $response['attack1'] = $item->score;
                                     } elseif ($item->keterangan === "firmness") {
@@ -316,7 +315,26 @@ class JuriController extends Controller
                                     } elseif ($item->keterangan === "soulfullness") {
                                         $response['soulfullness1'] = $item->score;
                                     }
-                            }                      
+                                    
+                                }
+                                elseif ($item->id_juri === $setting->juri_2) {
+                                    if ($item->keterangan === "attack") {
+                                        $response['attack2'] = $item->score;
+                                    } elseif ($item->keterangan === "firmness") {
+                                        $response['firmness2'] = $item->score;
+                                    } elseif ($item->keterangan === "soulfullness") {
+                                        $response['soulfullness2'] = $item->score;
+                                    }
+                                } elseif ($item->id_juri === $setting->juri_3) {
+                                    if ($item->keterangan === "attack") {
+                                        $response['attack3'] = $item->score;
+                                    } elseif ($item->keterangan === "firmness") {
+                                        $response['firmness3'] = $item->score;
+                                    } elseif ($item->keterangan === "soulfullness") {
+                                        $response['soulfullness3'] = $item->score;
+                                    }
+                                }
+                            }                            
                             return response()->json($response,200);
                         } else {
                             return response()->json(['message' => 'No data available'],404);
