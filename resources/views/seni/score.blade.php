@@ -130,8 +130,8 @@
                                     <td>
                                         -0.50
                                     </td>
-                                    <td>
-                                        9.23
+                                    <td id="total_score">
+                                        
                                     </td>
                                 </tr>
                             </tbody>
@@ -186,29 +186,32 @@
                         $('#soulfullness1').text(response.soulfullness1);
                         $('#attack1').text(response.attack1);
                         $('#firmness1').text(response.firmness1);
-                        $('#total1').text((parseFloat(response.firmness1) 
-                        + parseFloat(response.attack1)
-                        + parseFloat(response.soulfullness1) +parseFloat('9.1') ).toFixed(2));
+                        $('#total1').text(juri1);
                         $('#attack2').text(response.attack2);
                         $('#firmness2').text(response.firmness2);
-                        $('#total2').text((parseFloat(response.firmness2) 
-                        + parseFloat(response.attack2)
-                        + parseFloat(response.soulfullness2) +parseFloat('9.1')).toFixed(2));
+                        $('#total2').text(juri2);
                         $('#soulfullness3').text(response.soulfullness3);
                         $('#attack3').text(response.attack3);
                         $('#firmness3').text(response.firmness3);
-                        $('#total3').text((parseFloat(response.firmness3) 
-                        + parseFloat(response.attack3)
-                        + parseFloat(response.soulfullness3) +parseFloat('9.1')).toFixed(2));
-
-
+                        $('#total3').text(juri3);
+                        $('#total_score').text(findMedian(all_juri));
                     }
-                }); +parseFloat('9.1')
+                });
             }
             requestdata();
         }   
         calldata();
         setInterval(calldata, 500);
+function findMedian(arr) {
+            arr.sort((a, b) => a - b);
+            const middleIndex = Math.floor(arr.length / 2);
+
+            if (arr.length % 2 === 0) {
+                return (arr[middleIndex - 1] + arr[middleIndex]) / 2;
+            } else {
+                return arr[middleIndex];
+            }
+}        
     </script>
 </body>
 </html>
