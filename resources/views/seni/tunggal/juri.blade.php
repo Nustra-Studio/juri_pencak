@@ -48,7 +48,8 @@
                 $score_actual = 9 + $score-10 / 100;
                 $score_actual = number_format($score_actual, 2);
             }
-            $total_score = number_format($total_score + $score_actual);
+            $total_score = number_format($total_score);
+            $total_score = $total_score + $score_actual;
            $dewan = number_format($dewan);
     @endphp
         <!-- Match Info Section -->
