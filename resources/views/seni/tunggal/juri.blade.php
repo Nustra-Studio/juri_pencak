@@ -22,16 +22,7 @@
                             ->where('id_juri',$id_juri)
                             ->where('status','point_tunggal')->get();
             $score = 0;
-            if($score === 0){
-                $score_actual = 9 + $score / 100;
-                $score_actual = number_format($score_actual, 2);
-            }
-            else{
-                $score_actual = 9 + $score-10 / 100;
-                $score_actual = number_format($score_actual, 2);
-            }
-            $total_score = $score_actual;
-            $total_score = number_format($total_score);
+            $total_score = 0;
             $dewan = 0;
             $babak = 0;
            if(!empty($scores)){
@@ -49,6 +40,15 @@
            else{
             $score = 0;
            }
+           if($score === 0){
+                $score_actual = 9 + $score / 100;
+                $score_actual = number_format($score_actual, 2);
+            }
+            else{
+                $score_actual = 9 + $score-10 / 100;
+                $score_actual = number_format($score_actual, 2);
+            }
+            $total_score = number_format($total_score + $score_actual);
            $dewan = number_format($dewan);
     @endphp
         <!-- Match Info Section -->
