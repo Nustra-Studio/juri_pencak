@@ -149,7 +149,8 @@ class JuriController extends Controller
                     'status' => 'point_tunggal'
                 ];
                 $datas = score::where($check)->first();
-                if ($datas->keterangan == 'next') {
+               if($datas){
+                if ($status == 'next') {
                     $data = [
                         'score' => $datas->score + $p,
                         'keterangan' => $status,
@@ -160,7 +161,7 @@ class JuriController extends Controller
                     ];
                     $datas->update($data);
                 }
-                elseif ($datas->keterangan == 'flow') {
+                elseif ($status == 'flow') {
                     $data = [
                         'score' => $p,
                         'keterangan' => $status,
@@ -170,6 +171,7 @@ class JuriController extends Controller
                     ];
                     $datas->update($data);
                 } 
+               }
                 else {
                     score::create($data);
                 }
