@@ -40,15 +40,15 @@
            else{
             $score = 0;
            }
-           $number = number_format(9,2);
+           $numbers = number_format(9,2);
            if($score === 0){
-                $score = number_format($score / 100 , 2);
-                $score_actual = $number + $score;
+                $sc = number_format($score / 100 , 2);
+                $score_actual = $numbers + $sc;
                 $score_actual = number_format($score_actual, 2);
             }
             else{
-                $score = number_format($score -10 / 100 , 2);
-                $score_actual = $number + $score;
+                $sc = number_format($score -10 / 100 , 2);
+                $score_actual = $numbers + $sc;
                 $score_actual = number_format($score_actual, 2);
             }
             $total_score = number_format($total_score);
