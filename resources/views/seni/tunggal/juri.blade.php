@@ -40,17 +40,15 @@
            else{
             $score = 0;
            }
-           $numbers = 9.00;
-           if($score === 0){
-                $sc = number_format($score / 100 , 2);
-                $score_actual = $numbers + $sc;
-                $score_actual = number_format($score_actual, 2);
-            }
-            else{
-                $sc = number_format($score -10 / 100 , 2);
-                $score_actual = $numbers + $sc;
-                $score_actual = number_format($score_actual, 2);
-            }
+          $numbers = 9.00; // Ini adalah angka 9 dengan dua angka di belakang koma
+
+        if ($score === 0) {
+            $sc = number_format($score / 100, 2); 
+            $score_actual = $numbers + $sc; // Ini seharusnya 9,00 + 0,00 = 9,00
+        } else {
+            $sc = number_format(($score - 10) / 100, 2); // Ini akan menjadi 0,19 karena ($score - 10) adalah 19
+            $score_actual = $numbers + $sc; // Ini seharusnya 9,00 + 0,19 = 9,19
+        }
             $total_score = number_format($total_score);
             $total_score = $total_score + $score_actual;
            $dewan = number_format($dewan);
