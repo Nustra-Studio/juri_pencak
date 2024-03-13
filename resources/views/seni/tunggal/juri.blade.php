@@ -22,7 +22,6 @@
                             ->where('id_juri',$id_juri)
                             ->where('status','point_tunggal')->get();
             $score = 0;
-            $score = number_format($score, 2);
             if($score === 0){
                 $score_actual = 9 + $score / 100;
                 $score_actual = number_format($score_actual, 2);
