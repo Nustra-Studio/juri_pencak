@@ -40,7 +40,7 @@
            else{
             $score = 0;
            }
-           $numbers = number_format(9,2);
+           $numbers = 9.00;
            if($score === 0){
                 $sc = number_format($score / 100 , 2);
                 $score_actual = $numbers + $sc;
