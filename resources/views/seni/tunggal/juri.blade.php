@@ -18,9 +18,10 @@
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
             $number = 1;
-            $scores = score::where('id_perserta',$id_perserta)->where('status','point_tunggal')->get();
+            $scores = score::where('id_perserta',$id_perserta)
+                            ->where('id_juri',$id_juri)
+                            ->where('status','point_tunggal')->get();
             $score = 0;
-            $score = number_format($score, 2);
             if($score === 0){
                 $score_actual = 9 + $score / 100;
                 $score_actual = number_format($score_actual, 2);
@@ -30,20 +31,26 @@
                 $score_actual = number_format($score_actual, 2);
             }
             $total_score = $score_actual;
-            $total_score = number_format($total_score);
+            $dewan = 0;
+            $babak = 0;
            if(!empty($scores)){
                 foreach ($scores as $item) {
                     if($item->keterangan === "next"){
                         $score += $item->score;
+                        $babak = $item->babak; 
                     }
                     elseif($item->keterangan === 'flwo'){
                         $total_score += $item->score;
+                        $dewan += $item->score;
                     }
                 }
            }
            else{
             $score = 0;
            }
+           $score = number_format($score, 2);
+           $total_score = number_format($total_score);
+           $dewan = number_format($dewan);
     @endphp
         <!-- Match Info Section -->
         <div class="d-flex justify-content-center ">
@@ -69,6 +76,9 @@
             <div class="row text-center mt-4" style="height: 200px;">
                 <div class="col-md-5">
                     <button
+                    @if ($babak == 100)
+                    disabled
+                     @endif
                     name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:next p:0 keterangan:seni_tunggal"
                     class="btn btn-danger btn-lg custom-button shadow w-100 h-100 btn-data">Wrong Move</button>
                 </div>
@@ -92,6 +102,9 @@
                 </div>
                 <div class="col-md-5" >
                     <button
+                    @if ($babak == 100)
+                        disabled
+                    @endif
                      class="btn btn-primary btn-lg custom-button shadow w-100 h-100 btn-data"
                      name="arena:{{$arena}} juri:{{$id_juri}} id:{{$id_perserta}} status:next p:{{$number}} keterangan:seni_tunggal"
                      >Next Move</button>
@@ -126,7 +139,7 @@
                                     @endfor
                                 </td>
                                 <td class="text-center align-middle text-primary fw-bold">
-                                    0.01
+                                    {{$dewan}}
                                 </td>
                             </tr>
                             <tr>
