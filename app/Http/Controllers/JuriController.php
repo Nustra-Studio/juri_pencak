@@ -149,7 +149,7 @@ class JuriController extends Controller
                     'status' => 'point_tunggal'
                 ];
                 $datas = score::where($check)->first();
-                if ($datas) {
+                if ($datas->keterangan == 'next') {
                     $data = [
                         'score' => $datas->score + $p,
                         'keterangan' => $status,
@@ -159,7 +159,18 @@ class JuriController extends Controller
                         'babak' => $datas->babak + 1,
                     ];
                     $datas->update($data);
-                } else {
+                }
+                elseif ($datas->keterangan == 'flow') {
+                    $data = [
+                        'score' => $p,
+                        'keterangan' => $status,
+                        'id_perserta' => $id_perserta,
+                        'id_juri' => $id_juri,
+                        'status' => 'point_tunggal',
+                    ];
+                    $datas->update($data);
+                } 
+                else {
                     score::create($data);
                 }
                 return response()->json(['message' => 'Data berhasil disimpan']);
