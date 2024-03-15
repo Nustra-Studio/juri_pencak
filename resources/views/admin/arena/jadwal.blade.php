@@ -108,11 +108,11 @@
                             </thead>
                             <tbody class="text-center align-middle">
                                 @foreach ($data_perserta as $item)  
-                                    @if ($loop->index+1 % 2 != 0)
+                                    @if ($loop->index+1 % 2 == 0)
                                     @php
                                     $kelas = kelas::where('id',$item->kelas)->value('name');
                                     $category = category::where('id',$item->category)->value('name');
-                                    $lawan = PersertaModel::skip($loop->index+2)->take(1)->value('name');
+                                    $lawan = PersertaModel::skip($loop->index+1)->take(1)->value('name');
                                     @endphp
                                     <tr>
                                         <td class="text-center">{{ $loop->index+1 }}</td>
