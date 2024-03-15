@@ -108,7 +108,7 @@
                             </thead>
                             <tbody class="text-center align-middle">
                                 @foreach ($data_perserta as $item)  
-                                    @if ($loop->index % 2 !== 0)
+                                    @if ($loop->index % 2 === 0)
                                     @php
                                     $kelas = kelas::where('id',$item->kelas)->value('name');
                                     $category = category::where('id',$item->category)->value('name');
