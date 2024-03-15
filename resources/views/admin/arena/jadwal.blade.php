@@ -85,7 +85,7 @@
         </table>
     </div>
 
-    @if ($tipe_arena->status !== "Tanding")
+    @if ($tipe_arena->status === "Tanding")
     <div class="container">a</div>
     @else
     <div class="container-fluid">
