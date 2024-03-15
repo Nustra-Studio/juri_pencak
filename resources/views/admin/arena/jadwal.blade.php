@@ -115,7 +115,7 @@
                                     @php
                                     $kelas = kelas::where('id',$item->kelas)->value('name');
                                     $category = category::where('id',$item->category)->value('name');
-                                    $lawan = PersertaModel::skip($loop->index+1)->take(1)->value('name');
+                                    $lawan = PersertaModel::skip($loop->index+1)->take(1)->value('name') ?? "N/a";
                                     $count++;
                                     @endphp
                                     <tr>
