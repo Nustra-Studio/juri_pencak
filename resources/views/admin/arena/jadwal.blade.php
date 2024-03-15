@@ -111,7 +111,7 @@
                                 @php    
                                     $kelas = kelas::where('id',$item->kelas)->where('name', 'LIKE', '%' . 'tanding' . '%' )->value('name');
                                     $category = category::where('id',$item->category)->value('name');
-                                    $lawan = PesertaModel::where('id', $item->id_pesilat+1)->value('name');
+                                    $lawan = PersertaModel::where('id', $item->id_pesilat+1)->value('name');
                                 @endphp
                                 <tr>
                                     <td class="text-center">{{ $loop->index+1 }}</td>
