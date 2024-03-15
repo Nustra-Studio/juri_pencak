@@ -53,7 +53,7 @@
         <table class="table table-bordered border-dark shadow">
             <thead class="text-center">
                 <tr>
-                    <th class="text-primary" colspan="3">Indikator Pertandingan</th>
+                    <th class="text-primary" colspan="3">Indikator Pertandingan a</th>
                 </tr>
             </thead>
             <tbody class="">
