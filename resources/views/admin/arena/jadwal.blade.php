@@ -36,7 +36,7 @@
     use App\kelas;
     use App\category;
     use App\arena;
-    $tipe_arena = arena::where('id', $arena)->get();
+    $tipe_arena = arena::where('id', $arena)->first();
     $data_setting = Setting::first();
     $data_perserta = PersertaModel::get();
     $total_pertandingan = PersertaModel::where('status','pending')->count('id');
@@ -53,7 +53,7 @@
         <table class="table table-bordered border-dark shadow">
             <thead class="text-center">
                 <tr>
-                    <th class="text-primary" colspan="3">Indikator Pertandingan a</th>
+                    <th class="text-primary" colspan="3">Indikator Pertandingan</th>
                 </tr>
             </thead>
             <tbody class="">
