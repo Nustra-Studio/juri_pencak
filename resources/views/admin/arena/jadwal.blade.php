@@ -121,7 +121,7 @@
                                     <tr>
                                         <td class="text-center">{{ $count }}</td>
                                         <td class="text-center">1</td>
-                                        <td>{{ $count }}</td>
+                                        <td>{{ $kelas }}</td>
                                         <td class="fw-bold text-primary">{{ $item->name}}</td>
                                         <td class="fw-bold text-danger">{{$lawan}}</td>
                                         <td class="fw-bold text-primary text-center">N/a</td>
