@@ -107,7 +107,7 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center align-middle">
-                                @foreach ($data_peserta as $item)
+                                @foreach ($data_perserta as $item)
                                 @php    
                                     $kelas = kelas::where('id',$item->kelas)->where('name', 'LIKE', '%' . 'tanding' . '%' )->value('name');
                                     $category = category::where('id',$item->category)->value('name');
