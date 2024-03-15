@@ -109,7 +109,7 @@
                             <tbody class="text-center align-middle">
                                 @foreach ($data_perserta as $item)
                                 @php    
-                                    $kelas = kelas::where('id',$item->kelas)->where('name', 'LIKE', '%' . 'tanding' . '%' )->value('name');
+                                    $kelas = kelas::where('id',$item->kelas)->value('name');
                                     $category = category::where('id',$item->category)->value('name');
                                     $lawan = PersertaModel::where('id', $item->id_pesilat+1)->value('name');
                                 @endphp
