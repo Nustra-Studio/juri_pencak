@@ -94,7 +94,7 @@
                         <table id="example" class="table table-bordered shadow" style="width: 100%;">
                             <thead class="text-center">
                                 <tr>    
-                                    <th class="bg-light text-center">No</th>
+                                    <th class="bg-light text-center">{{$tipe_arena->status}}</th>
                                     <th class="bg-light text-center">Partai</th>
                                     <th class="bg-light text-center">Kelas</th>
                                     <th class="bg-light text-center">Nama</th>
