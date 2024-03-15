@@ -35,6 +35,8 @@
     use App\jadwal;
     use App\kelas;
     use App\category;
+    use App\arena;
+    $tipe_arena = arena::where('id', $arena)->get();
     $data_setting = Setting::first();
     $data_perserta = PersertaModel::get();
     $total_pertandingan = PersertaModel::where('status','pending')->count('id');
@@ -83,7 +85,7 @@
         </table>
     </div>
 
-    <!-- Information Table -->
+    @if ($tipe_arena->status !== "tanding")
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -152,6 +154,9 @@
             </div>
         </div>
     </div>
+    @endif
+    <!-- Information Table -->
+    
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
