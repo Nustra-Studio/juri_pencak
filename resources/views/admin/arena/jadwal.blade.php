@@ -42,7 +42,6 @@
     $total_pertandingan = PersertaModel::where('status','pending')->count('id');
     $finish_pertandingan = PersertaModel::where('status','finish')->count('id');
     $data_jadwal = jadwal::where('arena',$arena)->get();
-    $count = 1;
 @endphp
 <body>
     <!-- Title -->
@@ -108,51 +107,54 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center align-middle">
-                                @foreach ($data_perserta as $item)  
-                                @if ($count % 2 != 0)
-                                    @php
-                                    $kelas = kelas::where('id',$item->kelas)->value('name');
-                                    $category = category::where('id',$item->category)->value('name');
-                                    $lawan = PersertaModel::skip($count)->take(1)->value('name');
-                                    @endphp
-                                    <tr>
-                                        <td class="text-center">{{ $loop->index+1 }}</td>
-                                        <td class="text-center">1</td>
-                                        <td>{{ $kelas }}</td>
-                                        <td class="fw-bold text-danger">{{ $item->name}}</td>
-                                        <td class="fw-bold text-primary">{{$lawan}}</td>
-                                        <td class="fw-bold text-danger text-center">N/a</td>
-                                        <td class="fw-bold text-primary text-center">N/a</td>
-                                        <td class="fw-bold">N/a</td>
-                                        <td class="h-100 px-0 py-0 w-25">
-                                            <div class="container form-group p-0 " >
-                                                <select class="form-select w-100 p-0 text-center"" id="input-continent" style="height: 60px;">
-                                                    <option value="menang-1">Menang Point</option>
-                                                    <option value="menang-2">Menang Teknik</option>
-                                                    <option value="menang-2">Diskualifikasi</option>
-                                                    <option value="menang-4">Keputusan wasit</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex justify-content-center p-0">
-                                                @if ($item->status === "pending")
-                                                <button name="keterangan:jadwal p:{{$item->id}} status:proses arena:{{$arena}}" class="btn btn-data btn-primary px-3 shadow text-light">Pending</button>
-                                                @endif
-                                                @if ($item->status === "proses")
-                                                <button name="keterangan:jadwal p:{{$item->id}} status:finish arena:{{$arena}}" class="btn btn-data btn-warning px-3 shadow text-light">Proses</button>
-                                                @endif
-                                                @if ($item->status === "finish")
-                                                <button name="keterangan:jadwal p:{{$item->id}} status:finish arena:{{$arena}}" class="btn btn-success px-3 shadow text-light">Selesai</button>
-                                                @endif
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endif
-                                    @php
-                                        $count+1;
-                                    @endphp
-                                @endforeach
+                                @php
+                                    $count = 1;
+                                    @foreach ($data_perserta as $item)  
+                                    @if ($count % 2 != 0)
+                                        @php
+                                        $kelas = kelas::where('id',$item->kelas)->value('name');
+                                        $category = category::where('id',$item->category)->value('name');
+                                        $lawan = PersertaModel::skip($count)->take(1)->value('name');
+                                        @endphp
+                                        <tr>
+                                            <td class="text-center">{{ $loop->index+1 }}</td>
+                                            <td class="text-center">1</td>
+                                            <td>{{ $kelas }}</td>
+                                            <td class="fw-bold text-danger">{{ $item->name}}</td>
+                                            <td class="fw-bold text-primary">{{$lawan}}</td>
+                                            <td class="fw-bold text-danger text-center">N/a</td>
+                                            <td class="fw-bold text-primary text-center">N/a</td>
+                                            <td class="fw-bold">N/a</td>
+                                            <td class="h-100 px-0 py-0 w-25">
+                                                <div class="container form-group p-0 " >
+                                                    <select class="form-select w-100 p-0 text-center"" id="input-continent" style="height: 60px;">
+                                                        <option value="menang-1">Menang Point</option>
+                                                        <option value="menang-2">Menang Teknik</option>
+                                                        <option value="menang-2">Diskualifikasi</option>
+                                                        <option value="menang-4">Keputusan wasit</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-center p-0">
+                                                    @if ($item->status === "pending")
+                                                    <button name="keterangan:jadwal p:{{$item->id}} status:proses arena:{{$arena}}" class="btn btn-data btn-primary px-3 shadow text-light">Pending</button>
+                                                    @endif
+                                                    @if ($item->status === "proses")
+                                                    <button name="keterangan:jadwal p:{{$item->id}} status:finish arena:{{$arena}}" class="btn btn-data btn-warning px-3 shadow text-light">Proses</button>
+                                                    @endif
+                                                    @if ($item->status === "finish")
+                                                    <button name="keterangan:jadwal p:{{$item->id}} status:finish arena:{{$arena}}" class="btn btn-success px-3 shadow text-light">Selesai</button>
+                                                    @endif
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endif
+                                        @php
+                                            $count++;
+                                        @endphp
+                                    @endforeach
+                                @endphp
                             </tbody>
                         </table>
                     </div>
