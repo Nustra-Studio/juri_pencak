@@ -99,7 +99,8 @@
                                     <th class="bg-light text-center">Kelas</th>
                                     <th class="bg-light text-center">Sudut Biru</th>
                                     <th class="bg-light text-center">Sudut Merah</th>
-                                    <th class="bg-light text-center" colspan="2">Skor</th>
+                                    <th class="bg-light text-center">Skor</th>
+                                    <th class="bg-light text-center">Skor</th>
                                     <th class="bg-light text-center">Pemenang</th>
                                     <th class="bg-light text-center">Kondisi Menang</th>
                                     <th class="bg-light text-center">Status</th>
@@ -120,7 +121,7 @@
                                     <tr>
                                         <td class="text-center">{{ $count }}</td>
                                         <td class="text-center">1</td>
-                                        <td>{{ $loop->index }}</td>
+                                        <td>{{ $count }}</td>
                                         <td class="fw-bold text-primary">{{ $item->name}}</td>
                                         <td class="fw-bold text-danger">{{$lawan}}</td>
                                         <td class="fw-bold text-primary text-center">N/a</td>
