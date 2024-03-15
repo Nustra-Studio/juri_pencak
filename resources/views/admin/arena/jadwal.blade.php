@@ -124,11 +124,10 @@
                                     <td class="fw-bold">N/a</td>
                                     <td class="h-100 px-0 py-0 w-25">
                                         <div class="container form-group p-0 " >
-                                            <select class="custom-select w-100 p-0" id="input-continent" style="height: 60px;">
+                                            <select class="form-select w-100 p-0 text-center"" id="input-continent" style="height: 60px;">
                                                 <option value="menang-1">Menang Point</option>
                                                 <option value="menang-2">Menang Teknik</option>
                                                 <option value="menang-2">Diskualifikasi</option>
-                                                <option value="menang-3">Lawan Mengundurkan diri</option>
                                                 <option value="menang-4">Keputusan wasit</option>
                                             </select>
                                         </div>
