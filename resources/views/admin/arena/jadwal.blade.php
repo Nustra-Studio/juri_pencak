@@ -42,7 +42,6 @@
     $total_pertandingan = PersertaModel::where('status','pending')->count('id');
     $finish_pertandingan = PersertaModel::where('status','finish')->count('id');
     $data_jadwal = jadwal::where('arena',$arena)->get();
-    $count = 1;
 @endphp
 <body>
     <!-- Title -->
@@ -109,11 +108,11 @@
                             </thead>
                             <tbody class="text-center align-middle">
                                 @foreach ($data_perserta as $item)  
-                                    @if ($count % 2 != 0)
+                                    @if ($loop->index+1 % 2 != 0)
                                     @php
                                     $kelas = kelas::where('id',$item->kelas)->value('name');
                                     $category = category::where('id',$item->category)->value('name');
-                                    $lawan = PersertaModel::skip($count)->take(1)->value('name');
+                                    $lawan = PersertaModel::skip($loop->index+2)->take(1)->value('name');
                                     @endphp
                                     <tr>
                                         <td class="text-center">{{ $loop->index+1 }}</td>
@@ -148,9 +147,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    @php
-                                        $count++;
-                                    @endphp
                                     @endif
                                 @endforeach
                             </tbody>
