@@ -97,8 +97,8 @@
                                     <th class="bg-light text-center">No</th>
                                     <th class="bg-light text-center">Partai</th>
                                     <th class="bg-light text-center">Kelas</th>
-                                    <th class="bg-light text-center">Sudut Merah</th>
                                     <th class="bg-light text-center">Sudut Biru</th>
+                                    <th class="bg-light text-center">Sudut Merah</th>
                                     <th class="bg-light text-center">Skor</th>
                                     <th class="bg-light text-center">Skor</th>
                                     <th class="bg-light text-center">Pemenang</th>
@@ -118,10 +118,10 @@
                                         <td class="text-center">{{ $loop->index+1 }}</td>
                                         <td class="text-center">1</td>
                                         <td>{{ $kelas }}</td>
-                                        <td class="fw-bold text-danger">{{ $item->name}}</td>
-                                        <td class="fw-bold text-primary">{{$lawan}}</td>
-                                        <td class="fw-bold text-danger text-center">N/a</td>
+                                        <td class="fw-bold text-primary">{{ $item->name}}</td>
+                                        <td class="fw-bold text-danger">{{$lawan}}</td>
                                         <td class="fw-bold text-primary text-center">N/a</td>
+                                        <td class="fw-bold text-danger text-center">N/a</td>
                                         <td class="fw-bold">N/a</td>
                                         <td class="h-100 px-0 py-0 w-25">
                                             <div class="container form-group p-0 " >
