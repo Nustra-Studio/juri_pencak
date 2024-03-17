@@ -91,7 +91,7 @@
         <div class="row">
             <div class="col">
                 <div class="my-2 ps-3 d-flex justify-content-start align-items-center">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adddata">Tambah Peserta</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addpeserta">Tambah Peserta</button>
                 </div>
             </div>
             <div class="col"></div>
@@ -246,11 +246,11 @@
     
     {{-- Modal Section --}}
 
-    <div class="modal fade" id="adddata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="addpeserta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Data Category</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Peserta</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
                 </div>
                 <div class="modal-body">
