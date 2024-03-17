@@ -91,9 +91,7 @@
         <div class="row">
             <div class="col">
                 <div class="my-2 ps-3 d-flex justify-content-start align-items-center">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                        Masukan Peserta
-                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adddata">Tambah Data</button>
                 </div>
             </div>
             <div class="col"></div>
@@ -247,23 +245,48 @@
     <!-- Information Table -->
     
     {{-- Modal Section --}}
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <div class="modal fade" id="adddata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Data Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="forms-sample" method="post" action="{{ route('arena.store') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="exampleInputName" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputName" class="form-label">Juri 1</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputName" class="form-label">Juri 2</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputName" class="form-label">Juri 3</label>
+                        </div>
+                        <!-- ... Other form elements ... -->
+                        <div class="mb-3">
+                        <label for="exampleInputName" class="form-label">Status</label>
+                        <select  name="kelas" class="form-control" id="exampleInputName">
+                                    <option value="Tanding">Tanding</option>
+                                    <option value="Solo_Kreatif">Seni Solo Kreatif</option>
+                                    <option value="Ganda_Kreatif">Seni Ganda Kreatif</option>
+                                    <option value="Tunggal">Seni Tunggal</option>
+                                    <option value="Group">Seni Group</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-             </div>
-           </div>
         </div>
     </div>
 
