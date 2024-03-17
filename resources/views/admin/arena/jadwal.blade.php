@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col">
                 <div class="my-2 ps-3 d-flex justify-content-start align-items-center">
-                    <button class="btn btn-primary px-3" data-toggle="modal" data-target="#partaiModal">Add Partai</button>
+                    <button type="button" class="btn btn-primary px-3" data-toggle="modal" data-target="#partaiModal">Add Partai</button>
                 </div>
             </div>
             <div class="col"></div>
