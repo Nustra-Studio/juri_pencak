@@ -90,7 +90,9 @@
         <div class="row">
             <div class="col">
                 <div class="my-2 ps-3 d-flex justify-content-start align-items-center">
-                    <button type="button" class="btn btn-primary px-3" data-toggle="modal" data-target="#partaiModal">Add Partai</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Masukan Peserta
+                    </button>
                 </div>
             </div>
             <div class="col"></div>
@@ -244,7 +246,7 @@
     <!-- Information Table -->
     
     {{-- Modal Section --}}
-    <div class="modal fade" id="partaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
