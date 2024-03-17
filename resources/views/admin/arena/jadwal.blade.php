@@ -3,7 +3,8 @@
 @push('plugin-styles')
 <link href="{{ asset('assets/plugins/flatpickr/flatpickr.min.css') }}" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 
 <style>
         .form-floating {
@@ -86,6 +87,16 @@
     </div>
 
     @if ($tipe_arena->status === "Tanding")
+    <div class="cotainer-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="mb-2 mt-3 ps-3 d-flex justify-content-start align-items-center">
+                    <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#addpeserta">Tambah Peserta</button>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -233,6 +244,37 @@
     @endif
     <!-- Information Table -->
     
+    {{-- Modal Section --}}
+
+    <div class="modal fade" id="addpeserta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Peserta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <label for="biru" class="fs-4 text-primary">Tim Biru</label>
+                                <input type="text" name="" id="biru" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="biru" class="fs-4 text-danger">Tim Merah</label>
+                                <input type="text" name="" id="biru" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
