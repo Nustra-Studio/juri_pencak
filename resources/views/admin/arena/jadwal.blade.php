@@ -86,6 +86,16 @@
     </div>
 
     @if ($tipe_arena->status === "Tanding")
+    <div class="cotainer-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3 d-flex justify-content-start align-items-center">
+                    <button class="btn btn-primary">Add Partai</button>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
