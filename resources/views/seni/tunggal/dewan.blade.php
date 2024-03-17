@@ -18,7 +18,7 @@
             use App\PersertaModel;
             use App\KontigenModel;
             // peraturan
-            $setting = Setting::first();
+            $setting = Setting::where('arena',$arena)->first();
             $perserta = PersertaModel::where('id',$setting->biru)->first(); 
             $a = "PERFOMANCE EXCEDEED BY 10M BY 10M AREA";
             $b = "DROPING OF WEAPON, TOUCHING THE FLOOR";

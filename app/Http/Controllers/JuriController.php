@@ -149,7 +149,7 @@ class JuriController extends Controller
                     'status' => 'point_tunggal'
                 ];
                 $datas = score::where($check)->first();
-               if($datas){
+            if($datas){
                 if ($status == 'next') {
                     $data = [
                         'score' => $datas->score + $p,
@@ -161,7 +161,7 @@ class JuriController extends Controller
                     ];
                     $datas->update($data);
                 }
-                elseif ($status == 'flow') {
+                elseif ($status == 'flwo') {
                     $data = [
                         'score' => $p,
                         'keterangan' => $status,
@@ -171,7 +171,7 @@ class JuriController extends Controller
                     ];
                     $datas->update($data);
                 } 
-               }
+            }
                 else {
                     score::create($data);
                 }
@@ -377,6 +377,76 @@ class JuriController extends Controller
                                     } elseif ($item->keterangan === "soulfullness") {
                                         $response['soulfullness3'] = $item->score;
                                     }
+                                }
+                            }                            
+                            return response()->json($response,200);
+                        } else {
+                            return response()->json(['message' => 'No data available'],404);
+                        }
+                    }
+                    // return response()->json($respone);
+                }
+                elseif($tipe === "seni_tunggal"){
+                    $kt = $request->input('kt');
+                    $id = $request->input('id');
+                    $id_juri = $request->input('juri');
+                    if($kt == "tunggal"){
+                        $data =score::where('id_perserta',$id)->get();
+                        $dewan = $data->where('status','seni_minus')->sum('score');
+                        $setting = Setting::where('arena',$request->input('arena'))->first();
+                        if (!empty($data)) {
+                            $response = [
+                                'actual1' => 0,
+                                'actual2' => 0,
+                                'actual3' => 0,
+                                'flwo1' => 0,
+                                'flwo2' => 0,
+                                'flwo3' => 0,
+                                'dewan'=> 0,
+                            ];
+                            $response['dewan'] = number_format($dewan, 2); ;
+                            foreach ($data as $item) {
+                                if ($item->id_juri === $setting->juri_1) {
+                                    if ($item->keterangan === "next") {
+                                            $numbers = 9.00; 
+                                            if($item->score === '0'){
+                                                $sc = number_format($item->score / 100, 2); 
+                                            }
+                                            else{
+                                                $sc = number_format(($item->score -10 )/100  , 2); 
+                                            }
+                                            $response['actual1'] = $sc + $numbers;
+                                    } elseif ($item->keterangan === "flwo") {
+                                        $response['flwo1'] = $item->score;
+                                    }
+                                    
+                                }
+                                elseif ($item->id_juri === $setting->juri_2) {
+                                    if ($item->keterangan === "next") {
+                                        $numbers = 9.00; 
+                                        if($item->score === '0'){
+                                            $sc = number_format($item->score / 100, 2); 
+                                        }
+                                        else{
+                                            $sc = number_format(($item->score -10 )/100  , 2); 
+                                        }
+                                        $response['actual2'] =  $numbers + $sc;
+                                } elseif ($item->keterangan === "flwo") {
+                                    $response['flwo2'] = $item->score;
+                                }
+                                } elseif ($item->id_juri === $setting->juri_3) {
+                                    if ($item->keterangan === "next") {
+                                        $numbers = 9.00; 
+                                        if($item->score === '0'){
+                                            $sc = number_format($item->score / 100, 2); 
+                                        }
+                                        else{
+                                            $sc = number_format(($item->score -10 )/100  , 2); 
+                                        }
+                                        $response['actual3'] =  $numbers + $sc;
+                                } elseif ($item->keterangan === "flwo") {
+                                    $response['flwo3'] = $item->score;
+                                }
                                 }
                             }                            
                             return response()->json($response,200);

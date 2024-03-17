@@ -183,7 +183,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center align-middle">
-                                      
+                                
                                         @foreach ($data_perserta as $item)
                                         <tr>
                                                 @php

@@ -36,21 +36,16 @@ class AdminController extends Controller
                     $data->update(['babak'=>$select]);
                     return response()->json('success',200);
                 }
-            elseif($tipe ==="clear"){
-                if($arena == '1'){
-                $data = Score::where('id_perserta', '1')->orWhere('id_perserta', '2')->get();
-                $data->each->delete();
-                    $data = Setting::where('arena',$arena)->first();
-                    $data->update(['babak'=>'1']);
-                return response()->json('success',200);
-                }
-            elseif($arena == '2'){
-                $data = Score::where('id_perserta','3')->orWhere('id_perserta','4')->get();
-                $data->each->delete();
-                    $data = Setting::where('arena',$arena)->first();
-                    $data->update(['babak'=>'1']);
-                return response()->json('success',200);
-                }
+            elseif($tipe ==="start"){
+                $currentTimestamp = time();
+                $data = Setting::where('arena',$arena)->first();
+                $timer = date("H:i:s", $currentTimestamp);
+                    $data->update(
+                        ['timer'=>$timer,
+                        'status'=>"start"
+                        ]
+                    );
+                    return response()->json('success',200);
             }
         }
     /**
@@ -169,6 +164,9 @@ class AdminController extends Controller
                     }
                     elseif($data->status === "Ganda_Kreatif" || $data->status === "Solo_Kreatif"){
                         return view('seni.score',compact('arena'));
+                    }
+                    elseif($data->status === "Tunggal" || $data->status === "Group"){
+                        return view('seni.score_2',compact('arena'));
                     }
                     else{
                         return view('loginscore');

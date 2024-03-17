@@ -14,9 +14,9 @@
         </div>
         
         <div class="container-fluid d-flex justify-content-center my-4 px-1">
-            <button class="btn btn-primary mt-2 me-1 px-3 py-3 fs-1">Pause</button>  
-            <button class="btn btn-success mt-2 px-3 py-3 fs-1">Start</button>
-            <button class="btn btn-danger mt-2 ms-1 px-3 py-3 fs-1">Stop</button>  
+            <button id="pause" class="btn btn-primary mt-2 me-1 px-3 py-3 fs-1">Pause</button>  
+            <button id="start" class="btn btn-success mt-2 px-3 py-3 fs-1">Start</button>
+            <button id="stop" class="btn btn-danger mt-2 ms-1 px-3 py-3 fs-1">Stop</button>  
         </div>
 
         <div class="container-fluid px-4 mb-4">
@@ -57,13 +57,34 @@
 <!-- Your script with the AJAX call -->
 <script>
     jQuery(document).ready(function($) {
-            var button = document.getElementById('clear');
-            function clear(){
-                console.log('trigger button success');
-                const selectedValue = $(this).val();
-                const arenaId = $('#arena').data('arena');
+            const arenaId = $('#arena').data('arena');
+            var startBtn = document.getElementById('start');
+            var pauseBtn = document.getElementById('pause');
+            var stopBtn = document.getElementById('stop');
+            function start(){
+                console.log('trigger button start');
                 $.ajax({
-                    url: '/timeradmin/?tipe=clear&arena='+ arenaId +'',
+                    url: '/timeradmin/?tipe=start&arena='+ arenaId +'',
+                    method: 'GET',
+                    success: function (response) {
+                    console.log(response.data);
+                    }
+                }); 
+            }
+            function pause(){
+                console.log('trigger button pause');
+                $.ajax({
+                    url: '/timeradmin/?tipe=pause&arena='+ arenaId +'',
+                    method: 'GET',
+                    success: function (response) {
+                    console.log(response.data);
+                    }
+                }); 
+            }
+            function stop(){
+                console.log('trigger button stop');
+                $.ajax({
+                    url: '/timeradmin/?tipe=stop&arena='+ arenaId +'',
                     method: 'GET',
                     success: function (response) {
                     console.log(response.data);
@@ -81,7 +102,9 @@
             }
         });             
     });
-        button.addEventListener('click', clear);
+        startBtn.addEventListener('click', start);
+        pauseBtn.addEventListener('click', pause);
+        stopBtn.addEventListener('click', stop);
     });
 </script>
 

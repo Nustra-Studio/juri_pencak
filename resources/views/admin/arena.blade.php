@@ -42,7 +42,7 @@
                                 <td> {{$item->name}}</td>
                                 <td>
                                 <div class="text-end">
-                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="{{url("/redirect/?arena=$item->id&role=timer")}}" class="btn btn-primary btn-sm">Timer</a>
                                     <form id="form-delete-{{ $item->id }}" action="" method="POST" style="display: none;">
                                     @csrf
                                     @method('DELETE')

@@ -109,6 +109,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Recap</title>
+    @php
+            use App\score;
+            use App\Setting;
+            use App\PersertaModel;
+            use App\KontigenModel;
+            $setting = Setting::where('arena',$arena)->first();
+            $perserta = PersertaModel::where('id',$setting->biru)->first(); 
+            if(empty($perserta)) {
+                echo "<script>window.history.back();</script>";
+                exit;
+            }
+            $id_perserta = $perserta->id;
+            $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
+    @endphp
 </head>
 <body>
     <!-- Header Section -->
@@ -149,8 +163,8 @@
         <div class="row mx-2 mt-3">
             <div class="col ">
                 <i class="fa-regular fa-circle-user fa-4x mt-4" style="color: #0066FF;"></i>
-                <div class="mt-3 fs-4">INDONESIA</div>
-                <div class="fs-3 text-primary">BRIAN PUTRA IMANUEL</div>
+                <div class="mt-3 fs-4">{{$kontigen}}</div>
+                <div class="fs-3 text-primary">{{$perserta->name}}</div>
             </div>
             <div class="col">
                 <div class="container border border-primary border-3 rounded text-center p-3 fs-2">
@@ -174,19 +188,19 @@
             </thead>
             <tbody class="text-center align-middle">
                 <tr>
-                   <td class="">9.22</td> 
-                   <td class="">9.20</td> 
-                   <td class="">9.40</td> 
+                   <td class="" id="actual1"></td> 
+                   <td class="" id="actual2"></td> 
+                   <td class="" id="actual3"></td> 
                 </tr>
                 <tr>
-                    <td class="text-danger">0.10</td> 
-                    <td class="text-danger">0.0</td> 
-                    <td class="text-danger">0.20</td> 
+                    <td class="text-danger" id="flwo1"></td> 
+                    <td class="text-danger" id="flwo2"></td> 
+                    <td class="text-danger" id="flwo3"></td> 
                  </tr>
                  <tr>
-                    <td class="bg-light text-primary">9.12</td> 
-                    <td class="bg-light text-primary">9.20</td> 
-                    <td class="bg-light text-primary">9.20</td> 
+                    <td class="bg-light text-primary" id="total1"></td> 
+                    <td class="bg-light text-primary" id="total2"></td> 
+                    <td class="bg-light text-primary" id="total3"></td> 
                  </tr>
             </tbody>
         </table>
@@ -206,9 +220,9 @@
                     </thead>
                     <tbody class="text-center align-middle ">
                         <tr>
-                            <td>9,940</td>
-                            <td>0,00</td>
-                            <td>9,940</td>
+                            <td id="median"></td>
+                            <td id="dewan" class="text-danger"></td>
+                            <td id="total"></td>
                         </tr>
                         <tr>
                             <td colspan="3" class="bg-success text-light">Standard Deviation</td>
@@ -238,5 +252,57 @@
             </div>
         </div>
     </div>
+    <div class="d-none" name="{{$id_perserta}}" id="id_perserta"></div>
+    <div class="d-none" name="{{$arena}}" id="arena"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function calldata() {
+            function findMedian(arr) {
+            arr.sort((a, b) => a - b);
+            const middleIndex = Math.floor(arr.length / 2);
+
+            if (arr.length % 2 === 0) {
+                return (arr[middleIndex - 1] + arr[middleIndex]) / 2;
+            } else {
+                return arr[middleIndex];
+            }
+        } 
+            var elemenDiv = document.getElementById("id_perserta");
+            var id = elemenDiv.getAttribute("name");
+            var arenaDiv = document.getElementById("arena");
+            var arena = arenaDiv.getAttribute("name");
+            function requestdata() {
+                $.ajax({
+                    url: '/call-data/?tipe=seni_tunggal&kt=tunggal&id='+id+'&arena='+arena+'',
+                    method: 'GET',
+                    success: function (response) {
+                        var juri1 = (parseFloat(response.actual1) + parseFloat(response.flwo1)).toFixed(2);
+                        var juri2 = (parseFloat(response.actual2) + parseFloat(response.flwo2)).toFixed(2);
+                        var juri3 = (parseFloat(response.actual3) + parseFloat(response.flwo3)).toFixed(2);
+                        var all_juri = [juri1 , juri2 , juri3];        
+                        var total_score = findMedian(all_juri) - response.dewan;
+
+                        // Perbarui tampilan dengan data yang diperbarui
+                        console.log(response);
+                        $('#actual1').text(response.actual1);
+                        $('#actual2').text(response.actual2);
+                        $('#actual3').text(response.actual3);
+                        $('#total1').text(juri1);
+                        $('#flwo1').text(response.flwo1);
+                        $('#flwo2').text(response.flwo2);
+                        $('#flwo3').text(response.flwo3);
+                        $('#total2').text(juri2);
+                        $('#total3').text(juri3);
+                        $('#total').text(total_score);
+                        $('#dewan').text('-'+response.dewan);
+                        $('#median').text(findMedian(all_juri));
+                    }
+                });
+            }
+            requestdata();
+        }   
+        calldata();
+        setInterval(calldata, 500);       
+    </script>
 </body>
 </html>

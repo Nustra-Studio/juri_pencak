@@ -13,7 +13,7 @@
             use App\Setting;
             use App\PersertaModel;
             use App\KontigenModel;
-            $setting = Setting::first();
+            $setting = Setting::where('arena',$arena)->first();
             $perserta = PersertaModel::where('id',$setting->biru)->first(); 
             $id_perserta = $perserta->id;
             $kontigen = KontigenModel::where('id',$perserta->id_kontigen)->value('kontigen');
@@ -25,21 +25,21 @@
             $total_score = 0;
             $dewan = 0;
             $babak = 0;
-           if(!empty($scores)){
-                foreach ($scores as $item) {
-                    if($item->keterangan === "next"){
-                        $score += $item->score;
-                        $babak = $item->babak; 
+            if(!empty($scores)){
+                    foreach ($scores as $item) {
+                        if($item->keterangan === "next"){
+                            $score += $item->score;
+                            $babak = $item->babak; 
+                        }
+                        elseif($item->keterangan === 'flwo'){
+                            $dewan = $item->score;
+                            $total_score += $item->score;
+                        }
                     }
-                    elseif($item->keterangan === 'flwo'){
-                        $total_score += $item->score;
-                        $dewan += $item->score;
-                    }
-                }
-           }
-           else{
-            $score = 0;
-           }
+            }
+            else{
+                $score = 0;
+            }
           $numbers = 9.00; // Ini adalah angka 9 dengan dua angka di belakang koma
 
         if ($score === 0) {
@@ -50,8 +50,8 @@
             $score_actual = $numbers + $sc; // Ini seharusnya 9,00 + 0,19 = 9,19
         }
             $total_score = number_format($total_score);
-            $total_score = $total_score + $score_actual;
-           $dewan = number_format($dewan);
+            $total_score = $total_score + $score_actual + $dewan;
+            $dewan = number_format($dewan,2);
     @endphp
         <!-- Match Info Section -->
         <div class="d-flex justify-content-center ">
