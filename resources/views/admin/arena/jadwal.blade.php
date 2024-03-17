@@ -90,8 +90,8 @@
     <div class="cotainer-fluid">
         <div class="row">
             <div class="col">
-                <div class="my-2 ps-3 d-flex justify-content-start align-items-center">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addpeserta">Tambah Peserta</button>
+                <div class="mb-2 mt-3 ps-3 d-flex justify-content-start align-items-center">
+                    <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#addpeserta">Tambah Peserta</button>
                 </div>
             </div>
             <div class="col"></div>
