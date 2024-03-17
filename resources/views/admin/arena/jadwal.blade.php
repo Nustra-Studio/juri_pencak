@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col">
                 <div class="my-2 ps-3 d-flex justify-content-start align-items-center">
-                    <button class="btn btn-primary">Add Partai</button>
+                    <button class="btn btn-primary px-3" data-toggle="modal" data-target="#partaiModal">Add Partai</button>
                 </div>
             </div>
             <div class="col"></div>
@@ -243,6 +243,36 @@
     @endif
     <!-- Information Table -->
     
+    {{-- Modal Section --}}
+    <div class="modal fade" id="partaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Masukan Peserta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <label for="biru" class="fs-4 text-primary">Tim Biru</label>
+                        <input type="text" name="" id="biru" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="biru" class="fs-4 text-danger">Tim Merah</label>
+                        <input type="text" name="" id="biru" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Tutup</button>
+              <button type="button" class="btn btn-primary">Masukan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
