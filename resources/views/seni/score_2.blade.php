@@ -279,11 +279,14 @@
                         var juri1 = (parseFloat(response.actual1) + parseFloat(response.flwo1)).toFixed(2);
                         var juri2 = (parseFloat(response.actual2) + parseFloat(response.flwo2)).toFixed(2);
                         var juri3 = (parseFloat(response.actual3) + parseFloat(response.flwo3)).toFixed(2);
-                        var all_juri = [juri1 , juri2 , juri3];        
+                        var all_juri = [juri1 , juri2 , juri3];
+                        var average = juri1 + juri2 +juri3 / 3;
+                        var deviations = ((juri1-average)**2)+ ((juri2-average)**2)+ ((juri3-average)**2);
+                        var deviation = Math.sqrt(deviations/3);
                         var total_score = findMedian(all_juri) - response.dewan;
 
                         // Perbarui tampilan dengan data yang diperbarui
-                        console.log(response);
+                        console.log(deviation);
                         $('#actual1').text(response.actual1);
                         $('#actual2').text(response.actual2);
                         $('#actual3').text(response.actual3);
