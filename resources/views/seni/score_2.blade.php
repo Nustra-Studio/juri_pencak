@@ -228,7 +228,7 @@
                             <td colspan="3" class="bg-success text-light">Standard Deviation</td>
                         </tr>
                         <tr>
-                            <td colspan="3">0,021220388</td>
+                            <td colspan="3" id="deviation"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -280,9 +280,9 @@
                         var juri2 = (parseFloat(response.actual2) + parseFloat(response.flwo2)).toFixed(2);
                         var juri3 = (parseFloat(response.actual3) + parseFloat(response.flwo3)).toFixed(2);
                         var all_juri = [juri1 , juri2 , juri3];
-                        var average = juri1 + juri2 +juri3 / 3;
-                        var deviations = ((juri1-average)**2)+ ((juri2-average)**2)+ ((juri3-average)**2);
-                        var deviation = Math.sqrt(deviations/3);
+                        var average = (parseFloat(juri1) + parseFloat(juri2) + parseFloat(juri3)) / 3;
+                        var deviations = Math.pow((parseFloat(juri1) - average), 2) + Math.pow((parseFloat(juri2) - average), 2) + Math.pow((parseFloat(juri3) - average), 2);
+                        var deviation = Math.sqrt(deviations / 3);
                         var total_score = findMedian(all_juri) - response.dewan;
 
                         // Perbarui tampilan dengan data yang diperbarui
@@ -299,6 +299,7 @@
                         $('#total').text(total_score);
                         $('#dewan').text('-'+response.dewan);
                         $('#median').text(findMedian(all_juri));
+                        $('#deviation').text(deviation);
                     }
                 });
             }
