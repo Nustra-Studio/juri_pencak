@@ -283,7 +283,7 @@
                         var average = (parseFloat(juri1) + parseFloat(juri2) + parseFloat(juri3)) / 3;
                         var deviations = Math.pow((parseFloat(juri1) - average), 2) + Math.pow((parseFloat(juri2) - average), 2) + Math.pow((parseFloat(juri3) - average), 2);
                         var deviation = Math.sqrt(deviations / 3);
-                        var total_score = findMedian(all_juri) - response.dewan;
+                        var total_score = findMedian(all_juri) - parseFloat(response.dewan);
 
                         // Perbarui tampilan dengan data yang diperbarui
                         console.log(deviation);
